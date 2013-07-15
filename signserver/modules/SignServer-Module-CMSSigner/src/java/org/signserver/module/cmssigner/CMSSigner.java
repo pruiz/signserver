@@ -54,6 +54,9 @@ public class CMSSigner extends BaseSigner {
 
     /** Content-type for the produced data. */
     private static final String CONTENT_TYPE = "application/pkcs7-signature";
+
+    /** RequestMatadata requesting detached instead of enveloping signature **/
+    private static final String DETACHED_SIGNATURE = "DetachedSignature";
     
     @Override
     public void init(final int workerId, final WorkerConfig config,
@@ -113,7 +116,7 @@ public class CMSSigner extends BaseSigner {
                       
             generator.addCertificates(new JcaCertStore(certs));
             final CMSTypedData content = new CMSProcessableByteArray(data);
-            final CMSSignedData signedData = generator.generate(content, true);
+            final CMSSignedData signedData = generator.generate(content, !dettachedSignature(requestContext));
 
             final byte[] signedbytes = signedData.getEncoded();
             final Collection<? extends Archivable> archivables = Arrays.asList(new DefaultArchivable(Archivable.TYPE_RESPONSE, CONTENT_TYPE, signedbytes, archiveId));
@@ -162,4 +165,14 @@ public class CMSSigner extends BaseSigner {
         }
         return result;
     }
+
+    private static boolean dettachedSignature(final RequestContext context) {
+        boolean result = false;
+        final String value = RequestMetadata.getInstance(context).get(DETACHED_SIGNATURE);
+        if (value != null) {
+            result = Boolean.parseBoolean(value);
+        } 
+        return result;
+    }
+
 }
