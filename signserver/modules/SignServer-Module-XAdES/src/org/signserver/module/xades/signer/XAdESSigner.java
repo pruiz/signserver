@@ -31,6 +31,10 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.XPathExpressionException;
 import org.signserver.common.CryptoTokenOfflineException;
 import org.signserver.common.IllegalRequestException;
 import org.signserver.common.ProcessRequest;
@@ -50,6 +54,7 @@ import org.signserver.server.archive.Archivable;
 import org.signserver.server.archive.DefaultArchivable;
 import org.signserver.server.cryptotokens.ICryptoToken;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
@@ -57,12 +62,15 @@ import xades4j.UnsupportedAlgorithmException;
 import xades4j.XAdES4jException;
 import xades4j.algorithms.Algorithm;
 import xades4j.algorithms.GenericAlgorithm;
+import xades4j.algorithms.EnvelopedSignatureTransform;
 import xades4j.production.EnvelopedXmlObject;
 import xades4j.production.SignedDataObjects;
+import xades4j.production.DataObjectReference;
 import xades4j.production.XadesBesSigningProfile;
 import xades4j.production.XadesSigner;
 import xades4j.production.XadesSigningProfile;
 import xades4j.production.XadesTSigningProfile;
+import xades4j.properties.DataObjectDesc;
 import xades4j.properties.AllDataObjsCommitmentTypeProperty;
 import xades4j.providers.KeyingDataProvider;
 import xades4j.providers.TimeStampTokenProvider;
@@ -101,10 +109,19 @@ public class XAdESSigner extends BaseSigner {
     /** Worker property: SIGNATUREALGORITHM */
     public static final String SIGNATUREALGORITHM = "SIGNATUREALGORITHM";
 
+    /** Worker property: SIGNATURETYPE */
+    public static final String SIGNATURETYPE = "SIGNATURETYPE";
+
+    /** Worker property: SIGNATURENODE */
+    public static final String SIGNATURENODE = "SIGNATURENODE";
+
     public static final String COMMITMENT_TYPES_NONE = "NONE";
     
     /** Default value use if the worker property XADESFORM has not been set. */
     private static final String DEFAULT_XADESFORM = "BES";
+
+    /** Default signature type */
+    private static final String DEFAULT_SIGNATURETYPE = "Enveloping";
     
     private static final String CONTENT_TYPE = "text/xml";
     
@@ -114,6 +131,8 @@ public class XAdESSigner extends BaseSigner {
     private Collection<AllDataObjsCommitmentTypeProperty> commitmentTypes;
     
     private String signatureAlgorithm;
+    private SignatureTypes signatureType = SignatureTypes.Enveloping;
+    private String signatureNode;
     
     /**
      * Addional signature methods not yet covered by
@@ -152,7 +171,15 @@ public class XAdESSigner extends BaseSigner {
         EPES,
         T
     }
-    
+   
+    /**
+     * XAdES Signature type: Enveloped, Enveloping, Detached. 
+     */
+    public enum SignatureTypes {
+        Enveloping,
+        Enveloped
+        // TODO: Detached
+    } 
     
     /**
      * Commitment types defined in ETSI TS 101 903 V1.4.1 (2009-06).
@@ -233,8 +260,26 @@ public class XAdESSigner extends BaseSigner {
         parameters = new XAdESSignerParameters(form, tsa);
         
         // Get the signature algorithm
-        signatureAlgorithm = config.getProperty(SIGNATUREALGORITHM);
-        
+        signatureAlgorithm = config.getProperties().getProperty(SIGNATUREALGORITHM);
+
+	// Get the signature type
+	final String signatureTypeString = config.getProperties().getProperty(SIGNATURETYPE, DEFAULT_SIGNATURETYPE);
+
+	try {
+            signatureType = SignatureTypes.valueOf(signatureTypeString);
+        } catch (IllegalArgumentException ex) {
+            configErrors.add("Incorrect value for property " + SIGNATURETYPE + ": \"" + signatureTypeString + "\"");
+        }
+
+        if (signatureType == SignatureTypes.Enveloped)
+        {
+            signatureNode = config.getProperties().getProperty(SIGNATURENODE);
+            if (signatureNode == null)
+            {
+                configErrors.add("A signature node must be specified if SignatureType == Enveloped");
+            }
+        }
+ 
         if (LOG.isDebugEnabled()) {
             LOG.debug("Worker " + workerId + " configured: " + parameters);
             if (!configErrors.isEmpty()) {
@@ -277,12 +322,43 @@ public class XAdESSigner extends BaseSigner {
 
             // Sign
             final Node node = doc.getDocumentElement();
-            SignedDataObjects dataObjs = new SignedDataObjects(new EnvelopedXmlObject(node));
+	    SignedDataObjects dataObjs;
+
+            if (signatureType == SignatureTypes.Enveloping)
+            {
+                dataObjs = new SignedDataObjects(new EnvelopedXmlObject(node));
+                signer.sign(dataObjs, doc);
+            } 
+            else if (signatureType == SignatureTypes.Enveloped)
+            {
+		String refUri;
+                final XPath xpath = XPathFactory.newInstance().newXPath();
+		Element elementToSign = (Element)xpath.evaluate(signatureNode, doc, XPathConstants.NODE);
+
+		if (elementToSign == null) 
+		    throw new SignServerException("Unable to find SignatureNode at the specified Xml document.");
+
+	        if (elementToSign.hasAttribute("Id"))
+                    refUri = '#' + elementToSign.getAttribute("Id");
+                else
+                {
+                    if (elementToSign.getParentNode().getNodeType() != Node.DOCUMENT_NODE)
+                        throw new IllegalArgumentException("Element without Id must be the document root");
+                    refUri = "";
+                }
+
+                DataObjectDesc dataObjRef = new DataObjectReference(refUri).withTransform(new EnvelopedSignatureTransform());
+		dataObjs = new SignedDataObjects(dataObjRef);
+		signer.sign(dataObjs, elementToSign);
+            }
+	    else
+	    {
+	        throw new SignServerException("Invalid SignatureType setting.");
+	    }
             
             for (final AllDataObjsCommitmentTypeProperty commitmentType : commitmentTypes) {
                     dataObjs = dataObjs.withCommitmentType(commitmentType);
             }
-            signer.sign(dataObjs, doc);
             
             // Render result
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
@@ -303,6 +379,8 @@ public class XAdESSigner extends BaseSigner {
             throw new SignServerException("Exception signing document", ex);
         } catch (TransformerException ex) {
             throw new SignServerException("Transformation failure", ex);
+        } catch (XPathExpressionException ex) {
+            throw new SignServerException("Exception finding SignatureNode using XPath", ex);
         }
         
         // Response
@@ -418,5 +496,4 @@ public class XAdESSigner extends BaseSigner {
             }
         }
     }
-
 }
