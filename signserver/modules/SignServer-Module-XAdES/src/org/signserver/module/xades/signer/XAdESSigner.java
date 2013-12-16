@@ -62,6 +62,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import org.apache.commons.io.IOUtils;
+import org.apache.xml.security.algorithms.MessageDigestAlgorithm;
+import org.ejbca.util.Base64;
 
 import xades4j.UnsupportedAlgorithmException;
 import xades4j.XAdES4jException;
@@ -87,6 +89,7 @@ import xades4j.providers.SignaturePolicyInfoProvider;
 import xades4j.utils.XadesProfileResolutionException;
 import xades4j.providers.impl.DefaultAlgorithmsProviderEx;
 import xades4j.providers.impl.ExtendedTimeStampTokenProvider;
+import xades4j.providers.impl.DefaultBasicSignatureOptionsProvider;
 
 /**
  * A Signer using XAdES to createSigner XML documents.
@@ -112,21 +115,42 @@ public class XAdESSigner extends BaseSigner {
     
     /** Worker property: TSA_PASSWORD. */
     public static final String PROPERTY_TSA_PASSWORD = "TSA_PASSWORD";
+   
+    /** Worker property: TSA_HASHALGORITHM. */
+    public static final String TSA_HASHALGORITHM = "TSA_HASHALGORITHM";
     
     /** Worker property: COMMITMENT_TYPES. */
     public static final String PROPERTY_COMMITMENT_TYPES = "COMMITMENT_TYPES";
     
-    /** Worker property: SIGNATUREALGORITHM */
+    /** Worker property: SIGNATUREALGORITHM. */
     public static final String SIGNATUREALGORITHM = "SIGNATUREALGORITHM";
 
-    /** Worker property: SIGNATURETYPE */
+    /** Worker property: SIGNATURETYPE. */
     public static final String SIGNATURETYPE = "SIGNATURETYPE";
 
-    /** Worker property: SIGNATURENODE */
+    /** Worker property: SIGNATURENODE. */
     public static final String SIGNATURENODE = "SIGNATURENODE";
 
-    /** Worker property: SIGNATUREPOLICY_URL */
+    /** Worker property: SIGNATUREPOLICY_URL. */
     public static final String SIGNATUREPOLICY_URL = "SIGNATUREPOLICY_URL";
+
+    /** Worker property: SIGNATUREPOLICY_BYTES. */
+    public static final String SIGNATUREPOLICY_BYTES = "SIGNATUREPOLICY_BYTES";
+
+    /** Worker property: SIGNATUREPOLICY_IDENTIFIER. */
+    public static final String SIGNATUREPOLICY_IDENTIFIER = "SIGNATUREPOLICY_IDENTIFIER";
+
+    /** Worker property: SIGNATURE_SIGNKEYINFO. */
+    public static final String SIGNATURE_SIGNKEYINFO = "SIGNATURE_SIGNKEYINFO";
+
+    /** Worker property: SIGNATURE_INCLUDECHAIN. */
+    public static final String SIGNATURE_INCLUDECHAIN = "SIGNATURE_INCLUDECHAIN";
+
+    /** Worker property: DATAOBJSREFS_HASHALGORITHM. */
+    public static final String DATAOBJSREFS_HASHALGORITHM = "DATAOBJSREFS_HASHALGORITHM";
+
+    /** Worker property: REFERENCE_PROPERTIES_HASHALGORITHM. */
+    public static final String REFERENCE_PROPERTIES_HASHALGORITHM = "REFERENCE_PROPERTIES_HASHALGORITHM";
 
     public static final String COMMITMENT_TYPES_NONE = "NONE";
     
@@ -140,14 +164,21 @@ public class XAdESSigner extends BaseSigner {
     
     private LinkedList<String> configErrors;
     private XAdESSignerParameters parameters;
+    private String tsaHashAlgorithm;
     
     private Collection<AllDataObjsCommitmentTypeProperty> commitmentTypes;
-    
+   
+    private Profiles xadesProfile = Profiles.BES;
     private String signatureAlgorithm;
     private SignatureTypes signatureType = SignatureTypes.Enveloping;
     private String signatureNode;
     private URL signaturePolicyUrl;
     private byte[] signaturePolicyBytes;
+    private String signaturePolicyIdentifier;
+    private boolean signatureIncludeChain = true;
+    private boolean signatureSignKeyInfo = true;
+    private String dataObjsReferencesHashAlgorithm;
+    private String referencePropertiesHashAlgorithm;
     
     /**
      * Addional signature methods not yet covered by
@@ -182,9 +213,9 @@ public class XAdESSigner extends BaseSigner {
      */
     public enum Profiles {
         BES,
-        C,
         EPES,
-        T
+        T,
+        C
     }
    
     /**
@@ -220,6 +251,39 @@ public class XAdESSigner extends BaseSigner {
         AllDataObjsCommitmentTypeProperty prop;
     }
 
+    /**
+     * Loads configuration settings reated to Signature Policy generation.
+     */ 
+    private void parseSignaturePolicyConfig(final WorkerConfig config, final LinkedList<String> configErrors) {
+        final String signaturePolicyUrlString = config.getProperties().getProperty(SIGNATUREPOLICY_URL);
+        final String signaturePolicyIdentifierString = config.getProperties().getProperty(SIGNATUREPOLICY_IDENTIFIER);
+        final String signaturePolicyBytesString = config.getProperties().getProperty(SIGNATUREPOLICY_BYTES);
+
+        if (signaturePolicyUrlString != null) {
+            try {
+                signaturePolicyUrl = new URL(signaturePolicyUrlString);
+            } catch (MalformedURLException ex) {
+                configErrors.add("Invalid SignaturePolicyUrl: " + ex.getMessage());
+            }
+        }
+ 
+        if (signaturePolicyIdentifierString != null) {
+            signaturePolicyIdentifier = signaturePolicyIdentifierString.trim();
+        }
+
+        if (signaturePolicyBytesString != null) {
+            signaturePolicyBytes = Base64.decode(signaturePolicyBytesString.getBytes());
+        }
+
+        if ((signaturePolicyIdentifier == null && signaturePolicyBytes == null && signaturePolicyUrl == null)
+            || (signaturePolicyIdentifier == null && signaturePolicyUrl == null)
+            || (signaturePolicyBytes == null && signaturePolicyUrl == null))
+        {
+            configErrors.add("At least " + SIGNATUREPOLICY_URL + ", or " + SIGNATUREPOLICY_IDENTIFIER + " and " + SIGNATUREPOLICY_BYTES 
+                            + " are required when " + PROPERTY_XADESFORM + " is " + xadesProfile.toString());
+        }
+    }
+
     @Override
     public void init(final int signerId, final WorkerConfig config, final WorkerContext workerContext, final EntityManager em) {
         super.init(signerId, config, workerContext, em);
@@ -229,48 +293,32 @@ public class XAdESSigner extends BaseSigner {
         configErrors = new LinkedList<String>();
         
         // PROPERTY_XADESFORM
-        Profiles form = null;
         final String xadesForm = config.getProperties().getProperty(PROPERTY_XADESFORM, XAdESSigner.DEFAULT_XADESFORM);
         try {
-            form = Profiles.valueOf(xadesForm);
+            xadesProfile = Profiles.valueOf(xadesForm);
         } catch (IllegalArgumentException ex) {
             configErrors.add("Incorrect value for property " + PROPERTY_XADESFORM + ": \"" + xadesForm + "\"");
         }
         
-	// Get the signature policy url (Only if Profile == EPES || T)
-	String signaturePolicyUrlString = null;
-	
-	// PROPERTY_TSA_URL, PROPERTY_TSA_USERNAME, PROPERTY_TSA_PASSWORD
+        // PROPERTY_TSA_URL, PROPERTY_TSA_USERNAME, PROPERTY_TSA_PASSWORD
         TSAParameters tsa = null;
-        if (form == Profiles.T) {
+        if (xadesProfile == Profiles.T) {
             final String tsaUrl = config.getProperties().getProperty(PROPERTY_TSA_URL);
             final String tsaUsername = config.getProperties().getProperty(PROPERTY_TSA_USERNAME);
             final String tsaPassword = config.getProperties().getProperty(PROPERTY_TSA_PASSWORD);
-	    signaturePolicyUrlString = config.getProperties().getProperty(SIGNATUREPOLICY_URL);
             
             if (tsaUrl == null) {
                 configErrors.add("Property " + PROPERTY_TSA_URL + " is required when " + PROPERTY_XADESFORM + " is " + Profiles.T);
             } else {
                 tsa = new TSAParameters(tsaUrl, tsaUsername, tsaPassword);
             }
+
+            tsaHashAlgorithm = config.getProperties().getProperty(TSA_HASHALGORITHM); // TODO: Validate hash algorithm name.
         }
-	else if (form == Profiles.EPES) {
-	    signaturePolicyUrlString = config.getProperties().getProperty(SIGNATUREPOLICY_URL);
 
-	    if (signaturePolicyUrlString == null) {
-	    	configErrors.add("Property " + SIGNATUREPOLICY_URL + " is required when " + PROPERTY_XADESFORM + " is " + Profiles.EPES);
-	    }
-	}
+        // Only load SignaturePolicy-related settings if selected profile is atleast EPES.
+        if (xadesProfile != Profiles.BES) parseSignaturePolicyConfig(config, configErrors);
 
-       	if (signaturePolicyUrlString != null)
-	{
-	    try {
-	    	signaturePolicyUrl = new URL(signaturePolicyUrlString);
-	    } catch (MalformedURLException ex) {
-	    	configErrors.add("Invalid SignaturePolicyUrl: " + ex.getMessage());
-	    }
-	}
- 
         // TODO: Other configuration options
         final String commitmentTypesProperty = config.getProperties().getProperty(PROPERTY_COMMITMENT_TYPES);
         
@@ -292,15 +340,17 @@ public class XAdESSigner extends BaseSigner {
             }
         }
 
-        parameters = new XAdESSignerParameters(form, tsa);
+        parameters = new XAdESSignerParameters(xadesProfile, tsa);
         
-        // Get the signature algorithm
+        // Get the signature algorithm, hash algorithms, etc.
         signatureAlgorithm = config.getProperties().getProperty(SIGNATUREALGORITHM);
+        dataObjsReferencesHashAlgorithm = config.getProperties().getProperty(DATAOBJSREFS_HASHALGORITHM);
+        referencePropertiesHashAlgorithm = config.getProperties().getProperty(REFERENCE_PROPERTIES_HASHALGORITHM);
 
-	// Get the signature type
-	final String signatureTypeString = config.getProperties().getProperty(SIGNATURETYPE, DEFAULT_SIGNATURETYPE);
+        // Get the signature type
+        final String signatureTypeString = config.getProperties().getProperty(SIGNATURETYPE, DEFAULT_SIGNATURETYPE);
 
-	try {
+        try {
             signatureType = SignatureTypes.valueOf(signatureTypeString);
         } catch (IllegalArgumentException ex) {
             configErrors.add("Incorrect value for property " + SIGNATURETYPE + ": \"" + signatureTypeString + "\"");
@@ -314,7 +364,17 @@ public class XAdESSigner extends BaseSigner {
                 configErrors.add("A signature node must be specified if SignatureType == Enveloped");
             }
         }
- 
+
+        final String signatureIncludeChainString = config.getProperties().getProperty(SIGNATURE_INCLUDECHAIN);
+        if (signatureIncludeChainString != null) {
+            signatureIncludeChain = Boolean.parseBoolean(signatureIncludeChainString);
+        }
+
+        final String signatureSignKeyInfoString = config.getProperties().getProperty(SIGNATURE_SIGNKEYINFO);
+        if (signatureSignKeyInfoString != null) {
+            signatureSignKeyInfo = Boolean.parseBoolean(signatureSignKeyInfoString);
+        }
+
         if (LOG.isDebugEnabled()) {
             LOG.debug("Worker " + workerId + " configured: " + parameters);
             if (!configErrors.isEmpty()) {
@@ -357,7 +417,7 @@ public class XAdESSigner extends BaseSigner {
 
             // Sign
             final Node node = doc.getDocumentElement();
-	    SignedDataObjects dataObjs;
+            SignedDataObjects dataObjs;
 
             if (signatureType == SignatureTypes.Enveloping)
             {
@@ -366,14 +426,14 @@ public class XAdESSigner extends BaseSigner {
             } 
             else if (signatureType == SignatureTypes.Enveloped)
             {
-		String refUri;
+                String refUri;
                 final XPath xpath = XPathFactory.newInstance().newXPath();
-		Element elementToSign = (Element)xpath.evaluate(signatureNode, doc, XPathConstants.NODE);
+                Element elementToSign = (Element)xpath.evaluate(signatureNode, doc, XPathConstants.NODE);
 
-		if (elementToSign == null) 
-		    throw new SignServerException("Unable to find SignatureNode at the specified Xml document.");
+                if (elementToSign == null) 
+                    throw new SignServerException("Unable to find SignatureNode at the specified Xml document.");
 
-	        if (elementToSign.hasAttribute("Id"))
+                if (elementToSign.hasAttribute("Id"))
                     refUri = '#' + elementToSign.getAttribute("Id");
                 else
                 {
@@ -383,13 +443,13 @@ public class XAdESSigner extends BaseSigner {
                 }
 
                 DataObjectDesc dataObjRef = new DataObjectReference(refUri).withTransform(new EnvelopedSignatureTransform());
-		dataObjs = new SignedDataObjects(dataObjRef);
-		signer.sign(dataObjs, elementToSign);
+                dataObjs = new SignedDataObjects(dataObjRef);
+                signer.sign(dataObjs, elementToSign);
             }
-	    else
-	    {
-	        throw new SignServerException("Invalid SignatureType setting.");
-	    }
+            else
+            {
+                throw new SignServerException("Invalid SignatureType setting.");
+            }
             
             for (final AllDataObjsCommitmentTypeProperty commitmentType : commitmentTypes) {
                     dataObjs = dataObjs.withCommitmentType(commitmentType);
@@ -445,6 +505,9 @@ public class XAdESSigner extends BaseSigner {
             if (cert instanceof X509Certificate) {
                 xchain.add((X509Certificate) cert);
             }
+            // Some XADES Validator (ie. MITyCXADES) fail when
+            // SigningCertificate includes more than one Cert node.
+            if (!signatureIncludeChain) break;
         }
         final KeyingDataProvider kdp = new CertificateAndChainKeyingDataProvider(xchain, this.getCryptoToken().getPrivateKey(ICryptoToken.PURPOSE_SIGN));
         
@@ -453,20 +516,23 @@ public class XAdESSigner extends BaseSigner {
         switch (params.getXadesForm()) {
             case BES:
                 xsp = new XadesBesSigningProfile(kdp)
-                        .withAlgorithmsProviderEx(new AlgorithmsProvider());
+                    .withBasicSignatureOptionsProvider(new SignatureOptionsProvider())
+                    .withAlgorithmsProviderEx(new AlgorithmsProvider());
                 break;
-	    case EPES:
-	        xsp = new XadesEpesSigningProfile(kdp, new SignaturePolicyProvider())
-			.withAlgorithmsProviderEx(new AlgorithmsProvider());
-		break;
+            case EPES:
+                xsp = new XadesEpesSigningProfile(kdp, new SignaturePolicyProvider())
+                    .withBasicSignatureOptionsProvider(new SignatureOptionsProvider())
+                    .withAlgorithmsProviderEx(new AlgorithmsProvider());
+                break;
             case T:
                 xsp = new XadesTSigningProfile(kdp)
-                        .withTimeStampTokenProvider(timeStampTokenProviderImplementation)
-                        .withBinding(TSAParameters.class, params.getTsaParameters())
-                        .withAlgorithmsProviderEx(new AlgorithmsProvider());
+                    .withBasicSignatureOptionsProvider(new SignatureOptionsProvider())
+                    .withTimeStampTokenProvider(timeStampTokenProviderImplementation)
+                    .withBinding(TSAParameters.class, params.getTsaParameters())
+                    .withAlgorithmsProviderEx(new AlgorithmsProvider());
 
-		if (signaturePolicyUrl != null)
-			xsp = ((XadesTSigningProfile)xsp).withPolicyProvider(new SignaturePolicyProvider());
+                if (signaturePolicyUrl != null)
+                    xsp = ((XadesTSigningProfile)xsp).withPolicyProvider(new SignaturePolicyProvider());
                 break;
             case C:
             default:
@@ -536,44 +602,107 @@ public class XAdESSigner extends BaseSigner {
                 throw new UnsupportedAlgorithmException("Unsupported signature algorithm", signatureAlgorithm);
             }
         }
+
+        private String getDigestAlgorithmForName(String name)
+        {
+            if ("SHA1".equals(name)) return MessageDigestAlgorithm.ALGO_ID_DIGEST_SHA1;
+            else if ("SHA256".equals(name)) return MessageDigestAlgorithm.ALGO_ID_DIGEST_SHA256;
+            else if ("SHA384".equals(name)) return MessageDigestAlgorithm.ALGO_ID_DIGEST_SHA384;
+            else if ("SHA512".equals(name)) return MessageDigestAlgorithm.ALGO_ID_DIGEST_SHA512;
+
+            return null;
+        }
+
+
+        private String getDigestAlgorithmFromSignatureAlgorithm()
+        {
+            if (signatureAlgorithm == null) return null;
+            final Integer pos = signatureAlgorithm.indexOf("with");
+            return pos >= 0 ? getDigestAlgorithmForName(signatureAlgorithm.substring(0, pos)) : null;
+        }
+
+        @Override
+        public String getDigestAlgorithmForDataObjsReferences()
+        {
+            if (dataObjsReferencesHashAlgorithm != null) {
+                return getDigestAlgorithmForName(dataObjsReferencesHashAlgorithm);
+            }
+
+            final String alg = getDigestAlgorithmFromSignatureAlgorithm();
+            return alg != null ? alg : super.getDigestAlgorithmForDataObjsReferences();
+        }
+
+        @Override
+        public String getDigestAlgorithmForReferenceProperties()
+        {
+            if (referencePropertiesHashAlgorithm != null) {
+                return getDigestAlgorithmForName(referencePropertiesHashAlgorithm);
+            }
+
+            final String alg = getDigestAlgorithmFromSignatureAlgorithm();
+            return alg != null ? alg : super.getDigestAlgorithmForReferenceProperties();
+        }
+
+        @Override
+        public String getDigestAlgorithmForTimeStampProperties()
+        {
+            if (tsaHashAlgorithm != null) {
+                return getDigestAlgorithmForName(tsaHashAlgorithm);
+            }
+
+            final String alg = getDigestAlgorithmFromSignatureAlgorithm();
+            return alg != null ? alg : super.getDigestAlgorithmForTimeStampProperties();
+        }
     }
 
     /** 
-     * Implementation of {@link xades4j.providers.SignaturePolicyInfoProvider) using the
+     * Implementation of {@link xades4j.providers.SignaturePolicyInfoProvider} using the
      * policy details specified by worker's configuration.
      */
     private class SignaturePolicyProvider implements SignaturePolicyInfoProvider
     {
-    	// This performs lazy-loading of signature policy bytes, to avoid 
-	// issues when network may not be available during signserver's 
-	// initialization. (pruiz)
-    	private byte[] getSignaturePolicyBytes() throws IOException {
+        // This performs lazy-loading of signature policy bytes, to avoid 
+        // issues when network may not be available during signserver's 
+        // initialization. (pruiz)
+        private byte[] getSignaturePolicyBytes() throws IOException {
 
-	    synchronized(signaturePolicyUrl) {
-	    	if (signaturePolicyBytes == null) {
-		    InputStream stream = null;
+            synchronized(signaturePolicyUrl) {
+                if (signaturePolicyBytes == null) {
+                    InputStream stream = null;
 
-		    try {
-		    	stream = signaturePolicyUrl.openStream();
-			signaturePolicyBytes = IOUtils.toByteArray(stream);
-		    }
-		    finally {
-		    	if (stream != null) stream.close();
-		    }
-		}
-	    }
-	    return signaturePolicyBytes;
-	}
+                    try {
+                        stream = signaturePolicyUrl.openStream();
+                        signaturePolicyBytes = IOUtils.toByteArray(stream);
+                    }
+                    finally {
+                        if (stream != null) stream.close();
+                    }
+                }
+            }
+            return signaturePolicyBytes;
+        }
 
-	public SignaturePolicyBase getSignaturePolicy() {
-	    try {
-	        final String identifier = signaturePolicyUrl.toString();
-	        return new SignaturePolicyIdentifierProperty(new ObjectIdentifier(identifier), getSignaturePolicyBytes());
-	    } catch (IOException ex)
-	    {
-	    	LOG.error("Unable to load SignaturePolicyIdentifier from url: " + signaturePolicyUrl.toString());
-		throw new ProviderException("Unable to load SignaturePolicyIdentifier from url: " + signaturePolicyUrl.toString());
-	    }
-	}
+        public SignaturePolicyBase getSignaturePolicy() {
+            try {
+                final String identifier = signaturePolicyIdentifier != null ? signaturePolicyIdentifier : signaturePolicyUrl.toString();
+                return new SignaturePolicyIdentifierProperty(new ObjectIdentifier(identifier), getSignaturePolicyBytes());
+            } catch (IOException ex) {
+                LOG.error("Unable to load SignaturePolicyIdentifier from url: " + signaturePolicyUrl.toString());
+                throw new ProviderException("Unable to load SignaturePolicyIdentifier from url: " + signaturePolicyUrl.toString());
+            }
+        }
+    }
+
+    /**
+     * Extension of {@link xades4j.providers.impl.DefaultBasicSignatureOptionsProvider}
+     * used to indicate signing certificate's KeyInfo should be accounted for during
+     * signature computation.
+     */
+    private class SignatureOptionsProvider extends DefaultBasicSignatureOptionsProvider {
+        @Override
+        public boolean signSigningCertificate() {
+            return signatureSignKeyInfo;
+        }
     }
 }
+/* vim: set nowrap softtabstop=4 shiftwidth=4 smartindent smarttab expandtab */
