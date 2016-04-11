@@ -45,6 +45,7 @@ public class PDFSignerParameters {
     private WorkerConfig config;
     
     // private member declarations holding configuration property values
+    private String field;
     private String reason = PDFSigner.REASONDEFAULT;
     private String location = PDFSigner.LOCATIONDEFAULT;
 
@@ -97,6 +98,12 @@ public class PDFSignerParameters {
     private void extractAndProcessConfigurationProperties()
             throws IllegalRequestException, SignServerException {
 
+        // The field at which signature should be placed on.
+        if (config.getProperties().getProperty(PDFSigner.FIELD) != null) {
+            field = config.getProperties().getProperty(PDFSigner.FIELD);
+        }
+        LOG.debug("Using field: " + field);
+	
         // The reason shown in the PDF signature
         if (config.getProperties().getProperty(PDFSigner.REASON) != null) {
             reason = config.getProperties().getProperty(PDFSigner.REASON);
@@ -361,6 +368,10 @@ public class PDFSignerParameters {
     private void calculateUpperRightRectangleCoordinatesFromImage() {
         visible_sig_rectangle_urx = (int) (visible_sig_rectangle_llx + custom_image.getWidth());
         visible_sig_rectangle_ury = (int) (visible_sig_rectangle_lly + custom_image.getHeight());
+    }
+
+    public String getField() {
+	return field;
     }
 
     public String getReason() {
