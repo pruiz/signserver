@@ -46,6 +46,7 @@ import org.signserver.validationservice.server.ValidationUtils;
  * Implements a ISigner and have the following properties: REASON = The reason
  * shown in the PDF signature LOCATION = The location shown in the PDF signature
  * RECTANGLE = The location of the visible signature field (llx, lly, urx, ury)
+ * FIELD = The AcroFrom field into which signature should be stampped.
  *
  * TSA_URL = The URL of the timestamp authority TSA_USERNAME = Account
  * (username) of the TSA TSA_PASSWORD = Password for TSA
@@ -79,6 +80,7 @@ public class PDFSigner extends BaseSigner {
     
     // Configuration Property constants
     // signature properties
+    public static final String FIELD = "FIELD";
     public static final String REASON = "REASON";
     public static final String REASONDEFAULT = "Signed by SignServer";
     public static final String LOCATION = "LOCATION";
@@ -538,7 +540,11 @@ public class PDFSigner extends BaseSigner {
         // add visible signature if requested
         if (params.isAdd_visible_signature()) {
             int signaturePage = getPageNumberForSignature(reader, params);
-            sap.setVisibleSignature(new com.lowagie.text.Rectangle(params.getVisible_sig_rectangle_llx(), params.getVisible_sig_rectangle_lly(), params.getVisible_sig_rectangle_urx(), params.getVisible_sig_rectangle_ury()), signaturePage, null);
+
+	    if (params.getField() != null)
+                sap.setVisibleSignature(new com.lowagie.text.Rectangle(params.getVisible_sig_rectangle_llx(), params.getVisible_sig_rectangle_lly(), params.getVisible_sig_rectangle_urx(), params.getVisible_sig_rectangle_ury()), signaturePage, params.getField());
+	    else
+	        sap.setVisibleSignature(params.getField());
 
             // set custom image if requested
             if (params.isUse_custom_image()) {
