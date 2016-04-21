@@ -541,8 +541,8 @@ public class PDFSigner extends BaseSigner {
         if (params.isAdd_visible_signature()) {
             int signaturePage = getPageNumberForSignature(reader, params);
 
-	    if (params.getField() != null)
-                sap.setVisibleSignature(new com.lowagie.text.Rectangle(params.getVisible_sig_rectangle_llx(), params.getVisible_sig_rectangle_lly(), params.getVisible_sig_rectangle_urx(), params.getVisible_sig_rectangle_ury()), signaturePage, params.getField());
+	    if (params.getField() == null)
+                sap.setVisibleSignature(new com.lowagie.text.Rectangle(params.getVisible_sig_rectangle_llx(), params.getVisible_sig_rectangle_lly(), params.getVisible_sig_rectangle_urx(), params.getVisible_sig_rectangle_ury()), signaturePage, null);
 	    else
 	        sap.setVisibleSignature(params.getField());
 
