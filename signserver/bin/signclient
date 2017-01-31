@@ -13,6 +13,9 @@ esac
 
 JAVACMD=`which java`
 # Check that JAVA_HOME is set
+
+[ -f /etc/sysconfig/signserver ]&& . /etc/sysconfig/signserver
+
 if [ ! -n "$JAVA_HOME" ]; then
     if [ ! -n "$JAVACMD" ]
     then
