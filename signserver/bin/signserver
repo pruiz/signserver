@@ -12,6 +12,9 @@ case "`uname`" in
 esac
 
 JAVACMD=`which java`
+
+[ -f /etc/sysconfig/signserver ]&& . /etc/sysconfig/signserver
+
 # Check that JAVA_HOME is set
 if [ ! -n "$JAVA_HOME" ]; then
     if [ ! -n "$JAVACMD" ]
