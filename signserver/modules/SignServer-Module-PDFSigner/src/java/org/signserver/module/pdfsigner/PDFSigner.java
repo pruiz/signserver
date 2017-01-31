@@ -626,7 +626,7 @@ public class PDFSigner extends BaseSigner {
         	LOG.debug("Encoded length: " + encodedSig.length);
         }
 
-        if (contentEstimated + 2 < encodedSig.length) {
+        if (contentEstimated < encodedSig.length) {
         	if (!secondTry) {
         		int contentExact = encodedSig.length;
         		LOG.warn("Estimated signature size too small, usinging accurate calculation (resulting in an extra signature computation).");
