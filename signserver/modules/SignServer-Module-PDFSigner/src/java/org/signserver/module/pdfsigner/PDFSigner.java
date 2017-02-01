@@ -636,7 +636,9 @@ public class PDFSigner extends BaseSigner {
         		}
  
            		// try signing again
-        		return addSignatureToPDFDocument(params, pdfbytes, password, contentExact);
+			// In order to accomodate for servers returning responses of
+			// varying sizes, let's add a 15% to previous response's size.
+			return addSignatureToPDFDocument(params, pdfbytes, password, contentExact * 0.15);
         	} else {
         		// if we fail to get an accurate signature size on the second attempt, bail out (this shouldn't happen)
         		throw new SignServerException("Failed to calculate signature size");
