@@ -9,7 +9,7 @@ RUN mkdir -p /opt/ant/
 ENV ANT_SHA1 ca31bd42c27f7e63cccb219ee59930fdc943ca82
 ENV ANT_HOME /opt/ant/apache-ant-1.9.8
 
-RUN apk --no-cache add curl 
+#RUN apk --no-cache add curl 
 
 RUN cd $HOME \
     && curl -O http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.8-bin.tar.gz \
