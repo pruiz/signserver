@@ -30,8 +30,8 @@ pipeline {
                     
                     // Create the release
                     sh "ant release:binary-zip"
-                    archiveArtifacts '../signserver-*-bin.zip'
-                }               
+                }
+                archiveArtifacts 'signserver-*-bin.zip'
             }
         }
     }
