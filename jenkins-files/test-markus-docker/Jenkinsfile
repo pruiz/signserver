@@ -10,32 +10,33 @@ pipeline {
 	}
     
     stages {
+        stage('Verify Environment') {
+            steps {
+                // Print versions
+                sh "java -version"
+                sh "mvn -version"
+                sh "ant -version"
+
+                // Init edition
+                sh "ant -q init"
+
+                // Check expected edition
+                // TODO
+            }
+        }
         stage('build dss') {
-            //agent {
-            //    // build and run (later also cleanup) the Docker container
-            //    dockerfile {
-            //        label 'dss-docker'
-            //        dir 'jenkins-files/test-markus-docker'
-            //        filename 'Dockerfile'
-            //        additionalBuildArgs  '--disable-content-trust=false --pull'
-            //        args '--group-add root'
-            //    }
-            //}
             steps {
                 // Run these steps inside the running docker container
                 dir ('signserver') {
-                    sh "java -version"
-                    sh "mvn -version"
-                    //sh "cp /opt/conf/* conf/"
-                    //sh "ant -q -Dappserver.home=/tmp -Dappserver.type=jboss -Dejbca.productionmode=false clean build test:runsa"
-                    sh "ant -q init"
-                    sh "mvn clean install"
+                    withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
+                        sh "mvn clean install"
 
-                    // gather the results
-                    junit "**/target/surefire-reports/*.xml"
-                    
-                    // Create the release
-                    sh "ant release:binary-zip"
+                        // gather the results
+                        junit "**/target/surefire-reports/*.xml"
+
+                        // Create the release
+                        sh "ant release:binary-zip"
+                    }
                 }
                 archiveArtifacts 'signserver-*-bin.zip'
             }
