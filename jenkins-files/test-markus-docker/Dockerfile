@@ -1,7 +1,8 @@
 #FROM alpine:3.5
 
 #FROM maven:3.5.4-jdk-8-alpine
-FROM openjdk:8u171-jdk-stretch
+#FROM openjdk:8u171-jdk-stretch
+FROM openjdk:7u181-jdk-jessie
 
 # Install maven
 RUN apt-get update \
