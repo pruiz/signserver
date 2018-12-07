@@ -1,6 +1,6 @@
 #FROM alpine:3.5
 
-FROM maven:3.6.0-jdk-8-alpine
+FROM maven:3.5.4-jdk-8-alpine
 
 #Create Ant Dir
 RUN mkdir -p /opt/ant/
