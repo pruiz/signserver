@@ -54,6 +54,15 @@ pipeline {
                 archiveArtifacts 'signserver-*-bin.zip'
             }
         }
+        stage('Javadoc') {
+            steps {
+                dir ('signserver') {
+                    // Build Javadoc
+                    sh "mvn javadoc:aggregate"
+                }
+            }
+        }
+
     }
     post {
         always {
