@@ -2,7 +2,7 @@ pipeline {
 	agent {
                 dockerfile {
                     label 'dss-docker'
-                    dir 'jenkins-files/containers/openjdk_8u171-jdk-stretch'
+                    dir "jenkins-files/containers/${env.CONTAINER}"
                     filename 'Dockerfile'
                     additionalBuildArgs  '--disable-content-trust=false --pull'
                     args '--group-add root'
