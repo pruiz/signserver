@@ -16,7 +16,7 @@ RUN cd $HOME \
     && curl -O https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.13-bin.tar.gz \
     && sha512sum apache-ant-1.9.13-bin.tar.gz | grep $ANT_SHA512 \
     && tar xf apache-ant-1.9.13-bin.tar.gz \
-    && mkdir -p /opt/ant/
+    && mkdir -p /opt/ant/ \
     && mv $HOME/apache-ant-1.9.13 $ANT_HOME \
     && rm apache-ant-1.9.13-bin.tar.gz \
     && chmod -R g+rw ${ANT_HOME}
