@@ -18,10 +18,12 @@ pipeline {
                 sh "ant -version"
 
                 // Init edition
-                sh "ant -q init"
+                dir ('signserver') {
+                    sh "ant -q init"
 
-                // Check expected edition
-                // TODO
+                    // Check expected edition
+                    // TODO
+                }
             }
         }
         stage('build dss') {
