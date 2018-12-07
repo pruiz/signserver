@@ -1,12 +1,6 @@
 pipeline {
 	agent {
 		label "dss-docker"
-	}
-    
-    stages {
-        stage('build dss') {
-            agent {
-                // build and run (later also cleanup) the Docker container
                 dockerfile {
                     label 'dss-docker'
                     dir 'jenkins-files/test-markus-docker'
@@ -14,7 +8,20 @@ pipeline {
                     additionalBuildArgs  '--disable-content-trust=false --pull'
                     args '--group-add root'
                 }
-            }
+	}
+    
+    stages {
+        stage('build dss') {
+            //agent {
+            //    // build and run (later also cleanup) the Docker container
+            //    dockerfile {
+            //        label 'dss-docker'
+            //        dir 'jenkins-files/test-markus-docker'
+            //        filename 'Dockerfile'
+            //        additionalBuildArgs  '--disable-content-trust=false --pull'
+            //        args '--group-add root'
+            //    }
+            //}
             steps {
                 // Run these steps inside the running docker container
                 dir ('signserver') {
