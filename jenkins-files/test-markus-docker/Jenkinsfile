@@ -26,19 +26,30 @@ pipeline {
                 }
             }
         }
-        stage('build dss') {
+        stage('Build') {
             steps {
-                // Run these steps inside the running docker container
+                dir ('signserver') {
+                    sh "mvn clean install -DskipTests"
+                }
+            }
+        }
+        stage('Unit Test') {
+            steps {
                 dir ('signserver') {
                     withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
-                        sh "mvn clean install"
+                        sh "mvn test"
 
                         // gather the results
                         junit "**/target/surefire-reports/*.xml"
-
-                        // Create the release
-                        sh "ant release:binary-zip"
                     }
+                }
+            }
+        }
+        stage('Package') {
+            steps {
+                dir ('signserver') {
+                    // Create the release
+                    sh "ant release:binary-zip"
                 }
                 archiveArtifacts 'signserver-*-bin.zip'
             }
