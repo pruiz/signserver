@@ -26,7 +26,7 @@ pipeline {
                     sh "mvn clean install"
 
                     // gather the results
-                    junit "signserver/**/target/surefire-reports/*.xml"
+                    junit "**/target/surefire-reports/*.xml"
                     
                     // Create the release
                     sh "ant release:binary-zip"
