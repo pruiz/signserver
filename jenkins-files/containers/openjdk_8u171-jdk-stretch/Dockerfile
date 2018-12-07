@@ -7,7 +7,6 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
 
-
 # Install Apache Ant
 ENV ANT_SHA512 c8321aa223f70d7e64d3d0274263000cfffb46fbea61488534e26f9f0245d99e9872d0888e35cd3274416392a13f80c748c07750caaeffa5f9cae1220020715f
 ENV ANT_HOME /opt/ant/apache-ant-1.9.13
