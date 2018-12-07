@@ -24,9 +24,14 @@ pipeline {
                     //sh "ant -q -Dappserver.home=/tmp -Dappserver.type=jboss -Dejbca.productionmode=false clean build test:runsa"
                     sh "ant -q init"
                     sh "mvn clean install"
-                }
-                // gather the results
-                junit "signserver/**/target/surefire-reports/*.xml"
+
+                    // gather the results
+                    junit "signserver/**/target/surefire-reports/*.xml"
+                    
+                    // Create the release
+                    sh "ant release:binary-zip"
+                    archiveArtifacts '../signserver-*-bin.zip'
+                }               
             }
         }
     }
