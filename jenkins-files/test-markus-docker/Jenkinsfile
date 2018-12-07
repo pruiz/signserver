@@ -1,6 +1,5 @@
 pipeline {
 	agent {
-		label "dss-docker"
                 dockerfile {
                     label 'dss-docker'
                     dir 'jenkins-files/test-markus-docker'
