@@ -20,5 +20,11 @@ RUN cd $HOME \
     && rm apache-ant-1.9.13-bin.tar.gz \
     && chmod -R g+rw ${ANT_HOME}
 
+# Work around for missing crypto in openjdk7
+RUN sudo curl -O "https://bouncycastle.org/download/bcprov-jdk15on-156.jar" \
+    && mv bcprov-jdk15on-156.jar "${JAVA_HOME}"/jre/lib/ext && \
+  sudo perl -pi.bak -e 's/^(security\.provider\.)([0-9]+)/$1.($2+1)/ge' /etc/java-7-openjdk/security/java.security && \
+  echo "security.provider.1=org.bouncycastle.jce.provider.BouncyCastleProvider" | sudo tee -a /etc/java-7-openjdk/security/java.security
+
 ENV ANT_OPTS="-Xms256M -Xmx512M"
 ENV PATH="${PATH}:${HOME}/bin:${ANT_HOME}/bin"
