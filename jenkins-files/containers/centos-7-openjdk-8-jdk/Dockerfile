@@ -5,7 +5,7 @@ RUN yum update -y \
     && yum install -y curl \
     && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel \
     && yum install -y maven \
-    && yum install -y apache-ant \
+    && yum install -y ant \
     && yum clean all
 
 # Install Apache Ant
