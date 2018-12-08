@@ -16,7 +16,6 @@ pipeline {
                 sh "java -version"
                 sh "mvn -version"
                 sh "ant -version"
-                sh "cat ${JAVA_HOME}/jre/lib/security/java.security ${JAVA_HOME}/lib/security/java.security"
 
                 // Init edition
                 dir ('signserver') {
