@@ -5,7 +5,7 @@ pipeline {
                     dir "jenkins-files/containers/${env.CONTAINER}"
                     filename 'Dockerfile'
                     additionalBuildArgs  '--disable-content-trust=false --pull'
-                    args '--group-add root --volume m2-repo:${HOME}/.m2'
+                    args '--group-add root --volume m2-repo:/m2-repo'
                 }
 	}
     
@@ -17,7 +17,6 @@ pipeline {
                 sh "mvn -version"
                 sh "ant -version"
                 sh "locale"
-                sh "printenv USER HOME"
 
                 // Init edition
                 dir ('signserver') {
@@ -31,7 +30,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('signserver') {
-                    sh "mvn -Dmaven.repo.local=${HOME}/.m2 clean install -DskipTests"
+                    sh "mvn -Dmaven.repo.local=/m2-repo clean install -DskipTests"
                 }
             }
         }
@@ -39,7 +38,7 @@ pipeline {
             steps {
                 dir ('signserver') {
                     withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
-                        sh "mvn -Dmaven.repo.local=${HOME}/.m2 test"
+                        sh "mvn -Dmaven.repo.local=/m2-repo test"
 
                         // gather the results
                         junit "**/target/surefire-reports/*.xml"
@@ -60,7 +59,7 @@ pipeline {
             steps {
                 dir ('signserver') {
                     // Build Javadoc
-                    sh "mvn -Dmaven.repo.local=${HOME}/.m2 javadoc:aggregate"
+                    sh "mvn -Dmaven.repo.local=/m2-repo javadoc:aggregate"
                 }
             }
         }
