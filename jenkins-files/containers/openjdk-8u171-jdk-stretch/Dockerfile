@@ -1,11 +1,13 @@
 FROM openjdk:8u171-jdk-stretch
 
 # Install Maven
+ARG USER_HOME_DIR="/root"
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y maven \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
+ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 # Install Apache Ant
 ENV ANT_SHA512 c8321aa223f70d7e64d3d0274263000cfffb46fbea61488534e26f9f0245d99e9872d0888e35cd3274416392a13f80c748c07750caaeffa5f9cae1220020715f
