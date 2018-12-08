@@ -1,9 +1,9 @@
 FROM openjdk:7-jdk-jessie
 
-# Install Maven
+# Install Maven and Bouncy Castle (for EC tests to not fail)
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y maven \
+    apt-get install -y maven libbcprov-java \   
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
 
@@ -19,12 +19,6 @@ RUN cd $HOME \
     && mv $HOME/apache-ant-1.9.13 $ANT_HOME \
     && rm apache-ant-1.9.13-bin.tar.gz \
     && chmod -R g+rw ${ANT_HOME}
-
-# Work around for missing crypto in openjdk7
-RUN curl -O "https://bouncycastle.org/download/bcprov-jdk15on-156.jar" \
-    && mv bcprov-jdk15on-156.jar "${JAVA_HOME}"/jre/lib/ext \
-    && perl -pi.bak -e 's/^(security\.provider\.)([0-9]+)/$1.($2+1)/ge' /etc/java-7-openjdk/security/java.security \
-    && echo "security.provider.1=org.bouncycastle.jce.provider.BouncyCastleProvider" | tee -a /etc/java-7-openjdk/security/java.security
 
 ENV ANT_OPTS="-Xms256M -Xmx512M"
 ENV PATH="${PATH}:${HOME}/bin:${ANT_HOME}/bin"
