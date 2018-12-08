@@ -16,6 +16,7 @@ pipeline {
                 sh "java -version"
                 sh "mvn -version"
                 sh "ant -version"
+                sh "locale"
 
                 // Init edition
                 dir ('signserver') {
