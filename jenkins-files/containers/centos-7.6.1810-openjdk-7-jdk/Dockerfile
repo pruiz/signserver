@@ -13,4 +13,6 @@ RUN yum reinstall -q -y glibc-common \
     && localedef -i en_US -f UTF-8 en_US.UTF-8 \
     && echo "export LANG=en_US.utf8" >> /etc/environment \
     && echo "export LC_ALL=en_US.utf8" >> /etc/environment \
+    && source /etc/environment \
+    && locale \
     && yum clean all
