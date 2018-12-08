@@ -17,6 +17,8 @@ pipeline {
                 sh "mvn -version"
                 sh "ant -version"
                 sh "locale"
+                def workspace = pwd()
+                sh "echo workspace: ${workspace}"
 
                 // Init edition
                 dir ('signserver') {
@@ -29,16 +31,18 @@ pipeline {
         }
         stage('Build') {
             steps {
+                def workspace = pwd()
                 dir ('signserver') {
-                    sh "mvn -Dmaven.repo.local=/m2-repo clean install -DskipTests"
+                    sh "mvn -Dmaven.repo.local=${workspace}/m2-repo clean install -DskipTests"
                 }
             }
         }
         stage('Unit Test') {
             steps {
+                def workspace = pwd()
                 dir ('signserver') {
                     withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
-                        sh "mvn -Dmaven.repo.local=/m2-repo test"
+                        sh "mvn -Dmaven.repo.local=${workspace}/m2-repo test"
 
                         // gather the results
                         junit "**/target/surefire-reports/*.xml"
@@ -57,9 +61,10 @@ pipeline {
         }
         stage('Javadoc') {
             steps {
+                def workspace = pwd()
                 dir ('signserver') {
                     // Build Javadoc
-                    sh "mvn -Dmaven.repo.local=/m2-repo javadoc:aggregate"
+                    sh "mvn -Dmaven.repo.local=${workspace}/m2-repo javadoc:aggregate"
                 }
             }
         }
