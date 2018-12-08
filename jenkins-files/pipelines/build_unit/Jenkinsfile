@@ -64,6 +64,13 @@ pipeline {
                 }
             }
         }
+        stage('Coverage') {
+            steps {
+                dir ('signserver') {
+                    jacoco()
+                }
+            }
+        }
 
     }
     post {
