@@ -1,14 +1,14 @@
 pipeline {
-	agent {
-                dockerfile {
-                    label 'dss-docker'
-                    dir "jenkins-files/containers/${env.CONTAINER}"
-                    filename 'Dockerfile'
-                    additionalBuildArgs  '--disable-content-trust=false --pull'
-                    args '--group-add root --volume m2-repo:/m2-repo'
-                }
-	}
-    
+    agent {
+        dockerfile {
+            label 'dss-docker'
+            dir "jenkins-files/containers/${env.CONTAINER}"
+            filename 'Dockerfile'
+            additionalBuildArgs  '--disable-content-trust=false --pull'
+            args '--group-add root --volume m2-repo:/m2-repo'
+        }
+    }
+
     stages {
         stage('Verify Environment') {
             steps {
@@ -71,8 +71,8 @@ pipeline {
                 }
             }
         }
-
     }
+
     post {
         always {
             cleanWs()
