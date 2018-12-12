@@ -1,37 +1,39 @@
 pipeline {
     agent none
 
-    stages {
-        stage('Prepare Container') {
-            node('dss-docker-slave') {
+    node('dss-docker-slave') {
+        stages {
+            stage('Prepare Container') {
+
+                    steps {
+                        sh 'hostname'
+                        sh 'pwd'
+                        //sh 'cp -rv /home/jenkins/binaries `pwd`'
+                    }
+                }
+            }
+
+            stage('Build Container') {
+                agent {
+                    dockerfile {
+                        label 'dss-docker'
+                        dir "jenkins-files/containers/${env.CONTAINER}"
+                        filename 'Dockerfile'
+                        additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
+                        args '--group-add root --volume m2-repo:/m2-repo'
+                    }
+                }
                 steps {
                     sh 'hostname'
-                    sh 'pwd'
-                    //sh 'cp -rv /home/jenkins/binaries `pwd`'
+                    sh 'ls'
                 }
             }
         }
 
-        stage('Build Container') {
-            agent {
-                dockerfile {
-                    label 'dss-docker'
-                    dir "jenkins-files/containers/${env.CONTAINER}"
-                    filename 'Dockerfile'
-                    additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-                    args '--group-add root --volume m2-repo:/m2-repo'
-                }
+        post {
+            always {
+                cleanWs()
             }
-            steps {
-                sh 'hostname'
-                sh 'ls'
-            }
-        }
-    }
-
-    post {
-        always {
-            cleanWs()
         }
     }
 }
