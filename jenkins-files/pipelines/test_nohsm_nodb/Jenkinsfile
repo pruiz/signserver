@@ -3,9 +3,12 @@ pipeline {
 
     stages {
         stage('Prepare Container') {
-            steps {
-                sh 'hostname'
-                sh 'cp -rv /home/jenkins/binaries `pwd`'
+            node('dss-docker-slave') {
+                steps {
+                    sh 'hostname'
+                    sh 'pwd'
+                    //sh 'cp -rv /home/jenkins/binaries `pwd`'
+                }
             }
         }
 
