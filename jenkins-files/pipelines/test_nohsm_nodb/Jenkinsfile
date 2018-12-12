@@ -24,26 +24,27 @@ node('dss-docker-slave') {
         testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/jboss-base-jdk-8-eap7/")
         
     }
-    
-    stage('Run') {
-        
-        sh 'rm -rf signserver-ee-*'
-        copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
-        
-        testImage.inside {
-            sh 'hostname'
+
+    testImage.inside {
+
+        stage('Unpack') {
+            sh 'rm -rf signserver-ee-*'
+            copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
+
             sh 'ls'
-            sh 'id'
-            sh '$USER'
             sh 'unzip signserver-ee*.zip'
             sh 'rm signserver-ee*.zip'
+        }
 
+        stage('Configure App Server') {
             sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/jboss-eap-7.1/standalone/configuration/standalone.xml'
-            
+
             sh 'mkdir /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
             sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
             sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
-    
+        }
+
+        stage('Configure SignServer') {
             sh '''
                 cd signserver-ee* && echo "
                     j2ee.web-nohttps=true
@@ -54,10 +55,17 @@ node('dss-docker-slave') {
                     web.admingui.dist.enabled=true
                     web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
             '''
+        }
 
+        stage('Deploy SignServer') {
             sh 'cd signserver-ee* && ant -q deploy-ear'
-    
-            
+        }
+
+        stage('Run') {
+            sh 'hostname'
+            sh 'ls'
+            sh 'id'
+            sh '$USER'   
 
             sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
             sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
@@ -66,7 +74,6 @@ node('dss-docker-slave') {
             //    
             //}
         }
-        
     }
 
     //post {
