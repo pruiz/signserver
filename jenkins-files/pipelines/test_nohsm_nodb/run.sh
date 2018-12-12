@@ -7,7 +7,7 @@ java -version
 
 #cp /opt/conf/* /app/ejbca/conf/
 
-/opt/jboss/jboss-eap-7.1/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
+${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 #ant clean deployear
 
