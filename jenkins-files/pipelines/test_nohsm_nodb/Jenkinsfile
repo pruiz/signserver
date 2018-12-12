@@ -1,7 +1,8 @@
 node('dss-docker-slave') {
 
-    // checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+   checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
+   def testImage
     
     stage('Prepare Container') {
         sh 'hostname'
@@ -20,17 +21,45 @@ node('dss-docker-slave') {
         
         sh 'hostname'
         sh 'ls'
-        def testImage = docker.build("my-image:${env.BUILD_ID}", "jenkins-files/containers/jboss-base-jdk-8-eap7/")
+        testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/jboss-base-jdk-8-eap7/")
+        
+    }
+    
+    stage('Run') {
+        
+        sh 'rm -rf signserver-ee-*'
+        copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
+        
         testImage.inside {
             sh 'hostname'
             sh 'ls'
+            sh 'id'
+            sh '$USER'
+            sh 'unzip signserver-ee*.zip'
+            sh 'rm signserver-ee*.zip'
 
-            dir ('signserver') {
-                sh 'ant -q deploy-ear'
-            }
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/jboss-eap-7.1/standalone/configuration/standalone.xml'
+            
+            sh 'mkdir /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
+    
+            sh '''
+                cd signserver-ee* && echo "
+                    j2ee.web-nohttps=true
+                    database.name=nodb
+                    database.nodb.location=/tmp/data
+                    database.username=NOT-USED
+                    healthcheck.maintenancefile=${SIGNSERVER_HOME}/maintenance.properties
+                    web.admingui.dist.enabled=true
+                    web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
+            '''
 
-            #sh 'cp jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml'
+            sh 'cd signserver-ee* && ant -q deploy-ear'
+    
+            
 
+            sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
             sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
 
             //dir ('') {
