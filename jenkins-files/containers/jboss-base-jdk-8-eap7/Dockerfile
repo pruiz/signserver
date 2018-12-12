@@ -14,6 +14,8 @@ COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip $HOME
 # Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
+    && ls \
+    && pwd \
     && sha256sum jboss-eap-$JBOSS_EAP_VERSION.zip | grep $JBOSS_EAP_SHA256 \
     && unzip jboss-eap-$JBOSS_EAP_VERSION.tar.gz \
     && mv $HOME/jboss-eap-$JBOSS_EAP_VERSION $JBOSS_HOME \
