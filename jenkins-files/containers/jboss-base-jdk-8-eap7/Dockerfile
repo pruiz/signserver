@@ -1,6 +1,11 @@
 # Use latest jboss/base-jdk:8 image as the base
 FROM jboss/base-jdk:8
 
+# Install Ant
+RUN yum update -y \
+    && yum install -y ant \
+    && yum clean all
+
 # Set the WILDFLY_VERSION env variable
 ENV JBOSS_EAP_VERSION 7.1.0
 ENV JBOSS_EAP_FOLDER jboss-eap-7.1
