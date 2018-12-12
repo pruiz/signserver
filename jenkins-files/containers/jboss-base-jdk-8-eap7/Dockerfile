@@ -30,7 +30,8 @@ RUN cd $HOME \
     && mv $JBOSS_EAP_FOLDER /opt/jboss/ \
     && rm jboss-eap-$JBOSS_EAP_VERSION.zip \
     && chown -R jboss:0 ${JBOSS_HOME} \
-    && chmod -R g+rw ${JBOSS_HOME}
+    && chmod -R a+rw ${JBOSS_HOME}              
+# TODO only chmod g+rw but make sure it works to run
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
