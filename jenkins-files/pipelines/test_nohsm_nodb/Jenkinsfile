@@ -37,11 +37,11 @@ node('dss-docker-slave') {
         }
 
         stage('Configure App Server') {
-            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/jboss-eap-7.1/standalone/configuration/standalone.xml'
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/jboss-eap-7.0/standalone/configuration/standalone.xml'
 
             sh 'mkdir /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
-            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
-            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.1/standalone/configuration/keystore/'
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
+            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
         }
 
         stage('Configure SignServer') {
