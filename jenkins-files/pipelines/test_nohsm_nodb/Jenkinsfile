@@ -1,39 +1,37 @@
-pipeline {
-    agent none
+node('dss-docker-slave') {
 
-    node('dss-docker-slave') {
-        stages {
-            stage('Prepare Container') {
+    // checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
-                    steps {
-                        sh 'hostname'
-                        sh 'pwd'
-                        //sh 'cp -rv /home/jenkins/binaries `pwd`'
-                    }
-                }
-            }
-
-            stage('Build Container') {
-                agent {
-                    dockerfile {
-                        label 'dss-docker'
-                        dir "jenkins-files/containers/${env.CONTAINER}"
-                        filename 'Dockerfile'
-                        additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-                        args '--group-add root --volume m2-repo:/m2-repo'
-                    }
-                }
-                steps {
-                    sh 'hostname'
-                    sh 'ls'
-                }
-            }
-        }
-
-        post {
-            always {
-                cleanWs()
-            }
-        }
+    
+    stage('Prepare Container') {
+        sh 'hostname'
+        sh 'pwd'
+        sh 'cp -rv /home/jenkins/binaries `pwd`/jenkins-files/containers/jboss-base-jdk-8-eap7/'
     }
+
+    stage('Build Container') {
+        dockerfile {
+            label 'dss-docker'
+            dir "jenkins-files/containers/${env.CONTAINER}"
+            filename 'Dockerfile'
+            additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
+            args '--group-add root --volume m2-repo:/m2-repo'
+        }
+        
+        sh 'hostname'
+        sh 'ls'
+        def testImage = docker.build("my-image:${env.BUILD_ID}", "jenkins-files/containers/jboss-base-jdk-8-eap7/")
+        testImage.inside {
+            sh 'hostname'
+            sh 'ls'
+        }
+        
+    }
+
+    //post {
+    //    always {
+    //        cleanWs()
+    //    }
+    //}
+    
 }
