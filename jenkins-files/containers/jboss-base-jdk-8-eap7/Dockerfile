@@ -18,9 +18,9 @@ RUN cd $HOME \
     && ls \
     && pwd \
     && sha256sum jboss-eap-$JBOSS_EAP_VERSION.zip | grep $JBOSS_EAP_SHA256 \
-    && unzip jboss-eap-$JBOSS_EAP_VERSION.tar.gz \
+    && unzip jboss-eap-$JBOSS_EAP_VERSION.zip \
     && mv $HOME/jboss-eap-$JBOSS_EAP_VERSION $JBOSS_HOME \
-    && rm jboss-$JBOSS_EAP_VERSION.tar.gz \
+    && rm jboss-$JBOSS_EAP_VERSION.zip \
     && chown -R jboss:0 ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
