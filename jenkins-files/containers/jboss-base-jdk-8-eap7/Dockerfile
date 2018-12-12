@@ -7,6 +7,7 @@ ENV JBOSS_EAP_SHA256 682d2e7168c9f09cc019dce8f5a70e61169e2dc438dc44ba7352aba4e06
 ENV JBOSS_HOME /opt/jboss/jboss-eap-$JBOSS_EAP_VERSION
 
 USER root
+WORKDIR /root
 
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip $HOME
 
