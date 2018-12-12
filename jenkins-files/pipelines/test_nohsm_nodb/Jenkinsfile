@@ -24,6 +24,14 @@ node('dss-docker-slave') {
         testImage.inside {
             sh 'hostname'
             sh 'ls'
+
+            #sh 'cp jenkins-files/pipelines/test_nohsm_nodb/standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml'
+
+            sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
+
+            //dir ('') {
+            //    
+            //}
         }
         
     }
