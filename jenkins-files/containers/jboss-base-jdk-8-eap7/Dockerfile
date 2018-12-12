@@ -9,7 +9,7 @@ ENV JBOSS_HOME /opt/jboss/jboss-eap-$JBOSS_EAP_VERSION
 USER root
 WORKDIR /root
 
-COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip $HOME
+COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
 
 # Assume /binaries is mounted from the pipeline
 # Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
