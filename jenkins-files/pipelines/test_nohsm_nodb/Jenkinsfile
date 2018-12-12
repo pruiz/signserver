@@ -5,7 +5,7 @@ pipeline {
             dir "jenkins-files/containers/${env.CONTAINER}"
             filename 'Dockerfile'
             additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-            args '--group-add root --volume m2-repo:/m2-repo'
+            args '--group-add root --volume m2-repo:/m2-repo --mount type=bind,source=/home/jenkins/binaries,target=/binaries,readonly'
         }
     }
 
