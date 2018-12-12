@@ -1,74 +1,27 @@
 pipeline {
-    agent {
-        dockerfile {
-            label 'dss-docker'
-            dir "jenkins-files/containers/${env.CONTAINER}"
-            filename 'Dockerfile'
-            additionalBuildArgs  '--disable-content-trust=true --pull --mount type=bind,source=/home/jenkins/binaries,target=/binaries,readonly' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-            args '--group-add root --volume m2-repo:/m2-repo'
-        }
-    }
+    agent none
 
     stages {
-        stage('Verify Environment') {
+        stage('Prepare Container') {
             steps {
-                // Print versions
-                sh "java -version"
-                sh "mvn -version"
-                sh "ant -version"
-                sh "locale"
-                sh "echo Workspace: ${WORKSPACE}"
+                sh 'hostname'
+                sh 'cp -rv /home/jenkins/binaries `pwd`'
+            }
+        }
 
-                // Init edition
-                dir ('signserver') {
-                    sh "ant -q init"
-
-                    // Check expected edition
-                    // TODO
+        stage('Build Container') {
+            agent {
+                dockerfile {
+                    label 'dss-docker'
+                    dir "jenkins-files/containers/${env.CONTAINER}"
+                    filename 'Dockerfile'
+                    additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
+                    args '--group-add root --volume m2-repo:/m2-repo'
                 }
             }
-        }
-        stage('Build') {
             steps {
-                dir ('signserver') {
-                    sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo clean install -DskipTests"
-                }
-            }
-        }
-        stage('Unit Test') {
-            steps {
-                dir ('signserver') {
-                    withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
-                        sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo test"
-
-                        // gather the results
-                        junit "**/target/surefire-reports/*.xml"
-                    }
-                }
-            }
-        }
-        stage('Package') {
-            steps {
-                dir ('signserver') {
-                    // Create the release
-                    sh "ant release:binary-zip"
-                }
-                archiveArtifacts 'signserver-*-bin.zip'
-            }
-        }
-        stage('Javadoc') {
-            steps {
-                dir ('signserver') {
-                    // Build Javadoc
-                    sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo javadoc:aggregate"
-                }
-            }
-        }
-        stage('Coverage') {
-            steps {
-                dir ('signserver') {
-                    jacoco()
-                }
+                sh 'hostname'
+                sh 'ls'
             }
         }
     }
