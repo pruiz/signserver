@@ -1,6 +1,8 @@
 # Use latest jboss/base-jdk:8 image as the base
 FROM jboss/base-jdk:8
 
+USER root
+
 # Install Ant
 RUN yum update -y \
     && yum install -y ant \
@@ -12,7 +14,6 @@ ENV JBOSS_EAP_FOLDER jboss-eap-7.1
 ENV JBOSS_EAP_SHA256 682d2e7168c9f09cc019dce8f5a70e61169e2dc438dc44ba7352aba4e0634e20
 ENV JBOSS_HOME /opt/jboss/$JBOSS_EAP_FOLDER
 
-USER root
 WORKDIR /root
 
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
