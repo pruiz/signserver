@@ -59,6 +59,8 @@ node('dss-docker-slave') {
 
         stage('Deploy SignServer') {
             sh 'cd signserver-ee* && ant -q deploy-ear'
+
+            archiveArtifacts 'signserver-ee*/tmp/signserver.ear'
         }
 
         stage('Run') {
