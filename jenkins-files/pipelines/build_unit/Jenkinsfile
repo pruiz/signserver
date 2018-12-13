@@ -18,6 +18,7 @@ pipeline {
                 sh "ant -version"
                 sh "locale"
                 sh "echo Workspace: ${WORKSPACE}"
+                sh "printenv"
 
                 // Init edition
                 dir ('signserver') {
@@ -31,6 +32,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('signserver') {
+                    sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo help:effective-settings"
                     sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo clean install -DskipTests"
                 }
             }
