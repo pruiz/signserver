@@ -19,6 +19,7 @@ pipeline {
                 sh "locale"
                 sh "echo Workspace: ${WORKSPACE}"
                 sh "printenv"
+                sh "ls -l"
 
                 // Init edition
                 dir ('signserver') {
