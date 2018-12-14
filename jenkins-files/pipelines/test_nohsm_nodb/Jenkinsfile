@@ -80,7 +80,7 @@ node('dss-docker-slave') {
         }
         stage('System Test') {            
                         // run system tests                                     
-                        sh 'cd signserver-ee* && bin/ant systemtest:jars -Dno.clover=true'
+                        // sh 'cd signserver-ee* && bin/ant systemtest:jars -Dno.clover=true'
 
                         // gather the results
                          junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  

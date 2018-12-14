@@ -56,3 +56,6 @@ echo '=================== ant deployear done and successfully deployed! ========
 #
 #echo '=================== starting system tests ================================='
 #ant test:runsys
+
+cd signserver-ee*
+bin/ant systemtest:jars -Dno.clover=true
