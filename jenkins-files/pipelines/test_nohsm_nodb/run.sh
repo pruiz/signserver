@@ -63,6 +63,7 @@ chmod +x bin/signserver
 
 ls ${APPSRV_HOME}/standalone/tmp/auth/ -la
 id
+touch ${APPSRV_HOME}/standalone/tmp/auth/test123
 
 bin/signserver getstatus brief all
 if [ $? -ne 0 ]; then echo "Running SignServer CLI failed"; exit 1; fi
