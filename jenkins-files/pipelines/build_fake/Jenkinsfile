@@ -1,6 +1,5 @@
-pipeline {
+node('dss-docker-slave') {
 
-    stages {
         stage('Verify Environment') {
             steps {
                 // Print versions
@@ -63,11 +62,10 @@ pipeline {
                 }
             }
         }*/
-    }
 
-    post {
+    /*post {
         always {
             cleanWs()
         }
-    }
+    }*/
 }
