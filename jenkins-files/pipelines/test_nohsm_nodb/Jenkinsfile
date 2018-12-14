@@ -78,6 +78,16 @@ node('dss-docker-slave') {
             //    
             //}
         }
+        stage('System Test') {
+            steps {
+                dir ('signserver') {                                       
+                        sh "ant systemtest:jars -Dno.clover=true"
+                        // gather the results
+                         junit "**/target/surefire-reports/*.xml"
+                    
+                }
+            }
+        }
     }
 
     //post {
