@@ -43,6 +43,7 @@ node('dss-docker-slave') {
             sh 'mkdir /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
             sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
             sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
+            sh 'mkdir /tmp/data'
         }
 
         stage('Configure SignServer') {
