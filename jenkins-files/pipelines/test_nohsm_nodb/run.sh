@@ -59,6 +59,9 @@ echo '=================== ant deployear done and successfully deployed! ========
 
 cd signserver-ee*
 
-strace bin/signserver getstatus brief all
+chmod +x bin/signserver
+
+bin/signserver getstatus brief all
+if [ $? -ne 0 ]; then echo "Running SignServer CLI failed"; exit 1; fi
 
 bin/ant systemtest:jars -Dno.clover=true
