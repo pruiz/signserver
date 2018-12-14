@@ -1,22 +1,4 @@
 pipeline {
-    agent: none
-    stages { 
-        stage('Prepare') {
-            sh 'hostname'
-            sh 'pwd'
-            sh 'cp -rv /home/jenkins/binaries ${WORKSPACE}'
-        }
-    }
-
-    agent {
-        dockerfile {
-            label 'dss-docker'
-            dir "jenkins-files/containers/${env.CONTAINER}"
-            filename 'Dockerfile'
-            additionalBuildArgs  '--disable-content-trust=false --pull'
-            args '--group-add root --volume m2-repo:/m2-repo'
-        }
-    }
 
     stages {
         stage('Verify Environment') {
@@ -41,7 +23,7 @@ pipeline {
         }
         stage('Copy Release File') {
             steps {
-                //sh ('cp /home/jenkins/binaries/signserver-ee-5.0.0.Alpha1-SNAPSHOT-bin.zip .')
+                sh ('cp /home/jenkins/binaries/signserver-ee-5.0.0.Alpha1-SNAPSHOT-bin.zip .')
                 sh ('ls -l')
             }
         }
