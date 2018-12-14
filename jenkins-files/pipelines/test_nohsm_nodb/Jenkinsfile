@@ -29,7 +29,8 @@ node('dss-docker-slave') {
 
         stage('Unpack') {
             sh 'rm -rf signserver-ee-*'
-            copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
+            //copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
+            copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_BuildFake_openjdk-8u171-jdk-stretch', selector: lastSuccessful()
 
             sh 'ls'
             sh 'unzip signserver-ee*.zip'
