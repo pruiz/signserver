@@ -82,7 +82,7 @@ node('dss-docker-slave') {
                         sh 'cd signserver-ee*'  
                         sh "ls -l"
                         sh "pwd"                                      
-                        sh "bin/ant systemtest:jars -Dno.clover=true"
+                        sh 'cd signserver-ee* && bin/ant systemtest:jars -Dno.clover=true'
                         // gather the results
                          junit "**/target/surefire-reports/*.xml"                                  
         }
