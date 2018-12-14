@@ -5,7 +5,8 @@ USER root
 
 # Install Ant
 RUN yum update -y \
-    && yum install -y ant \
+    && yum install -y ant \ 
+    && yum install -y ant-junit \
     && yum clean all
 
 # Set the WILDFLY_VERSION env variable
