@@ -3,7 +3,6 @@ node('dss-docker-slave') {
     checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
         stage('Verify Environment') {
-            steps {
                 // Print versions
                 sh "java -version"
                 sh "mvn -version"
@@ -20,13 +19,10 @@ node('dss-docker-slave') {
                     // Check expected edition
                     // TODO
                 }*/
-            }
         }
         stage('Copy Release File') {
-            steps {
                 sh ('cp /home/jenkins/binaries/signserver-ee-5.0.0.Alpha1-SNAPSHOT-bin.zip .')
                 sh ('ls -l')
-            }
         }
 //        stage('Unit Test') {
 //            steps {
@@ -41,13 +37,11 @@ node('dss-docker-slave') {
 //            }
 //        }
         stage('Package') {
-            steps {
                 /*dir ('signserver') {
                     // Create the release
                     sh "ant release:binary-zip"
                 }*/
                 archiveArtifacts 'signserver-*-bin.zip'
-            }
         }
         /* stage('Javadoc') {
             steps {
