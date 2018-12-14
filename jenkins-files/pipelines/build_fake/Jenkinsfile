@@ -1,4 +1,10 @@
 pipeline {
+    stage('Prepare') {
+        sh 'hostname'
+        sh 'pwd'
+        sh 'cp -rv /home/jenkins/binaries ${WORKSPACE}'
+    }
+
     agent {
         dockerfile {
             label 'dss-docker'
@@ -22,17 +28,17 @@ pipeline {
                 sh "ls -l"
 
                 // Init edition
-                dir ('signserver') {
+                /*dir ('signserver') {
                     sh "ant -q init"
 
                     // Check expected edition
                     // TODO
-                }
+                }*/
             }
         }
         stage('Copy Release File') {
             steps {
-                sh ('cp /home/jenkins/binaries/signserver-ee-5.0.0.Alpha1-SNAPSHOT-bin.zip .')
+                //sh ('cp /home/jenkins/binaries/signserver-ee-5.0.0.Alpha1-SNAPSHOT-bin.zip .')
                 sh ('ls -l')
             }
         }
