@@ -1,8 +1,11 @@
 pipeline {
-    stage('Prepare') {
-        sh 'hostname'
-        sh 'pwd'
-        sh 'cp -rv /home/jenkins/binaries ${WORKSPACE}'
+    agent: none
+    stages { 
+        stage('Prepare') {
+            sh 'hostname'
+            sh 'pwd'
+            sh 'cp -rv /home/jenkins/binaries ${WORKSPACE}'
+        }
     }
 
     agent {
