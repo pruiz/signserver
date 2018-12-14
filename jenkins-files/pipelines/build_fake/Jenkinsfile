@@ -36,18 +36,18 @@ pipeline {
                 sh ('ls -l')
             }
         }
-        /*stage('Unit Test') {
-            steps {
-                dir ('signserver') {
-                    withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
-                        sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo test"
-
-                        // gather the results
-                        junit "**/target/surefire-reports/*.xml"
-                    }
-                }
-            }
-        }*/
+//        stage('Unit Test') {
+//            steps {
+//                dir ('signserver') {
+//                    withEnv(['SIGNSERVER_NODEID=node1.example.com']) {                     
+//                        sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo test"
+//
+//                        // gather the results
+//                        junit "**/target/surefire-reports/*.xml"
+//                    }
+//                }
+//            }
+//        }
         stage('Package') {
             steps {
                 /*dir ('signserver') {
