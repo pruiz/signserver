@@ -5,8 +5,8 @@ node('dss-docker-slave') {
         stage('Verify Environment') {
                 // Print versions
                 sh "java -version"
-                sh "mvn -version"
-                sh "ant -version"
+                //sh "mvn -version"
+                //sh "ant -version"
                 sh "locale"
                 sh "echo Workspace: ${WORKSPACE}"
                 sh "printenv"
