@@ -58,4 +58,7 @@ echo '=================== ant deployear done and successfully deployed! ========
 #ant test:runsys
 
 cd signserver-ee*
+
+strace bin/signserver getstatus brief all
+
 bin/ant systemtest:jars -Dno.clover=true
