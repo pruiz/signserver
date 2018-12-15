@@ -30,11 +30,6 @@ pipeline {
                 }
             }
         }
-        stage('Patch DeployTools') {
-            steps {
-                sh "MAVEN_REPO_LOCAL=${WORKSPACE}/m2-repo ${WORKSPACE}/jenkins-files/pipelines/build_unit/deploytools/maven-manually-install.sh"
-            }
-        }
         stage('Build') {
             steps {
                 dir ('signserver') {
