@@ -5,7 +5,7 @@ pipeline {
             dir "jenkins-files/containers/${env.CONTAINER}"
             filename 'Dockerfile'
             additionalBuildArgs  '--disable-content-trust=false --pull'
-            args '--group-add root --volume m2-repo:/m2-repo'
+            args '--user user --group-add root'
         }
     }
 
