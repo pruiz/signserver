@@ -7,3 +7,7 @@ RUN yum update -y \
     && yum install -y maven \
     && yum install -y ant \
     && yum clean all
+
+RUN groupadd -g 1000 user
+RUN useradd --uid 1000 -g 1000 user
+USER user
