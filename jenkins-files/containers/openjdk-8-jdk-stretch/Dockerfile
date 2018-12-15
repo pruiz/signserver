@@ -6,3 +6,7 @@ RUN apt-get update \
     apt-get install -y maven ant \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
+
+RUN groupadd -g 1000 user
+RUN useradd --uid 1000 -g 1000 user
+USER user
