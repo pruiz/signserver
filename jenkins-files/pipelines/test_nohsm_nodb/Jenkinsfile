@@ -3,6 +3,7 @@ node('dss-docker-slave') {
    checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
    def testImage
+   def SIGNSERVER_HOME= 'UNKNOWN'
     
     stage('Prepare Container') {
         sh 'hostname'
@@ -35,6 +36,9 @@ node('dss-docker-slave') {
             sh 'ls'
             sh 'unzip signserver-ee*.zip'
             sh 'rm signserver-ee*.zip'
+         script {
+          SIGNSERVER_HOME = {env.WORKSPACE}/signserver-ee*
+        }
         }
 
         stage('Configure App Server') {
@@ -82,7 +86,7 @@ log4j.category.org.cesecore.keys.util.KeyTools=WARN, A1
 sh 'cd signserver-ee* && mkdir p12'
 sh 'cd signserver-ee* && ls -ltr'
 // sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
-def SIGNSERVER_HOME= ${env.WORKSPACE}/signserver-ee*
+// def SIGNSERVER_HOME= ${env.WORKSPACE}/signserver-ee*
 sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks $SIGNSERVER_HOME/p12/tomcat.jks'
 sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks $SIGNSERVER_HOME/p12/truststore.jks'
 
