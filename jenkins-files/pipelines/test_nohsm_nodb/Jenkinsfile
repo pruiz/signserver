@@ -80,13 +80,17 @@ log4j.category.org.cesecore.keys.util.KeyTools=WARN, A1
 #log4j.category.org.jboss.ejb.client=ERROR, A1
 #log4j.category.org.xnio=ERROR, A1" > conf/log4j.properties
             '''
-sh 'cd signserver-ee* && mkdir p12'
+sh 'cd signserver-ee* && mkdir p12 && mkdir jarsigner-test-files'
 
 sh 'cd signserver-ee* && ls -ltr'
 sh 'cd ${PWD}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
 
 sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
 sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
+
+sh 'cd signserver-ee*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/
+sh 'cd signserver-ee*/lib/ext && cp -v log4j*.jar ../../jarsigner-test-files/
+sh 'cd signserver-ee*/lib/ext && cp -v cesecore-*.jar ../../jarsigner-test-files/
 
 
         }
