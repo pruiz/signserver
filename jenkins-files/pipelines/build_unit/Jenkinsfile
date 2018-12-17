@@ -9,6 +9,10 @@ pipeline {
         }
     }
 
+	environment {
+        SIGNSERVER_HOME = sh "${WORKSPACE}"
+        }
+
     stages {
         stage('Verify Environment') {
             steps {
