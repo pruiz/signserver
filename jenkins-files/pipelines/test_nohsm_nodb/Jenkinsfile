@@ -80,7 +80,8 @@ log4j.category.org.cesecore.keys.util.KeyTools=WARN, A1
 #log4j.category.org.xnio=ERROR, A1" > conf/log4j.properties
             '''
 sh 'cd signserver-ee* && mkdir p12'
-sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
+sh 'cd signserver-ee* && ls -ltr'
+// sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
 sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks signserver-ee*/p12/truststore.jks'
 
 
