@@ -86,8 +86,8 @@ sh 'cd signserver-ee* && ls -ltr'
 sh 'cd ${PWD}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
 // sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
 // def SIGNSERVER_HOME= ${env.WORKSPACE}/signserver-ee*
-// sh 'cd signserver-ee* && cp -v ${PWD}/jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
-sh 'cd signserver-ee* &&  cp -v ${PWD}/jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
+// sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
+sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
 
 
         }
