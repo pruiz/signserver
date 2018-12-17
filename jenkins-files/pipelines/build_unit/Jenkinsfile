@@ -10,7 +10,7 @@ pipeline {
     }
 
 	environment {
-        SIGNSERVER_HOME = sh "${WORKSPACE}"
+        SIGNSERVER_HOME = sh "${WORKSPACE}/SignServer"
         }
 
     stages {
