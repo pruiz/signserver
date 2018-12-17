@@ -35,10 +35,7 @@ node('dss-docker-slave') {
 
             sh 'ls'
             sh 'unzip signserver-ee*.zip'
-            sh 'rm signserver-ee*.zip'
-         script {
-          SIGNSERVER_HOME = {env.WORKSPACE}/signserver-ee*
-        }
+            sh 'rm signserver-ee*.zip'         
         }
 
         stage('Configure App Server') {
@@ -87,8 +84,8 @@ sh 'cd signserver-ee* && mkdir p12'
 sh 'cd signserver-ee* && ls -ltr'
 // sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
 // def SIGNSERVER_HOME= ${env.WORKSPACE}/signserver-ee*
-sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks $SIGNSERVER_HOME/p12/tomcat.jks'
-sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks $SIGNSERVER_HOME/p12/truststore.jks'
+// sh 'cd signserver-ee* && cp -v `pwd`/jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
+sh 'cd signserver-ee* &&  cp -v `pwd`/jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
 
 
         }
