@@ -82,11 +82,11 @@ log4j.category.org.cesecore.keys.util.KeyTools=WARN, A1
             '''
 sh 'cd signserver-ee* && mkdir p12'
 sh 'cd signserver-ee* && ls -ltr'
-sh 'cd 'pwd`/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
+sh 'cd ${env.WORKSPACE}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
 // sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks signserver-ee*/p12/tomcat.jks'
 // def SIGNSERVER_HOME= ${env.WORKSPACE}/signserver-ee*
-// sh 'cd signserver-ee* && cp -v `pwd`/jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
-sh 'cd signserver-ee* &&  cp -v `pwd`/jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
+// sh 'cd signserver-ee* && cp -v ${env.WORKSPACE}/jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
+sh 'cd signserver-ee* &&  cp -v ${env.WORKSPACE}/jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
 
 
         }
