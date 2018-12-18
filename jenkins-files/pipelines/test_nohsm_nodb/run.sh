@@ -65,6 +65,7 @@ echo '=================== ant deployear done and successfully deployed! ========
 #ant test:runsys
 
 cd signserver-ee*
+export SIGNSERVER_HOME=.
 
 chmod +x bin/signserver
 
