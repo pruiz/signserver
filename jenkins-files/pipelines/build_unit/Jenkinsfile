@@ -10,7 +10,7 @@ pipeline {
     }
 
 	environment {
-        SIGNSERVER_HOME = "/home/user/workspace/signServer/trunk/signserver"
+        SIGNSERVER_HOME = "/home/user/workspace/signserver/trunk/signserver"
         }
 
     stages {
