@@ -12,8 +12,6 @@ pipeline {
 	environment {
         SIGNSERVER_HOME = "/home/user/workspace/signserver/trunk/signserver"
 	SIGNSERVER_NODEID = "magnum-ci"
-	sh "echo checking Java:"
-	sh "which java"
         }
 
     stages {
