@@ -11,7 +11,7 @@ RUN yum update -y \
     && yum install -y openssl \
     && yum clean all
 
-RUN "which java"
+RUN "/bin/which java"
 
 # Set the WILDFLY_VERSION env variable
 ENV JBOSS_EAP_VERSION 7.0.0
