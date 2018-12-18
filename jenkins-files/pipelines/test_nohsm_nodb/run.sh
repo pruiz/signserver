@@ -10,6 +10,8 @@ java -version
 cd signserver-ee*
 export SIGNSERVER_HOME=.
 
+export SIGNSERVER_NODEID="magnum-ci"
+
 echo '=================== Setup audit log ======================================='
 AUDITLOG=${APPSRV_HOME}/standalone/log/signserver_audit.log
 # Audit log file
