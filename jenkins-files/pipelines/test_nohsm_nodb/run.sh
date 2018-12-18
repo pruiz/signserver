@@ -23,6 +23,12 @@ keytool -import -keystore ${JAVA_HOME}/lib/security/cacerts -file res/test/dss10
 keytool -exportcert -keystore ${JAVA_HOME}/lib/security/cacerts -alias DSSRootCA10 -file /dev/null -noprompt -storepass changeit
 if [ $? -ne 0 ]; then echo "Build step 2 failed: trusting DSSRootCA10"; exit 1; fi
 
+# Clear maintenance file
+echo "Clearing maintenance file"
+cat > ${SIGNSERVER_HOME}/maintenance.properties << EOF
+DOWN_FOR_MAINTENANCE=false
+EOF
+
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 #ant clean deployear
