@@ -14,6 +14,11 @@ echo "[SCRIPT] Removing old audit log"
 ln -s ${AUDITLOG} signserver_audit.log
 rm ${AUDITLOG}
 
+echo "Trusting DSSRootCA10"
+keytool -import -keystore ${JAVA_HOME}/lib/security/cacerts -file ${SIGNSERVER_HOME}/res/test/dss10/DSSRootCA10.cacert.pem -alias DSSRootCA10 -noprompt -storepass changeit
+keytool -exportcert -keystore ${JAVA_HOME}/lib/security/cacerts -alias DSSRootCA10 -file /dev/null -noprompt -storepass changeit
+if [ $? -ne 0 ]; then echo "Build step 2 failed: trusting DSSRootCA10"; exit 1; fi
+
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 #ant clean deployear
