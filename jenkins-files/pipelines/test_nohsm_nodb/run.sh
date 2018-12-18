@@ -7,6 +7,9 @@ java -version
 
 #cp /opt/conf/* /app/ejbca/conf/
 
+cd signserver-ee*
+export SIGNSERVER_HOME=.
+
 echo '=================== Setup audit log ======================================='
 AUDITLOG=${APPSRV_HOME}/standalone/log/signserver_audit.log
 # Audit log file
@@ -14,8 +17,6 @@ echo "[SCRIPT] Removing old audit log"
 rm -f signserver_audit.log
 ln -s ${AUDITLOG} signserver_audit.log
 rm -f ${AUDITLOG}
-
-echo $(which java)
 
 echo "Trusting DSSRootCA10"
 keytool -import -keystore ${JAVA_HOME}/lib/security/cacerts -file res/test/dss10/DSSRootCA10.cacert.pem -alias DSSRootCA10 -noprompt -storepass changeit
@@ -71,9 +72,6 @@ echo '=================== ant deployear done and successfully deployed! ========
 #
 #echo '=================== starting system tests ================================='
 #ant test:runsys
-
-cd signserver-ee*
-export SIGNSERVER_HOME=.
 
 chmod +x bin/signserver
 
