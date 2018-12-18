@@ -7,6 +7,13 @@ java -version
 
 #cp /opt/conf/* /app/ejbca/conf/
 
+echo '=================== Setup audit log ======================================='
+AUDITLOG=${APPSRV_HOME}/standalone/log/signserver_audit.log
+# Audit log file
+echo "[SCRIPT] Removing old audit log"
+ln -s ${AUDITLOG} signserver_audit.log
+rm ${AUDITLOG}
+
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 #ant clean deployear
