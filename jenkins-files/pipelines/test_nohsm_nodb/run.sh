@@ -14,6 +14,8 @@ echo "[SCRIPT] Removing old audit log"
 ln -s ${AUDITLOG} signserver_audit.log
 rm ${AUDITLOG}
 
+echo $(which java)
+
 echo "Trusting DSSRootCA10"
 keytool -import -keystore ${JAVA_HOME}/lib/security/cacerts -file ${SIGNSERVER_HOME}/res/test/dss10/DSSRootCA10.cacert.pem -alias DSSRootCA10 -noprompt -storepass changeit
 keytool -exportcert -keystore ${JAVA_HOME}/lib/security/cacerts -alias DSSRootCA10 -file /dev/null -noprompt -storepass changeit
