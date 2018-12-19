@@ -55,7 +55,7 @@ node('dss-docker-slave') {
                     database.name=nodb
                     database.nodb.location=/tmp/data
                     database.username=NOT-USED
-                    healthcheck.maintenancefile=${SIGNSERVER_HOME}/maintenance.properties
+                    healthcheck.maintenancefile=${PWD}/maintenance.properties
                     web.admingui.dist.enabled=true
                     web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
             '''
