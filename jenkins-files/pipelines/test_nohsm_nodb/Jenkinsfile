@@ -4,12 +4,12 @@ node('dss-docker-slave') {
 
    def testImage   
    def PWD = pwd();
-   def CONTAINER_NAME = ${env.CONTAINER}
+   // def CONTAINER_NAME = ${env.CONTAINER}
     
     stage('Prepare Container') {
         sh 'hostname'
         sh 'pwd'
-        sh 'cp -rv /home/jenkins/binaries `pwd`/jenkins-files/containers/${CONTAINER_NAME}/'
+        sh "cp -rv /home/jenkins/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
 	sh 'which java'
     }
 
