@@ -18,10 +18,10 @@ ENV JBOSS_EAP_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b2
 ENV JBOSS_HOME /opt/jboss/$JBOSS_EAP_FOLDER
 ENV APPSRV_HOME $JBOSS_HOME
 # TODO: parameterize this
-# ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
+ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.201-2.6.16.1.el7_6.x86_64/jre
 
 # Make Java keystore read/write for all users
-# RUN chmod 666 $JAVA_HOME/lib/security/cacerts
+RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
