@@ -23,7 +23,7 @@ node('dss-docker-slave') {
         
         sh 'hostname'
         sh 'ls'
-        testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/jboss-base-jdk-8-eap7/")
+        testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
         
     }
 
