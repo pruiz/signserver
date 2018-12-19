@@ -41,11 +41,11 @@ node('dss-docker-slave') {
         }
 
         stage('Configure App Server') {
-            sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} /opt/jboss/jboss-eap-7.0/standalone/configuration/standalone.xml"
+            sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} /opt/jboss/$JBOSS_EAP_FOLDER/standalone/configuration/standalone.xml"
 
-            sh 'mkdir /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
-            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
-            sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/jboss-eap-7.0/standalone/configuration/keystore/'
+            sh "mkdir /opt/jboss/$JBOSS_EAP_FOLDER/standalone/configuration/keystore/"
+            sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/$JBOSS_EAP_FOLDER/standalone/configuration/keystore/"
+            sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/$JBOSS_EAP_FOLDER/standalone/configuration/keystore/"
             sh 'mkdir /tmp/data'
         }
 
