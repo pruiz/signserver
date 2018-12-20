@@ -34,7 +34,7 @@ node('dss-docker-slave') {
          echo 'All environment variables'
          // sh '$JBOSS_EAP_VERSION'
          sh 'printenv'          
-         sh "cat $JAVA_HOME/lib/security/java.security"
+         sh "cat ${env.JAVA_HOME}/lib/security/java.security"
         }
 
         stage('Unpack') {
