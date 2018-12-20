@@ -8,8 +8,7 @@ RUN yum update -y \
     && yum install -y ant \ 
     && yum install -y ant-junit \
     && yum install -y strace \
-    && yum install -y openssl \
-    // && yum install -y bouncycastle \
+    && yum install -y openssl \    
     && yum clean all
 
 # Set the WILDFLY_VERSION env variable
