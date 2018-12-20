@@ -56,11 +56,6 @@ RUN yum reinstall -q -y glibc-common \
 
 ENV LANG en_US.UTF-8
 
-RUN cd $JAVA_HOME/lib/ext/ && \
-	curl -O http://downloads.bouncycastle.org/java/bcprov-jdk15on-156.jar -nv && \
-	cd $JAVA_HOME/lib/security && \
-	echo 'security.provider.10=org.bouncycastle.jce.provider.BouncyCastleProvider' >> $JAVA_HOME/lib/security/java.security
-
 USER jboss
 
 # Expose the ports we're interested in
