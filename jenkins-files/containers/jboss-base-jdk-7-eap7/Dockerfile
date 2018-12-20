@@ -20,6 +20,10 @@ ENV APPSRV_HOME $JBOSS_HOME
 # TODO: parameterize this
 ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.201-2.6.16.1.el7_6.x86_64/jre
 
+# Make Sure the SafeNet emulator will not generate a fixed key
+# for a given key size/spec
+ENV ET_PTKC_SW_AUTOSEEDRNG true
+
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
