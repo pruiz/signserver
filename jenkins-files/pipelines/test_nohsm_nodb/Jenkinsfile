@@ -31,10 +31,10 @@ node('dss-docker-slave') {
     testImage.inside {
 
         stage('Verify environment') {
-         echo 'All environment variables'
-         // sh '$JBOSS_EAP_VERSION'
+         echo 'All environment variables'         
          sh 'printenv'          
          sh 'cat ${JAVA_HOME}/lib/security/java.security'
+         sh 'ls -ltr $JAVA_HOME/lib/ext/'
         }
 
         stage('Unpack') {
