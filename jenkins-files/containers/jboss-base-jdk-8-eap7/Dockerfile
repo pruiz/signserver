@@ -57,7 +57,7 @@ RUN yum reinstall -q -y glibc-common \
 
 ENV LANG en_US.UTF-8
 
-cd $JAVA_HOME/lib/ext/ && \
+RUN cd $JAVA_HOME/lib/ext/ && \
 	wget http://downloads.bouncycastle.org/java/bcprov-ext-jdk15on-152.jar -nv && \
 	cd $JAVA_HOME/lib/security && \
 	echo 'security.provider.10=org.bouncycastle.jce.provider.BouncyCastleProvider' >> $JAVA_HOME/jre/lib/security/java.security
