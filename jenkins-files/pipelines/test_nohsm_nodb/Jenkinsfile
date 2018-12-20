@@ -30,6 +30,12 @@ node('dss-docker-slave') {
 
     testImage.inside {
 
+        stage('Verify environment') {
+         echo 'All environment variables'
+         // sh '$JBOSS_EAP_VERSION'
+         sh 'printenv'                   
+        }
+
         stage('Unpack') {
             sh 'rm -rf signserver-ee-*'
             //copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
