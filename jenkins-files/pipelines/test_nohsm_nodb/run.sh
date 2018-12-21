@@ -85,4 +85,4 @@ chmod +x bin/signserver
 bin/signserver getstatus brief all
 if [ $? -ne 0 ]; then echo "Running SignServer CLI failed"; exit 1; fi
 
-# bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true
+bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true
