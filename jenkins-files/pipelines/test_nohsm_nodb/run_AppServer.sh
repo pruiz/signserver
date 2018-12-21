@@ -1,5 +1,15 @@
 #!/bin/sh
 
+cd signserver-ee*
+
+echo '=================== Setup audit log ======================================='
+AUDITLOG=${APPSRV_HOME}/standalone/log/signserver_audit.log
+# Audit log file
+echo "[SCRIPT] Removing old audit log"
+rm -f signserver_audit.log
+ln -s ${AUDITLOG} signserver_audit.log
+rm -f ${AUDITLOG}
+
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 echo '=================== Waiting for deploy ================================='
