@@ -129,15 +129,16 @@ databaseprotection.version.0 = 2
             sh 'id'
             sh '$USER'   
 
-            sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
-            sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
+            sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run_AppServer.sh'
+            sh 'jenkins-files/pipelines/test_nohsm_nodb/run_AppServer.sh'
 
             //dir ('') {
             //    
             //}
         }
         stage('System Test') {
-         sh "cd signserver-ee* && bin/ant systemtest:jars -Dsystemtest.includes=**/XMLSignerTest.class"
+         sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
+         sh 'jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
         }
         stage('Gather Results') {            
             junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
