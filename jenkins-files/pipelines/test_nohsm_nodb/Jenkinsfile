@@ -136,8 +136,8 @@ databaseprotection.version.0 = 2
             //    
             //}
         }
-        stage('Test') {
-         sh "cd signserver-ee* && bin/ant systemtest:jars -Dsystemtest.includes=**/XMLSignerTest.class"
+        stage('System Test') {
+         sh "cd signserver-ee* && bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true"
         }
         stage('Gather Results') {            
             junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
