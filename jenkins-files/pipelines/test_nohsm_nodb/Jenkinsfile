@@ -3,8 +3,7 @@ node('dss-docker-slave') {
    checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
    def testImage   
-   def PWD = pwd();
-   // def CONTAINER_NAME = ${env.CONTAINER}
+   def PWD = pwd();   
     
     stage('Prepare Container') {
         sh 'hostname'
@@ -38,8 +37,7 @@ node('dss-docker-slave') {
         }
 
         stage('Unpack') {
-            sh 'rm -rf signserver-ee-*'
-            //copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: 'EE_trunk_Build_centos-7-openjdk-8-jdk_Unit', selector: lastSuccessful()
+            sh 'rm -rf signserver-ee-*'            
             copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_JOB}", selector: lastSuccessful()
 
             sh 'ls'

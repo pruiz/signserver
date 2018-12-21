@@ -3,13 +3,12 @@
 echo '=================== CHECKING JAVA VERSION: ================================='
 java -version
 
-#cp /opt/standalone1.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
-
-#cp /opt/conf/* /app/ejbca/conf/
+# Set SIGNSERVER_HOME
 
 cd signserver-ee*
 export SIGNSERVER_HOME=.
 
+# Set SIGNSERVER_NODEID
 export SIGNSERVER_NODEID="magnum-ci"
 
 echo '=================== Setup audit log ======================================='
