@@ -20,6 +20,10 @@ ENV APPSRV_HOME $JBOSS_HOME
 # TODO: parameterize this
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 
+# ProtectServer Gold HSM emulator
+ENV SAFENET_EMULATOR_RPM ETcpsdk-3.33.00-1.x86_64.rpm
+ENV SAFENET_EMULATOR_SHA256 9ab17a4380771382984285ae59b0405f32c3436a7d154a82a897132940eacbc0
+
 # Make Sure the SafeNet emulator will not generate a fixed key
 # for a given key size/spec
 ENV ET_PTKC_SW_AUTOSEEDRNG true
@@ -30,6 +34,7 @@ RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 WORKDIR /root
 
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
+COPY binaries/$SAFENET_EMULATOR_RPM ./
 
 # Assume /binaries is mounted from the pipeline
 # Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
@@ -38,6 +43,7 @@ RUN cd $HOME \
     && ls \
     && pwd \
     && sha256sum jboss-eap-$JBOSS_EAP_VERSION.zip | grep $JBOSS_EAP_SHA256 \
+    && sha256sum $SAFENET_EMULATOR_RPM | grep $SAFENET_EMULATOR_SHA256 \
     && unzip jboss-eap-$JBOSS_EAP_VERSION.zip \
     && mv $JBOSS_EAP_FOLDER /opt/jboss/ \
     && rm jboss-eap-$JBOSS_EAP_VERSION.zip \
