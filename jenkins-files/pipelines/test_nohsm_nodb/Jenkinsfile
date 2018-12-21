@@ -136,6 +136,9 @@ databaseprotection.version.0 = 2
             //    
             //}
         }
+        stage('Test') {
+         sh 'cd signserver-ee* && bin/ant systemtest:jars --Dsystemtest.includes=**/XMLSignerTest.class'
+        }
         stage('Gather Results') {            
             junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
         }
