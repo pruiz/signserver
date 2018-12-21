@@ -145,10 +145,10 @@ databaseprotection.version.0 = 2
         }
     }
 
-    post {
-        always {
-            cleanWs()
-        }
-    }
+    //post {
+    //    always {
+    //        cleanWs()
+    //    }
+    //}
     
 }

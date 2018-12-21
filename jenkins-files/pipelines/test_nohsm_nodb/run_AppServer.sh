@@ -10,6 +10,9 @@ rm -f signserver_audit.log
 ln -s ${AUDITLOG} signserver_audit.log
 rm -f ${AUDITLOG}
 
+# Set SIGNSERVER_NODEID
+export SIGNSERVER_NODEID="magnum-ci"
+
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 echo '=================== Waiting for deploy ================================='
