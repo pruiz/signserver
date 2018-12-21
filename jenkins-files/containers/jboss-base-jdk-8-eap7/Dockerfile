@@ -23,6 +23,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 # ProtectServer Gold HSM emulator
 ENV SAFENET_EMULATOR_RPM ETcpsdk-3.33.00-1.x86_64.rpm
 ENV SAFENET_EMULATOR_SHA256 9ab17a4380771382984285ae59b0405f32c3436a7d154a82a897132940eacbc0
+ENV SAFENET_CTCONF /opt/ETcpsdk/bin/linux-x86_64/ctconf
+ENV SAFENET_CTKMU /opt/ETcpsdk/bin/linux-x86_64/ctkmu
+ENV NUMBER_OF_SLOTS 10
 
 # Make Sure the SafeNet emulator will not generate a fixed key
 # for a given key size/spec
@@ -43,7 +46,6 @@ RUN cd $HOME \
     && ls \
     && pwd \
     && sha256sum jboss-eap-$JBOSS_EAP_VERSION.zip | grep $JBOSS_EAP_SHA256 \
-    && sha256sum $SAFENET_EMULATOR_RPM | grep $SAFENET_EMULATOR_SHA256 \
     && unzip jboss-eap-$JBOSS_EAP_VERSION.zip \
     && mv $JBOSS_EAP_FOLDER /opt/jboss/ \
     && rm jboss-eap-$JBOSS_EAP_VERSION.zip \
@@ -60,7 +62,20 @@ RUN yum reinstall -q -y glibc-common \
     && echo "LANG=en_US.utf8" >> /etc/locale.conf \
     && yum clean all
 
+# Install HSM emulator
+RUN cd $HOME \
+    && sha256sum $SAFENET_EMULATOR_RPM | grep $SAFENET_EMULATOR_SHA256 \
+    && rpm -i $SAFENET_EMULATOR_RPM
+
 ENV LANG en_US.UTF-8
+
+# Set LD_LIBRARY_PATH for SafeNet
+ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
+
+# Intialize HSM slots and set "no public crypto"
+RUN $SAFENET_CTCONF -c$NUMBER_OF_SLOTS \
+    && $SAFENET_CTCONF -fc
+
 
 USER jboss
 
