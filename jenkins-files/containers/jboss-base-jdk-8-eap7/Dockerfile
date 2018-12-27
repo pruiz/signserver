@@ -25,12 +25,12 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 ENV ET_PTKC_SW_AUTOSEEDRNG true
 
 # Eracom emulator
-ENV ERACOM_RPM=etcpsdk-3.33.00-1.x86_64.rpm
+ENV ERACOM_RPM=ETcpsdk-3.33.00-1.x86_64.rpm
 ENV ERACOM_SHA256=9ab17a4380771382984285ae59b0405f32c3436a7d154a82a897132940eacbc0
 ENV SAFENET_CTCONF /opt/ETcpsdk/bin/linux-x86_64/ctconf
 ENV SAFENET_CTKMU /opt/ETcpsdk/bin/linux-x86_64/ctkmu
 ENV NUMBER_OF_SLOTS 10
-
+ENV SO_PIN foo123
 
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
@@ -66,7 +66,8 @@ RUN yum reinstall -q -y glibc-common \
 # Install HSM emulator
 RUN cd $HOME \
     && sha256sum $ERACOM_RPM | grep $ERACOM_SHA256 \
-    && rpm -i $ERACOM_RPM
+    && rpm -i $ERACOM_RPM \
+    && rm $ERACOM_RPM
 
 ENV LANG en_US.UTF-8
 
@@ -74,7 +75,7 @@ ENV LANG en_US.UTF-8
 ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
 
 # Intialize HSM slots and set "no public crypto"
-RUN $SAFENET_CTCONF -c$NUMBER_OF_SLOTS \
+RUN printf "$SO_PIN\n$SO_PIN\n" | $SAFENET_CTCONF -c$NUMBER_OF_SLOTS \
     && $SAFENET_CTCONF -fc
 
 USER jboss
