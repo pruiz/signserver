@@ -74,10 +74,6 @@ ENV LANG en_US.UTF-8
 # Set LD_LIBRARY_PATH for SafeNet
 ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
 
-# Intialize HSM slots and set "no public crypto"
-RUN printf "$SO_PIN\n$SO_PIN\n" | $SAFENET_CTCONF -c$NUMBER_OF_SLOTS \
-    && $SAFENET_CTCONF -fc
-
 USER jboss
 
 # Expose the ports we're interested in
