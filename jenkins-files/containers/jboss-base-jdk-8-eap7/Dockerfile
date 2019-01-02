@@ -37,6 +37,9 @@ RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
+RUN whoami
+RUN ls -ltr
+
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
 COPY binaries/$ERACOM_RPM ./
 
