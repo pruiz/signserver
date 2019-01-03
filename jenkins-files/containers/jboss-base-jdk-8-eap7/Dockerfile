@@ -27,10 +27,16 @@ ENV ET_PTKC_SW_AUTOSEEDRNG true
 # Eracom emulator
 ENV ERACOM_RPM=ETcpsdk-3.33.00-1.x86_64.rpm
 ENV ERACOM_SHA256=9ab17a4380771382984285ae59b0405f32c3436a7d154a82a897132940eacbc0
-ENV SAFENET_CTCONF /opt/ETcpsdk/bin/linux-x86_64/ctconf
-ENV SAFENET_CTKMU /opt/ETcpsdk/bin/linux-x86_64/ctkmu
-ENV NUMBER_OF_SLOTS 10
-ENV SO_PIN foo123
+
+# Emulator prepared setup
+ENV CRYPTOKI_ZIP=cryptoki.zip
+ENV CRYPTOKI_SHA256=c279986e3d2a3f44a9eedbbae70c5347fd13689bb0995236c0009b96f3f83559
+
+# P11 test config variables
+ENV LIBCRYPTOKI="/opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so"
+ENV P11SLOT="2"
+ENV P11PIN="foo123"
+ENV P11KEY="mykey001"
 
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
@@ -70,6 +76,14 @@ RUN cd $HOME \
     && rm $ERACOM_RPM
 
 ENV LANG en_US.UTF-8
+
+# Unpack HSM emulator setup (couldn't get running
+# ctconf setup commands from scratch working,
+# requires interactive input of PIN codes)
+RUN cd $HOME \
+    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256
+    && unzip $CRYPTOKI_ZIP
+    && rm $CRYPTOKI_ZIP
 
 # Set LD_LIBRARY_PATH for SafeNet
 ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64

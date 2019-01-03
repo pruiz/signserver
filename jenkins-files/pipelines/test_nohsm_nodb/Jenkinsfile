@@ -116,6 +116,15 @@ databaseprotection.version.0 = 2
                     " > conf/databaseprotection.properties
             '''
 
+	// P11 test configuration
+        sh '''
+	   cd signserver-ee* && echo "
+test.p11.sharedlibrary=${env.LIBCRYPTOKI}
+test.p11.slot=${env.P11SLOT}
+test.p11.pin=${env.P11PIN}
+test.p11.existingkey1=${env.P11KEY}" > test-config.properties
+           '''
+
         }
 
         stage('Deploy SignServer') {
