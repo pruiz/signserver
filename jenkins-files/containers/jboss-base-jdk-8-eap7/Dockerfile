@@ -89,11 +89,9 @@ RUN cd $HOME \
     && unzip $CRYPTOKI_ZIP \
     && rm $CRYPTOKI_ZIP \
     && echo "pwd: $HOME" && ls -la \
-    && mkdir /home/jboss \
-    && mv .cryptoki /home/jboss \
-    && chown -R jboss:0 /home/jboss \
-    && chmod -R a+rw /home/jboss \
-    && echo "home jboss: " && ls -la /home/jboss \
+    && mv .cryptoki /opt/jboss \
+    && chmod -R a+rw /opt/jboss/.cryptoki \
+    && echo "home jboss: " && ls -la /opt/jboss \
     && echo "cryptoki lib dir: " && ls -la /opt/ETcpsdk/lib/linux-x86_64
 
 USER jboss
