@@ -89,7 +89,8 @@ USER jboss
 RUN cd /home/jboss \
     && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
     && unzip $CRYPTOKI_ZIP \
-    && rm $CRYPTOKI_ZIP
+    && rm $CRYPTOKI_ZIP \
+    && cd $HOME
 
 # Expose the ports we're interested in
 EXPOSE 8080
