@@ -45,6 +45,7 @@ WORKDIR /root
 
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
 COPY binaries/$ERACOM_RPM ./
+COPY binaries/$CRYPTOKI_ZIP ./
 
 # Assume /binaries is mounted from the pipeline
 # Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
