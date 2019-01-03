@@ -88,6 +88,7 @@ RUN cd $HOME \
     && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
     && unzip $CRYPTOKI_ZIP \
     && rm $CRYPTOKI_ZIP \
+    && echo "pwd: $HOME" && ls -la \
     && mv .cryptoki /home/jboss \
     && chown -R jboss:0 /home/jboss/.cryptoki \
     && chmod -R a+rw ${JBOSS_HOME}
