@@ -81,8 +81,8 @@ ENV LANG en_US.UTF-8
 # ctconf setup commands from scratch working,
 # requires interactive input of PIN codes)
 RUN cd $HOME \
-    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256
-    && unzip $CRYPTOKI_ZIP
+    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
+    && unzip $CRYPTOKI_ZIP \
     && rm $CRYPTOKI_ZIP
 
 # Set LD_LIBRARY_PATH for SafeNet
