@@ -78,18 +78,18 @@ RUN cd $HOME \
 
 ENV LANG en_US.UTF-8
 
-# Unpack HSM emulator setup (couldn't get running
-# ctconf setup commands from scratch working,
-# requires interactive input of PIN codes)
-RUN cd $HOME \
-    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
-    && unzip $CRYPTOKI_ZIP \
-    && rm $CRYPTOKI_ZIP
-
 # Set LD_LIBRARY_PATH for SafeNet
 ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
 
 USER jboss
+
+# Unpack HSM emulator setup (couldn't get running
+# ctconf setup commands from scratch working,
+# requires interactive input of PIN codes)
+RUN cd /home/jboss \
+    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
+    && unzip $CRYPTOKI_ZIP \
+    && rm $CRYPTOKI_ZIP
 
 # Expose the ports we're interested in
 EXPOSE 8080
