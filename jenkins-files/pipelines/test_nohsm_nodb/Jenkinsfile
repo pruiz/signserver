@@ -128,7 +128,7 @@ test.p11.existingkey1=${P11KEY}" > test-config.properties
         }
 
 	stage('Test P11NG-tool') {
-	    sh 'cd signserver-ee* && ./bin/p11ng-tool -libfile /opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so -action listSlots'
+	    sh 'cd signserver-ee* && chmod a+x bin/p11-ng-tool && ./bin/p11ng-tool -libfile /opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so -action listSlots'
 	}
 
         stage('Deploy SignServer') {
