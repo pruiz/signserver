@@ -1,5 +1,7 @@
 node('dss-docker-slave') {
 
+try{
+
    checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
    def testImage   
@@ -158,11 +160,10 @@ test.p11.existingkey1=${P11KEY}" > test-config.properties
             junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
         }
     }
+}
 
-    //post {
-    //    always {
-    //        cleanWs()
-    //    }
-    //}
+     finally {   
+          cleanWs()   
+    }
     
 }
