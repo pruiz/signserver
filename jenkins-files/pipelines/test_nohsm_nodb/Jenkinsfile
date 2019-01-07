@@ -155,15 +155,13 @@ node('dss-docker-slave') {
 
                     sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
                     sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
-
-                    //dir ('') {
-                    //    
-                    //}
                 }
+
                 // stage('System Test') {
                 // sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
                 // sh 'jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
                 // }
+
                 stage('Gather Results') {            
                     junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
                 }
