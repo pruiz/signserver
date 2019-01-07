@@ -1,72 +1,72 @@
 node('dss-docker-slave') {
 
-try{
+    try {
 
-   checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+        checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
-   def testImage   
-   def PWD = pwd();   
+        def testImage   
+        def PWD = pwd();   
     
-    stage('Prepare Container') {
-        sh 'hostname'
-        sh 'pwd'
-        sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
-        sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
-	sh 'which java'
-    }
-
-    stage('Build Container') {
-        dockerfile {
-            label 'dss-docker'
-            dir "jenkins-files/containers/${env.CONTAINER}"
-            filename 'Dockerfile'
-            additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-            args '--group-add root --volume m2-repo:/m2-repo'
+        stage('Prepare Container') {
+            sh 'hostname'
+            sh 'pwd'
+            sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
+            sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
+            sh 'which java'
         }
-        
-        sh 'hostname'
-        sh 'ls'
-        testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
-        
-    }
 
-    testImage.inside {
+        stage('Build Container') {
+            dockerfile {
+                label 'dss-docker'
+                dir  "jenkins-files/containers/${env.CONTAINER}"
+                filename 'Dockerfile'
+                additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
+                args '--group-add root --volume m2-repo:/m2-repo'
+            }
+        
+            sh 'hostname'
+            sh 'ls'
+            testImage = docker.build("my-image2:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
+        
+        }
+
+        testImage.inside {
     
-        withEnv(['HOME=/opt/jboss']){
+            withEnv(['HOME=/opt/jboss']){
 
-            stage('Verify environment') {
-             echo 'All environment variables'         
-             sh 'printenv'          
-             sh 'cat ${JAVA_HOME}/lib/security/java.security'
-             sh 'ls -ltr $JAVA_HOME/lib/ext/'
-             sh 'id'
-            }
+                stage('Verify environment') {
+                    echo 'All environment variables'         
+                    sh 'printenv'          
+                    sh 'cat ${JAVA_HOME}/lib/security/java.security'
+                    sh 'ls -ltr $JAVA_HOME/lib/ext/'
+                    sh 'id'
+                }
 
-            stage('Unpack') {
-                sh 'rm -rf signserver-ee-*'            
-                copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_JOB}", selector: lastSuccessful()
+                stage('Unpack') {
+                    sh 'rm -rf signserver-ee-*'            
+                    copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_JOB}", selector: lastSuccessful()
 
-                sh 'ls'
-                sh 'unzip signserver-ee*.zip'
-                sh 'rm signserver-ee*.zip'         
-            }            
+                    sh 'ls'
+                    sh 'unzip signserver-ee*.zip'
+                    sh 'rm signserver-ee*.zip'         
+                }            
 
-            stage('Setup cryptoki') {
-                sh 'ls -la $HOME'
-                sh 'unzip -d $HOME /opt/eracom/${CRYPTOKI_ZIP}'
-            }
+                stage('Setup cryptoki') {
+                    sh 'ls -la $HOME'
+                    sh 'unzip -d $HOME /opt/eracom/${CRYPTOKI_ZIP}'
+                }
 
-            stage('Configure App Server') {
-                sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/standalone.xml"
+                stage('Configure App Server') {
+                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/standalone.xml"
 
-                sh "mkdir /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
-                sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
-                sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
-                sh 'mkdir /tmp/data'
-            }
+                    sh "mkdir /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
+                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
+                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/keystore/"
+                    sh 'mkdir /tmp/data'
+                }
 
-            stage('Configure SignServer') {
-                sh '''
+                stage('Configure SignServer') {
+                    sh '''
                     cd signserver-ee* && echo "
                         j2ee.web-nohttps=true
                         database.name=nodb
@@ -76,7 +76,7 @@ try{
                         web.admingui.dist.enabled=true
                         web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
                 '''
-                sh '''
+                    sh '''
                     cd signserver-ee* && echo "
     # Set root logger level to DEBUG for debug output.
     log4j.rootLogger=DEBUG, A1
@@ -98,20 +98,20 @@ try{
     #log4j.category.org.jboss.ejb.client=ERROR, A1
     #log4j.category.org.xnio=ERROR, A1" > conf/log4j.properties
                 '''
-    sh 'cd signserver-ee* && mkdir p12 && mkdir jarsigner-test-files'
+                    sh 'cd signserver-ee* && mkdir p12 && mkdir jarsigner-test-files'
 
-    sh 'cd signserver-ee* && ls -ltr'
-    sh 'cd ${PWD}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
+                    sh 'cd signserver-ee* && ls -ltr'
+                    sh 'cd ${PWD}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
 
-    sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
-    sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
+                    sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
+                    sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
 
-    sh 'cd signserver-ee*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/'
-    sh 'cd signserver-ee*/lib/ext && cp -v log4j*.jar ../../jarsigner-test-files/'
-    sh 'cd signserver-ee*/lib/ext && cp -v cesecore-*.jar ../../jarsigner-test-files/'
+                    sh 'cd signserver-ee*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/'
+                    sh 'cd signserver-ee*/lib/ext && cp -v log4j*.jar ../../jarsigner-test-files/'
+                    sh 'cd signserver-ee*/lib/ext && cp -v cesecore-*.jar ../../jarsigner-test-files/'
 
-             // Database audit log
-                sh '''
+                    // Database audit log
+                    sh '''
                     cd signserver-ee* && echo "          
     databaseprotection.enablesign.AuditRecordData = true
     databaseprotection.enableverify.AuditRecordData = true
@@ -126,8 +126,8 @@ try{
                         " > conf/databaseprotection.properties
                 '''
 
-            // P11 test configuration
-            sh '''
+                    // P11 test configuration
+                    sh '''
                cd signserver-ee* && echo "
     test.p11.sharedlibrary=${LIBCRYPTOKI}
     test.p11.slot=${P11SLOT}
@@ -135,44 +135,44 @@ try{
     test.p11.existingkey1=${P11KEY}" > test-config.properties
                '''
 
-            }
+                }
 
-            stage('Test P11NG-tool') {
-                sh 'cd signserver-ee* && chmod a+x bin/p11ng-tool && ./bin/p11ng-tool -libfile /opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so -action listSlots'
-            }
+                stage('Test P11NG-tool') {
+                    sh 'cd signserver-ee* && chmod a+x bin/p11ng-tool && ./bin/p11ng-tool -libfile /opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so -action listSlots'
+                }
 
-            stage('Deploy SignServer') {
-                sh 'cd signserver-ee* && ant -q deploy-ear'
+                stage('Deploy SignServer') {
+                    sh 'cd signserver-ee* && ant -q deploy-ear'
 
-                archiveArtifacts 'signserver-ee*/tmp/signserver.ear'
-            }
+                    archiveArtifacts 'signserver-ee*/tmp/signserver.ear'
+                }
 
-            stage('Run') {
-                sh 'hostname'
-                sh 'ls'
-                sh 'id'
-                sh '$USER'   
+                stage('Run') {
+                    sh 'hostname'
+                    sh 'ls'
+                    sh 'id'
+                    sh '$USER'   
 
-                sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
-                sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
+                    sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
+                    sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
 
-                //dir ('') {
-                //    
-                //}
-            }
-            // stage('System Test') {
-            // sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
-            // sh 'jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
-            // }
-            stage('Gather Results') {            
-                junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
+                    //dir ('') {
+                    //    
+                    //}
+                }
+                // stage('System Test') {
+                // sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
+                // sh 'jenkins-files/pipelines/test_nohsm_nodb/run_SystemTest.sh'
+                // }
+                stage('Gather Results') {            
+                    junit "signserver-ee*/tmp/test/results/TEST-*.xml"                                  
+                }
             }
         }
     }
-}
 
-     finally {   
-          cleanWs()   
+    finally {   
+        cleanWs()   
     }
     
 }
