@@ -24,12 +24,28 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.201-2.6.16.1.el7_6.x86_64/jr
 # for a given key size/spec
 ENV ET_PTKC_SW_AUTOSEEDRNG true
 
+# Eracom emulator
+ENV ERACOM_RPM=ETcpsdk-3.33.00-1.x86_64.rpm
+ENV ERACOM_SHA256=9ab17a4380771382984285ae59b0405f32c3436a7d154a82a897132940eacbc0
+
+# Emulator prepared setup
+ENV CRYPTOKI_ZIP=cryptoki.zip
+ENV CRYPTOKI_SHA256=dad7027b5ff1ea615095a4195d7388b6b0aab590a08138d34e23cb9ecaa99cc1
+
+# P11 test config variables
+ENV LIBCRYPTOKI="/opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so"
+ENV P11SLOT="2"
+ENV P11PIN="foo123"
+ENV P11KEY="mykey001"
+
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
 COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
+COPY binaries/$ERACOM_RPM ./
+COPY binaries/$CRYPTOKI_ZIP ./
 
 # Assume /binaries is mounted from the pipeline
 # Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
@@ -54,7 +70,33 @@ RUN yum reinstall -q -y glibc-common \
     && echo "LANG=en_US.utf8" >> /etc/locale.conf \
     && yum clean all
 
+# Install HSM emulator
+RUN cd $HOME \
+    && sha256sum $ERACOM_RPM | grep $ERACOM_SHA256 \
+    && rpm -i $ERACOM_RPM \
+    && rm $ERACOM_RPM
+
 ENV LANG en_US.UTF-8
+
+# Set LD_LIBRARY_PATH for SafeNet
+ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
+
+# Unpack HSM emulator setup (couldn't get running
+# ctconf setup commands from scratch working,
+# requires interactive input of PIN codes)
+RUN cd $HOME \
+    && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
+    && mkdir -p /opt/eracom \
+    && cp $CRYPTOKI_ZIP /opt/eracom \
+    && chmod a+rw /opt/eracom/$CRYPTOKI_ZIP \
+    && rm $CRYPTOKI_ZIP \
+    && echo "pwd: $HOME" && ls -la \
+    && echo "home jboss: " && ls -la /opt/jboss \
+    && echo "cryptoki lib dir: " && ls -la /opt/ETcpsdk/lib/linux-x86_64
+
+#RUN echo "cryptoki device version: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -V \
+#  && echo "cryptoki device slot count: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -b slotcount \
+#  && echo "cryptoki device token objects: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctstat -j
 
 USER jboss
 
