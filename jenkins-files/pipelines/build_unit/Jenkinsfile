@@ -9,11 +9,6 @@ pipeline {
         }
     }
 
-	environment {
-        SIGNSERVER_HOME = "/home/user/workspace/signserver/trunk/signserver"
-	SIGNSERVER_NODEID = "magnum-ci"
-        }
-
     stages {
         stage('Verify Environment') {
             steps {
