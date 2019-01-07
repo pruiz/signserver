@@ -34,7 +34,7 @@ ENV CRYPTOKI_SHA256=c279986e3d2a3f44a9eedbbae70c5347fd13689bb0995236c0009b96f3f8
 
 # P11 test config variables
 ENV LIBCRYPTOKI="/opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so"
-ENV P11SLOT="1"
+ENV P11SLOT="2"
 ENV P11PIN="foo123"
 ENV P11KEY="mykey001"
 
