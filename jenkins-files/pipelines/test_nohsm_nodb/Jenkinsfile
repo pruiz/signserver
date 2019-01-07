@@ -30,7 +30,7 @@ node('dss-docker-slave') {
         }
 
         testImage.inside {
-            withEnv(['HOME=/opt/jboss']){
+            withEnv(['HOME=/opt/jboss']) {
 
                 stage('Verify environment') {
                     echo 'All environment variables'         
