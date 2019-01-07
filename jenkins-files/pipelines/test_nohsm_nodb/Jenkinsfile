@@ -37,6 +37,7 @@ try{
          sh 'printenv'          
          sh 'cat ${JAVA_HOME}/lib/security/java.security'
          sh 'ls -ltr $JAVA_HOME/lib/ext/'
+         sh 'id'
         }
 
         stage('Unpack') {
