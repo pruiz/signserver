@@ -48,6 +48,11 @@ try{
             sh 'rm signserver-ee*.zip'         
         }
 
+	stage('Setup cryptoki') {
+	    sh 'unzip -d $HOME /opt/eracom/${CRYPTOKI_ZIP}'
+	    sh 'ls -la $HOME'
+        }
+
         stage('Configure App Server') {
             sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} /opt/jboss/${env.JBOSS_EAP_FOLDER}/standalone/configuration/standalone.xml"
 

@@ -86,18 +86,16 @@ ENV LD_LIBRARY_PATH /opt/ETcpsdk/lib/linux-x86_64
 # requires interactive input of PIN codes)
 RUN cd $HOME \
     && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
-    && unzip $CRYPTOKI_ZIP \
+    && mkdir -p /opt/eracom \
+    && cp $CRYPTOKI_ZIP /opt/eracom \
     && rm $CRYPTOKI_ZIP \
     && echo "pwd: $HOME" && ls -la \
-    && mv .cryptoki /opt/jboss \
-    && chown -R jboss:0 /opt/jboss/.cryptoki \
-    && chmod -R a+rw /opt/jboss/.cryptoki \
     && echo "home jboss: " && ls -la /opt/jboss \
     && echo "cryptoki lib dir: " && ls -la /opt/ETcpsdk/lib/linux-x86_64
 
-RUN echo "cryptoki device version: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -V \
-  && echo "cryptoki device slot count: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -b slotcount \
-  && echo "cryptoki device token objects: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctstat -j
+#RUN echo "cryptoki device version: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -V \
+#  && echo "cryptoki device slot count: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -b slotcount \
+#  && echo "cryptoki device token objects: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctstat -j
 
 USER jboss
 
