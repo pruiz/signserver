@@ -1,10 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 echo '=================== CHECKING JAVA VERSION: ================================='
 java -version
 
 # Set SIGNSERVER_HOME
-
 cd signserver-ee*
 export SIGNSERVER_HOME=.
 
@@ -32,10 +31,7 @@ EOF
 
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
-#ant clean deployear
-
 echo '=================== Waiting for deploy ================================='
-
 
 wait_for_deployment() {
     DEPLOY_SUCCESSFUL=0
@@ -60,29 +56,12 @@ wait_for_deployment() {
 }
 
 wait_for_deployment
-echo '=================== ant deployear done and successfully deployed! ================================='
-#
-#ant runinstall
-#echo '=================== ant runinstall done! ================================='
-#
-#ant deploy-keystore
-#echo '=================== ant deploy-keystore done! ================================='
-
-# load the final version of Wildfly conf and restart wildfly
-#cp /opt/standalone2.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
-#/opt/jboss/wildfly/bin/jboss-cli.sh -c --command=:reload
-
-# wait for reload to kick in and start undeploying and drop ejbca.ear.deployed file (otherwise we'd detect ejbca.ear.deployed file immediately again)
-#sleep 10
-
-#wait_for_deployment
-#
-#echo '=================== starting system tests ================================='
-#ant test:runsys
+echo '=================== ant deploy-ear done and successfully deployed! ================================='
 
 # Make sure we can communicate with SignServer or otherwise fail fast
 chmod +x bin/signserver
 bin/signserver getstatus brief all
 if [ $? -ne 0 ]; then echo "Running SignServer CLI failed"; exit 1; fi
 
+# Run the system tests
 bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true
