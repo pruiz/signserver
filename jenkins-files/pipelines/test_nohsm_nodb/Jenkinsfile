@@ -50,8 +50,8 @@ try{
         }
 
 	stage('Setup cryptoki') {
-	    sh 'unzip -d $HOME /opt/eracom/${CRYPTOKI_ZIP}'
 	    sh 'ls -la $HOME'
+	    sh 'unzip -d $HOME /opt/eracom/${CRYPTOKI_ZIP}'
         }
 
         stage('Configure App Server') {

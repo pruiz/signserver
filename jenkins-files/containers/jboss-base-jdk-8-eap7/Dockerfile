@@ -88,6 +88,7 @@ RUN cd $HOME \
     && sha256sum $CRYPTOKI_ZIP | grep $CRYPTOKI_SHA256 \
     && mkdir -p /opt/eracom \
     && cp $CRYPTOKI_ZIP /opt/eracom \
+    && chmod a+rw /opt/eracom/$CRYPTOKI_ZIP \
     && rm $CRYPTOKI_ZIP \
     && echo "pwd: $HOME" && ls -la \
     && echo "home jboss: " && ls -la /opt/jboss \
