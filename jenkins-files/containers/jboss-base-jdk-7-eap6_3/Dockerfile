@@ -93,10 +93,6 @@ RUN cd $HOME \
     && echo "home jboss: " && ls -la /opt/jboss \
     && echo "cryptoki lib dir: " && ls -la /opt/ETcpsdk/lib/linux-x86_64
 
-#RUN echo "cryptoki device version: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -V \
-#  && echo "cryptoki device slot count: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctcheck -b slotcount \
-#  && echo "cryptoki device token objects: " && LD_LIBRARY_PATH=/opt/ETcpsdk/lib/linux-x86_64 /opt/ETcpsdk/bin/linux-x86_64/ctstat -j
-
 USER jboss
 
 # Set the default command to run on boot
