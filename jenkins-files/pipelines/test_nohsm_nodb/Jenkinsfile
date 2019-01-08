@@ -57,9 +57,9 @@ node('dss-docker-slave') {
                 stage('Configure App Server') {
                     sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/${env.APPSERVER_STANDALONE_XML} ${env.APPSRV_HOME}/standalone/configuration/standalone.xml"
 
-                    sh "mkdir ${env.APPSRV_HOME}/standalone/configuration/keystore/"
-                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks ${env.APPSRV_HOME}/standalone/configuration/keystore/"
-                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks ${env.APPSRV_HOME}/standalone/configuration/keystore/"
+                    sh "mkdir ${APPSRV_HOME}/standalone/configuration/keystore/"
+                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/"
+                    sh "cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/"
                     sh 'mkdir /tmp/data'
                 }
 
