@@ -29,7 +29,12 @@ node('dss-docker-slave') {
             testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
         }
 
-        testImage.inside {
+        docker.image('mariadb/server:10.3').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw"') { c ->
+        docker.image('mariadb/server:10.3').inside("--link ${c.id}:dss-docker-slave") {
+            /* Wait until mysql service is up */
+            sh 'while ! mysqladmin ping -hdb --silent; do sleep 1; done'
+        }
+        testImage.inside ("--link ${c.id}:dss-docker-slave"){
             withEnv(['HOME=/opt/jboss']) {
 
                 stage('Verify environment') {
@@ -145,6 +150,7 @@ node('dss-docker-slave') {
             }
         }
     }
+  }
 
     finally {   
         cleanWs()   
