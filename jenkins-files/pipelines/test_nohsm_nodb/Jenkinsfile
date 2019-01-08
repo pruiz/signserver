@@ -119,7 +119,7 @@ node('dss-docker-slave') {
 
                 }
 
-                stage('Test P11NG-tool') {
+                stage('Verify HSM') {
                     sh 'cd signserver-ee* && chmod a+x bin/p11ng-tool && ./bin/p11ng-tool -libfile /opt/ETcpsdk/lib/linux-x86_64/libcryptoki.so -action listSlots'
                 }
 
