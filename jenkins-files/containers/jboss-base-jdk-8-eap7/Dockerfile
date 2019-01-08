@@ -49,7 +49,7 @@ COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
 
 # Assume /binaries is mounted from the pipeline
-# Add the JBoss EAP distribution to /opt, and make jboss the owner of the extracted tar content
+# Add the appserver distribution to /opt, and make jboss the owner of the extracted ZIP content
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
     && ls \
