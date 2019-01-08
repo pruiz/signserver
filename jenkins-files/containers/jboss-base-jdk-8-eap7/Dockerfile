@@ -12,11 +12,11 @@ RUN yum update -y \
     && yum clean all
 
 # Set the WILDFLY_VERSION env variable
-ENV JBOSS_EAP_VERSION 7.0.0
-ENV JBOSS_EAP_FOLDER jboss-eap-7.0
-ENV JBOSS_EAP_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b23340e
-ENV JBOSS_HOME /opt/jboss/$JBOSS_EAP_FOLDER
-ENV APPSRV_HOME $JBOSS_HOME
+ENV APPSRV_VERSION 7.0.0
+ENV APPSRV_FOLDER jboss-eap-7.0
+ENV APPSRV_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b23340e
+ENV APPSRV_HOME /opt/jboss/$JBOSS_EAP_FOLDER
+
 # TODO: parameterize this
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 
@@ -43,7 +43,7 @@ RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
-COPY binaries/jboss-eap-$JBOSS_EAP_VERSION.zip ./
+COPY binaries/jboss-eap-$APPSRV_VERSION.zip ./
 COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
 
@@ -53,12 +53,12 @@ COPY binaries/$CRYPTOKI_ZIP ./
 RUN cd $HOME \
     && ls \
     && pwd \
-    && sha256sum jboss-eap-$JBOSS_EAP_VERSION.zip | grep $JBOSS_EAP_SHA256 \
-    && unzip jboss-eap-$JBOSS_EAP_VERSION.zip \
-    && mv $JBOSS_EAP_FOLDER /opt/jboss/ \
-    && rm jboss-eap-$JBOSS_EAP_VERSION.zip \
-    && chown -R jboss:0 ${JBOSS_HOME} \
-    && chmod -R a+rw ${JBOSS_HOME}              
+    && sha256sum jboss-eap-$APPSRV_VERSION.zip | grep $APPSRV_SHA256 \
+    && unzip jboss-eap-$APPSRV_VERSION.zip \
+    && mv $APPSRV_FOLDER /opt/jboss/ \
+    && rm jboss-eap-$APPSRV_VERSION.zip \
+    && chown -R jboss:0 ${APPSRV_HOME} \
+    && chmod -R a+rw ${APPSRV_HOME}              
 # TODO only chmod g+rw but make sure it works to run
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
@@ -98,4 +98,4 @@ USER jboss
 
 # Set the default command to run on boot
 # This will boot WildFly in the standalone mode and bind to all interface
-CMD ["$JBOSS_HOME/bin/standalone.sh", "-b", "0.0.0.0"]
+CMD ["$APPSRV_HOME/bin/standalone.sh", "-b", "0.0.0.0"]
