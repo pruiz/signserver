@@ -15,6 +15,7 @@ RUN yum update -y \
 ENV APPSRV_VERSION 6.3.0
 ENV APPSRV_FOLDER jboss-eap-6.3
 ENV APPSRV_SHA256 7f4e6d63196edc3cf15240b693391b9c0be474cda2194ba7575be31881f1a3d5
+ENV APPSRV_ZIP jboss-eap-$APPSRV_VERSION.zip
 ENV APPSRV_HOME /opt/jboss/$APPSRV_FOLDER
 # TODO: parameterize this
 ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.201-2.6.16.1.el7_6.x86_64/jre
@@ -42,7 +43,7 @@ RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
-COPY binaries/jboss-eap-$APPSRV_VERSION.zip ./
+COPY binaries/$APPSRV_ZIP ./
 COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
 
@@ -52,10 +53,10 @@ COPY binaries/$CRYPTOKI_ZIP ./
 RUN cd $HOME \
     && ls \
     && pwd \
-    && sha256sum jboss-eap-$APPSRV_VERSION.zip | grep $APPSRV_SHA256 \
-    && unzip jboss-eap-$APPSRV_VERSION.zip \
+    && sha256sum $APPSRV_ZIP | grep $APPSRV_SHA256 \
+    && unzip $APPSRV_ZIP \
     && mv $APPSRV_FOLDER /opt/jboss/ \
-    && rm jboss-eap-$APPSRV_VERSION.zip \
+    && rm $APPSRV_ZIP \
     && chown -R jboss:0 ${APPSRV_HOME} \
     && chmod -R a+rw ${APPSRV_HOME}              
 # TODO only chmod g+rw but make sure it works to run
