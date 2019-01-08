@@ -11,7 +11,7 @@ RUN yum update -y \
     && yum install -y openssl \    
     && yum clean all
 
-# Set the WILDFLY_VERSION env variable
+# Set the appserver env variables
 ENV APPSRV_VERSION 7.0.0
 ENV APPSRV_FOLDER jboss-eap-7.0
 ENV APPSRV_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b23340e
