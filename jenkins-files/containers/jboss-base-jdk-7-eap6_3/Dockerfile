@@ -97,5 +97,5 @@ RUN cd $HOME \
 USER jboss
 
 # Set the default command to run on boot
-# This will boot WildFly in the standalone mode and bind to all interface
+# This will boot the appserver in the standalone mode and bind to all interface
 CMD ["$APPSRV_HOME/bin/standalone.sh", "-b", "0.0.0.0"]
