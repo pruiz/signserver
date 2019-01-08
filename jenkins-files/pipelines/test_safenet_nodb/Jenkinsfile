@@ -26,7 +26,7 @@ node('dss-docker-slave') {
         
             sh 'hostname'
             sh 'ls'
-            testImage = docker.build("test_nohsm_nodb:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
+            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
         }
 
         testImage.inside {
@@ -55,11 +55,11 @@ node('dss-docker-slave') {
                 }
 
                 stage('Configure App Server') {
-                    sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/${APPSERVER_STANDALONE_XML} ${APPSRV_HOME}/standalone/configuration/standalone.xml'
+                    sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/${APPSERVER_STANDALONE_XML} ${APPSRV_HOME}/standalone/configuration/standalone.xml'
 
                     sh 'mkdir ${APPSRV_HOME}/standalone/configuration/keystore/'
-                    sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
-                    sh 'cp -v jenkins-files/pipelines/test_nohsm_nodb/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
+                    sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
+                    sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
                     sh 'mkdir /tmp/data'
                 }
 
@@ -99,10 +99,10 @@ node('dss-docker-slave') {
                     sh 'cd signserver-ee* && mkdir p12 && mkdir jarsigner-test-files'
 
                     sh 'cd signserver-ee* && ls -ltr'
-                    sh 'cd ${PWD}/jenkins-files/pipelines/test_nohsm_nodb &&  ls -ltr'
+                    sh 'cd ${PWD}/jenkins-files/pipelines/${PIPELINE_NAME} &&  ls -ltr'
 
-                    sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/test_nohsm_nodb/keystore.jks p12/tomcat.jks'
-                    sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/test_nohsm_nodb/truststore.jks p12/'
+                    sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/${PIPELINE_NAME}/keystore.jks p12/tomcat.jks'
+                    sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/${PIPELINE_NAME}/truststore.jks p12/'
 
                     sh 'cd signserver-ee*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/'
                     sh 'cd signserver-ee*/lib/ext && cp -v log4j*.jar ../../jarsigner-test-files/'
@@ -135,8 +135,8 @@ node('dss-docker-slave') {
                     sh 'id'
                     sh '$USER'   
 
-                    sh 'chmod +x jenkins-files/pipelines/test_nohsm_nodb/run.sh'
-                    sh 'jenkins-files/pipelines/test_nohsm_nodb/run.sh'
+                    sh 'chmod +x jenkins-files/pipelines/${PIPELINE_NAME}/run.sh'
+                    sh 'jenkins-files/pipelines/${PIPELINE_NAME}/run.sh'
                 }                
 
                 stage('Gather Results') {            
