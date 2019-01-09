@@ -81,16 +81,16 @@ node('dss-docker-slave') {
 		        sh 'mkdir -p ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/'
 			sh 'cp /opt/jboss/${MARIADB_DRIVER_JAR} ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/mariadb.jar'
                         sh '''echo '
-				<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-				<module xmlns=\"urn:jboss:module:1.0\" name=\"org.mariadb\">
-				  <resources>
-				    <resource-root path=\"mariadb.jar\"/>
-				  </resources>
-				  <dependencies>
-				    <module name=\"javax.api\"/>
-				    <module name=\"javax.transaction.api\"/>
-				  </dependencies>
-				</module>
+<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<module xmlns=\"urn:jboss:module:1.0\" name=\"org.mariadb\">
+  <resources>
+    <resource-root path=\"mariadb.jar\"/>
+  </resources>
+  <dependencies>
+    <module name=\"javax.api\"/>
+    <module name=\"javax.transaction.api\"/>
+  </dependencies>
+</module>
 			   ' > ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/module.xml
 			  '''
 		      sh 'ls -la ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/'
