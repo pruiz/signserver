@@ -37,7 +37,7 @@ node('dss-docker-slave') {
                 stage('Work with DB') {
                 // sh 'mysqladmin version -u root -p my-secret-pw'
                 sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw'
-                sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw && "show databases;"'
+                sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw -p -e "create database signserver"'
                 sh 'mysqladmin version -u root -p my-secret-pw'
                 }
             }
