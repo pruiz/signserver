@@ -53,7 +53,7 @@ node('dss-docker-slave') {
                         sh 'id'
                         
                         sh 'ping -c 4 db'
-                        sh 'mysql -h db -u signserver --password=signserver -e "show tables;" signserver'
+                        sh 'mysql -h db -u signserver_trunk --password=signserver -e "show tables;" signserver_trunk'
                     }
 
                     stage('Unpack') {
