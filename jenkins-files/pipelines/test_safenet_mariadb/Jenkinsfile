@@ -30,11 +30,11 @@ node('dss-docker-slave') {
         }
 
         docker.image('mariadb/server:10.3').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw"') { c ->
-            docker.image('mariadb/server:10.3').inside("--link ${c.id}:dss-docker-slave") {
+            docker.image('mariadb/server:10.3').inside("--link ${c.id}:db") {
                 /* Wait until mysql service is up */
                 sh 'while ! mysqladmin ping -hdb --silent; do sleep 1; done'
             }
-            testImage.inside ("--link ${c.id}:dss-docker-slave") {
+            testImage.inside ("--link ${c.id}:db") {
                 withEnv(['HOME=/opt/jboss']) {
 
                     stage('Verify environment') {
