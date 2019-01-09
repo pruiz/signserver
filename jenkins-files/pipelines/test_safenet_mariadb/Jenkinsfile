@@ -133,6 +133,15 @@ node('dss-docker-slave') {
         test.p11.pin=${P11PIN}
         test.p11.existingkey1=${P11KEY}" > test-config.properties
                    '''
+                        // Database CLI  TODO: parametrization
+                        sh '''
+                   cd signserver-ee* && echo "
+        dbcli.database.name=mysql
+        dbcli.database.url=jdbc:mysql://db:3306/signserver_trunk?characterEncoding=UTF-8
+        dbcli.database.username=signserver_trunk
+        dbcli.database.password=signserver
+        dbcli.database.driver=org.mariadb.jdbc.Driver" > conf/signserver_cli.properties
+                   '''
 
                     }
 
