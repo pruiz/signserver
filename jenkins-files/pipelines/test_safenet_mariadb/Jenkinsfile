@@ -37,8 +37,8 @@ node('dss-docker-slave') {
                 stage('Work with DB') {
                 // sh 'mysqladmin version -u root -p my-secret-pw'
                 sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw'
-                sh 'mysql -hlocalhost -uroot -pmy-secret-pw -e "CREATE DATABASE signserver CHARACTER SET utf8 COLLATE utf8_general_ci"'
-                sh 'mysql -hlocalhost -uroot -pmy-secret-pw -e "GRANT ALL PRIVILEGES ON signserver.* TO 'signserver'@'localhost' IDENTIFIED BY 'signserver'"'
+                sh 'mysql -hdb -uroot -pmy-secret-pw -e "CREATE DATABASE signserver CHARACTER SET utf8 COLLATE utf8_general_ci"'
+                sh 'mysql -hdb -uroot -pmy-secret-pw -e "GRANT ALL PRIVILEGES ON signserver.* TO 'signserver'@'localhost' IDENTIFIED BY 'signserver'"'
                 sh 'mysqladmin version -u root -p my-secret-pw'
                 }
             }
