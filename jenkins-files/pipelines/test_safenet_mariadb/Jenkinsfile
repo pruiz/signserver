@@ -94,6 +94,7 @@ node('dss-docker-slave') {
 			   " > ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/module.xml
 			  '''
 		      sh 'ls -la ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/'
+                      sh 'cat ${APPSRV_HOME}/modules/system/layers/base/org/mariadb/main/module.xml'
                     }
 
                     stage('Configure SignServer') {
