@@ -40,7 +40,7 @@ ENV P11PIN="foo123"
 ENV P11KEY="mykey001"
 
 # Database JDBC drivers
-ENV MARIADB_CLIENT_JAR="mariadb-java-client-1.1.5.jar"
+ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
