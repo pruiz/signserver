@@ -70,7 +70,7 @@ node('dss-docker-slave') {
                     }
 
                     stage('Configure App Server') {
-                        sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/${APPSERVER_STANDALONE_XML} ${APPSRV_HOME}/standalone/configuration/standalone.xml'
+                        sh 'cp -v jenkins-files/configurations/${APPSERVER_STANDALONE_XML} ${APPSRV_HOME}/standalone/configuration/standalone.xml'
 
                         sh 'mkdir ${APPSRV_HOME}/standalone/configuration/keystore/'
                         sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
