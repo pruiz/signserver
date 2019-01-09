@@ -83,7 +83,8 @@ node('dss-docker-slave') {
                         sh '''
                         cd signserver-ee* && echo "
                             j2ee.web-nohttps=true
-                            database.name=nodb
+                            database.name=mysql
+                            datasource.jndi-name=${DATASOURCE_NAME}
                             database.nodb.location=/tmp/data
                             database.username=NOT-USED
                             healthcheck.maintenancefile=${PWD}/maintenance.properties
