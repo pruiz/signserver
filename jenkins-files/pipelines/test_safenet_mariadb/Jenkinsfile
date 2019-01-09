@@ -39,7 +39,7 @@ node('dss-docker-slave') {
                 sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw'
                 sh 'mysql -hdb -uroot -pmy-secret-pw -e "CREATE DATABASE signserver CHARACTER SET utf8 COLLATE utf8_general_ci"'
                 sh 'mysql -hdb -uroot -pmy-secret-pw -e "GRANT ALL PRIVILEGES ON signserver.* TO \'signserver\'@\'db\' IDENTIFIED BY \'signserver\'"'
-                sh 'mysqladmin version -hdb -u root -p my-secret-pw'
+                sh 'mysqladmin version -hdb -uroot -pmy-secret-pw'
                 }
             }
             testImage.inside ("--link ${c.id}:db") {
