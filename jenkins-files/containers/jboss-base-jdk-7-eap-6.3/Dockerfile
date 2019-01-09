@@ -39,6 +39,9 @@ ENV P11SLOT="2"
 ENV P11PIN="foo123"
 ENV P11KEY="mykey001"
 
+# Database JDBC drivers
+ENV MARIADB_CLIENT_JAR mariadb-java-client-1.1.5.jar
+
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
@@ -47,6 +50,7 @@ WORKDIR /root
 COPY binaries/$APPSRV_ZIP ./
 COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
+COPY binaries/$MARIADB_CLIENT_JAR ./
 
 # Assume /binaries is mounted from the pipeline
 # Add the appserver distribution to /opt, and make jboss the owner of the extracted ZIP content
@@ -94,6 +98,10 @@ RUN cd $HOME \
     && echo "pwd: $HOME" && ls -la \
     && echo "home jboss: " && ls -la /opt/jboss \
     && echo "cryptoki lib dir: " && ls -la /opt/ETcpsdk/lib/linux-x86_64
+
+# put the JDBC driver in /opt/jboss for the pipeline to install in the correct place
+RUN cd $HOME \
+    && cp $MARIADB_DRIVER_JAR /opt/jboss
 
 USER jboss
 
