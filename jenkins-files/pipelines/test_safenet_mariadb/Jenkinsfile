@@ -43,6 +43,9 @@ node('dss-docker-slave') {
                         sh 'cat ${JAVA_HOME}/lib/security/java.security'
                         sh 'ls -ltr $JAVA_HOME/lib/ext/'
                         sh 'id'
+                        
+                        sh 'ping -c 4 db'
+                        sh 'mysql -h db -u signserver --password=signserver -e "show tables;" signserver'
                     }
 
                     stage('Unpack') {
