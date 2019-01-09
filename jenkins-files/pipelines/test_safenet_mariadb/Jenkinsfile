@@ -73,8 +73,8 @@ node('dss-docker-slave') {
                         sh 'cp -v jenkins-files/configurations/${APPSERVER_STANDALONE_XML} ${APPSRV_HOME}/standalone/configuration/standalone.xml'
 
                         sh 'mkdir ${APPSRV_HOME}/standalone/configuration/keystore/'
-                        sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
-                        sh 'cp -v jenkins-files/pipelines/${PIPELINE_NAME}/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
+                        sh 'cp -v jenkins-files/configurations/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
+                        sh 'cp -v jenkins-files/configurations/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
                         sh 'mkdir /tmp/data'
                     }
 
@@ -116,8 +116,8 @@ node('dss-docker-slave') {
                         sh 'cd signserver-ee* && ls -ltr'
                         sh 'cd ${PWD}/jenkins-files/pipelines/${PIPELINE_NAME} &&  ls -ltr'
 
-                        sh 'cd signserver-ee* && cp -v ../jenkins-files/pipelines/${PIPELINE_NAME}/keystore.jks p12/tomcat.jks'
-                        sh 'cd signserver-ee* &&  cp -v ../jenkins-files/pipelines/${PIPELINE_NAME}/truststore.jks p12/'
+                        sh 'cd signserver-ee* && cp -v ../jenkins-files/configurations/keystore.jks p12/tomcat.jks'
+                        sh 'cd signserver-ee* &&  cp -v ../jenkins-files/configurations/truststore.jks p12/'
 
                         sh 'cd signserver-ee*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/'
                         sh 'cd signserver-ee*/lib/ext && cp -v log4j*.jar ../../jarsigner-test-files/'
