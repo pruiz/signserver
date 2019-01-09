@@ -8,7 +8,8 @@ RUN yum update -y \
     && yum install -y ant \ 
     && yum install -y ant-junit \
     && yum install -y strace \
-    && yum install -y openssl \    
+    && yum install -y openssl \
+    && yum install -y mariadb \ 
     && yum clean all
 
 # Set the appserver env variables
