@@ -177,7 +177,7 @@ node('dss-docker-slave') {
                             " > conf/databaseprotection.properties
                     '''
 
-                        sh 'rm signserver-ee*/lib/ext/jdbc/jdbc.jar'
+                        // sh 'rm signserver-ee*/lib/ext/jdbc/jdbc.jar'
                         sh 'cd signserver-ee*/lib/ext/jdbc && ln -s /opt/jboss/${MARIADB_DRIVER_JAR} jdbc.jar'
                     }
 
