@@ -163,7 +163,7 @@ node('dss-docker-slave') {
                         sh '''
                    cd signserver-ee* && echo "
         dbcli.database.name=${DATABASE_NAME}
-        dbcli.database.url=jdbc:${DATABASE_NAME}://${DBHOST}:3306/{DBSCHEMA}?characterEncoding=UTF-8
+        dbcli.database.url=jdbc:${DATABASE_NAME}://${DBHOST}:3306/${DBSCHEMA}?characterEncoding=UTF-8
         dbcli.database.username=${DBUSER}
         dbcli.database.password=${DBPASS}
         dbcli.database.driver=${DBDRIVER}" > conf/signserver_cli.properties
