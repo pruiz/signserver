@@ -18,7 +18,7 @@ rm -f signserver_audit.log
 ln -s ${AUDITLOG} signserver_audit.log
 rm -f ${AUDITLOG}
 
-echo "Trusting DSSRootCA10"
+echo "Importing the DSSRootCA10 CA certificate to the system Java truststore"
 keytool -import -keystore ${JAVA_HOME}/lib/security/cacerts -file res/test/dss10/DSSRootCA10.cacert.pem -alias DSSRootCA10 -noprompt -storepass changeit
 keytool -exportcert -keystore ${JAVA_HOME}/lib/security/cacerts -alias DSSRootCA10 -file /dev/null -noprompt -storepass changeit
 if [ $? -ne 0 ]; then echo "Build step 2 failed: trusting DSSRootCA10"; exit 1; fi
