@@ -196,7 +196,7 @@ node('dss-docker-slave') {
                         sh '$USER'   
 
                         sh 'chmod +x jenkins-files/pipelines/${PIPELINE_NAME}/run.sh'
-                        sh 'jenkins-files/pipelines/${PIPELINE_NAME}/run.sh && cd signserver-ee* && export SIGNSERVER_HOME=. && bin/ant systemtest:jars -Dno.clover=true'
+                        sh 'jenkins-files/pipelines/${PIPELINE_NAME}/run.sh && cd signserver-ee* && export SIGNSERVER_HOME=. && export SIGNSERVER_NODEID="magnum-ci" && bin/ant systemtest:jars -Dno.clover=true'
                     }                
 
                     stage('Gather Results') {            
