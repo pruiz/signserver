@@ -30,6 +30,7 @@ cat > ${SIGNSERVER_HOME}/maintenance.properties << EOF
 DOWN_FOR_MAINTENANCE=false
 EOF
 
+// Start the application server
 ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 echo '=================== Waiting for deploy ================================='
