@@ -6,7 +6,7 @@ node('dss-docker-slave') {
 
         def testImage
         def PWD = pwd();
-        def DATABASE_NAME='mysql'
+        def DATABASE_NAME="mysql"
     
         stage('Prepare Container') {
             sh 'hostname'
