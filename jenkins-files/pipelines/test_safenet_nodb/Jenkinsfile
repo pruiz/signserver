@@ -101,7 +101,6 @@ node('dss-docker-slave') {
                 '''
                     sh 'cd signserver-ee* && mkdir p12 && mkdir jarsigner-test-files'
 
-                    sh 'cd signserver-ee* && ls -ltr'
                     sh 'cd ${PWD}/jenkins-files/pipelines/${PIPELINE_NAME} &&  ls -ltr'
 
                     sh 'cd signserver-ee* && cp -v ../jenkins-files/configurations/keystore.jks p12/tomcat.jks'
