@@ -135,8 +135,8 @@ node('dss-docker-slave') {
                     sh 'id'
                     sh '$USER'   
 
-                    sh 'chmod +x jenkins-files/pipelines/${PIPELINE_NAME}/run.sh'
-                    sh 'jenkins-files/pipelines/${PIPELINE_NAME}/run.sh && cd signserver-ee* && export SIGNSERVER_HOME=. && export SIGNSERVER_NODEID="magnum-ci" && bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true'
+                    sh 'chmod +x jenkins-files/tools/run.sh'
+                    sh 'jenkins-files/tools/run.sh && cd signserver-ee* && export SIGNSERVER_HOME=. && export SIGNSERVER_NODEID="magnum-ci" && bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true'
                 }                
 
                 stage('Gather Results') {            
