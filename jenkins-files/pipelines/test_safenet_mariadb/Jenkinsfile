@@ -46,7 +46,7 @@ node('dss-docker-slave') {
                          'DATABASE_NAME=mysql',
                          'DBHOST=db',
                          'DBUSER=signserver_trunk',
-                         'DBPASS=signserver ',
+                         'DBPASS=signserver',
                          'DBSCHEMA=signserver_trunk',
                          'DBDRIVER=org.mariadb.jdbc.Driver']) {
 
