@@ -3,6 +3,7 @@
 echo '=================== CHECKING JAVA VERSION: ================================='
 java -version
 
+echo '=================== Setting environment variables =========================='
 # Set SIGNSERVER_HOME
 cd signserver-ee*
 export SIGNSERVER_HOME=.
