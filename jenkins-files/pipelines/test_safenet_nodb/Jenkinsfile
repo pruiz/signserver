@@ -33,6 +33,10 @@ node('dss-docker-slave') {
             withEnv(['HOME=/opt/jboss']) {
 
                 stage('Verify environment') {
+                    // Print versions
+                    sh "java -version"
+                    sh "ant -version"
+                    sh "locale"
                     echo 'All environment variables'         
                     sh 'printenv'          
                     sh 'cat ${JAVA_HOME}/lib/security/java.security'
