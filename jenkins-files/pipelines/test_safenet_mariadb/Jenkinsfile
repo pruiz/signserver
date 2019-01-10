@@ -34,12 +34,11 @@ node('dss-docker-slave') {
                 /* Wait until mysql service is up */
                 sh 'while ! mysqladmin ping -hdb --silent; do sleep 1; done'
 
-                stage('Work with DB') {
-                // sh 'mysqladmin version -u root -p my-secret-pw'
-                sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw'
-                sh 'mysql -hdb -uroot -pmy-secret-pw -e "CREATE DATABASE signserver_trunk CHARACTER SET utf8 COLLATE utf8_general_ci"'
-                sh 'mysql -hdb -uroot -pmy-secret-pw -e "GRANT ALL PRIVILEGES ON signserver_trunk.* TO \'signserver_trunk\'@\'%\' IDENTIFIED BY \'signserver\'"'
-                sh 'mysqladmin version -hdb -uroot -pmy-secret-pw'
+                stage('Setup DB') {
+		        sh 'mysql -hdb -P3306 -uroot -pmy-secret-pw'
+		        sh 'mysql -hdb -uroot -pmy-secret-pw -e "CREATE DATABASE signserver_trunk CHARACTER SET utf8 COLLATE utf8_general_ci"'
+		        sh 'mysql -hdb -uroot -pmy-secret-pw -e "GRANT ALL PRIVILEGES ON signserver_trunk.* TO \'signserver_trunk\'@\'%\' IDENTIFIED BY \'signserver\'"'
+		        sh 'mysqladmin version -hdb -uroot -pmy-secret-pw'
                 }
             }
             testImage.inside ("--link ${c.id}:db") {
