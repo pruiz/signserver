@@ -5,7 +5,8 @@ node('dss-docker-slave') {
         checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 
         def testImage
-        def PWD = pwd();        
+        def PWD = pwd(); 
+        def DATABASE_NAME = "mysql"       
     
         stage('Prepare Container') {
             sh 'hostname'
@@ -42,7 +43,13 @@ node('dss-docker-slave') {
                 }
             }
             testImage.inside ("--link ${c.id}:db") {
-                withEnv(['HOME=/opt/jboss','DATABASE_NAME=mysql']) {
+                withEnv(['HOME=/opt/jboss',
+                         'DATABASE_NAME=mysql',
+                         'DBHOST=db',
+                         'DBUSER=signserver_trunk',
+                         'DBPASS=signserver ',
+                         'DBSCHEMA=signserver_trunk',
+                         'DBDRIVER=org.mariadb.jdbc.Driver']) {
 
                     stage('Verify environment') {
                         // Print versions
@@ -156,11 +163,11 @@ node('dss-docker-slave') {
                         // Database CLI  TODO: parametrization
                         sh '''
                    cd signserver-ee* && echo "
-        dbcli.database.name=mysql
-        dbcli.database.url=jdbc:mysql://db:3306/signserver_trunk?characterEncoding=UTF-8
-        dbcli.database.username=signserver_trunk
-        dbcli.database.password=signserver
-        dbcli.database.driver=org.mariadb.jdbc.Driver" > conf/signserver_cli.properties
+        dbcli.database.name=${DATABASE_NAME}
+        dbcli.database.url=jdbc:${DATABASE_NAME}://${DBHOST}:3306/{DBSCHEMA}?characterEncoding=UTF-8
+        dbcli.database.username=${DBUSER}
+        dbcli.database.password=${DBPASS}
+        dbcli.database.driver=${DBDRIVER}" > conf/signserver_cli.properties
                    '''
 
                       // Database audit log
