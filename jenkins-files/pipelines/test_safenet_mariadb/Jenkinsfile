@@ -102,8 +102,7 @@ node('dss-docker-slave') {
                             j2ee.web-nohttps=true
                             database.name=mysql
                             datasource.jndi-name=${DATASOURCE_NAME}
-                            database.nodb.location=/tmp/data
-                            database.username=NOT-USED
+                            database.nodb.location=_NON_EXISTING_
                             healthcheck.maintenancefile=${PWD}/maintenance.properties
                             web.admingui.dist.enabled=true
                             web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
