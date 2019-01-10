@@ -64,4 +64,4 @@ bin/signserver getstatus brief all
 if [ $? -ne 0 ]; then echo "Running SignServer CLI failed"; exit 1; fi
 
 # Run the system tests
-bin/ant systemtest:jars -Dno.clover=true
+# bin/ant systemtest:jars -Dno.clover=true
