@@ -72,8 +72,7 @@ node('dss-docker-slave') {
                     cd signserver-ee* && echo "
                         j2ee.web-nohttps=true
                         database.name=nodb
-                        database.nodb.location=/tmp/data
-                        database.username=NOT-USED
+                        database.nodb.location=/tmp/data                        
                         healthcheck.maintenancefile=${PWD}/maintenance.properties
                         web.admingui.dist.enabled=true
                         web.clientcli.dist.enabled=true" > conf/signserver_deploy.properties
