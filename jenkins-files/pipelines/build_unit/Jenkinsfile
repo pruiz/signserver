@@ -1,3 +1,9 @@
+/**
+ * Jenkins pipeline building SignServer, running unit tests and archives
+ * the release artifact for other jobs to use.
+ *
+ * Additionally, test coverage is captured.
+ */
 pipeline {
     agent {
         dockerfile {

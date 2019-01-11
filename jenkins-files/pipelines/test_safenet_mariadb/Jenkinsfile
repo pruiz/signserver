@@ -1,3 +1,8 @@
+/**
+ * Jenkins pipeline for running system tests with an application server
+ * and use a SafeNet HSM emulator and MariaDB.
+ *
+ */
 node('dss-docker-slave') {
 
     try {
