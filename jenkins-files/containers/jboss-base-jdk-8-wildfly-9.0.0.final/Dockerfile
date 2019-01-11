@@ -53,6 +53,9 @@ COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
 COPY binaries/$MARIADB_CLIENT_JAR ./
 
+# COPY standalone.conf with higher heap space parameters
+COPY standalone.conf ${APPSRV_HOME}/bin
+
 # Assume /binaries is mounted from the pipeline
 # Add the appserver distribution to /opt, and make jboss the owner of the extracted ZIP content
 # Make sure the distribution is available from a well-known place
