@@ -66,6 +66,7 @@ node('dss-docker-slave') {
                     sh 'cp -v jenkins-files/configurations/keystore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
                     sh 'cp -v jenkins-files/configurations/truststore.jks ${APPSRV_HOME}/standalone/configuration/keystore/'
                     sh 'mkdir /tmp/data'
+                    sh 'ls -ltr /tmp/data'
                 }
 
                 stage('Configure SignServer') {
@@ -136,7 +137,8 @@ node('dss-docker-slave') {
                     sh 'hostname'
                     sh 'ls'
                     sh 'id'
-                    sh '$USER'   
+                    sh '$USER'
+                    sh 'ls -ltr /tmp/data'
 
                     sh 'chmod +x jenkins-files/tools/run.sh'
                     sh 'jenkins-files/tools/run.sh && cd signserver-ee* && export SIGNSERVER_HOME=. && export SIGNSERVER_NODEID="magnum-ci" && bin/ant systemtest:jars -Dsystemtest.excludes="**/ArchivingCLITest*,**/GroupKeyServiceCLITest*,**/Base64DatabaseArchiverTest*,**/OldDatabaseArchiverTest*,,**/GroupKeyServiceTest*,**/ArchiveTest*,**/AuditLogCLITest*,**/VerifyLogCommandTest*,**/DatabaseCLITest*" -Dno.clover=true'
