@@ -65,14 +65,14 @@ pipeline {
                 archiveArtifacts 'signserver-*-bin.zip'
             }
         }
-        /* stage('Javadoc') {
+        stage('Javadoc') {
             steps {
                 dir ('signserver') {
                     // Build Javadoc
                     sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo javadoc:aggregate"
                 }
             }
-        } */
+        }
         stage('Coverage') {
             steps {
                 dir ('signserver') {
