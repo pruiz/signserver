@@ -1,5 +1,5 @@
 /**
- * Jenkins pipeline use for ad hoc testing/experimentation by Ram.
+ * Jenkins pipeline for ad hoc testing/experimentation by Ram.
  *
  */
 pipeline {
