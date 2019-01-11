@@ -13,10 +13,6 @@ RUN yum update -y \
     && yum clean all
 
 # Set the appserver env variables
-# ENV APPSRV_VERSION 9.0.0.Final
-# ENV APPSRV_FOLDER jboss-eap-7.0
-# ENV APPSRV_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b23340e
-# ENV APPSRV_ZIP jboss-eap-$APPSRV_VERSION.zip
 ENV APPSRV_HOME /opt/jboss/wildfly
 
 # TODO: parameterize this
@@ -48,7 +44,6 @@ RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
-# COPY binaries/$APPSRV_ZIP ./
 COPY binaries/$ERACOM_RPM ./
 COPY binaries/$CRYPTOKI_ZIP ./
 COPY binaries/$MARIADB_CLIENT_JAR ./
@@ -61,11 +56,7 @@ COPY standalone.conf ${APPSRV_HOME}/bin
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
     && ls \
-    && pwd \
-    ## && sha256sum $APPSRV_ZIP | grep $APPSRV_SHA256 \
-    ## && unzip $APPSRV_ZIP \
-    ## && mv $APPSRV_FOLDER /opt/jboss/ \
-    ## && rm $APPSRV_ZIP \
+    && pwd \    
     && chown -R jboss:0 ${APPSRV_HOME} \
     && chmod -R a+rw ${APPSRV_HOME}              
 # TODO only chmod g+rw but make sure it works to run
