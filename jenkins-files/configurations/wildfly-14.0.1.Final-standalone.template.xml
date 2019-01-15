@@ -163,8 +163,8 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <datasource jndi-name="java:/SignServerDS" pool-name="signserverds" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:mysql://127.0.0.1:3306/signserver</connection-url>
+                <datasource jndi-name="java:/SignServerMariaDBDS" pool-name="signservermariadbds" enabled="true" use-ccm="true">
+                    <connection-url>jdbc:mysql://db:3306/signserver</connection-url>
                     <driver-class>org.mariadb.jdbc.Driver</driver-class>
                     <driver>org.mariadb.jdbc.Driver</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
@@ -174,7 +174,7 @@
                         <prefill>true</prefill>
                     </pool>
                     <security>
-                        <user-name>signserver</user-name>
+                        <user-name>signserver_trunk</user-name>
                         <password>signserver</password>
                     </security>
                     <validation>
