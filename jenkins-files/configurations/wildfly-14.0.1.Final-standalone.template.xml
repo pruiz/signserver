@@ -164,7 +164,7 @@
                     </security>
                 </datasource>
                 <datasource jndi-name="java:/SignServerMariaDBDS" pool-name="signservermariadbds" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:mysql://db:3306/signserver</connection-url>
+                    <connection-url>jdbc:mysql://db:3306/signserver_trunk</connection-url>
                     <driver-class>org.mariadb.jdbc.Driver</driver-class>
                     <driver>org.mariadb.jdbc.Driver</driver>
                     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
