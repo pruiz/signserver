@@ -36,6 +36,10 @@
         <extension module="org.wildfly.extension.security.manager"/>
         <extension module="org.wildfly.extension.undertow"/>
     </extensions>
+    <system-properties>
+        <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
+        <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
+    </system-properties>
     <management>
         <security-realms>
             <security-realm name="ManagementRealm">
@@ -117,6 +121,22 @@
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
+            <periodic-rotating-file-handler name="SignServer" autoflush="true">
+                <formatter>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="signserver.log"/>
+                <suffix value=".yyyy-MM-dd"/>
+                <append value="true"/>
+            </periodic-rotating-file-handler>
+            <periodic-rotating-file-handler name="SignServer_audit" autoflush="true">
+                <formatter>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                </formatter>
+                <file relative-to="jboss.server.log.dir" path="signserver_audit.log"/>
+                <suffix value=".yyyy-MM-dd"/>
+                <append value="true"/>
+            </periodic-rotating-file-handler>
             <logger category="com.arjuna">
                 <level name="WARN"/>
             </logger>
@@ -125,6 +145,34 @@
             </logger>
             <logger category="sun.rmi">
                 <level name="WARN"/>
+            </logger>
+            <logger category="org.signserver">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="SignServer"/>
+                </handlers>
+            </logger>
+            <logger category="org.ejbca">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="SignServer"/>
+                </handlers>
+            </logger>
+            <logger category="org.cesecore">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="SignServer"/>
+                </handlers>
+            </logger>
+            <logger category="org.signserver.server.log.SignServerLog4jDevice">
+                <handlers>
+                    <handler name="SignServer_audit"/>
+                </handlers>
+            </logger>
+            <logger category="org.signserver.server.log.ISystemLogger">
+                <handlers>
+                    <handler name="SignServer_audit"/>
+                </handlers>
             </logger>
             <root-logger>
                 <level name="INFO"/>
@@ -517,7 +565,8 @@
             </handlers>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:webservices:2.0">
-            <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>
+            <modify-wsdl-address>true</modify-wsdl-address>
+            <wsdl-host>jbossws.undefined.host</wsdl-host>
             <endpoint-config name="Standard-Endpoint-Config"/>
             <endpoint-config name="Recording-Endpoint-Config">
                 <pre-handler-chain name="recording-handlers" protocol-bindings="##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM">
@@ -549,7 +598,6 @@
         <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
         <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
-        <socket-binding name="https" port="${jboss.https.port:8443}"/>
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <socket-binding name="httpspriv" interface="httpspriv" port="8443"/>
