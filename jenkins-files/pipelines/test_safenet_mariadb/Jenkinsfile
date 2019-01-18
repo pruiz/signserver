@@ -26,7 +26,7 @@ node('dss-docker-slave') {
                 dir  "jenkins-files/containers/${env.CONTAINER}"
                 filename 'Dockerfile'
                 additionalBuildArgs  '--disable-content-trust=true --pull' // TODO: We want to find out how to run with content trust enabled for Red Hat images
-                args '--group-add root --volume m2-repo:/m2-repo --memory 1g'
+                args '--group-add root --volume m2-repo:/m2-repo --memory 1g --memory-swap 1g'
             }
         
             sh 'hostname'
@@ -34,7 +34,7 @@ node('dss-docker-slave') {
             testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
         }
 
-        docker.image('mariadb:10.3.12').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -m 512m') { c ->
+        docker.image('mariadb:10.3.12').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -m 512m --memory-swap 512m') { c ->
             docker.image('mariadb:10.3.12').inside("--link ${c.id}:db") {
                 /* Wait until mysql service is up */
                 sh 'while ! mysqladmin ping -hdb --silent; do sleep 1; done'
