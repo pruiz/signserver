@@ -60,6 +60,12 @@ wait_for_deployment() {
 wait_for_deployment
 echo '=================== ant deploy-ear done and successfully deployed! ================================='
 
+# Print processes to see memory usage etc
+echo
+echo "Java processes:"
+ps aux | grep java
+echo
+
 # Make sure we can communicate with SignServer or otherwise fail fast
 chmod +x bin/signserver
 bin/signserver getstatus brief all
