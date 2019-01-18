@@ -31,7 +31,7 @@ node('dss-docker-slave') {
         
             sh 'hostname'
             sh 'ls'
-            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
+            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "-m 1g jenkins-files/containers/${env.CONTAINER}/")
         }
 
         docker.image('mariadb:10.3.12').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -m 512m --memory-swap 512m') { c ->
