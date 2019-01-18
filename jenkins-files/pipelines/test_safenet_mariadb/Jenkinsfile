@@ -23,10 +23,10 @@ node('dss-docker-slave') {
         stage('Build Container') {
             sh 'hostname'
             sh 'ls'
-            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "-m 1g jenkins-files/containers/${env.CONTAINER}/")
+            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "-m 1g --memory-swap 1g jenkins-files/containers/${env.CONTAINER}/")
         }
 
-        docker.image('mariadb:10.3.12').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -m 512m') { c ->
+        docker.image('mariadb:10.3.12').withRun('-e "MYSQL_ROOT_PASSWORD=my-secret-pw" -m 512m --memory-swap 512m') { c ->
             docker.image('mariadb:10.3.12').inside("--link ${c.id}:db") {
                 /* Wait until mysql service is up */
                 sh 'while ! mysqladmin ping -hdb --silent; do sleep 1; done'
