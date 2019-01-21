@@ -25,8 +25,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 # for a given key size/spec
 ENV ET_PTKC_SW_AUTOSEEDRNG true
 
-ENV ANT_OPTS="-Xms64M -Xmx64M"
-ENV JAVA_OPTS="-Xms256M -Xmx256M"
+ENV ANT_OPTS="-Xms64M -Xmx256M"
+ENV JAVA_OPTS="-Xms64M -Xmx256M"
 
 # Eracom emulator
 ENV ERACOM_RPM=ETcpsdk-3.33.00-1.x86_64.rpm
