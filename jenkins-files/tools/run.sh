@@ -31,7 +31,8 @@ DOWN_FOR_MAINTENANCE=false
 EOF
 
 # Start the application server
-${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
+# Clear JAVA_OPTS so it will instead be set in standalone.conf
+JAVA_OPTS= ${APPSRV_HOME}/bin/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 &
 
 echo '=================== Waiting for deploy ================================='
 
