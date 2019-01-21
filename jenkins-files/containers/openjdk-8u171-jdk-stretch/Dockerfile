@@ -7,9 +7,9 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
 
-ENV JAVA_OPTS="-Xms512M -Xmx512M"
+ENV JAVA_OPTS="-Xms256M -Xmx256M"
 ENV ANT_OPTS="-Xms64M -Xmx64M"
-ENV MAVEN_OPTS="-Xms512M -Xmx512M"
+ENV MAVEN_OPTS="-Xms256M -Xmx256M"
 
 RUN groupadd -g 1000 user
 RUN useradd --uid 1000 -g 1000 user
