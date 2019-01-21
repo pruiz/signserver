@@ -9,7 +9,7 @@ RUN apt-get update \
 
 ENV JAVA_OPTS="-Xms256M -Xmx256M"
 ENV ANT_OPTS="-Xms64M -Xmx64M"
-ENV MAVEN_OPTS="-Xms256M -Xmx256M -Xss16m"
+ENV MAVEN_OPTS="-Xms384M -Xmx384M"
 
 RUN groupadd -g 1000 user
 RUN useradd --uid 1000 -g 1000 user
