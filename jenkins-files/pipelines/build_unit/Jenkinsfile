@@ -10,8 +10,8 @@ pipeline {
             label 'dss-docker'
             dir "jenkins-files/containers/${env.CONTAINER}"
             filename 'Dockerfile'
-            additionalBuildArgs  '--disable-content-trust=false --pull -m 512m --memory-swap 512m'
-            args '--user user --group-add root -m 512m --memory-swap 512m'
+            additionalBuildArgs  '--disable-content-trust=false --pull -m 1g --memory-swap 1g'
+            args '--user user --group-add root -m 1g --memory-swap 1g'
         }
     }
 
