@@ -38,7 +38,7 @@ node('dss-docker-slave') {
 		        sh 'mysqladmin version -hdb -uroot -pmy-secret-pw'
                 }
             }
-            testImage.inside ("--link ${c.id}:db -m 1g --memory-swap 1g") {
+            testImage.inside ("--link ${c.id}:db -m 1500m --memory-swap 1500m") {
                 withEnv(['HOME=/opt/jboss',
                          'DATABASE_NAME=mysql',
                          'DBHOST=db',
