@@ -19,6 +19,7 @@ ENV APPSRV_HOME /opt/jboss/wildfly
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 
 ENV ANT_OPTS="-Xms64M -Xmx64M"
+ENV JAVA_OPTS="-Xms256M -Xmx256M"
 
 # Make Sure the SafeNet emulator will not generate a fixed key
 # for a given key size/spec
