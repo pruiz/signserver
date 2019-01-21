@@ -16,7 +16,7 @@ RUN yum reinstall -q -y glibc-common \
 
 ENV LANG en_US.UTF-8
 
-ENV JAVA_OPTS="-Xms256M -Xmx256M"
+ENV JAVA_OPTS="-Xms384M -Xmx384M"
 ENV ANT_OPTS="-Xms64M -Xmx64M"
 
 RUN groupadd -g 1000 user
