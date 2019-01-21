@@ -5,7 +5,9 @@ RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y maven ant \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/*  
+ && rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_OPTS="-Xms256M -Xmx256M"
 
 RUN groupadd -g 1000 user
 RUN useradd --uid 1000 -g 1000 user

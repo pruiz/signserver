@@ -7,6 +7,8 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*  
 
+ENV JAVA_OPTS="-Xms256M -Xmx256M"
+
 RUN groupadd -g 1000 user
 RUN useradd --uid 1000 -g 1000 user
 USER user
