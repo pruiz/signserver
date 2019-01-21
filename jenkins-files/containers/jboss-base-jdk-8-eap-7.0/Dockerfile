@@ -19,6 +19,8 @@ ENV APPSRV_SHA256 7c28c74e475a296b6e3370b5eb2e21f158c31f4b50d56dafadada6483b2334
 ENV APPSRV_ZIP jboss-eap-$APPSRV_VERSION.zip
 ENV APPSRV_HOME /opt/jboss/$APPSRV_FOLDER
 
+ENV ANT_OPTS="-Xms64M -Xmx64M"
+
 # TODO: parameterize this
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 
