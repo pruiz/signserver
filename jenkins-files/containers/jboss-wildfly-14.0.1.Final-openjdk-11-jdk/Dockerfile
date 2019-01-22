@@ -10,13 +10,15 @@ RUN yum update -y \
     && yum install -y strace \
     && yum install -y openssl \
     && yum install -y mariadb \ 
+    && yum install -y java-11-openjdk-devel \
+    && yum remove java-1.8.0-openjdk-headless \
     && yum clean all
 
 # Set the appserver env variables
 ENV APPSRV_HOME /opt/jboss/wildfly
 
 # TODO: parameterize this
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
+# ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
 
 ENV ANT_OPTS="-Xms64M -Xmx256M"
 ENV JAVA_OPTS="-Xms64M -Xmx256M"
