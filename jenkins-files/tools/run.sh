@@ -64,7 +64,7 @@ echo '=================== ant deploy-ear done and successfully deployed! =======
 # Print processes to see memory usage etc
 echo
 echo "Java processes:"
-ps aux | grep java
+ps aux | grep [j]ava
 echo
 
 # Make sure we can communicate with SignServer or otherwise fail fast
