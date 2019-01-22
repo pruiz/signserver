@@ -23,10 +23,10 @@ node('dss-docker-slave') {
         stage('Build Container') {
             sh 'hostname'
             sh 'ls'
-            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "jenkins-files/containers/${env.CONTAINER}/")
+            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "-m 512m --memory-swap 512m jenkins-files/containers/${env.CONTAINER}/")
         }
 
-        testImage.inside {
+        testImage.inside ("-m 2500m --memory-swap 2500m") {
             withEnv(['HOME=/opt/jboss']) {
 
                 stage('Verify environment') {
