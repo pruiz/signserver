@@ -114,8 +114,10 @@ node('dss-docker-slave') {
                cd signserver-ee* && echo "
     test.p11.sharedlibrary=${LIBCRYPTOKI}
     test.p11.slot=${P11SLOT}
+    test.p11.slotindex=${P11SLOTINDEX}
     test.p11.pin=${P11PIN}
-    test.p11.existingkey1=${P11KEY}" > test-config.properties
+    test.p11.existingkey1=${P11KEY}
+    test.p11.provider=${P11_PROVIDER}" > test-config.properties
                '''
 
                 }
