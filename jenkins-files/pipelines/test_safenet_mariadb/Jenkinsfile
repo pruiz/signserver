@@ -57,7 +57,7 @@ node('dss-docker-slave') {
                         sh 'printenv'          
                         sh 'cat ${JAVA_HOME}/lib/security/java.security || echo "No java.security file exists in Java8 location"'
                         sh 'cat ${JAVA_HOME}/conf/security/java.security || echo "No java.security file exists in Java11 location"'
-                        sh 'ls -ltr $JAVA_HOME/lib/ext/ || echo "No ext folder exists in Java11 location"'
+                        sh 'ls -ltr $JAVA_HOME/lib/ext/ || echo "No ext folder exists in Java8 location"'
                         sh 'id'
                         
                         sh 'ping -c 4 db'
