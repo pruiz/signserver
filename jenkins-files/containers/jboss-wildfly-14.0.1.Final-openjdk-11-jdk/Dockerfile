@@ -5,13 +5,13 @@ USER root
 
 # Install Ant
 RUN yum update -y \
-    && yum install -y ant \ 
-    && yum install -y ant-junit \
+    && yum remove -y java-1.8.0-openjdk-headless \   
     && yum install -y strace \
     && yum install -y openssl \
-    && yum install -y mariadb \ 
-    && yum install -y java-11-openjdk-devel \
-    && yum remove -y java-1.8.0-openjdk-headless \
+    && yum install -y mariadb \     
+    && yum install -y java-11-openjdk-devel \ 
+    && yum install -y ant \
+    && yum install -y ant-junit \    
     && yum clean all
 
 # Set the appserver env variables
