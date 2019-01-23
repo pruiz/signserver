@@ -50,6 +50,7 @@ node('dss-docker-slave') {
                     stage('Verify environment') {
                         // Print versions
                         sh "java -version"
+                        sh  'cd /usr/lib/jvm && ls -ltr'
                         sh "ant -version"
                         sh "locale"
                         echo 'All environment variables'
