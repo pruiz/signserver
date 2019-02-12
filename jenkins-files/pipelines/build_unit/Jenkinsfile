@@ -40,7 +40,7 @@ pipeline {
             steps {
                 dir ('signserver') {
                     // Temporary fix during DSS-1903 to be removed after CESeCore 7.0.0.1 is avialable in Central:
-                    sh "MAVEN_REPO_DIR=${WORKSPACE}/m2-repo ./modules/maven-manually-install-deps.sh"
+                    // sh "MAVEN_REPO_DIR=${WORKSPACE}/m2-repo ./modules/maven-manually-install-deps.sh"
 
                     sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo help:effective-settings"
                     sh "mvn -Dmaven.repo.local=${WORKSPACE}/m2-repo clean install -DskipTests"
