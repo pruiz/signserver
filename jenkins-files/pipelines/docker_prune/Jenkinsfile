@@ -1,5 +1,7 @@
 /**
- * Jenkins pipeline for running system prune
+ * Jenkins pipeline for collecting the statistics of system space, container size, 
+ * images, networks, volumes info before system prune and after system prune
+ * Also deletes the stopped containers, dangling images, networks and build cache.
  */
 pipeline {
     agent {
