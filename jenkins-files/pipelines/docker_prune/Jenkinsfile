@@ -1,7 +1,10 @@
+/**
+ * Jenkins pipeline for running system prune
+ */
 pipeline {
-	agent {
-		label "dss-docker"
-	}
+    agent {
+        label "dss-docker"
+    }
     stages {
         stage('Docker info before  system prune') {
             steps {
