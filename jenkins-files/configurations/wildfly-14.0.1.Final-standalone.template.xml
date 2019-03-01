@@ -547,10 +547,10 @@
         <subsystem xmlns="urn:jboss:domain:undertow:7.0" default-server="default-server" default-virtual-host="default-host" default-servlet-container="default" default-security-domain="other">
             <buffer-cache name="default"/>
             <server name="default-server">
-                <http-listener name="default" socket-binding="http" max-post-size="1048576000" redirect-socket="httpspriv" enable-http2="false"/>
-                <http-listener name="remoting" socket-binding="remoting" max-post-size="10485760" enable-http2="false"/>
-                <https-listener name="httpspriv" socket-binding="httpspriv" max-post-size="10485760" security-realm="SSLRealm" verify-client="REQUIRED" enable-http2="false"/>
-                <https-listener name="httpspub" socket-binding="httpspub" max-post-size="10485760" security-realm="SSLRealm" enable-http2="false"/>
+                <http-listener name="default" socket-binding="http" max-post-size="5242880000" redirect-socket="httpspriv" enable-http2="false"/>
+                <http-listener name="remoting" socket-binding="remoting" max-post-size="5242880000" enable-http2="false"/>
+                <https-listener name="httpspriv" socket-binding="httpspriv" max-post-size="5242880000" security-realm="SSLRealm" verify-client="REQUIRED" enable-http2="false"/>
+                <https-listener name="httpspub" socket-binding="httpspub" max-post-size="5242880000" security-realm="SSLRealm" enable-http2="false"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
                     <http-invoker security-realm="ApplicationRealm"/>
