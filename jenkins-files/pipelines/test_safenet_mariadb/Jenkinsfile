@@ -65,12 +65,12 @@ node('dss-docker-slave') {
                     }
 
                     stage('Unpack') {
-                        sh 'rm -rf signserver-ee-*'            
-                        copyArtifacts filter: 'signserver-ee-*-bin.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_JOB}", selector: lastSuccessful()
+                        sh 'rm -rf signserver-${EDITION}-*'            
+                        copyArtifacts filter: 'signserver-${EDITION}-*-bin.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_JOB}", selector: lastSuccessful()
 
                         sh 'ls'
-                        sh 'unzip signserver-ee*.zip'
-                        sh 'rm signserver-ee*.zip'         
+                        sh 'unzip signserver-${EDITION}*.zip'
+                        sh 'rm signserver-${EDITION}*.zip'         
                     }            
 
                     stage('Setup cryptoki') {
