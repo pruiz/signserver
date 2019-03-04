@@ -5,7 +5,7 @@ java -version
 
 echo '=================== Setting environment variables =========================='
 # Set SIGNSERVER_HOME
-cd signserver-ee*
+cd signserver-${EDITION}*
 export SIGNSERVER_HOME=.
 
 # Set SIGNSERVER_NODEID
