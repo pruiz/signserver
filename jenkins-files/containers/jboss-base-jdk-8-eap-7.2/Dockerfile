@@ -23,7 +23,7 @@ ENV ANT_OPTS="-Xms64M -Xmx256M"
 ENV JAVA_OPTS="-Xms64M -Xmx256M"
 
 # TODO: parameterize this
-#ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64/jre
 
 # Make Sure the SafeNet emulator will not generate a fixed key
 # for a given key size/spec
@@ -48,7 +48,7 @@ ENV P11KEY="mykey001"
 ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 
 # Make Java keystore read/write for all users
-#RUN chmod 666 $JAVA_HOME/lib/security/cacerts
+RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
