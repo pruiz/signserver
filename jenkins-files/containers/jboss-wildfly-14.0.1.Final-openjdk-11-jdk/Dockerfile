@@ -18,7 +18,7 @@ RUN yum update -y \
 ENV APPSRV_HOME /opt/jboss/wildfly
 
 # TODO: parameterize this
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.1.13-3.el7_6.x86_64
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.2.7-0.el7_6.x86_64
 
 ENV ANT_OPTS="-Xms64M -Xmx256M"
 ENV JAVA_OPTS="-Xms64M -Xmx256M"
@@ -45,10 +45,8 @@ ENV P11KEY="mykey001"
 # Database JDBC drivers
 ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 
-#RUN ls -la $JAVA_HOME/lib/security
-
 # Make Java keystore read/write for all users
-#RUN chmod 666 $JAVA_HOME/lib/security/cacerts
+RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 WORKDIR /root
 
