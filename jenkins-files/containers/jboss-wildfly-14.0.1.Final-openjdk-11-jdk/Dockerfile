@@ -45,7 +45,7 @@ ENV P11KEY="mykey001"
 # Database JDBC drivers
 ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 
-RUN echo "cacerts check: " && ls -la $JAVA_HOME/lib/security
+RUN ls -la $JAVA_HOME/lib/security
 
 # Make Java keystore read/write for all users
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
