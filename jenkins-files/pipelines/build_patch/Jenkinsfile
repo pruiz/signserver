@@ -18,20 +18,10 @@ pipeline {
             steps {
                 // Print versions
                 sh "java -version"
-                sh "mvn -version"
-                sh "ant -version"
                 sh "locale"
                 sh "echo Workspace: ${WORKSPACE}"
                 sh "printenv"
                 sh "ls -l"
-
-                // Init edition
-                dir ('signserver') {
-                    sh "ant -q init"
-
-                    // Check expected edition
-                    // TODO
-                }
             }
         }
         stage('Package') {
