@@ -15,5 +15,6 @@ ADD run.sh /build/
 RUN \
     chmod 777 /build/
 
+USER user
 CMD ["/build/run.sh"]
 
