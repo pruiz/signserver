@@ -50,6 +50,7 @@ node('dss-docker-slave') {
                     stage('Patch java') {
                         if (env.PATCH_JAVA.toBoolean()) {
                             sh 'echo "Java will be patched"'
+                            sh 'cd ${JAVA_HOME}/lib/ext && ls -ltr'
                             sh 'cp /opt/jboss/${MARIADB_DRIVER_JAR} ${JAVA_HOME}/lib/ext/'
                         } 
                         else {
