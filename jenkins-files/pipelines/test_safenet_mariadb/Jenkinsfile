@@ -48,9 +48,10 @@ node('dss-docker-slave') {
                          'DBDRIVER=org.mariadb.jdbc.Driver']) {
 
                     stage('Patch java') {
-                    if (env.PATCH_JAVA.toBoolean()) {
+                        if (env.PATCH_JAVA.toBoolean()) {
                             sh 'echo "Java will be patched"'
-                        }
+                            sh 'cp /opt/jboss/${MARIADB_DRIVER_JAR} ${JAVA_HOME}/lib/ext/'
+                        } 
                         else {
                             sh 'echo "This stage is not applicable as per configuration"'
                         }
