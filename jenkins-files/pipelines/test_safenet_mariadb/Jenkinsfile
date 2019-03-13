@@ -47,6 +47,15 @@ node('dss-docker-slave') {
                          'DBSCHEMA=signserver_trunk',
                          'DBDRIVER=org.mariadb.jdbc.Driver']) {
 
+                    stage('Patch java') {
+                    if (env.PATCHED_JAVA) {
+                            sh 'echo "Java will be patched"'
+                        }
+                        else {
+                            sh 'echo "This stage is not applicable as per configuration"'
+                        }
+                    }
+
                     stage('Verify environment') {
                         // Print versions
                         sh "java -version"
