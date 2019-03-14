@@ -25,6 +25,16 @@ patchJar() {
     jar uvf ${jarFile} -C out-${jarFile//.jar/}/ . || exit 1
 }
 
+echo "PWD: $PWD"
+echo "Contents of PWD"
+ls -ltra $PWD
+
+echo "Contents of $HOME"
+ls -ltra $HOME
+
+echo "Contents of $HOME/binaries"
+ls -ltra $HOME/binaries
+
 patchJar sunec.jar     binaries/openJDK8-sunec.patch
 patchJar sunpkcs11.jar binaries/openJDK8-sunpkcs11.patch
 
