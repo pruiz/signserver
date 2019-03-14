@@ -40,6 +40,9 @@ ls -ltra jenkins-files/containers/$CONTAINER/
 patchJar sunec.jar     jenkins-files/containers/$CONTAINER/binaries/openJDK8-sunec.patch
 patchJar sunpkcs11.jar jenkins-files/containers/$CONTAINER/binaries/openJDK8-sunpkcs11.patch
 
+echo "PWD after patch"
+ls -ltra $PWD
+
 echo "Create a patch layer that shadows the original JARs when added as a Docker image layer..."
 
 mkdir -p ./${jdkDir}/jre/lib/ext/
