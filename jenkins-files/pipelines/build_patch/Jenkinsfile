@@ -24,6 +24,9 @@ pipeline {
                 sh "ls -l"
             }
         }
+	stage('Run patch script') {
+	   sh 'jenkins-files/tools/build-patch.sh'
+	}
         stage('Package') {
             steps {
                 archiveArtifacts '*.jar'
