@@ -24,6 +24,14 @@ pipeline {
                 sh "ls -l"
             }
         }
+        stage('Prepare Container') {
+           steps {
+           	sh 'hostname'
+            	sh 'pwd'
+            	sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
+            	sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
+           }
+        }
 	stage('Run patch script') {
            steps {
 	        sh 'chmod +x jenkins-files/tools/build-patch.sh'
