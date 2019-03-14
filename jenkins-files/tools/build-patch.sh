@@ -35,8 +35,10 @@ ls -ltra $HOME
 echo "Contents of $HOME/binaries"
 ls -ltra $HOME/binaries
 
-patchJar sunec.jar     binaries/openJDK8-sunec.patch
-patchJar sunpkcs11.jar binaries/openJDK8-sunpkcs11.patch
+ls -ltra ../../containers/$CONTAINER/
+
+patchJar sunec.jar     ../../containers/$CONTAINER/binaries/openJDK8-sunec.patch
+patchJar sunpkcs11.jar ../../containers/$CONTAINER/binaries/openJDK8-sunpkcs11.patch
 
 echo "Create a patch layer that shadows the original JARs when added as a Docker image layer..."
 cd /build/
