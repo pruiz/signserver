@@ -52,7 +52,6 @@ node('dss-docker-slave') {
                             sh 'echo "Java will be patched"'
                             sh 'cd ${JAVA_HOME}/lib/ext && ls -ltr'
                             copyArtifacts filter: 'artifacts*.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_PATCH_JOB}", selector: lastSuccessful()
-                            #sh 'cp /opt/jboss/${MARIADB_DRIVER_JAR} ${JAVA_HOME}/lib/ext/'
                             sh 'mv ${JAVA_HOME}/lib/ext/sunec.jar ${JAVA_HOME}/lib/ext/sunec_original_jar.bkp'
                             sh 'mv ${JAVA_HOME}/lib/ext/sunpkcs11.jar ${JAVA_HOME}/lib/ext/sunpkcs11_original_jar.bkp'
                             sh 'unzip artifacts*.zip'
