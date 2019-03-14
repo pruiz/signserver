@@ -43,10 +43,6 @@ patchJar sunpkcs11.jar jenkins-files/containers/$CONTAINER/binaries/openJDK8-sun
 echo "PWD after patch"
 ls -ltra $PWD
 
-echo "Create a patch layer that shadows the original JARs when added as a Docker image layer..."
-
-mkdir -p ./${jdkDir}/jre/lib/ext/
-mv *.jar ./${jdkDir}/jre/lib/ext/
 mkdir artifacts/
 
 artifactBaseName=$(basename $jdkDir)
