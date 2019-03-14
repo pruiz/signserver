@@ -43,6 +43,9 @@ patchJar sunpkcs11.jar jenkins-files/containers/$CONTAINER/binaries/openJDK8-sun
 echo "PWD after patch"
 ls -ltra $PWD
 
+ls -ltra $PWD/out-sunec
+ls -ltra $PWD/out-sunpkcs11
+
 mkdir artifacts/
 
 artifactBaseName=$(basename $jdkDir)
