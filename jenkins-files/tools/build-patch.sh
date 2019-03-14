@@ -53,8 +53,8 @@ artifactBaseName=$(basename $jdkDir)
 #export XZ_OPT="-7e --threads=0"
 #time tar -Ixz --directory=. -cvnf artifacts/openjdk-patch.tar.xz usr/lib/ || exit 1
 
-cp $jdkDir/jre/lib/ext/sunec.jar artifacts/sunec-${artifactBaseName}.jar
-cp $jdkDir/jre/lib/ext/sunpkcs11.jar artifacts/sunpkcs11-${artifactBaseName}.jar
+cp sunec.jar artifacts/sunec-${artifactBaseName}.jar
+cp sunpkcs11.jar artifacts/sunpkcs11-${artifactBaseName}.jar
 
 # Make a copy that we can attach as a build artifact
 #cp artifacts/openjdk-patch.tar.xz artifacts/${artifactBaseName}-patch.tar.xz || exit 1
