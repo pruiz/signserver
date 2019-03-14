@@ -47,7 +47,7 @@ ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 RUN chmod 666 $JAVA_HOME/lib/security/cacerts
 
 # Make Java lib/ext read/write for all users, required for patching java
-RUN chmod -R 666 $JAVA_HOME/lib/ext
+RUN chmod -R 777 $JAVA_HOME/lib/ext
 
 WORKDIR /root
 
