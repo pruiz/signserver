@@ -17,7 +17,7 @@ patchJar() {
     mkdir out-${jarFile//.jar/}/
     # Re-compile any file affected by the patch
     cd src/
-    javac -d ../out-${jarFile//.jar/}/ -XDignore.symbol.file $(grep "diff " ../${patchFile} | awk '{print $4}' | sed 's/^p11-patched\///' | tr '\r\n' ' ') || exit 1
+    javac -d ../out-${jarFile//.jar/}/ -XDignore.symbol.file $(grep "diff " ../${patchFile} | awk '{print $4}' | sed 's/^b\///' | tr '\r\n' ' ') || exit 1
     cd ..
     # Make a local copy of the JAR from the JDK
     cp "${jdkDir}/jre/lib/ext/${jarFile}" ${jarFile}
