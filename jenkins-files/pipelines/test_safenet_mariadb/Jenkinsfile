@@ -55,8 +55,8 @@ node('dss-docker-slave') {
                             sh 'mv ${JAVA_HOME}/lib/ext/sunec.jar ${JAVA_HOME}/lib/ext/sunec_original_jar.bkp'
                             sh 'mv ${JAVA_HOME}/lib/ext/sunpkcs11.jar ${JAVA_HOME}/lib/ext/sunpkcs11_original_jar.bkp'
                             sh 'unzip artifacts*.zip'
-                            sh 'cp -v artifacts*/sunec.jar ${JAVA_HOME}/lib/ext/sunec.jar'
-                            sh 'cp -v artifacts*/sunpkcs11.jar ${JAVA_HOME}/lib/ext/sunpkcs11.jar'
+                            sh 'cp -v artifacts*/sunec-java*.jar ${JAVA_HOME}/lib/ext/sunec.jar'
+                            sh 'cp -v artifacts*/sunpkcs11-java*.jar ${JAVA_HOME}/lib/ext/sunpkcs11.jar'
                         } 
                         else {
                             sh 'echo "This stage is not applicable as per configuration"'
