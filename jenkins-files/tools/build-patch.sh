@@ -25,8 +25,8 @@ patchJar() {
     jar uvf ${jarFile} -C out-${jarFile//.jar/}/ . || exit 1
 }
 
-patchJar sunec.jar     openJDK8-sunec.patch
-patchJar sunpkcs11.jar openJDK8-sunpkcs11.patch
+patchJar sunec.jar     binaries/openJDK8-sunec.patch
+patchJar sunpkcs11.jar binaries/openJDK8-sunpkcs11.patch
 
 echo "Create a patch layer that shadows the original JARs when added as a Docker image layer..."
 cd /build/
