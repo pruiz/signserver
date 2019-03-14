@@ -26,6 +26,7 @@ pipeline {
         }
 	stage('Run patch script') {
            steps {
+	        sh 'chmod +x jenkins-files/tools/build-patch.sh'
 	   	sh 'jenkins-files/tools/build-patch.sh'
            }
 	}
