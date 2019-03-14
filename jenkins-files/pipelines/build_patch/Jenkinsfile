@@ -1,47 +1,64 @@
 /**
- * Jenkins pipeline building patched EC and SunP11 JARs.
+ * Jenkins pipeline for running JRE patch script.
  *
  */
-pipeline {
-    agent {
-        dockerfile {
-            label 'dss-docker'
-            dir "jenkins-files/containers/${env.CONTAINER}"
-            filename 'Dockerfile'
-            additionalBuildArgs  '--disable-content-trust=false --pull -m 512m --memory-swap 512m'
-            args '--user user --group-add root -m 2g --memory-swap 2g'
-        }
-    }
+node('dss-docker-slave') {
 
-    stages {
-        stage('Verify Environment') {
-            steps {
-                // Print versions
-                sh "java -version"
-                sh "locale"
-                sh "echo Workspace: ${WORKSPACE}"
-                sh "printenv"
-                sh "ls -l"
-            }
-        }
+    try {
+
+        checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'e8aa0eb0-9eb8-42d2-8596-6a7a90c8f7cc', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://svn.cesecore.eu/svn/signserver-restricted/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
+
+        def testImage
+        def PWD = pwd();            
+    
         stage('Prepare Container') {
-           steps {
-           	sh 'hostname'
-            	sh 'pwd'
-            	sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
-            	sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
-           }
+            sh 'hostname'
+            sh 'pwd'
+            sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
+            sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
+            sh 'which java'
         }
-	stage('Run patch script') {
-           steps {
-	        sh 'chmod +x jenkins-files/tools/build-patch.sh'
-	   	sh 'jenkins-files/tools/build-patch.sh'
-           }
-	}
-        stage('Package') {
-            steps {
-                archiveArtifacts '*.jar'
+
+        stage('Build Container') {
+            sh 'hostname'
+            sh 'ls'
+            testImage = docker.build("${PIPELINE_NAME}:${env.BUILD_ID}", "-m 512m --memory-swap 512m jenkins-files/containers/${env.CONTAINER}/")
+        }
+
+            testImage.inside ("-m 2500m --memory-swap 2500m") {
+                withEnv([]) {
+
+                    stage('Verify environment') {
+                        // Print versions
+                        sh "java -version"
+                        sh  'cd /usr/lib/jvm && ls -ltr'
+                        sh "locale"
+                        echo 'All environment variables'
+                        sh 'printenv'          
+                        sh 'id'
+                    }
+
+                    
+                    stage('Run') {
+                        sh 'hostname'
+                        sh 'ls'
+                        sh 'id'
+                        sh '$USER'   
+
+                        sh 'chmod +x jenkins-files/tools/build-patch.sh'
+                        sh 'jenkins-files/tools/build-patch.sh'
+                    }
+
+                    stage('Package') {
+                        archiveArtifacts '*.jar'
+                    }
+
+                }
             }
         }
+
+    finally {   
+        cleanWs()   
     }
+    
 }
