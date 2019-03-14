@@ -16,6 +16,8 @@ ADD run.sh /build/
 RUN \
     chmod 777 /build/
 
+RUN groupadd -g 1000 user
+RUN useradd --uid 1000 -g 1000 user
 USER user
 CMD ["/build/run.sh"]
 
