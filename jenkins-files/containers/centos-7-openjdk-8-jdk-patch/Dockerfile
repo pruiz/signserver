@@ -9,12 +9,11 @@ RUN \
     yum clean all && \
     rm -rf /var/cache/yum
 
-WORKDIR /build/
+WORKDIR /root
 
 #ADD run.sh /build/
-
-RUN \
-    chmod 777 /build/
+COPY binaries/openJDK8-sunec.patch ./
+COPY binaries/openJDK8-sunpkcs11.patch ./
 
 RUN groupadd -g 1000 user
 RUN useradd --uid 1000 -g 1000 user
