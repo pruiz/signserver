@@ -58,4 +58,5 @@ cp $jdkDir/jre/lib/ext/sunpkcs11.jar artifacts/sunpkcs11-${artifactBaseName}.jar
 
 ls -l artifacts/*
 
-#cp -r artifacts "${startDir}/"
+zip -R artifacts-$artifactBaseName.zip artifacts
+

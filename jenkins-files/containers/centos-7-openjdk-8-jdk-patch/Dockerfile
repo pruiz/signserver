@@ -5,7 +5,7 @@ FROM centos:7
 RUN \
     yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
     yum install -y java-1.8.0-openjdk-src && \
-    yum install -y make unzip patch which && \
+    yum install -y make unzip zip patch which && \
     yum clean all && \
     rm -rf /var/cache/yum
 

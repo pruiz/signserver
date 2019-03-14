@@ -50,7 +50,7 @@ node('dss-docker-slave') {
                     }
 
                     stage('Package') {
-                        archiveArtifacts '*.jar'
+                        archiveArtifacts '*.zip'
                     }
 
                 }
