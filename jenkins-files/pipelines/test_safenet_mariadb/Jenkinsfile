@@ -202,6 +202,16 @@ node('dss-docker-slave') {
                             " > conf/databaseprotection.properties
                     '''
 
+                      // CESECORE configuration
+                        sh '''
+                   cd signserver-${EDITION}* && echo "          
+        securityeventsaudit.implementation.0=org.signserver.server.log.SignServerLog4jDevice
+        securityeventsaudit.implementation.1=org.cesecore.audit.impl.integrityprotected.IntegrityProtectedDevice
+        securityeventsaudit.exporter.1=org.cesecore.audit.impl.AuditExporterXml
+        pkcs11.makeKeyUnmodifiableAfterGeneration=${PATCH_JAVA}
+                            " > conf/cesecore.properties
+                    '''
+
                         sh 'cd signserver-${EDITION}*/lib/ext/jdbc && ln -s /opt/jboss/${MARIADB_DRIVER_JAR} jdbc.jar'
                     }
 
