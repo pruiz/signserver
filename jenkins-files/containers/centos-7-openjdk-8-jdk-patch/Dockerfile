@@ -11,7 +11,7 @@ RUN \
 
 WORKDIR /build/
 
-ADD run.sh /build/
+#ADD run.sh /build/
 
 RUN \
     chmod 777 /build/
