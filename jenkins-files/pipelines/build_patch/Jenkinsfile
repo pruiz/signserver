@@ -25,7 +25,9 @@ pipeline {
             }
         }
 	stage('Run patch script') {
-	   sh 'jenkins-files/tools/build-patch.sh'
+           steps {
+	   	sh 'jenkins-files/tools/build-patch.sh'
+           }
 	}
         stage('Package') {
             steps {
