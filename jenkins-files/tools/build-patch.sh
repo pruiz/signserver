@@ -41,7 +41,7 @@ patchJar sunec.jar     jenkins-files/containers/$CONTAINER/binaries/openJDK8-sun
 patchJar sunpkcs11.jar jenkins-files/containers/$CONTAINER/binaries/openJDK8-sunpkcs11.patch
 
 echo "Create a patch layer that shadows the original JARs when added as a Docker image layer..."
-cd /build/
+
 mkdir -p ./${jdkDir}/jre/lib/ext/
 mv *.jar ./${jdkDir}/jre/lib/ext/
 mkdir artifacts/
@@ -55,4 +55,4 @@ cp artifacts/openjdk-patch.tar.xz artifacts/${artifactBaseName}-patch.tar.xz || 
 
 ls -l artifacts/*
 
-cp -r artifacts "${startDir}/"
+#cp -r artifacts "${startDir}/"
