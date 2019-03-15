@@ -118,7 +118,8 @@ node('dss-docker-slave') {
     test.p11.slotindex=${P11SLOTINDEX}
     test.p11.pin=${P11PIN}
     test.p11.existingkey1=${P11KEY}
-    test.p11.provider=${P11_PROVIDER}" > test-config.properties
+    test.p11.provider=${P11_PROVIDER}
+    test.p11.MAKE_UNMODIFIABLE_SUPPORTED=false" > test-config.properties
                '''
 
                 }
