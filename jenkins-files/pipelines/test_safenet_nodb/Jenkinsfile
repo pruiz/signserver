@@ -28,6 +28,22 @@ node('dss-docker-slave') {
 
         testImage.inside ("-m 2500m --memory-swap 2500m") {
             withEnv(['HOME=/opt/jboss']) {
+                
+                stage('Patch java') {
+                        if (env.PATCH_JAVA.toBoolean()) {
+                            sh 'echo "Java will be patched"'
+                            sh 'cd ${JAVA_HOME}/lib/ext && ls -ltr'
+                            copyArtifacts filter: 'artifacts*.zip', fingerprintArtifacts: true, projectName: "${env.UPSTREAM_BUILD_PATCH_JOB}", selector: lastSuccessful()
+                            sh 'mv ${JAVA_HOME}/lib/ext/sunec.jar ${JAVA_HOME}/lib/ext/sunec_original_jar.bkp'
+                            sh 'mv ${JAVA_HOME}/lib/ext/sunpkcs11.jar ${JAVA_HOME}/lib/ext/sunpkcs11_original_jar.bkp'
+                            sh 'unzip artifacts*.zip'
+                            sh 'cp -v artifacts*/sunec-java*.jar ${JAVA_HOME}/lib/ext/sunec.jar'
+                            sh 'cp -v artifacts*/sunpkcs11-java*.jar ${JAVA_HOME}/lib/ext/sunpkcs11.jar'
+                        } 
+                        else {
+                            sh 'echo "This stage is not applicable as per configuration"'
+                        }
+                    }
 
                 stage('Verify environment') {
                     // Print versions
@@ -121,7 +137,15 @@ node('dss-docker-slave') {
     test.p11.provider=${P11_PROVIDER}
     test.p11.MAKE_UNMODIFIABLE_SUPPORTED=false" > test-config.properties
                '''
-
+                    // CESECORE configuration
+                        sh '''
+                cd signserver-${EDITION}* && echo "          
+    securityeventsaudit.implementation.0=org.signserver.server.log.SignServerLog4jDevice
+    securityeventsaudit.implementation.1=org.cesecore.audit.impl.integrityprotected.IntegrityProtectedDevice
+    securityeventsaudit.exporter.1=org.cesecore.audit.impl.AuditExporterXml
+    pkcs11.makeKeyUnmodifiableAfterGeneration=${PATCH_JAVA}
+                            " > conf/cesecore.properties
+                    '''
                 }
 
                 stage('Verify HSM') {
