@@ -117,6 +117,9 @@ node('dss-docker-slave') {
                 '''
                     sh 'cd signserver-${EDITION}* && mkdir p12 && mkdir jarsigner-test-files'
 
+		    sh 'cd signserver-${EDITION}* && cp -v res/test/dss10/dss10_demo-tls.jks p12/tomcat.jks'
+                    sh 'cd signserver-${EDITION}* && cp -v res/test/dss10/dss10_truststore.jks p12/truststore.jks'
+
                     sh 'cd ${PWD}/jenkins-files/pipelines/${PIPELINE_NAME} &&  ls -ltr'
 
                     sh 'cd signserver-${EDITION}*/lib/ext && cp -v commons-lang*.jar ../../jarsigner-test-files/'
