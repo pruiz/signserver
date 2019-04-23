@@ -19,7 +19,7 @@ ENV APPSRV_SHA256 7f4e6d63196edc3cf15240b693391b9c0be474cda2194ba7575be31881f1a3
 ENV APPSRV_ZIP jboss-eap-$APPSRV_VERSION.zip
 ENV APPSRV_HOME /opt/jboss/$APPSRV_FOLDER
 # TODO: parameterize this
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64/jre
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre
 
 # Make Sure the SafeNet emulator will not generate a fixed key
 # for a given key size/spec
