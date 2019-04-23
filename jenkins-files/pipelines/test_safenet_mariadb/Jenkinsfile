@@ -17,7 +17,8 @@ node('dss-docker-slave') {
             sh 'pwd'
             sh "cd jenkins-files/containers/${env.CONTAINER} && ls -ltr && whoami"
             sh "cp -rv /home/user/binaries `pwd`/jenkins-files/containers/${env.CONTAINER}/"
-            sh 'which java'
+            sh 'which java && java -version'
+            sh 'ls -l /usr/lib/jvm/'
         }
 
         stage('Build Container') {
