@@ -18,7 +18,7 @@ RUN yum update -y \
 ENV APPSRV_HOME /opt/jboss/wildfly
 
 # TODO: parameterize this
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.2.7-0.el7_6.x86_64
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.3.7-0.el7_6.x86_64
 
 ENV ANT_OPTS="-Xms64M -Xmx256M"
 ENV JAVA_OPTS="-Xms64M -Xmx256M"
