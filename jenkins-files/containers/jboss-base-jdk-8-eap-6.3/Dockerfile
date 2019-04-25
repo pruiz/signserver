@@ -47,7 +47,7 @@ ENV P11KEY="mykey001"
 ENV MARIADB_DRIVER_JAR="mariadb-java-client-1.1.5.jar"
 
 # Make Java keystore read/write for all users
-RUN chmod 666 $JAVA_HOME/lib/security/cacerts
+RUN ls -l /usr/lib/jvm/ && chmod 666 $JAVA_HOME/lib/security/cacerts
 
 # Make Java lib/ext read/write for all users, required for patching java
 RUN chmod -R 777 $JAVA_HOME/lib/ext
