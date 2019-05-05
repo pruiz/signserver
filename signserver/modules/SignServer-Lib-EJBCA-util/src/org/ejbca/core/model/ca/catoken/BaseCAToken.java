@@ -84,7 +84,7 @@ public abstract class BaseCAToken implements ICAToken {
         final byte signBV[];
         String testSigAlg = (String)AlgorithmTools.getSignatureAlgorithms(pair.getPublic()).iterator().next();
         if ( testSigAlg == null ) {
-        	testSigAlg = "SHA1WithRSA";
+        	testSigAlg = "SHA256WithRSA";
         }
         if (log.isDebugEnabled()) {
             log.debug("Testing keys with algorithm: "+pair.getPublic().getAlgorithm());        	

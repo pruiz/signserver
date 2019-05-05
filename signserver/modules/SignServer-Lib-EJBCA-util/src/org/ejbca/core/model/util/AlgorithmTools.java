@@ -56,16 +56,17 @@ public class AlgorithmTools {
 	
 	static {
 		SIG_ALGS_RSA = new LinkedList();
-		SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA1_WITH_RSA);
-		SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA1_WITH_RSA_AND_MGF1);
+		// XXX: Disable non-eIDAS algorithms (pruiz)
+		//SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA1_WITH_RSA);
+		//SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA1_WITH_RSA_AND_MGF1);
 		SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA256_WITH_RSA);
 		SIG_ALGS_RSA.add(CATokenConstants.SIGALG_SHA256_WITH_RSA_AND_MGF1);
 		
 		SIG_ALGS_DSA = new LinkedList();
-		SIG_ALGS_DSA.add(CATokenConstants.SIGALG_SHA1_WITH_DSA);
+		//SIG_ALGS_DSA.add(CATokenConstants.SIGALG_SHA1_WITH_DSA);
 		
 		SIG_ALGS_ECDSA = new LinkedList();
-		SIG_ALGS_ECDSA.add(CATokenConstants.SIGALG_SHA1_WITH_ECDSA);
+		//SIG_ALGS_ECDSA.add(CATokenConstants.SIGALG_SHA1_WITH_ECDSA);
 		SIG_ALGS_ECDSA.add(CATokenConstants.SIGALG_SHA224_WITH_ECDSA);
 		SIG_ALGS_ECDSA.add(CATokenConstants.SIGALG_SHA256_WITH_ECDSA);
 	}

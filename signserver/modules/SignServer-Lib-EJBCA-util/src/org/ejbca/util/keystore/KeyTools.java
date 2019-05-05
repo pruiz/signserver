@@ -553,7 +553,7 @@ public class KeyTools {
         final byte signBV[];
         String testSigAlg = (String)AlgorithmTools.getSignatureAlgorithms(pub).iterator().next();
         if ( testSigAlg == null ) {
-        	testSigAlg = "SHA1WithRSA";
+        	testSigAlg = "SHA256WithRSA";
         }
         {
         	String prov = "BC";
