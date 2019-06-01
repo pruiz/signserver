@@ -28,6 +28,7 @@ import org.bouncycastle.asn1.cmp.PKIStatus;
 import org.bouncycastle.asn1.oiw.OIWObjectIdentifiers;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
+import org.bouncycastle.asn1.x509.Extensions;
 import org.bouncycastle.asn1.x509.GeneralName;
 import org.bouncycastle.asn1.x509.KeyPurposeId;
 import org.bouncycastle.cert.X509CertificateHolder;
@@ -41,13 +42,11 @@ import org.bouncycastle.operator.DigestCalculatorProvider;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.bc.BcDigestCalculatorProvider;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
-import org.signserver.module.tsa.TimeStampResponseGenerator;
 import org.bouncycastle.tsp.TSPAlgorithms;
 import org.bouncycastle.tsp.TSPException;
 import org.bouncycastle.tsp.TimeStampRequest;
-import org.bouncycastle.tsp.TimeStampResponse;
+//import org.bouncycastle.tsp.TimeStampResponse;
 import org.bouncycastle.tsp.TimeStampToken;
-import org.bouncycastle.tsp.TimeStampTokenGenerator;
 import org.bouncycastle.util.Selector;
 import org.bouncycastle.util.Store;
 import org.ejbca.util.Base64;
@@ -462,10 +461,14 @@ public class TimeStampSigner extends BaseSigner {
             final TimeStampResponseGenerator timeStampResponseGen =
                     getTimeStampResponseGenerator(timeStampTokenGen);
 
+	    final Extensions additionalExtensions =
+		    getAdditionalExtensions(signRequest, requestContext);
+
             final TimeStampResponse timeStampResponse =
                     timeStampResponseGen.generate(timeStampRequest,
-                    serialNumber,
-                    date, includeStatusString);
+                    serialNumber, date,
+		    includeStatusString ? "Operation Okay" : null,
+		    additionalExtensions);
 
             final TimeStampToken token = timeStampResponse.getTimeStampToken();
             final byte[] signedbytes = timeStampResponse.getEncoded();
@@ -734,7 +737,7 @@ public class TimeStampSigner extends BaseSigner {
             X509CertificateHolder certHolder = new X509CertificateHolder(cert.getEncoded());
             SignerInfoGenerator sig = sigb.build(cs, certHolder);
             
-            timeStampTokenGen = new TimeStampTokenGenerator(calc, sig, tSAPolicyOID);
+            timeStampTokenGen = new TimeStampTokenGenerator(sig, calc, tSAPolicyOID);
 
             if (config.getProperties().getProperty(ACCURACYMICROS) != null) {
                 timeStampTokenGen.setAccuracyMicros(Integer.parseInt(
@@ -997,6 +1000,21 @@ public class TimeStampSigner extends BaseSigner {
         }
 
         return result;
+    }
+   
+    /**
+     * Get additional time stamp extensions.
+     *
+     * @param request Signing request
+     * @param context Request context
+     * @return An Extensions object, or null if no additional extensions
+     *         should be included
+     * @throws java.io.IOException
+     */
+    protected Extensions getAdditionalExtensions(final ProcessRequest request,
+            RequestContext context)
+            throws IOException {
+        return null;
     }
     
     /**
