@@ -17,7 +17,7 @@ package org.signserver.server.log;
  * when the log message is requested.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ExceptionLoggable.java 7534 2016-06-21 11:22:43Z malu9369 $
  */
 public class ExceptionLoggable implements Loggable {
     final private Throwable ex;

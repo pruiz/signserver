@@ -23,7 +23,7 @@ import org.signserver.common.RequestContext;
  * Helper method for handling credentials from the web.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CredentialUtils.java 6892 2015-12-13 15:07:51Z netmackan $
  */
 public class CredentialUtils {
 

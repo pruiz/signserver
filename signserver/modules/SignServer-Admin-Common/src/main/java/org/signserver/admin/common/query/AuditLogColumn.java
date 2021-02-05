@@ -22,7 +22,7 @@ import org.cesecore.audit.impl.integrityprotected.AuditRecordData;
  * Representation of an audit log column with name and description.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AuditLogColumn.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public enum AuditLogColumn implements QueryColumn {
     

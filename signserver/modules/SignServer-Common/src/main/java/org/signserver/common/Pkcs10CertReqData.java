@@ -22,7 +22,7 @@ import org.bouncycastle.util.encoders.Base64;
  * Replaces Base64SignerCertReqData.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Pkcs10CertReqData.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 public class Pkcs10CertReqData extends AbstractCertReqData {
 

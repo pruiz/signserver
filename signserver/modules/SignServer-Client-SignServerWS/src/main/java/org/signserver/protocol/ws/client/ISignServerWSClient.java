@@ -29,7 +29,7 @@ import org.signserver.protocol.ws.ProcessRequestWS;
  * the SignServerWSClientFactory
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ISignServerWSClient.java 7563 2016-06-28 06:22:42Z malu9369 $
  */
 public interface ISignServerWSClient {
 

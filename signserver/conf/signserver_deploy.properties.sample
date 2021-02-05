@@ -1,5 +1,5 @@
 #
-# $Id$
+# $Id: signserver_deploy.properties.sample 11034 2019-06-19 07:02:30Z netmackan $
 #
 # Build configuration of SignServer. Modify at will before building and 
 # deploying.
@@ -295,6 +295,12 @@
 #   NONE:           No updates are logged.
 #statusrepository.log=ALL
 
+# ------------- CryptoToken Configuration --------------------------------------
+
+# Disable the key generation functionality for all crypto tokens.
+#
+# Default: false
+#cryptotoken.disablekeygeneration=false
 
 # ------------- PKCS11 library definitions -------------------------------------
 #

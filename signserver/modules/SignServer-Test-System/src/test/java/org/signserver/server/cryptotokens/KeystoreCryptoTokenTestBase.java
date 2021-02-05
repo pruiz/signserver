@@ -42,7 +42,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSession;
  * tests.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: KeystoreCryptoTokenTestBase.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 public abstract class KeystoreCryptoTokenTestBase extends ModulesTestCase {
     

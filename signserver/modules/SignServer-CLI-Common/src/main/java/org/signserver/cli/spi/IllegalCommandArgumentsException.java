@@ -17,7 +17,7 @@ package org.signserver.cli.spi;
  * arguments.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IllegalCommandArgumentsException.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public class IllegalCommandArgumentsException extends Exception {
 

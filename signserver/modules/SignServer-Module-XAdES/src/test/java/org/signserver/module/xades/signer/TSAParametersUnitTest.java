@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  * Unit tests for the TSAParameters class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TSAParametersUnitTest.java 3728 2013-08-20 10:45:44Z netmackan $
  */
 public class TSAParametersUnitTest {
     

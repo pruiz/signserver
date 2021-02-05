@@ -26,7 +26,7 @@ import org.apache.log4j.Logger;
  * of the form /signserver/sodworker/&lt;worker name&gt;
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: SODProcessWorkerServlet.java 6820 2015-12-07 14:37:08Z malu9369 $
  */
 public class SODProcessWorkerServlet extends HttpServlet {
         /** Logger for this class. */

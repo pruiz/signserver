@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
  * Class containing logic for managing participant hosts under load balancing & fail over.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: HostManager.java 9256 2018-04-13 17:49:27Z vinays $
  */
 public class HostManager {
 

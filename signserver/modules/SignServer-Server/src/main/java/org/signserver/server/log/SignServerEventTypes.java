@@ -17,7 +17,7 @@ import org.cesecore.audit.enums.EventType;
 /**
  * Different types of log events used by the SystemLogger.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignServerEventTypes.java 5139 2014-09-10 12:19:00Z malu9369 $
  */
 public enum SignServerEventTypes implements EventType {
     

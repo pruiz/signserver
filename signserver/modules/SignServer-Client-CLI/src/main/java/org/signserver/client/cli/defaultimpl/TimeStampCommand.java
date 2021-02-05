@@ -64,7 +64,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
  *
  *
  * @author philip
- * @version $Id$
+ * @version $Id: TimeStampCommand.java 10979 2019-06-05 10:07:44Z netmackan $
  */
 public class TimeStampCommand extends AbstractCommand {
 
@@ -738,7 +738,7 @@ public class TimeStampCommand extends AbstractCommand {
                 }
             }
             
-            final SSLSocketFactory sf = keyStoreOptions.setupHTTPS();
+            final SSLSocketFactory sf = keyStoreOptions.setupHTTPS(createConsolePasswordReader(), out);
             
             if (sf != null) {
                 HttpsURLConnection.setDefaultSSLSocketFactory(sf);

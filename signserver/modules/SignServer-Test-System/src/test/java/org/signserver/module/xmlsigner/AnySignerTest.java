@@ -41,7 +41,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Can be used for testing key generation, key testing, csr generation etc.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AnySignerTest.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AnySignerTest extends ModulesTestCase {

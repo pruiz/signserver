@@ -17,7 +17,7 @@ package org.ejbca.util;
  * instances of Base64PutHashMap for the old EJBCA-util package.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: Base64GetHashMap.java 6428 2015-10-08 06:36:12Z malu9369 $
  */
 public class Base64GetHashMap extends org.cesecore.util.Base64GetHashMap {
 }

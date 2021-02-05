@@ -20,7 +20,7 @@ import org.signserver.common.data.ReadableData;
  * The old default Archivable implementation is now called ByteArrayArchivable.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultArchivable.java 7612 2016-07-14 06:43:21Z netmackan $
  * @see ByteArrayArchivable
  */
 public class DefaultArchivable extends AbstractArchivable {

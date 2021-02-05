@@ -51,7 +51,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
  * Test crypto token recording testKey() operations.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: TestKeyDebugCryptoToken.java 9494 2018-08-30 07:30:12Z vinays $
  */
 public class TestKeyDebugCryptoToken extends BaseCryptoToken {
 

@@ -20,7 +20,7 @@ import junit.framework.TestCase;
  * Tests the X-Forwarded-For header utility methods.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: XForwardedForUtilsTest.java 3718 2013-08-18 15:55:09Z netmackan $
  *
  */
 public class XForwardedForUtilsTest extends TestCase {

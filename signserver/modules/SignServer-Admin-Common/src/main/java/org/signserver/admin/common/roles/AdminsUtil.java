@@ -24,7 +24,7 @@ import org.signserver.common.SignServerUtil;
  * Utility methods for handling administrator rules and roles.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminsUtil.java 8466 2017-07-13 11:10:55Z netmackan $
  */
 public class AdminsUtil {
     

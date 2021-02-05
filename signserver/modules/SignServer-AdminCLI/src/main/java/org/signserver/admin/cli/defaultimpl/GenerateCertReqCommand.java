@@ -26,7 +26,7 @@ import org.signserver.common.WorkerIdentifier;
 /**
  * Commands that requests a signer to generate a PKCS10 certificate request 
  *
- * @version $Id$
+ * @version $Id: GenerateCertReqCommand.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 public class GenerateCertReqCommand extends AbstractAdminCommand {
 

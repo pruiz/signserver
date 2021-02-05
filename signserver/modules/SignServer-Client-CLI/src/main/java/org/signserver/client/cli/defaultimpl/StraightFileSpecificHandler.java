@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * for server-side signing and pass the result through to the resulting file.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: StraightFileSpecificHandler.java 8685 2017-10-12 09:36:26Z malu9369 $
  */
 public class StraightFileSpecificHandler implements FileSpecificHandler {
     /** Logger for this class */

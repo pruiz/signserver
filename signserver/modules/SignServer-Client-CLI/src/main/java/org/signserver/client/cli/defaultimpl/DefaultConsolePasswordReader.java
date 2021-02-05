@@ -8,7 +8,7 @@ import org.signserver.cli.spi.CommandFailureException;
  * Default implementation of a console password reader, using System.console()
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: DefaultConsolePasswordReader.java 6237 2015-09-15 12:42:48Z malu9369 $
  */
 public class DefaultConsolePasswordReader implements ConsolePasswordReader {
 

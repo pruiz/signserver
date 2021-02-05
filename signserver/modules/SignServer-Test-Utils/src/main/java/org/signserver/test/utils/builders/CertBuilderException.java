@@ -16,7 +16,7 @@ package org.signserver.test.utils.builders;
  * Exception indicating a problem with creation of the certificate.
  *
  *
- * @version $Id$
+ * @version $Id: CertBuilderException.java 2487 2012-08-17 08:45:22Z netmackan $
  */
 public class CertBuilderException extends Exception {
 

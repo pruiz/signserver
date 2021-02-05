@@ -36,7 +36,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the signdatagroups command of Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODSignerTest.java 10363 2019-02-19 12:06:00Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SODSignerTest extends ModulesTestCase {

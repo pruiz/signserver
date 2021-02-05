@@ -20,7 +20,7 @@ import org.signserver.common.ClientEntry;
  * certificate serial number and issuer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminEntry.java 8466 2017-07-13 11:10:55Z netmackan $
  */
 public class AdminEntry {
     

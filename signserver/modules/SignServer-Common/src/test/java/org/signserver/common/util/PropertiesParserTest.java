@@ -33,7 +33,7 @@ import org.signserver.common.MatchSubjectWithType;
  * Unit tests for the properties parser.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: PropertiesParserTest.java 10625 2019-04-10 10:50:52Z vinays $
  *
  */
 public class PropertiesParserTest extends TestCase {

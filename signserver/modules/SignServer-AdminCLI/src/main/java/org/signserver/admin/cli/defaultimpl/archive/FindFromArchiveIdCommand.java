@@ -24,7 +24,7 @@ import org.signserver.common.ArchiveDataVO;
 /**
  * Finds archivedata from database with given id.
  *
- * @version $Id$
+ * @version $Id: FindFromArchiveIdCommand.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public class FindFromArchiveIdCommand extends AbstractCommand {
 

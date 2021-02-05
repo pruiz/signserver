@@ -34,7 +34,7 @@ import org.signserver.module.renewal.common.RenewalWorkerProperties;
  * generates a new key and then sends a request to EJBCA for a certificate
  * and installs it to SignServer.
  *
- * @version $Id$
+ * @version $Id: RenewSignerCommand.java 7111 2016-03-01 09:55:31Z malu9369 $
  */
 public class RenewSignerCommand extends AbstractAdminCommand {
 

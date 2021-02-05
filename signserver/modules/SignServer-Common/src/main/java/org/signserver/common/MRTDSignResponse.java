@@ -27,7 +27,7 @@ import org.cesecore.util.CertTools;
  * specific to MRTD signing.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: MRTDSignResponse.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class MRTDSignResponse extends ProcessResponse {
 

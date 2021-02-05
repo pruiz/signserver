@@ -44,7 +44,7 @@ import org.signserver.server.log.AdminInfo;
  * parent interface related to audit logging, taking an additional AdminInfo
  * instance.
  *
- * @version $Id$
+ * @version $Id: WorkerSessionLocal.java 11034 2019-06-19 07:02:30Z netmackan $
  */
 @Local
 public interface WorkerSessionLocal extends WorkerSession {
@@ -394,4 +394,10 @@ public interface WorkerSessionLocal extends WorkerSession {
             InvalidAlgorithmParameterException,
             UnsupportedCryptoTokenParameter,
             OperationUnsupportedException;
+    
+    /**
+     * Checks if key generation is disabled in the deployment configuration.
+     * @return true if key generation has been disabled globally.
+     */
+    boolean isKeyGenerationDisabled();
 }

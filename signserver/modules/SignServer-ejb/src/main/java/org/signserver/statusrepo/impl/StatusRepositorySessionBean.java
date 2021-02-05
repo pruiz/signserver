@@ -37,7 +37,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
 /**
  * Session bean offering an interface towards the status repository.
  *
- * @version $Id$
+ * @version $Id: StatusRepositorySessionBean.java 7566 2016-06-28 08:44:51Z malu9369 $
  * @author Markus Kilås
  */
 @Singleton

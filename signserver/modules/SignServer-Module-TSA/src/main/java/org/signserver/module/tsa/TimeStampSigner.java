@@ -190,7 +190,7 @@ import static org.signserver.common.SignServerConstants.DEFAULT_NULL;
  *
  *
  * @author philip
- * @version $Id$
+ * @version $Id: TimeStampSigner.java 10448 2019-03-01 13:06:21Z netmackan $
  */
 public class TimeStampSigner extends BaseSigner {
 

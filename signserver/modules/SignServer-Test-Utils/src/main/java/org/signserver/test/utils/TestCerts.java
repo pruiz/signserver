@@ -16,7 +16,7 @@ package org.signserver.test.utils;
  * Hard-coded test certificates used by some tests.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: TestCerts.java 6467 2015-10-13 09:43:07Z malu9369 $
  */
 public interface TestCerts {
     /**

@@ -29,7 +29,7 @@ import org.signserver.validationservice.common.Validation.Status;
  * serialized data on GlassFish could not be parsed by the test code.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidationTest.java 6282 2015-09-17 13:04:44Z malu9369 $
  */
 public class ValidationTest extends TestCase {
     

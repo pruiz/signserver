@@ -36,7 +36,7 @@ import org.signserver.common.WorkerType;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: WorkerConfigDataService.java 9418 2018-06-28 14:08:00Z vinays $
  */
 public class WorkerConfigDataService implements IWorkerConfigDataService {
 

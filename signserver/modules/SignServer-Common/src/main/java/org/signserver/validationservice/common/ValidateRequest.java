@@ -29,7 +29,7 @@ import org.signserver.common.RequestAndResponseManager;
  * validate a certificate.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ValidateRequest.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class ValidateRequest extends ProcessRequest {
 

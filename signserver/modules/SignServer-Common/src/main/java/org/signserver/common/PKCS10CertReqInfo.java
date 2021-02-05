@@ -20,7 +20,7 @@ import org.bouncycastle.asn1.ASN1Set;
  * and ASN1 set of extensions.
  * 
  * @author Philip Vendil 2007 feb 19
- * @version $Id$
+ * @version $Id: PKCS10CertReqInfo.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public class PKCS10CertReqInfo implements ISignerCertReqInfo {
 

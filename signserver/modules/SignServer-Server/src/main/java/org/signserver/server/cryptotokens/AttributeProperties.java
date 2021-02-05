@@ -26,7 +26,7 @@ import org.bouncycastle.util.encoders.Hex;
  * Public and private attributes for different key types.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AttributeProperties.java 9055 2018-01-19 10:25:18Z netmackan $
  */
 public class AttributeProperties {
 

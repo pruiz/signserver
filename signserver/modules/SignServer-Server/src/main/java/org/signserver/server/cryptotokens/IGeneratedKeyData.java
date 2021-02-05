@@ -18,7 +18,7 @@ import java.security.PublicKey;
  * Holder for the generated key.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IGeneratedKeyData.java 5710 2015-02-16 12:30:40Z netmackan $
  */
 public interface IGeneratedKeyData {
 

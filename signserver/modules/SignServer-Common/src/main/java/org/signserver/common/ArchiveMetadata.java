@@ -21,7 +21,7 @@ import org.signserver.server.archive.Archivable;
  * Can optionally hold the actual archived data assoiated with an entry.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ArchiveMetadata.java 5078 2014-08-29 12:19:24Z malu9369 $
  *
  */
 public class ArchiveMetadata implements Serializable {

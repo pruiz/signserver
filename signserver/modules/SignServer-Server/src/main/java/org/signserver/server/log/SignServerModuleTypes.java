@@ -17,7 +17,7 @@ import org.cesecore.audit.enums.ModuleType;
 /**
  * Different types of modules used by the SystemLogger.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignServerModuleTypes.java 8463 2017-07-12 15:30:30Z netmackan $
  */
 public enum SignServerModuleTypes implements ModuleType {
 

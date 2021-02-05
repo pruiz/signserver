@@ -28,7 +28,7 @@ import org.signserver.testutils.ModulesTestCase;
  * Tests that the right HTTP status codes are returned in different situations.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODProcessWorkerServletResponseTest.java 8775 2017-11-01 14:47:22Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SODProcessWorkerServletResponseTest extends WebTestCase {

@@ -24,7 +24,7 @@ import org.signserver.validationservice.common.Validation;
  * Factory class transforming different certficates to a ICertificate.
  * 
  * @author Philip Vendil 30 nov 2007
- * @version $Id$
+ * @version $Id: ICertificateManager.java 7302 2016-05-17 08:51:32Z malu9369 $
  */
 public class ICertificateManager {
 

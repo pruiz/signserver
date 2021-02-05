@@ -36,7 +36,7 @@ import org.signserver.server.log.Loggable;
  * forwarded addresses based on white and black listing.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ListBasedAddressAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 
 public class ListBasedAddressAuthorizer implements IAuthorizer {

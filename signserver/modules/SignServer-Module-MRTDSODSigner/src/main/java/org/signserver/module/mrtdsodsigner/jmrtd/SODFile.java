@@ -17,7 +17,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * $Id$
+ * $Id: SODFile.java 9307 2018-05-14 12:53:41Z netmackan $
  */
 
 package org.signserver.module.mrtdsodsigner.jmrtd;

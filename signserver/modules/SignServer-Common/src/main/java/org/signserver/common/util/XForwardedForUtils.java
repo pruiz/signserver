@@ -19,7 +19,7 @@ import org.signserver.common.RequestContext;
  * Utility methods for archiving
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: XForwardedForUtils.java 3499 2013-05-23 07:35:51Z malu9369 $
  *
  */
 public class XForwardedForUtils {

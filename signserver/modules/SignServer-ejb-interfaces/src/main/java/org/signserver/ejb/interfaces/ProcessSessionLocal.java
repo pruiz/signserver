@@ -27,7 +27,7 @@ import org.signserver.server.log.AdminInfo;
  * some processing.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ProcessSessionLocal.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Local
 public interface ProcessSessionLocal {

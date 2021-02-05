@@ -33,7 +33,7 @@ import org.junit.runners.MethodSorters;
  * without database). If running without database this test case should not be 
  * included in the test run.
  * 
- * @version $Id$
+ * @version $Id: ArchivingCLITest.java 9419 2018-06-29 09:16:47Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArchivingCLITest extends ModulesTestCase {

@@ -20,7 +20,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
  * Reads a property value, increments it, and writes it back.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IncrementProperty.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 public class IncrementProperty implements Runnable {
 

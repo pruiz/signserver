@@ -46,7 +46,7 @@ import org.signserver.validationservice.server.ValidationServiceWorker;
 /**
  * Implementation of the Validation Service web interface.
  *
- * @version $Id$
+ * @version $Id: ValidationWS.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 @Stateless
 @WebService(wsdlLocation = "META-INF/wsdl/ValidationWSService.wsdl",

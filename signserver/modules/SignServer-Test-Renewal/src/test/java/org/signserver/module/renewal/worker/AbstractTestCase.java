@@ -46,7 +46,7 @@ import org.signserver.server.signers.CryptoWorker;
  * and setup of signers etc.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractTestCase.java 7360 2016-05-19 13:23:30Z malu9369 $
  */
 public abstract class AbstractTestCase extends TestCase {
 

@@ -25,7 +25,7 @@ import org.bouncycastle.cms.DefaultSignedAttributeTableGenerator;
  *
  * @author Marcus Lundblad
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FilteredSignedAttributeTableGenerator.java 8562 2017-08-28 09:33:13Z netmackan $
  *
  */
 public class FilteredSignedAttributeTableGenerator extends

@@ -24,7 +24,7 @@ import org.signserver.common.SignServerException;
  * Interface for classes that can sign documents.
  *
  * @author Markus Kilås
- * $Id$
+ * $Id: DocumentSigner.java 6635 2015-11-06 16:24:45Z netmackan $
  */
 public interface DocumentSigner {
 

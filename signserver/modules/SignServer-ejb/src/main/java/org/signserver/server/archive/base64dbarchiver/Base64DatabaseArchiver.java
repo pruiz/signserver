@@ -45,7 +45,7 @@ import org.signserver.server.log.Loggable;
  * Currently only Archivable.TYPE_RESPONSE are supported.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Base64DatabaseArchiver.java 8051 2017-02-17 12:41:01Z malu9369 $
  */
 public class Base64DatabaseArchiver extends BaseArchiver implements Archiver {
 

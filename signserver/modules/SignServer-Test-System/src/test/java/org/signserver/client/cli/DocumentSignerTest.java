@@ -38,7 +38,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the signdocument command of Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DocumentSignerTest.java 9764 2018-11-29 09:48:00Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DocumentSignerTest extends ModulesTestCase {

@@ -38,7 +38,7 @@ import java.util.zip.ZipOutputStream;
  * entitymappings-xml-path
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: SetDBType.java 7562 2016-06-28 06:01:42Z malu9369 $
  */
 public class SetDBType {
 

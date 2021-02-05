@@ -23,7 +23,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
 /**
  * Implements the SignServer command line interface.
  *
- * @version $Id$
+ * @version $Id: AdminCLI.java 7562 2016-06-28 06:01:42Z malu9369 $
  */
 public class AdminCLI extends CommandLineInterface {
     

@@ -29,7 +29,7 @@ import org.signserver.common.data.Request;
  * 
  * @author Philip Vendil 23 nov 2007
  *
- * @version $Id$
+ * @version $Id: IAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public interface IAuthorizer {
 

@@ -17,7 +17,7 @@ package org.signserver.common;
  * more entries.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TokenOutOfSpaceException.java 6112 2015-06-22 14:32:14Z netmackan $
  */
 public class TokenOutOfSpaceException extends CryptoTokenOfflineException {
 

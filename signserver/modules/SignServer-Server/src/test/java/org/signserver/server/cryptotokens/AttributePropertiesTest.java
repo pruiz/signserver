@@ -26,7 +26,7 @@ import org.pkcs11.jacknji11.CKA;
  * Unit tests for the AttributeProperties class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AttributePropertiesTest.java 9055 2018-01-19 10:25:18Z netmackan $
  */
 public class AttributePropertiesTest {
     /** Logger for this class. */

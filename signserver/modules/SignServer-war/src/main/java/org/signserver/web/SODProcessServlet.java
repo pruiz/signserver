@@ -63,7 +63,7 @@ import org.signserver.server.data.impl.UploadConfig;
  * This is not located in the mrtdsod module package because it has to be available at startup to map urls.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODProcessServlet.java 7907 2016-12-28 15:30:09Z netmackan $
  */
 public class SODProcessServlet extends AbstractProcessServlet {
 

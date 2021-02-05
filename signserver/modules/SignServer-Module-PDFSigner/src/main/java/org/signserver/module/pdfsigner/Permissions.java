@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
  * SignServer to configure them.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Permissions.java 7305 2016-05-17 09:07:00Z malu9369 $
  */
 public class Permissions {
 

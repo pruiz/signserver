@@ -31,7 +31,7 @@ import org.apache.commons.fileupload.util.Streams;
  * Use parseTheRequest() to get a FileItem.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: BinaryFileUpload.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class BinaryFileUpload extends FileUpload {
     

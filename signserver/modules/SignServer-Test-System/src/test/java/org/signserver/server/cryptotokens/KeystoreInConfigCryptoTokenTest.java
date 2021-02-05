@@ -27,7 +27,7 @@ import org.signserver.common.WorkerType;
  * Test cases for the keystore crypto token storing the keystore in the config.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: KeystoreInConfigCryptoTokenTest.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 public class KeystoreInConfigCryptoTokenTest extends KeystoreCryptoTokenTestBase {
     private static final Logger LOG =

@@ -19,7 +19,7 @@ import java.util.List;
  * Base implementation of the component interface.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: BaseComponent.java 7470 2016-06-14 07:41:02Z malu9369 $
  */
 public abstract class BaseComponent implements IComponent {
 

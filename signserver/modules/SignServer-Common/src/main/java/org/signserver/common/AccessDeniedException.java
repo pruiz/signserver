@@ -15,7 +15,7 @@ package org.signserver.common;
 /**
  * Exception thrown if access is denied.
  * 
- * @version $Id$
+ * @version $Id: AccessDeniedException.java 3019 2012-11-20 08:34:07Z netmackan $
  */
 public class AccessDeniedException extends SignServerException {
 

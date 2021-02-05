@@ -23,7 +23,7 @@ import org.signserver.test.random.Task;
  * Renews a signer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RenewSigner.java 6966 2015-12-29 16:01:17Z netmackan $
  */
 public class RenewSigner implements Task {
 

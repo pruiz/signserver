@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  * Test for the statistical methods of the performance tool.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: WorkerThreadTest.java 3422 2013-04-08 11:10:04Z malu9369 $
  *
  */
 public class WorkerThreadTest extends TestCase {

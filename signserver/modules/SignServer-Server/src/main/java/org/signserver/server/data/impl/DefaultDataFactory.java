@@ -24,7 +24,7 @@ import org.signserver.common.data.ReadableData;
  * Implementation of the DataFactory.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultDataFactory.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class DefaultDataFactory implements DataFactory {
     /** Logger for this class. */

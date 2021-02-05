@@ -32,7 +32,7 @@ import org.signserver.server.log.LogMap;
  * on an authorized username from the request.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AuthorizedUsernameAliasSelector.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class AuthorizedUsernameAliasSelector implements AliasSelector {
 

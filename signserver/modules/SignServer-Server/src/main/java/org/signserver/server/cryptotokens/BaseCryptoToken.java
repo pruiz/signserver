@@ -18,7 +18,7 @@ package org.signserver.server.cryptotokens;
  * implementations can be added here.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: BaseCryptoToken.java 9494 2018-08-30 07:30:12Z vinays $
  */
 public abstract class BaseCryptoToken implements ICryptoTokenV4 {
 

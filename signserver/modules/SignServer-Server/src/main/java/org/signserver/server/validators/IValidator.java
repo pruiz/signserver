@@ -20,7 +20,7 @@ import org.signserver.server.IProcessable;
  * There exists a BaseValidator that can be extended covering some of it's functions.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IValidator.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public interface IValidator extends IProcessable {
 }

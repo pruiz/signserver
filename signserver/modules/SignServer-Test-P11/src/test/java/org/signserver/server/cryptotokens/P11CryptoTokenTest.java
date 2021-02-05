@@ -49,7 +49,7 @@ import static org.signserver.server.cryptotokens.CryptoTokenHelper.SECRET_KEY_PR
  * Generic CryptoToken tests using PKCS#11.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: P11CryptoTokenTest.java 9062 2018-01-23 13:51:54Z netmackan $
  */
 public class P11CryptoTokenTest extends CryptoTokenTestBase {
     /** Logger for this class */

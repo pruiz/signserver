@@ -21,7 +21,7 @@ import org.signserver.server.log.AdminInfo;
  * Local EJB interface.
  * Mirrors methods which are audit-logged, taking an extra AdminInfo instance.
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationSessionLocal.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @Local
 public interface GlobalConfigurationSessionLocal extends GlobalConfigurationSession {

@@ -45,7 +45,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * TODO: Most test cases here can be moved to the unit test in Module-XMSigner.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLSignerTest.java 10198 2019-01-11 13:06:11Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class XMLSignerTest {

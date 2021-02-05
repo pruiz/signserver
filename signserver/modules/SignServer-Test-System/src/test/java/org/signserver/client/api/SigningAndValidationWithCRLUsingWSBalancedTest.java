@@ -17,7 +17,7 @@ package org.signserver.client.api;
  * with load balancing capabilities etc.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SigningAndValidationWithCRLUsingWSBalancedTest.java 9733 2018-11-26 12:05:20Z malu9369 $
  */
 public class SigningAndValidationWithCRLUsingWSBalancedTest extends SigningAndValidationWithCRLTest {
 

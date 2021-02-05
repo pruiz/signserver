@@ -17,7 +17,7 @@ package org.signserver.common;
  * to the CLI.
  * 
  * @author Philip Vendil 2007 feb 19
- * @version $Id$
+ * @version $Id: ICertReqData.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public interface ICertReqData extends java.io.Serializable {
 }

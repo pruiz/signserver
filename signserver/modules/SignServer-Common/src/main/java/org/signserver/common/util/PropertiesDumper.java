@@ -35,7 +35,7 @@ import static org.signserver.common.util.PropertiesConstants.*;
  * Utility methods for dumping (exporting) global and worker configuration.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PropertiesDumper.java 10653 2019-04-12 07:49:49Z vinays $
  */
 public class PropertiesDumper {
     

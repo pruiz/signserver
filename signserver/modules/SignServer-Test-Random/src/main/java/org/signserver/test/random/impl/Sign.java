@@ -55,7 +55,7 @@ import org.xml.sax.SAXException;
  * Signs a sample document.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Sign.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class Sign implements Task {
 

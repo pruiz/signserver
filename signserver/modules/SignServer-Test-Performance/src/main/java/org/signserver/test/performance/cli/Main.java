@@ -32,7 +32,7 @@ import org.signserver.test.performance.impl.TimeStampThread;
  * Performance test tool.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: Main.java 9608 2018-10-11 08:57:04Z vinays $
  *
  */
 public class Main {

@@ -20,7 +20,7 @@ import org.apache.log4j.Logger;
 /**
  * Utility methods related to the Health check functionality.
  * 
- * @version $Id$
+ * @version $Id: HealthCheckUtils.java 7460 2016-06-10 07:45:55Z netmackan $
  */
 public class HealthCheckUtils {
 

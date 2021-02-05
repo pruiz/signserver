@@ -20,7 +20,7 @@ import org.signserver.common.WorkerType;
 /**
  * DataService managing the persistence of the worker configuration data.
  * 
- * @version $Id$
+ * @version $Id: IWorkerConfigDataService.java 9418 2018-06-28 14:08:00Z vinays $
  */
 public interface IWorkerConfigDataService {
 

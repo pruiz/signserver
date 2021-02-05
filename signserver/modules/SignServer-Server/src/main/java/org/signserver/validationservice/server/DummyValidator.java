@@ -32,7 +32,7 @@ import org.signserver.validationservice.common.Validation;
  * Dummy validator used for testing and demonstration purposes.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: DummyValidator.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class DummyValidator extends BaseValidator {
 

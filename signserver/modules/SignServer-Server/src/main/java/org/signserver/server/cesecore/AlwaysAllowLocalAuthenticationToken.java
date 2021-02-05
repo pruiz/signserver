@@ -29,7 +29,7 @@ import org.cesecore.authorization.user.matchvalues.AccessMatchValue;
  * 
  * Example usage: AuthenticationToken authenticationToken = new AlwaysAllowLocalAuthenticationToken("Internal function abc");
  * 
- * @version $Id$
+ * @version $Id: AlwaysAllowLocalAuthenticationToken.java 8434 2017-06-28 09:14:12Z netmackan $
  */
 public class AlwaysAllowLocalAuthenticationToken extends NestableAuthenticationToken {
 

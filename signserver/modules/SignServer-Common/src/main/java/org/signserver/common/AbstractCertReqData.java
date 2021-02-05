@@ -23,7 +23,7 @@ import java.io.IOException;
  * Replaces Base64SignerCertReqData.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractCertReqData.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 public abstract class AbstractCertReqData implements ICertReqData {
     private final String contentType;

@@ -18,7 +18,7 @@ import java.io.Serializable;
  * Identifier for a worker: either ID or name.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerIdentifier.java 7090 2016-02-23 14:24:08Z netmackan $
  */
 public class WorkerIdentifier implements Serializable {
 

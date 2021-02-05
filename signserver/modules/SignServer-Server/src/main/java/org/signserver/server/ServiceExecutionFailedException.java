@@ -18,7 +18,7 @@ package org.signserver.server;
  * There exists a BaseTimedService that can be extended covering some of it's functions
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ServiceExecutionFailedException.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public class ServiceExecutionFailedException extends Exception {
 

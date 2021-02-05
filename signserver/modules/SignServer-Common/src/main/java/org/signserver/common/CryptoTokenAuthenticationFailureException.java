@@ -19,7 +19,7 @@ import javax.xml.ws.WebFault;
  * to activate a signing token. 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: CryptoTokenAuthenticationFailureException.java 3835 2013-11-05 20:12:04Z netmackan $
  */
 @WebFault
 public class CryptoTokenAuthenticationFailureException extends Exception {

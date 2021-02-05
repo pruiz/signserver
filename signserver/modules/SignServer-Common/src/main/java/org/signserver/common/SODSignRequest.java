@@ -29,7 +29,7 @@ import org.apache.log4j.Logger;
  * available at startup to map urls.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODSignRequest.java 7301 2016-05-17 08:33:34Z malu9369 $
  */
 public class SODSignRequest extends ProcessRequest implements ISignRequest {
 

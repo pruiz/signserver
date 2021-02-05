@@ -18,7 +18,7 @@ import org.cesecore.util.query.elems.RelationalOperator;
  * Representation of an query condition.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: QueryCondition.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class QueryCondition {
     private String column;

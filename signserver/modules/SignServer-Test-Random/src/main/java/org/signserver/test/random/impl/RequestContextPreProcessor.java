@@ -18,7 +18,7 @@ import org.signserver.common.RemoteRequestContext;
  * Responsible for processing a RequestContext before it is sent out as a
  * request.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RequestContextPreProcessor.java 6966 2015-12-29 16:01:17Z netmackan $
  */
 public interface RequestContextPreProcessor {
 

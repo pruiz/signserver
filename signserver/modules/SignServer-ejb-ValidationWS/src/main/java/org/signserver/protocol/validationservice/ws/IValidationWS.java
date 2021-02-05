@@ -19,7 +19,7 @@ import org.signserver.common.SignServerException;
  * WebService interface for the Validation Service
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: IValidationWS.java 1865 2011-09-27 13:22:17Z anatom $
  */
 public interface IValidationWS {
 

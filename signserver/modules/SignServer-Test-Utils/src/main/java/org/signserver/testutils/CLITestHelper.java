@@ -25,7 +25,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
  * Helper methods for executing AdminCLI commands.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CLITestHelper.java 10638 2019-04-11 09:59:27Z malu9369 $
  */
 public class CLITestHelper {
   

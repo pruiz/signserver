@@ -27,7 +27,7 @@ import org.apache.log4j.Logger;
  * implemented currently.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ServiceLocator.java 6976 2016-01-04 11:07:37Z netmackan $
  */
 public final class ServiceLocator {
 

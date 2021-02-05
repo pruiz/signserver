@@ -28,7 +28,7 @@ import org.signserver.common.WorkerIdentifier;
  * Command used to test one or more keys associated with a Crypto Token.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TestKeyCommand.java 6942 2015-12-25 17:55:39Z netmackan $
  */
 public class TestKeyCommand extends AbstractAdminCommand {
 

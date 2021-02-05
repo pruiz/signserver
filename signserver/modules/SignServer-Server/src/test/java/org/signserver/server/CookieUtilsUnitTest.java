@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
  * Unit tests for the CookieUtils class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CookieUtilsUnitTest.java 9687 2018-11-12 15:22:44Z netmackan $
  */
 public class CookieUtilsUnitTest {
     

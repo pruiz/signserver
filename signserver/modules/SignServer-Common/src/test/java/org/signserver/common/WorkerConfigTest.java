@@ -25,7 +25,7 @@ import junit.framework.TestCase;
  * Tests for the WorkerConfig logging functions.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: WorkerConfigTest.java 9410 2018-06-27 06:21:11Z malu9369 $
  *
  */
 public class WorkerConfigTest extends TestCase {

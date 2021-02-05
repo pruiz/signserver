@@ -21,7 +21,7 @@ package org.signserver.cli.spi;
  * good error message as far as possible and only use this for unexpected 
  * failures.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UnexpectedCommandFailureException.java 2103 2012-02-07 19:33:00Z netmackan $
  * @see CommandFailureException
  */
 public class UnexpectedCommandFailureException extends Exception {

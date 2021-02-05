@@ -22,7 +22,7 @@ import javax.net.ssl.X509KeyManager;
  * KeyManager choosing the specified alias.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AliasKeyManager.java 2090 2012-02-01 16:41:43Z netmackan $
  */
 public class AliasKeyManager implements X509KeyManager {
 

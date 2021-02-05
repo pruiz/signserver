@@ -18,7 +18,7 @@ import org.signserver.common.WorkerConfig;
  * Constants used when parsing/dumping global and worker properties.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PropertiesConstants.java 10637 2019-04-11 09:55:20Z vinays $
  */
 public interface PropertiesConstants {
     

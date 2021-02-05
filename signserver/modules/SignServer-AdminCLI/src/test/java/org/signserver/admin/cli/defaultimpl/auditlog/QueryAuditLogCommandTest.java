@@ -24,7 +24,7 @@ import junit.framework.TestCase;
  * Tests the query parser.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: QueryAuditLogCommandTest.java 7562 2016-06-28 06:01:42Z malu9369 $
  *
  */
 

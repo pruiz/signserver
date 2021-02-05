@@ -26,7 +26,7 @@ import org.signserver.common.SignServerException;
  * Abstract implementation of DocumentValidator.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractDocumentValidator.java 7604 2016-07-05 14:39:29Z netmackan $
  */
 public abstract class AbstractDocumentValidator implements DocumentValidator {
 

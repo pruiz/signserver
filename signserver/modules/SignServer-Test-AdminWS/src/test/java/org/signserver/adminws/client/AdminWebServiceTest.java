@@ -31,7 +31,7 @@ import org.signserver.testutils.ModulesTestCase;
  * requires authentication.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminWebServiceTest.java 7376 2016-05-23 06:53:38Z malu9369 $
  */
 public class AdminWebServiceTest extends ModulesTestCase {
     

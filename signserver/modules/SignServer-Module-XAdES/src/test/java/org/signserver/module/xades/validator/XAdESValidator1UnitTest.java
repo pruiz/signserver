@@ -40,7 +40,7 @@ import org.signserver.validationservice.common.Validation;
  * Uses a hard coded XML document.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESValidator1UnitTest.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class XAdESValidator1UnitTest {
 

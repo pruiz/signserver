@@ -20,7 +20,7 @@ import org.signserver.statusrepo.common.NoSuchPropertyException;
 /**
  * Sets a status property.
  *
- * @version $Id$
+ * @version $Id: SetStatusPropertyCommand.java 2853 2012-10-17 13:02:07Z netmackan $
  */
 public class SetStatusPropertyCommand extends AbstractAdminCommand {
 

@@ -20,7 +20,7 @@ import org.signserver.common.GlobalConfiguration;
  *
  * @see GlobalConfiguration
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSGlobalConfiguration.java 5700 2015-02-13 12:23:16Z netmackan $
  */
 public class WSGlobalConfiguration {
 

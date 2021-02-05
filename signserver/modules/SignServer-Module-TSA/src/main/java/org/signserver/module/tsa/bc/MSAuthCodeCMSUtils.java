@@ -36,7 +36,7 @@ import org.signserver.module.tsa.MSAuthCodeTimeStampSigner;
  * to handle the requirements of the MSAuthCodeTimeStampSigner
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: MSAuthCodeCMSUtils.java 7360 2016-05-19 13:23:30Z malu9369 $
  *
  */
 public class MSAuthCodeCMSUtils

@@ -52,7 +52,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
  * Tests for the CRL Validator.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CRLValidatorTest.java 7360 2016-05-19 13:23:30Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CRLValidatorTest extends ModulesTestCase {

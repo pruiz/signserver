@@ -23,7 +23,7 @@ import org.cesecore.audit.enums.EventStatus;
  * WS version of AuditLogEntry.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSAuditLogEntry.java 7315 2016-05-17 11:23:33Z malu9369 $
  */
 @XmlType(name = "logEntry")
 public class WSAuditLogEntry {

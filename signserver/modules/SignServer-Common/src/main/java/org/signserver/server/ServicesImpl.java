@@ -18,7 +18,7 @@ import java.util.HashMap;
  * Implementation of a services map.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ServicesImpl.java 7302 2016-05-17 08:51:32Z malu9369 $
  */
 public class ServicesImpl implements IServices {
 

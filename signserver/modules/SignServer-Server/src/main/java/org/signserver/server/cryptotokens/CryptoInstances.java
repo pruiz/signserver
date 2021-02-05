@@ -23,7 +23,7 @@ import org.signserver.common.RequestContext;
  *
  * @see RequestContext
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CryptoInstances.java 7308 2016-05-17 09:46:40Z malu9369 $
  */
 public class CryptoInstances {
     

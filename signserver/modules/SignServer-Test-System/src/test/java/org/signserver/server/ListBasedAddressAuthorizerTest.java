@@ -34,7 +34,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the ListBasedAddressAuthorizer implementation.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ListBasedAddressAuthorizerTest.java 6969 2015-12-29 18:24:25Z netmackan $
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

@@ -20,7 +20,7 @@ package org.signserver.common;
  * Legacy class, use AbstractCertReqData or Pkcs10CertReqData instead.
  * 
  * @author Philip Vendil 2007 feb 19
- * @version $Id$
+ * @version $Id: Base64SignerCertReqData.java 10715 2019-04-30 11:29:06Z netmackan $
  * @see AbstractCertReqData
  * @see Pkcs10CertReqData
  */

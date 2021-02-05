@@ -36,7 +36,7 @@ import static org.signserver.common.util.PropertiesConstants.*;
  * SignServer as well. Move to SignServer-Common or to a session bean.
  * 
  * @author Philip Vendil 19 maj 2008
- * @version $Id$
+ * @version $Id: SetPropertiesHelper.java 10663 2019-04-12 21:58:30Z vinays $
  */
 public class SetPropertiesHelper {
 

@@ -20,7 +20,7 @@ import javax.xml.ws.Endpoint;
  * Could be used for debugging purposes.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RunMock.java 3982 2014-01-06 15:41:36Z netmackan $
  */
 public class RunMock {
 

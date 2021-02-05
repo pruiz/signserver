@@ -27,7 +27,7 @@ import static org.junit.Assert.*;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: RequestAndResponseManagerTest.java 6393 2015-10-01 09:45:46Z malu9369 $
  */
 public class RequestAndResponseManagerTest {
 

@@ -40,7 +40,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: FileBasedWorkerConfigDataService.java 9420 2018-06-29 10:03:31Z vinays $
  */
 public class FileBasedWorkerConfigDataService implements IWorkerConfigDataService {
 

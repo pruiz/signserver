@@ -19,7 +19,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
  * Holder for the data to use when creating an certificate extension.
  * 
  *
- * @version $Id$
+ * @version $Id: CertExt.java 2487 2012-08-17 08:45:22Z netmackan $
  */
 public class CertExt {
     private ASN1ObjectIdentifier oid;

@@ -47,7 +47,7 @@ import org.signserver.protocol.ws.gen.WorkerStatusWS;
  * server cluster.
  *
  * @author Philip Vendil 2007 feb 3
- * @version $Id$
+ * @version $Id: CallFirstNodeWithStatusOKWSClient.java 9711 2018-11-16 07:23:57Z malu9369 $
  */
 public class CallFirstNodeWithStatusOKWSClient implements ISignServerWSClient {
 

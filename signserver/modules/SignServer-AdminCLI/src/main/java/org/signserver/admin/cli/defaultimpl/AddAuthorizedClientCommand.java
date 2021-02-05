@@ -25,7 +25,7 @@ import org.signserver.common.SignServerUtil;
 /**
  * Adds an authorized client to a signer
  *
- * @version $Id$
+ * @version $Id: AddAuthorizedClientCommand.java 10662 2019-04-12 15:06:48Z netmackan $
  */
 public class AddAuthorizedClientCommand extends AbstractAdminCommand {
 

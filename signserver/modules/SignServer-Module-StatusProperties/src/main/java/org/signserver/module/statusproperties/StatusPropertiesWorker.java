@@ -57,7 +57,7 @@ import org.signserver.statusrepo.common.StatusName;
  * If no property is specified all status properties are returned
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusPropertiesWorker.java 7620 2016-07-14 14:50:30Z netmackan $
  * @see IStatusRepositorySession
  * @see GenericPropertiesRequest
  * @see GenericPropertiesResponse

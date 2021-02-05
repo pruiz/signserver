@@ -16,7 +16,7 @@ package org.signserver.test.random;
  * Thread running the tests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerThread.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public class WorkerThread extends Thread {   
     

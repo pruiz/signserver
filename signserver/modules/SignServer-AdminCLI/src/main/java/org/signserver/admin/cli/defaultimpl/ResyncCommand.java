@@ -21,7 +21,7 @@ import org.signserver.common.ResyncException;
 /**
  * Resynchronizes an out-of-sync Global Configuration.
  *
- * @version $Id$
+ * @version $Id: ResyncCommand.java 2095 2012-02-06 16:06:07Z netmackan $
  */
 public class ResyncCommand extends AbstractAdminCommand {
 

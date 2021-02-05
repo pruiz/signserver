@@ -106,7 +106,7 @@ import org.signserver.server.signers.BaseSigner;
  *
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: MSAuthCodeTimeStampSigner.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class MSAuthCodeTimeStampSigner extends BaseSigner {
 

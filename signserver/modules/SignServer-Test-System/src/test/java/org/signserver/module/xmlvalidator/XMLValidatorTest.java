@@ -37,7 +37,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSession;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: XMLValidatorTest.java 7626 2016-07-15 09:47:59Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class XMLValidatorTest extends ModulesTestCase {

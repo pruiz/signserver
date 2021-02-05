@@ -51,7 +51,7 @@ import org.signserver.testutils.WebTestCase;
  * System tests for the CookieAuthorizer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CookieAuthorizerTest.java 9756 2018-11-28 14:22:04Z netmackan $
  */
 public class CookieAuthorizerTest {
 

@@ -59,7 +59,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
 /**
  * EJB Singleton used to start services and perform upgrades etc.
  * 
- * @version $Id$
+ * @version $Id: StartupSingletonBean.java 7314 2016-05-17 11:18:23Z malu9369 $
  */
 @Startup
 @Singleton

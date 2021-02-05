@@ -22,7 +22,7 @@ import org.signserver.common.data.Response;
  * Default account that grants all requests without charging anybody.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoAccounter.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class NoAccounter implements IAccounter {
 

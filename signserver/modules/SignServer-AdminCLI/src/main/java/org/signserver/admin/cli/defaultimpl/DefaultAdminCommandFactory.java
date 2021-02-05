@@ -26,7 +26,7 @@ import org.signserver.cli.spi.AbstractCommandFactory;
  * CommandFactory for the default admin commands used by the Admin CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultAdminCommandFactory.java 10593 2019-03-29 09:43:15Z netmackan $
  */
 public class DefaultAdminCommandFactory extends AbstractCommandFactory implements AdminCommandFactory {
 

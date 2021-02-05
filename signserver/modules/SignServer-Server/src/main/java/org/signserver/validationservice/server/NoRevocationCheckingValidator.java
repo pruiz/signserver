@@ -39,7 +39,7 @@ import org.signserver.validationservice.common.Validation;
  * XXX: This class contains code mostly duplicated in CRLValidator and possibly
  * OCSPValidator. Consider refactoring.
  *
- * @version $Id$
+ * @version $Id: NoRevocationCheckingValidator.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class NoRevocationCheckingValidator extends BaseValidator {
 

@@ -52,7 +52,7 @@ import org.signserver.server.signers.BaseSigner;
  * Class used to sign MRTD Document Objects.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: MRTDSigner.java 8769 2017-10-30 14:57:36Z vinays $
  */
 public class MRTDSigner extends BaseSigner {
 

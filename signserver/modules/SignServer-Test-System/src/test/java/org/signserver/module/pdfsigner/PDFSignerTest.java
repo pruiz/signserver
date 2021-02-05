@@ -42,7 +42,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
 /**
  * Unit tests for the PDFSigner.
  *
- * @version $Id$
+ * @version $Id: PDFSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PDFSignerTest extends ModulesTestCase {

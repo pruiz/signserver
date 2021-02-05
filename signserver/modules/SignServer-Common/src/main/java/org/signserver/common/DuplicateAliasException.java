@@ -16,7 +16,7 @@ package org.signserver.common;
  * Exception indicating that the supplied alias already existed in the token.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DuplicateAliasException.java 6112 2015-06-22 14:32:14Z netmackan $
  */
 public class DuplicateAliasException extends Exception {
 

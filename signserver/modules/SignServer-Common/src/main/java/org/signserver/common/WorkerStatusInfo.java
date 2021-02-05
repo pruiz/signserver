@@ -22,7 +22,7 @@ import java.util.List;
  * as a list of brief status entries and longer ("complete") entries.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerStatusInfo.java 5071 2014-08-29 11:39:30Z netmackan $
  */
 public class WorkerStatusInfo implements Serializable {
 

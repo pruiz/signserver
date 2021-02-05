@@ -19,7 +19,7 @@ package org.signserver.server.archive;
  * files.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ByteArrayArchivable.java 7610 2016-07-13 10:12:10Z netmackan $
  * @see DefaultArchivable
  */
 public class ByteArrayArchivable extends AbstractArchivable {

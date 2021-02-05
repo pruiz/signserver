@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  * Filter adding no-cache headers to the response.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoCacheFilter.java 7918 2017-01-02 14:51:35Z netmackan $
  */
 public class NoCacheFilter implements Filter {
 

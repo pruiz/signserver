@@ -26,7 +26,7 @@ import org.signserver.cli.spi.CommandFailureException;
  * All accessible methods in this file handles concurrency and are thread-safe.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TransferManager.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public class TransferManager {
     /** Logger for this class. */

@@ -30,7 +30,7 @@ import org.signserver.common.WorkerIdentifier;
  * Command used to remove keys associated with a Crypto Token.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RemoveKeyCommand.java 6942 2015-12-25 17:55:39Z netmackan $
  */
 public class RemoveKeyCommand extends AbstractAdminCommand {
 

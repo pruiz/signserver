@@ -16,7 +16,7 @@ package org.signserver.common;
  * Exception thrown during initialization of a signtoken
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: CryptoTokenInitializationFailureException.java 4505 2014-04-03 12:57:42Z malu9369 $
  */
 public class CryptoTokenInitializationFailureException extends Exception {
 

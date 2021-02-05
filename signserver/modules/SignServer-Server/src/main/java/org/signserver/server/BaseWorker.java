@@ -31,7 +31,7 @@ import org.signserver.server.timedservices.ITimedService;
 /**
  * Base class with common methods for workers.
  *
- * @version $Id$
+ * @version $Id: BaseWorker.java 9410 2018-06-27 06:21:11Z malu9369 $
  */
 public abstract class BaseWorker implements IWorker {
 

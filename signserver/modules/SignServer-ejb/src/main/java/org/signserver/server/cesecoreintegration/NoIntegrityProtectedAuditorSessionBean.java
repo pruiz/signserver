@@ -39,7 +39,7 @@ import org.cesecore.util.query.QueryCriteria;
  * database in the NODB mode.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoIntegrityProtectedAuditorSessionBean.java 3325 2013-02-09 19:32:43Z netmackan $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)

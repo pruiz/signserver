@@ -16,7 +16,7 @@ package org.signserver.common;
  * Types for matching issuer DN with.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: MatchIssuerWithType.java 10564 2019-03-26 13:24:15Z netmackan $
  */
 public enum MatchIssuerWithType {
 

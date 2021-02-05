@@ -69,7 +69,6 @@ import org.signserver.server.entities.KeyUsageCounter;
 import org.signserver.server.entities.KeyUsageCounterDataService;
 import org.signserver.server.log.*;
 import org.signserver.server.nodb.FileBasedDatabaseManager;
-import org.signserver.server.statistics.StatisticsManager;
 import org.signserver.ejb.interfaces.WorkerSessionLocal;
 import org.signserver.ejb.interfaces.WorkerSessionRemote;
 import org.signserver.ejb.interfaces.GlobalConfigurationSessionLocal;
@@ -81,7 +80,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
 /**
  * The main worker session bean.
  * 
- * @version $Id$
+ * @version $Id: WorkerSessionBean.java 11125 2019-08-12 08:00:17Z malu9369 $
  */
 @Stateless
 public class WorkerSessionBean implements WorkerSessionLocal, WorkerSessionRemote {
@@ -354,8 +353,6 @@ public class WorkerSessionBean implements WorkerSessionLocal, WorkerSessionRemot
             serviceTimerSession.unload(workerId);
             serviceTimerSession.load(workerId);
         }
-
-        StatisticsManager.flush(workerId);
     }
 
     /* (non-Javadoc)
@@ -418,6 +415,11 @@ public class WorkerSessionBean implements WorkerSessionLocal, WorkerSessionRemot
             String keySpec, String alias, final char[] authCode)
             throws CryptoTokenOfflineException, InvalidWorkerIdException,
                 IllegalArgumentException {
+
+        // Check that key generation is not disabled
+        if (isKeyGenerationDisabled()) {
+            throw new CryptoTokenOfflineException("Key generation has been disabled");
+        }
 
         try {
             IWorker worker = workerManagerSession.getWorker(signerId);
@@ -1474,5 +1476,10 @@ public class WorkerSessionBean implements WorkerSessionLocal, WorkerSessionRemot
         } catch (NoSuchWorkerException ex) {
             throw new InvalidWorkerIdException(ex.getMessage());
         }
+    }
+
+    @Override
+    public boolean isKeyGenerationDisabled() {
+        return SignServerUtil.isKeyGenerationDisabled();
     }
 }

@@ -28,7 +28,7 @@ import org.signserver.testutils.ModulesTestCase;
  * For unit tests see he ClientsAuthorizationCommandUnitTest class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientsAuthorizationCommandTest.java 10666 2019-04-15 08:24:43Z netmackan $
  */
 public class ClientsAuthorizationCommandTest extends ModulesTestCase {
 

@@ -23,7 +23,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
  * 
  * See the manual for the syntax of the property file
  *
- * @version $Id$
+ * @version $Id: SetPropertiesCommand.java 10345 2019-02-14 12:11:39Z malu9369 $
  */
 public class SetPropertiesCommand extends AbstractAdminCommand {
 

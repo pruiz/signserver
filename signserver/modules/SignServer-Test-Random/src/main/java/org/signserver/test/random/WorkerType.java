@@ -16,7 +16,7 @@ package org.signserver.test.random;
  * All supported types of workers.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerType.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public enum WorkerType {
     /** XMLSigner. */

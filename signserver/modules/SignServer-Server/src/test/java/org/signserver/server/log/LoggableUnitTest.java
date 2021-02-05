@@ -18,7 +18,7 @@ import org.junit.Test;
 /**
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: LoggableUnitTest.java 7534 2016-06-21 11:22:43Z malu9369 $
  */
 public class LoggableUnitTest extends TestCase {
     /**

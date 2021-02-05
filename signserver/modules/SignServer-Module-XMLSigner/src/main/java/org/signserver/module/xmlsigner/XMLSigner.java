@@ -69,7 +69,7 @@ import org.signserver.server.IServices;
  * No properties yet
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLSigner.java 10026 2018-12-20 14:11:21Z vinays $
  */
 public class XMLSigner extends BaseSigner {
 

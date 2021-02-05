@@ -20,6 +20,6 @@ package org.signserver.server.archive.test1archiver;
  * name is different.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Test2Archiver.java 9951 2018-12-17 12:30:05Z malu9369 $
  */
 public class Test2Archiver extends Test1Archiver {}

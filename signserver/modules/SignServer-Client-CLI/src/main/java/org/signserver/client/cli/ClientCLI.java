@@ -24,7 +24,7 @@ import org.signserver.client.cli.spi.ClientCommandFactory;
  * Main class for the Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientCLI.java 2096 2012-02-07 10:19:40Z netmackan $
  */
 public class ClientCLI extends CommandLineInterface {
 

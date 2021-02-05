@@ -30,7 +30,7 @@ import org.signserver.server.ServicesImpl;
  * Contains tests for the log types facility.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ITimedServiceTest.java 7080 2016-02-23 09:51:29Z netmackan $
  */
 public class ITimedServiceTest extends TestCase {
     

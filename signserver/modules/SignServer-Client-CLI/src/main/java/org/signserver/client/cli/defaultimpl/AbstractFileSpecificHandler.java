@@ -26,7 +26,7 @@ import org.apache.log4j.Logger;
  * the instance is being closed.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractFileSpecificHandler.java 8679 2017-10-09 14:01:05Z malu9369 $
  */
 public abstract class AbstractFileSpecificHandler implements FileSpecificHandler {
     

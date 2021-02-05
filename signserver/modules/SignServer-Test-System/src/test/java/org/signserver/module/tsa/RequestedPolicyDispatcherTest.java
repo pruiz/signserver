@@ -36,7 +36,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
 /**
  * Tests for RequestedProfileDistpatcher.
  *
- * @version $Id$
+ * @version $Id: RequestedPolicyDispatcherTest.java 10448 2019-03-01 13:06:21Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RequestedPolicyDispatcherTest extends ModulesTestCase {

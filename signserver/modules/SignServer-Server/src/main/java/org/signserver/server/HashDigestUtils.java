@@ -16,7 +16,7 @@ package org.signserver.server;
  * Helper method for validating Hash Digest.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: HashDigestUtils.java 8794 2017-11-08 14:35:42Z vinays $
  */
 public class HashDigestUtils {
     /**

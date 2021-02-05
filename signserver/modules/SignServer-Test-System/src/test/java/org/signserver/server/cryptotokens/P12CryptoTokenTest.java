@@ -30,7 +30,7 @@ import org.signserver.test.utils.mock.MockedServicesImpl;
  * 
  * TODO: This is a unit test consider moving from SignServer Test-System to SignServer-Server project.
  * 
- * @version $Id$
+ * @version $Id: P12CryptoTokenTest.java 7584 2016-06-29 11:06:32Z netmackan $
  */
 public class P12CryptoTokenTest extends TestCase {
 

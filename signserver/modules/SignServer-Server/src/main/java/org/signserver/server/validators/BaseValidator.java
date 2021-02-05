@@ -29,7 +29,7 @@ import org.signserver.server.IServices;
  * functionality.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: BaseValidator.java 9410 2018-06-27 06:21:11Z malu9369 $
  */
 public abstract class BaseValidator extends BaseProcessable implements IValidator {
 

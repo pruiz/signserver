@@ -16,7 +16,7 @@ package org.signserver.common;
  * Exception where the given worker ID or worker name could not be found.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoSuchWorkerException.java 1807 2011-07-15 08:49:18Z netmackan $
  */
 public class NoSuchWorkerException extends IllegalRequestException {
 

@@ -31,7 +31,7 @@ import org.signserver.common.SignServerException;
  * Docuement validator using the HTTP protocol.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: HTTPDocumentValidator.java 7604 2016-07-05 14:39:29Z netmackan $
  *
  */
 public class HTTPDocumentValidator extends AbstractDocumentValidator {

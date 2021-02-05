@@ -42,7 +42,7 @@ import org.signserver.common.SignServerException;
  * certificate of certificate in question and making it stateless.
  * 
  * @author rayback2
- * @version $Id$
+ * @version $Id: OCSPCRLPathChecker.java 8434 2017-06-28 09:14:12Z netmackan $
  */
 public class OCSPCRLPathChecker extends OCSPPathChecker {
 

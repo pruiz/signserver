@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * Counter in database for number of signings made with a particular key.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeyUsageCounter.java 2615 2012-09-07 08:02:43Z netmackan $
  */
 @Entity
 @Table(name = "KeyUsageCounter")

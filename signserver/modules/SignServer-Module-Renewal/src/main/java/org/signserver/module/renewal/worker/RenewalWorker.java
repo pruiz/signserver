@@ -80,7 +80,7 @@ import org.signserver.server.log.Loggable;
  * a certificate signing request using the EJBCA Web Service interface.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RenewalWorker.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 public class RenewalWorker extends BaseSigner {
 

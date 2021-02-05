@@ -24,7 +24,7 @@ import org.cesecore.roles.management.RoleDataSessionLocal;
 /**
  * Mocked implementation of the RoleDataSession local interface.
  * 
- * @version $Id$
+ * @version $Id: RoleDataMockSessionBean.java 10727 2019-05-03 08:16:27Z netmackan $
  */
 @Stateless//(mappedName = JndiConstants.APP_JNDI_PREFIX + "RoleDataSessionRemote")
 @TransactionAttribute(TransactionAttributeType.REQUIRED)

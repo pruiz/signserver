@@ -22,7 +22,7 @@ import org.signserver.common.SignServerException;
  * Interface for requesting signing or validation of documents from SignServer.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ISigningAndValidation.java 1833 2011-08-10 14:28:47Z netmackan $
  */
 public interface ISigningAndValidation extends ISignServerWorker {
 

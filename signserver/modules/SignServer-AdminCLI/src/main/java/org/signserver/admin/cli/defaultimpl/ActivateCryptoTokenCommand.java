@@ -30,7 +30,7 @@ import org.signserver.common.WorkerStatus;
 /**
  * Command used to activate a Crypto Token
  *
- * @version $Id$
+ * @version $Id: ActivateCryptoTokenCommand.java 7562 2016-06-28 06:01:42Z malu9369 $
  */
 public class ActivateCryptoTokenCommand extends AbstractAdminCommand {
 

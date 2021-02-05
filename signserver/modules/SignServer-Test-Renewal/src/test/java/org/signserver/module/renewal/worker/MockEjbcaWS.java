@@ -72,7 +72,7 @@ import org.signserver.module.renewal
  * Mock implementation of the EJBCA Web Service.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockEjbcaWS.java 7391 2016-05-24 09:41:14Z netmackan $
  */
 @WebService(serviceName="EjbcaWSService", portName="EjbcaWSPort", 
     targetNamespace="http://ws.protocol.core.ejbca.org/",

@@ -21,7 +21,7 @@ import javax.xml.ws.WebFault;
  * such as miss-configuration or service unavailability.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalServerException.java 3836 2013-11-05 20:59:20Z netmackan $
  */
 @WebFault
 public class InternalServerException extends Exception {

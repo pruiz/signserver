@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlValue;
  * pair.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Metadata.java 8063 2017-02-21 08:41:57Z netmackan $
  */
 public class Metadata {
     private String name;

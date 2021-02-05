@@ -20,7 +20,7 @@ import java.util.Properties;
  * interface.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSWorkerConfig.java 5700 2015-02-13 12:23:16Z netmackan $
  */
 public class WSWorkerConfig implements Serializable {
 

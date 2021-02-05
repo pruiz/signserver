@@ -28,7 +28,7 @@ import org.apache.log4j.Logger;
  * URL of the form /signserver/worker/<worker name>
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: GenericProcessWorkerServlet.java 8152 2017-03-31 10:06:37Z netmackan $
  *
  */
 public class GenericProcessWorkerServlet extends HttpServlet {

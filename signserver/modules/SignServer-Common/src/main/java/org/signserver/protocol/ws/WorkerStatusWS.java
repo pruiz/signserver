@@ -16,7 +16,7 @@ package org.signserver.protocol.ws;
  * Class representing a WS representation of status of a worker in the system.
  * 
  * @author Philip Vendil 28 okt 2007
- * @version $Id$
+ * @version $Id: WorkerStatusWS.java 7748 2016-09-30 13:14:58Z netmackan $
  */
 public class WorkerStatusWS {
 

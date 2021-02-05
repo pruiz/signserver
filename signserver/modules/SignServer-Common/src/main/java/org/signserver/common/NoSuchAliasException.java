@@ -16,7 +16,7 @@ package org.signserver.common;
  * Exception indicating that the supplied alias did not exist in the token.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoSuchAliasException.java 6112 2015-06-22 14:32:14Z netmackan $
  */
 public class NoSuchAliasException extends Exception {
 

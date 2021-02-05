@@ -1,6 +1,6 @@
 <%-- 
     Author     : Markus Kilås
-    Version    : $Id$
+    Version    : $Id: error404.jsp 8313 2017-04-25 14:23:34Z netmackan $
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true" import="java.io.*" session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

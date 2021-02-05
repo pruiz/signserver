@@ -18,7 +18,7 @@ import java.util.HashMap;
  * Map holding the request meta data for a request.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RequestMetadata.java 3025 2012-11-21 08:14:49Z netmackan $
  */
 public class RequestMetadata extends HashMap<String, String> {
   

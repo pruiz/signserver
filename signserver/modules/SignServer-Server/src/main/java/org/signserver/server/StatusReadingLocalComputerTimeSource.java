@@ -38,7 +38,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
  * NONE, PAUSE or STOP.
  * 
  *
- * @version $Id$
+ * @version $Id: StatusReadingLocalComputerTimeSource.java 7702 2016-08-31 11:51:31Z malu9369 $
  */
 public class StatusReadingLocalComputerTimeSource implements ITimeSource {
 

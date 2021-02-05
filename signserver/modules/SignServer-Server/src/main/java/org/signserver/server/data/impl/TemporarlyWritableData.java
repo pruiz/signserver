@@ -35,7 +35,7 @@ import org.signserver.common.data.ReadableData;
  * The backing temporary file (if one) is removed when the instance is closed.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TemporarlyWritableData.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class TemporarlyWritableData extends CloseableWritableData {
     

@@ -21,7 +21,7 @@ import org.signserver.server.archive.Archivable;
  * This is not located in the mrtdsod module package because it has to be available at startup to map urls.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODSignResponse.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class SODSignResponse extends GenericSignResponse {
 

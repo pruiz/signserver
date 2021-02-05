@@ -45,7 +45,7 @@ import org.signserver.server.log.Loggable;
  * ACCEPT_ALL_USERNAMES = true
  * </pre>
  *
- * @version $Id$
+ * @version $Id: UsernameAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class UsernameAuthorizer implements IAuthorizer {
 

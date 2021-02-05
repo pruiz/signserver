@@ -71,7 +71,7 @@ import org.signserver.server.log.LogMap;
  * Unit tests for the CMSSigner class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CMSSignerUnitTest.java 8768 2017-10-30 08:52:10Z vinays $
  */
 public class CMSSignerUnitTest {
 

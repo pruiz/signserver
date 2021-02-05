@@ -20,7 +20,7 @@ import org.signserver.test.utils.mock.MockedCryptoToken;
  * Mocked version of the CMSSigner using a MockedCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedOpenPGPSigner.java 10721 2019-05-02 10:57:06Z netmackan $
  */
 public class MockedOpenPGPSigner extends OpenPGPSigner {
     private final MockedCryptoToken mockedToken;

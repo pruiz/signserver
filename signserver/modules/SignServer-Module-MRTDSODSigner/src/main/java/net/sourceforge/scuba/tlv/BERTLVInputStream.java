@@ -17,7 +17,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * $Id$
+ * $Id: BERTLVInputStream.java 7305 2016-05-17 09:07:00Z malu9369 $
  */
 
 /*

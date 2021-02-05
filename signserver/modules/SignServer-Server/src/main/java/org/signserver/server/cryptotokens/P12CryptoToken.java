@@ -27,7 +27,7 @@ import org.signserver.server.IServices;
  * KEYSTOREPATH : The full path to the key store to load. (required)
  * KEYSTOREPASSWORD : The password that locks the key store.
  * 
- * $Id$
+ * $Id: P12CryptoToken.java 7584 2016-06-29 11:06:32Z netmackan $
  */
 public class P12CryptoToken extends KeystoreCryptoToken {
 

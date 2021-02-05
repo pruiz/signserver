@@ -26,7 +26,7 @@ import org.signserver.common.WorkerIdentifier;
 /**
  * Command used to generate a new signing key.
  *
- * @version $Id$
+ * @version $Id: GenerateKeyCommand.java 6942 2015-12-25 17:55:39Z netmackan $
  */
 public class GenerateKeyCommand extends AbstractAdminCommand {
 

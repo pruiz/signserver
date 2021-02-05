@@ -27,7 +27,7 @@ import org.signserver.ejb.interfaces.WorkerSessionLocal;
  * Builds a signer's status report for the choosen signers in a special format.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignerStatusReportBuilder.java 8038 2017-02-08 15:14:32Z malu9369 $
  */
 public class SignerStatusReportBuilder implements ReportBuilder {
 

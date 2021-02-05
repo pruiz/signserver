@@ -20,7 +20,7 @@ import javax.xml.ws.WebFault;
  * not supporting this, like a soft crypto token.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: OperationUnsupportedException.java 5700 2015-02-13 12:23:16Z netmackan $
  */
 @WebFault
 public class OperationUnsupportedException extends Exception {

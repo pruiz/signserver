@@ -67,7 +67,7 @@ import org.cesecore.util.Base64;
  * 
  * @author Philip Vendil 30 nov 2007
  *
- * @version $Id$
+ * @version $Id: ValidationTestUtils.java 6759 2015-11-23 12:51:11Z malu9369 $
  */
 public class ValidationTestUtils {
 

@@ -40,7 +40,7 @@ import org.signserver.common.MatchSubjectWithType;
  * Tests for the property applier used for loading configuration property files.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: PropertiesApplierTest.java 10664 2019-04-12 22:14:26Z vinays $
  *
  */
 public class PropertiesApplierTest extends TestCase {

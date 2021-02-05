@@ -19,7 +19,7 @@ import java.util.Properties;
  * Class implementing many of the Command interface methods for convenience.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractCommand.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public abstract class AbstractCommand implements Command {
 

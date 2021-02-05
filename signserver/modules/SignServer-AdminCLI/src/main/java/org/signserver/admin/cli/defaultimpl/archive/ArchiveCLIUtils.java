@@ -22,7 +22,7 @@ import org.signserver.common.ArchiveDataVO;
  * Utility methods used by the different Achiving commands.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveCLIUtils.java 2891 2012-10-25 09:50:28Z netmackan $
  */
 public class ArchiveCLIUtils {
     

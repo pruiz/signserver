@@ -35,7 +35,7 @@ import org.signserver.server.timedservices.ITimedService;
  * worker is missing the IMPLEMENTATION_CLASS property.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UnloadableWorker.java 7637 2016-08-15 13:22:44Z malu9369 $
  */
 public class UnloadableWorker extends BaseSigner implements ITimedService {
     

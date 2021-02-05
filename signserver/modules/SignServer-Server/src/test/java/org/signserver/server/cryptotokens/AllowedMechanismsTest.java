@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  * Unit tests for AllowedMechanisms class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AllowedMechanismsTest.java 8906 2017-12-12 13:34:24Z netmackan $
  */
 public class AllowedMechanismsTest {
     

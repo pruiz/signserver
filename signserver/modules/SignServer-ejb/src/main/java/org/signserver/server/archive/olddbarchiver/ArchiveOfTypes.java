@@ -16,7 +16,7 @@ package org.signserver.server.archive.olddbarchiver;
  * Representation of what to archive.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveOfTypes.java 2844 2012-10-16 14:18:09Z netmackan $
  */
  public enum ArchiveOfTypes {
     

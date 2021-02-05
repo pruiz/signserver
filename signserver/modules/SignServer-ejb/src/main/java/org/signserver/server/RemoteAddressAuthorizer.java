@@ -42,7 +42,7 @@ import org.signserver.server.log.Loggable;
  * list of allowed addresses.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RemoteAddressAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class RemoteAddressAuthorizer implements IAuthorizer {
 

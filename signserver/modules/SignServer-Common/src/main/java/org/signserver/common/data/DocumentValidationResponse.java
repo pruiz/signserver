@@ -15,7 +15,7 @@ package org.signserver.common.data;
 /**
  * Data holder for a document validation response.
  *
- * @version $Id$
+ * @version $Id: DocumentValidationResponse.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class DocumentValidationResponse extends Response {
 

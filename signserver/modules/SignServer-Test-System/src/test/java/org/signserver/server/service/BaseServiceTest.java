@@ -34,8 +34,8 @@ import org.signserver.testutils.ModulesTestCase;
 import org.signserver.ejb.interfaces.WorkerSessionRemote;
 
 /**
- * TODO: Document me! See issue DSS-610
- * @version $Id$
+ * TODO: Document me!
+ * @version $Id: BaseServiceTest.java 11144 2019-08-16 09:25:06Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BaseServiceTest extends ModulesTestCase {

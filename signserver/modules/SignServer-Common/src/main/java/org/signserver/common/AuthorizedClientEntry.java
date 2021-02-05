@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * Class representing admin or client authorization.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: AuthorizedClientEntry.java 10635 2019-04-10 14:51:47Z netmackan $
  *
  */
 public class AuthorizedClientEntry {

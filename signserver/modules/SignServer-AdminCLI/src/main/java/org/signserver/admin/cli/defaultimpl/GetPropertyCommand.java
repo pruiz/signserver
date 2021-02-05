@@ -23,7 +23,7 @@ import org.signserver.common.GlobalConfiguration;
  * Get a property for a given worker.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: GetPropertyCommand.java 4583 2014-04-10 10:03:43Z malu9369 $
  *
  */
 public class GetPropertyCommand extends AbstractAdminCommand {

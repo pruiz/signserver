@@ -29,7 +29,7 @@ import org.signserver.server.IServices;
  * Dummy Signer used for test and demonstration purposes.
  *
  * @author Philip Vendil 17 dec 2007
- * @version $Id$
+ * @version $Id: DummySigner.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class DummySigner extends BaseSigner {
 

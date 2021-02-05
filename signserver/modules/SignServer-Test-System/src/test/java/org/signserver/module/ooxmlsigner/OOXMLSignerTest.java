@@ -33,7 +33,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Test case : signs docx file with certificate defined in module-configs/ooxmlsigner/junittest-part-config.properties
  *  
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: OOXMLSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OOXMLSignerTest extends ModulesTestCase {

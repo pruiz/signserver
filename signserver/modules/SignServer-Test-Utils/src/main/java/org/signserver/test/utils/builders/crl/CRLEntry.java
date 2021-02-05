@@ -20,7 +20,7 @@ import org.bouncycastle.asn1.x509.Extensions;
  * Holder for the data to use when creating an CRL entry.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CRLEntry.java 3753 2013-08-26 14:25:33Z netmackan $
  */
 public class CRLEntry {
     

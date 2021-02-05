@@ -34,7 +34,7 @@ import org.signserver.common.WorkerIdentifier;
  * Utility methods for checking the validity time of signer certificates.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidityTimeUtils.java 9493 2018-08-24 14:48:00Z vinays $
  */
 public class ValidityTimeUtils {
     

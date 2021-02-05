@@ -19,7 +19,7 @@ import org.signserver.test.utils.mock.MockedCryptoToken;
 /**
  * Mocked version of the PlainSigner using a MockedCryptoToken.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedPlainSigner.java 7663 2016-08-24 11:24:33Z netmackan $
  */
 public class MockedPlainSigner extends PlainSigner {
     private final MockedCryptoToken mockedToken;

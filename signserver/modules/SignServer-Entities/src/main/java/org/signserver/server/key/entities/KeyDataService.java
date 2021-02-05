@@ -20,7 +20,7 @@ import javax.persistence.Query;
  * Service for interacting with the key data entities.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeyDataService.java 9330 2018-05-23 13:48:18Z netmackan $
  */
 public class KeyDataService {
     

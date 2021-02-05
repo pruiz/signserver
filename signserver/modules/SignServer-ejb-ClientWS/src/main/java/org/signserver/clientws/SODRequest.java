@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlElement;
  * Request data to be sent to the processSOD operation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODRequest.java 8063 2017-02-21 08:41:57Z netmackan $
  * @see ClientWS#processSOD(java.lang.String, java.util.List, org.signserver.clientws.SODRequest) 
  */
 public class SODRequest {

@@ -23,7 +23,7 @@ import org.signserver.statusrepo.common.StatusEntry;
 /**
  * Gets all status properties and their expiration time.
  *
- * @version $Id$
+ * @version $Id: GetStatusPropertiesCommand.java 8038 2017-02-08 15:14:32Z malu9369 $
  */
 public class GetStatusPropertiesCommand extends AbstractAdminCommand {
 

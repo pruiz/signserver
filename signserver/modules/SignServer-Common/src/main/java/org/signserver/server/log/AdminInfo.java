@@ -19,7 +19,7 @@ import java.security.cert.X509Certificate;
 /**
  * Class holding administrator logging information.
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AdminInfo.java 3249 2013-01-25 14:21:08Z malu9369 $
  *
  */
 public class AdminInfo {

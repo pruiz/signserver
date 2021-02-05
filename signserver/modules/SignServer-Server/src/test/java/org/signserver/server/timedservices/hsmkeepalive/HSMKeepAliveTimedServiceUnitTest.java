@@ -24,7 +24,7 @@ import org.signserver.ejb.interfaces.WorkerSessionLocal;
  * Unit test for the HSM keep alive timed service.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: HSMKeepAliveTimedServiceUnitTest.java 7080 2016-02-23 09:51:29Z netmackan $
  */
 public class HSMKeepAliveTimedServiceUnitTest extends TestCase {
     

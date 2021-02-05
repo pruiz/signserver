@@ -35,7 +35,7 @@ import org.signserver.common.SignServerUtil;
  * (identified by client certificates).
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AbstractWSClientsCommand.java 8524 2017-08-22 08:35:29Z netmackan $
  */
 public abstract class AbstractWSClientsCommand extends AbstractAdminCommand {
 

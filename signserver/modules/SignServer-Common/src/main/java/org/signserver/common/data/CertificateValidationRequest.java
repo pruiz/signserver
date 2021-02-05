@@ -18,7 +18,7 @@ import java.security.cert.Certificate;
  * Data holder for a certificate validation request.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CertificateValidationRequest.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class CertificateValidationRequest extends Request {
 

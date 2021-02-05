@@ -24,7 +24,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionRemote;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: GlobalConfigurationTest.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GlobalConfigurationTest {

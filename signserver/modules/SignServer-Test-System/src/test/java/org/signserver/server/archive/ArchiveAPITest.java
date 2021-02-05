@@ -42,7 +42,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the Archiving API.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveAPITest.java 7864 2016-12-05 14:20:05Z netmackan $
  * 
  * @see Test1Archiver
  * @see Test2Archiver

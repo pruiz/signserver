@@ -24,7 +24,7 @@ import org.signserver.common.RequestMetadata;
  * the the existing GeneralSignatureRequest class.
  * 
  * @author Philip Vendil 28 okt 2007
- * @version $Id$
+ * @version $Id: ProcessRequestWS.java 7748 2016-09-30 13:14:58Z netmackan $
  */
 public class ProcessRequestWS {
 

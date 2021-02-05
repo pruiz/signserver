@@ -33,7 +33,7 @@ import org.signserver.server.IServices;
  *  validate                 : Main method used to validate a certificate.
  *  
  * @author Philip Vendil 13 nov 2007
- * @version $Id$
+ * @version $Id: IValidationService.java 7637 2016-08-15 13:22:44Z malu9369 $
  */
 public interface IValidationService {
 

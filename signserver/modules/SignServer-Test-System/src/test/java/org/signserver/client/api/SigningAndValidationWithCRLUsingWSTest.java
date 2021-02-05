@@ -16,7 +16,7 @@ package org.signserver.client.api;
  * Tests for client API with a CRLValidator and uses the web services interface.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SigningAndValidationWithCRLUsingWSTest.java 9728 2018-11-26 08:54:06Z malu9369 $
  */
 public class SigningAndValidationWithCRLUsingWSTest extends SigningAndValidationWithCRLTest {
 

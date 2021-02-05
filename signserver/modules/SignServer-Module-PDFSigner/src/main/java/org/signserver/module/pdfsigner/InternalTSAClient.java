@@ -25,7 +25,7 @@ import org.signserver.server.tsa.InternalTimeStampTokenFetcher;
  * TSA Client fetching the token internally.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalTSAClient.java 9283 2018-04-27 11:41:45Z malu9369 $
  */
 public class InternalTSAClient implements TSAClient {
 

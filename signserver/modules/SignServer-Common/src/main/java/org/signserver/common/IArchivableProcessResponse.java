@@ -19,7 +19,7 @@ import org.signserver.server.archive.Archivable;
  * Interface that should be implemented by all process responses that could be archived.
  * 
  * @author phive
- * @version $Id$
+ * @version $Id: IArchivableProcessResponse.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public interface IArchivableProcessResponse {
 

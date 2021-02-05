@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  * method can be called.
  *
  * @author Philip Vendil 23 okt 2008
- * @version $Id$
+ * @version $Id: WorkerEntityManager.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

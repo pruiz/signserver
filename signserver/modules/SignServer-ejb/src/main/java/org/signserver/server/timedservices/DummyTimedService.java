@@ -31,7 +31,7 @@ import org.signserver.server.WorkerContext;
  * Only output to the log that it have been called
  *
  * @author Philip Vendil 2007 jan 23
- * @version $Id$
+ * @version $Id: DummyTimedService.java 7566 2016-06-28 08:44:51Z malu9369 $
  */
 public class DummyTimedService extends BaseTimedService {
 

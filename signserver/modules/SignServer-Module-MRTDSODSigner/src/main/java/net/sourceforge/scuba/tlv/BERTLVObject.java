@@ -17,7 +17,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * $Id$
+ * $Id: BERTLVObject.java 7578 2016-06-28 14:16:12Z malu9369 $
  */
 
 /*

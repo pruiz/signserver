@@ -1,4 +1,4 @@
--- version: $Id$
+-- version: $Id: drop-index-signserver.sql 7766 2016-10-06 13:42:45Z netmackan $
 
 DROP INDEX auditrecorddata_idx2 ON AuditRecordData;
 DROP INDEX auditrecorddata_idx3 ON AuditRecordData;

@@ -23,7 +23,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
  * value equals the expected value.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IncrementPropertyThread.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 public class IncrementPropertyThread extends WorkerThread {
     /** Logger for this class. */

@@ -20,7 +20,7 @@ import org.signserver.server.archive.AbstractArchivable;
  * Holds the archiveId and archiveData object.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveDataArchivable.java 9954 2018-12-17 14:09:55Z malu9369 $
  */
 public class ArchiveDataArchivable extends AbstractArchivable {
 

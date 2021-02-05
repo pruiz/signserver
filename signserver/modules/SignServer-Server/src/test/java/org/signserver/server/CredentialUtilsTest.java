@@ -62,7 +62,7 @@ import org.bouncycastle.util.encoders.Base64;
  * Unit tests for the CredentialUtils helper class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CredentialUtilsTest.java 10385 2019-02-20 14:57:05Z vinays $
  */
 public class CredentialUtilsTest {
 

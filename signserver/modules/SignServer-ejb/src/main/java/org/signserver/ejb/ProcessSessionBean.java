@@ -88,7 +88,7 @@ import org.signserver.validationservice.common.ValidateResponse;
  * Session Bean handling the worker process requests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ProcessSessionBean.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.SUPPORTS)

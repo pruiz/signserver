@@ -22,7 +22,7 @@ import org.signserver.common.RequestContext;
  * for the current transaction to put in log entries into.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: LogMap.java 7542 2016-06-21 14:08:45Z malu9369 $
  */
 public class LogMap extends HashMap<String, Object> {
   

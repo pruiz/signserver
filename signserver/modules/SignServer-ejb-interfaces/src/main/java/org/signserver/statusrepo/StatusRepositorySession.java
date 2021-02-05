@@ -22,7 +22,7 @@ import org.signserver.statusrepo.common.StatusEntry;
  * Interface towards the status repository session bean.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusRepositorySession.java 6970 2015-12-29 18:27:47Z netmackan $
  */
 public interface StatusRepositorySession {
 

@@ -45,7 +45,7 @@ import org.cesecore.util.query.QueryCriteria;
  * the log format used by the old SignServer SystemLogger.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: SignServerLog4jDevice.java 7495 2016-06-16 12:02:51Z malu9369 $
  *
  */
 

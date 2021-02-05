@@ -38,7 +38,7 @@ import org.signserver.common.SignServerException;
  * Command Line Interface (CLI) for signing MRTD SODs.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignDataGroupsCommand.java 10979 2019-06-05 10:07:44Z netmackan $
  */
 public class SignDataGroupsCommand extends AbstractCommand {
 
@@ -284,7 +284,7 @@ public class SignDataGroupsCommand extends AbstractCommand {
     /**
      * Checks that all mandatory options are given.
      */
-    private void validateOptions() throws ParseException {
+    private void validateOptions() throws ParseException, IllegalCommandArgumentsException {
         if (workerName == null && workerId == 0) {
             throw new ParseException(
                     "Missing -workername or -workerid");
@@ -304,7 +304,7 @@ public class SignDataGroupsCommand extends AbstractCommand {
     private SODSigner createSigner() throws MalformedURLException {
         final SODSigner signer;
 
-        final SSLSocketFactory sf = keyStoreOptions.setupHTTPS();
+        final SSLSocketFactory sf = keyStoreOptions.setupHTTPS(createConsolePasswordReader(), out);
         
         if (sf != null) {
             HttpsURLConnection.setDefaultSSLSocketFactory(sf);

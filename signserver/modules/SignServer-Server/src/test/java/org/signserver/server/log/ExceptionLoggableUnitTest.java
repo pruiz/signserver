@@ -19,7 +19,7 @@ import org.junit.Test;
  * Test for the ExceptionLoggable Loggable implementation.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ExceptionLoggableUnitTest.java 7534 2016-06-21 11:22:43Z malu9369 $
  */
 public class ExceptionLoggableUnitTest extends TestCase {
     /**

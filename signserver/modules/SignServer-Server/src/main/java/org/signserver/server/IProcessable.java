@@ -46,7 +46,7 @@ import org.signserver.common.data.Response;
  * functions.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: IProcessable.java 8472 2017-07-14 12:28:36Z netmackan $
  */
 public interface IProcessable extends IWorker {
 

@@ -18,7 +18,7 @@ import java.util.Map;
  * Data holder for a MRTD SOD signing request.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODRequest.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class SODRequest extends Request {
 

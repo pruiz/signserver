@@ -71,7 +71,7 @@ import org.signserver.validationservice.server.X509ExtendedKeyUsageExistsCertSel
  * CertPathChecker using OCSP with fallback to CRL.
  * 
  * Based on the OCSPCRLPathChecker by rayback2.
- * @version $Id$
+ * @version $Id: AbstractCustomCertPathChecker.java 8435 2017-06-28 09:42:58Z netmackan $
  */
 public abstract class AbstractCustomCertPathChecker extends PKIXCertPathChecker {
     

@@ -35,7 +35,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * module-configs/odfsigner/junittest-part-config.properties
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: ODFSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ODFSignerTest extends ModulesTestCase {

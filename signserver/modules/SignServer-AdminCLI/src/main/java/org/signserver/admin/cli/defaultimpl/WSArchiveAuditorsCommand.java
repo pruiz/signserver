@@ -15,7 +15,7 @@ package org.signserver.admin.cli.defaultimpl;
 /**
  * Command for managing the list of authorized WS auditors.
  *
- * @version $Id$
+ * @version $Id: WSArchiveAuditorsCommand.java 8469 2017-07-13 13:59:24Z netmackan $
  */
 public class WSArchiveAuditorsCommand extends AbstractWSClientsCommand {
     

@@ -43,7 +43,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSession;
  * Tests for client API with a CRLValidator.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SigningAndValidationWithCRLTest.java 9728 2018-11-26 08:54:06Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SigningAndValidationWithCRLTest extends ModulesTestCase {

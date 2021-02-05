@@ -53,7 +53,7 @@ import org.xml.sax.SAXException;
  *                           handling certificate validation
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLValidator.java 7626 2016-07-15 09:47:59Z netmackan $
  */
 public class XMLValidator extends BaseValidator {
 

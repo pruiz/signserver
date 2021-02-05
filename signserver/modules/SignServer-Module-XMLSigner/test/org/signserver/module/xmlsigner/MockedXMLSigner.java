@@ -24,7 +24,7 @@ import org.signserver.test.utils.mock.MockedCryptoToken;
  * Mocked version of the XMLSigner using a MockedCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedXMLSigner.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class MockedXMLSigner extends XMLSigner {
     private final MockedCryptoToken mockedToken;

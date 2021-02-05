@@ -19,7 +19,7 @@ package org.signserver.server.log;
  * of log strings.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: Loggable.java 7534 2016-06-21 11:22:43Z malu9369 $
  */
 public interface Loggable {
     /**

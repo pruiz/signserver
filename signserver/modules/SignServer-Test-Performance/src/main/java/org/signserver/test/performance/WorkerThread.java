@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
  * Thread running tests.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: WorkerThread.java 3422 2013-04-08 11:10:04Z malu9369 $
  *
  */
 public class WorkerThread extends Thread {

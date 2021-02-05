@@ -37,7 +37,7 @@ import org.signserver.server.log.AdminInfo;
  * WORKERS = Comma separated list of worker names
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FirstActiveDispatcher.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class FirstActiveDispatcher extends BaseDispatcher {
 

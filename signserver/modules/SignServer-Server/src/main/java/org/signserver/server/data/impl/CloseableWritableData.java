@@ -23,7 +23,7 @@ import org.signserver.common.data.WritableData;
  * any temporary upload file being removed).
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CloseableWritableData.java 7669 2016-08-24 20:01:10Z netmackan $
  * @see CloseableReadableData
  */
 public abstract class CloseableWritableData extends ResourcesAutoCloseable implements WritableData {

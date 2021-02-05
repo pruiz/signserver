@@ -19,7 +19,7 @@ package org.signserver.test.signserverws.v32;
  * This tests assumes that test-configuration.properties as been applied to
  * SignServer.
  *
- * @version $Id$
+ * @version $Id: SignServerWSServiceTest.java 4478 2014-03-31 09:26:33Z netmackan $
  */
 public class SignServerWSServiceTest extends org.signserver.test.signserverws.v31.SignServerWSServiceTest {
 

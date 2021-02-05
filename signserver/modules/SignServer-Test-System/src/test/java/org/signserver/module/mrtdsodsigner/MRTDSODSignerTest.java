@@ -45,7 +45,7 @@ import org.signserver.test.utils.builders.CryptoUtils;
 /**
  * Tests the MRTDSODSigner.
  *
- * @version $Id$
+ * @version $Id: MRTDSODSignerTest.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MRTDSODSignerTest extends ModulesTestCase {

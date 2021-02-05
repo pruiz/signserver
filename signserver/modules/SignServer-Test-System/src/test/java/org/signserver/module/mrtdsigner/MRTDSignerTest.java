@@ -41,7 +41,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: MRTDSignerTest.java 8808 2017-11-14 09:51:21Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MRTDSignerTest extends ModulesTestCase {

@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
  * Unit tests for Permissions.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PermissionsUnitTest.java 7579 2016-06-29 07:18:03Z malu9369 $
  */
 public class PermissionsUnitTest extends TestCase {
 

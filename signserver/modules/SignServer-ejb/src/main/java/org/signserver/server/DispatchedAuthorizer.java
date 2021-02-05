@@ -31,7 +31,7 @@ import org.signserver.common.data.Request;
  * AUTHORIZEALLDISPATCHERS = True, if any Dispatcher should be authorized. (Default: true, currently only true is supported)
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DispatchedAuthorizer.java 7752 2016-09-30 15:45:40Z netmackan $
  * @see RequestContext#DISPATCHER_AUTHORIZED_CLIENT
  */
 public class DispatchedAuthorizer implements IAuthorizer {

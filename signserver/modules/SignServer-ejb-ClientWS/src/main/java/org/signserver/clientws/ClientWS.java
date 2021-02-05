@@ -56,7 +56,7 @@ import org.signserver.server.log.Loggable;
  * signing etc.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientWS.java 8113 2017-03-13 14:47:03Z netmackan $
  */
 @WebService(serviceName = "ClientWSService")
 @Stateless()

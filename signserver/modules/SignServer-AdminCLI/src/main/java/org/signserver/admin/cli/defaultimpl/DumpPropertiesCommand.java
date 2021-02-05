@@ -26,7 +26,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
 /**
  * Command used to dump all configured properties for a worker or all workers
  *
- * @version $Id$
+ * @version $Id: DumpPropertiesCommand.java 10634 2019-04-10 13:11:38Z vinays $
  */
 public class DumpPropertiesCommand extends AbstractAdminCommand {
 

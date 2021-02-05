@@ -38,7 +38,7 @@ import org.signserver.testutils.ModulesTestCase;
  * Tests that the right HTTP status codes are returned in different situations.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: GenericProcessServletResponseTest.java 9959 2018-12-18 08:40:11Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GenericProcessServletResponseTest extends WebTestCase {

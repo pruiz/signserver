@@ -37,7 +37,7 @@ import org.signserver.common.ArchiveMetadata;
  *
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: ArchiveDataService.java 7573 2016-06-28 11:29:45Z malu9369 $
  */
 public class ArchiveDataService {
 

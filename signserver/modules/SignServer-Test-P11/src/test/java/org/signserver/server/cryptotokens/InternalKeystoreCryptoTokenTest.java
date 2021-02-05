@@ -64,7 +64,7 @@ import org.signserver.test.utils.mock.MockedServicesImpl;
  * Generic CryptoToken tests using KeyStoreCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalKeystoreCryptoTokenTest.java 11034 2019-06-19 07:02:30Z netmackan $
  */
 public class InternalKeystoreCryptoTokenTest extends CryptoTokenTestBase {
     /** Logger for this class */
@@ -506,6 +506,11 @@ public class InternalKeystoreCryptoTokenTest extends CryptoTokenTestBase {
                     @Override
                     public List<String> getAllWorkerNames() {
                         throw new UnsupportedOperationException("Not supported yet."); 
+                    }
+
+                    @Override
+                    public boolean isKeyGenerationDisabled() {
+                        return false;
                     }
                 };
             }

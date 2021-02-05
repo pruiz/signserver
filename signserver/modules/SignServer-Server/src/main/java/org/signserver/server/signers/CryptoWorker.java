@@ -21,7 +21,7 @@ import org.signserver.server.IServices;
  * Meant as a placeholder for a crypto token to be referenced from an other 
  * worker.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CryptoWorker.java 7637 2016-08-15 13:22:44Z malu9369 $
  */
 public class CryptoWorker extends NullSigner {
 

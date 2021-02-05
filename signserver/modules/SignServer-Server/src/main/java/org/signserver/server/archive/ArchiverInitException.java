@@ -16,7 +16,7 @@ package org.signserver.server.archive;
  * Exception thrown in case of exception initializing the archiver.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiverInitException.java 2841 2012-10-16 08:31:40Z netmackan $
  */
 public class ArchiverInitException extends Exception {
 

@@ -18,7 +18,7 @@ import java.math.BigInteger;
  * Class representing all allowed Subject types for trusted client certs.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: MatchSubjectWithType.java 10616 2019-04-09 14:52:14Z netmackan $
  */
 public enum MatchSubjectWithType {
 

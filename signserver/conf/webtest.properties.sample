@@ -1,5 +1,5 @@
 # Configuration for the SignServer WebTest module
-# $Id$
+# $Id: webtest.properties.sample 9446 2018-07-09 06:56:15Z oskareriksson $
 
 # Basic configuration for connecting to SignServer
 webtest.appserver.domainname = localhost

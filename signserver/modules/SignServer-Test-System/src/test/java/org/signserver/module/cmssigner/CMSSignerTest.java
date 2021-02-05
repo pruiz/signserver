@@ -50,7 +50,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for CMSSigner.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CMSSignerTest.java 10202 2019-01-11 13:46:48Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CMSSignerTest  {

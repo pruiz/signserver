@@ -25,7 +25,13 @@
         <cookie-config>
             <http-only>true</http-only>
         </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
     </session-config>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet>
         <servlet-name>GenericProcessServlet</servlet-name>
         <servlet-class>org.signserver.web.GenericProcessServlet</servlet-class>
@@ -58,6 +64,10 @@
         <servlet-name>ClientCLIDistServlet</servlet-name>
         <servlet-class>org.signserver.web.ClientCLIDistServlet</servlet-class>
     </servlet>
+     <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>WS31Dispatcher</servlet-name>
         <url-pattern>/signserverws/signserverws</url-pattern>
@@ -110,30 +120,23 @@
         <url-pattern>/clientcli-dist/signserver-clientcli.zip</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <!-- Special page for 404 -->
+    <error-page>
+        <exception-type>com.sun.faces.context.FacesFileNotFoundException</exception-type>
+        <location>/error-404.xhtml</location>
+    </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/errorpages/error404.jsp</location>
+        <location>/error-404.xhtml</location>
     </error-page>
     <error-page>
-        <error-code>400</error-code>
-        <location>/errorpages/error400.jsp</location>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/error-expiredview.xhtml</location>
     </error-page>
+    <!-- Global error page for all other errors -->
     <error-page>
-        <error-code>403</error-code>
-        <location>/errorpages/error403.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>413</error-code>
-        <location>/errorpages/error413.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/errorpages/error500.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>503</error-code>
-        <location>/errorpages/error503.jsp</location>
+        <location>/error.xhtml</location>
     </error-page>
 </web-app>

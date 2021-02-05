@@ -84,7 +84,7 @@ import org.signserver.testutils.TestUtils;
  * and uses the signature algorithm as set.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: MSAuthCodeTimeStampSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class MSAuthCodeTimeStampSignerTest extends ModulesTestCase {
     

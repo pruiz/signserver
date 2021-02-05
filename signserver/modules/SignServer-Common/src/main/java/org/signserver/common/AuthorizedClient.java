@@ -19,7 +19,7 @@ import java.io.Serializable;
  * issuerDN of trusted client certs.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: AuthorizedClient.java 6309 2015-09-18 13:06:33Z malu9369 $
  */
 public class AuthorizedClient implements Comparable<Object>, Serializable {
 

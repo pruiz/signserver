@@ -24,7 +24,7 @@ import org.signserver.common.data.Response;
  * out worker request.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IAccounter.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public interface IAccounter {
 

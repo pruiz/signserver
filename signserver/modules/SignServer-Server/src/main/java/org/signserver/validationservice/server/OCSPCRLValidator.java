@@ -26,7 +26,7 @@ import org.signserver.common.SignServerException;
  * also getLogger() is overriden too for proper logging
  * 
  * @author rayback2
- * @version $Id$
+ * @version $Id: OCSPCRLValidator.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class OCSPCRLValidator extends OCSPValidator {
 

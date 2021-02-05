@@ -47,7 +47,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionLocal;
  * </p>
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: GlobalConfigSampleAccounter.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class GlobalConfigSampleAccounter implements IAccounter {
 

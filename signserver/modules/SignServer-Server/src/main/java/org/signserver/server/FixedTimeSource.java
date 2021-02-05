@@ -25,7 +25,7 @@ import org.signserver.common.WorkerStatusInfo;
  * predictable non-null time value.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FixedTimeSource.java 7647 2016-08-17 08:16:10Z malu9369 $
  */
 public class FixedTimeSource implements ITimeSource {
 

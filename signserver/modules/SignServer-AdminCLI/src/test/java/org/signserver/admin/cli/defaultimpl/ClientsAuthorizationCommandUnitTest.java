@@ -25,7 +25,7 @@ import org.signserver.common.MatchSubjectWithType;
  * An other system test will check that add/remove/list actually works.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientsAuthorizationCommandUnitTest.java 10658 2019-04-12 12:49:29Z netmackan $
  */
 public class ClientsAuthorizationCommandUnitTest {
 

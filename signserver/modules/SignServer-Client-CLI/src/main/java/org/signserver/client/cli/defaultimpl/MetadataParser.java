@@ -21,7 +21,7 @@ import org.signserver.cli.spi.IllegalCommandArgumentsException;
  * Utility class to handle the -metadata and -extraoption CLI options.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: MetadataParser.java 8728 2017-10-19 14:09:23Z netmackan $
  *
  */
 public class MetadataParser {

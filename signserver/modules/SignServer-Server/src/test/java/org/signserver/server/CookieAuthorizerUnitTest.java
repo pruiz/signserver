@@ -26,7 +26,7 @@ import org.signserver.common.WorkerConfig;
  * Unit tests for CookieAutorizer feature.
  * 
  * @author George Matveev
- * @version $Id$
+ * @version $Id: CookieAuthorizerUnitTest.java 9692 2018-11-12 16:03:10Z georgem $
  */
 public class CookieAuthorizerUnitTest {
     

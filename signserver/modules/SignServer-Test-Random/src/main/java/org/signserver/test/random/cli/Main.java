@@ -35,7 +35,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
  * Command line interface for random tests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Main.java 7360 2016-05-19 13:23:30Z malu9369 $
  */
 public class Main {
     

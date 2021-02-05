@@ -25,7 +25,7 @@ import java.io.ObjectOutput;
  * 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ProcessResponse.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public abstract class ProcessResponse implements Serializable {
 

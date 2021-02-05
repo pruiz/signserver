@@ -16,7 +16,7 @@ package org.signserver.test.adminws;
  * Informs that this class is not intended to be run standalone.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Main.java 1837 2011-08-11 10:13:08Z netmackan $
  */
 public class Main {
 

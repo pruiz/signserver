@@ -21,7 +21,7 @@ import org.signserver.common.WorkerStatus;
  *
  * @see WorkerStatus
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSWorkerStatus.java 1831 2011-08-10 12:27:36Z netmackan $
  */
 public class WSWorkerStatus implements Serializable {
 

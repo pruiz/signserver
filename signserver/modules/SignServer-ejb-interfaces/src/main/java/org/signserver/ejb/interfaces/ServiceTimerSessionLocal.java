@@ -18,7 +18,7 @@ import javax.ejb.Remote;
 /**
  * Interface for ServiceTimerSession.
  *
- * @version $Id$
+ * @version $Id: ServiceTimerSessionLocal.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @Local
 public interface ServiceTimerSessionLocal {

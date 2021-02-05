@@ -24,7 +24,7 @@ import static org.signserver.common.util.PropertiesConstants.NAME;
  * Parsed and checked configuration.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PreloadedWorkerConfig.java 9467 2018-07-26 14:00:24Z vinays $
  */
 public class PreloadedWorkerConfig {
     

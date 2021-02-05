@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * Manages settings for PKCS11 libaries.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: PKCS11Settings.java 7301 2016-05-17 08:33:34Z malu9369 $
  */
 public class PKCS11Settings {
     /** Logger for this class */

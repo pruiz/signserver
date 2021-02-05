@@ -43,7 +43,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
  * AdminCLI command to query the audit log.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: QueryAuditLogCommand.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class QueryAuditLogCommand extends AbstractCommand {
 

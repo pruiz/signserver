@@ -20,7 +20,7 @@ import org.signserver.common.WorkerIdentifier;
 /**
  * Command used to deactivate a Crypto Token
  *
- * @version $Id$
+ * @version $Id: DeactivateCryptoTokenCommand.java 6942 2015-12-25 17:55:39Z netmackan $
  */
 public class DeactivateCryptoTokenCommand extends AbstractAdminCommand {
 

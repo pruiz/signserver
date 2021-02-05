@@ -17,7 +17,7 @@ package org.signserver.common;
  * by the accounter.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NotGrantedException.java 4563 2014-04-08 13:40:07Z netmackan $
  */
 public class NotGrantedException extends SignServerException {
 

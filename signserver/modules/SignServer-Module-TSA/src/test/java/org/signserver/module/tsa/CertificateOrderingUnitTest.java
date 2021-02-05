@@ -63,7 +63,7 @@ import static org.signserver.testutils.ModulesTestCase.createResponseData;
  * Unit tests for the encoding of the time-stamp tokens and specifically related to the ordering of the certificates in the output.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CertificateOrderingUnitTest.java 9434 2018-07-05 09:32:36Z vinays $
  */
 public class CertificateOrderingUnitTest extends ModulesTestCase {
     /** Logger for this class. */

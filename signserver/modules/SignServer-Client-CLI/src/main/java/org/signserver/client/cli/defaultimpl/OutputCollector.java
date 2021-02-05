@@ -21,7 +21,7 @@ import java.io.OutputStream;
  * via a ByteArrayOutputStream.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: OutputCollector.java 8710 2017-10-19 07:03:18Z malu9369 $
  */
 public class OutputCollector {
     private final OutputStream outputStream;

@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: UsernamePasswordClientCredential.java 3718 2013-08-18 15:55:09Z netmackan $
  */
 public class UsernamePasswordClientCredential implements IClientCredential,
         Serializable {

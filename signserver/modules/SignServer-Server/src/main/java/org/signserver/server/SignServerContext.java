@@ -22,7 +22,7 @@ import org.signserver.server.entities.IKeyUsageCounterDataService;
  * so the workers can access it.
  * 
  * @author Philip Vendil 3 aug 2008
- * @version $Id$
+ * @version $Id: SignServerContext.java 7052 2016-02-18 11:59:37Z netmackan $
  */
 public class SignServerContext extends WorkerContext {
 

@@ -37,7 +37,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  *
  * @see WorkerFactory
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerManagerSingletonBean.java 9418 2018-06-28 14:08:00Z vinays $
  */
 @ConcurrencyManagement(ConcurrencyManagementType.BEAN) // Currently the WorkerFactory handles concurrency, we might change this to be handled by the container instead after refactoring
 @Singleton

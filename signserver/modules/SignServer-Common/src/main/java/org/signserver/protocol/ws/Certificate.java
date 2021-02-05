@@ -25,7 +25,7 @@ import org.bouncycastle.util.encoders.Base64;
  * Base64 format.
  *
  * @author Philip Vendil 29 okt 2007
- * @version $Id$
+ * @version $Id: Certificate.java 7748 2016-09-30 13:14:58Z netmackan $
  */
 public class Certificate {
 

@@ -39,7 +39,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * Session Bean handling the worker process requests when transaction is needed.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: ProcessTransactionSessionBean.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Stateless
 public class ProcessTransactionSessionBean implements ProcessTransactionSessionLocal {

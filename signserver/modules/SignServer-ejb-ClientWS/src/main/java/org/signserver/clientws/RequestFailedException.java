@@ -22,7 +22,7 @@ import javax.xml.ws.WebFault;
  * the request data.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RequestFailedException.java 3836 2013-11-05 20:59:20Z netmackan $
  */
 @WebFault
 public class RequestFailedException extends Exception {

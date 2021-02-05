@@ -28,7 +28,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
  * Implements methods useful for Commands.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractAdminCommand.java 7562 2016-06-28 06:01:42Z malu9369 $
  */
 public abstract class AbstractAdminCommand extends AbstractCommand {
     

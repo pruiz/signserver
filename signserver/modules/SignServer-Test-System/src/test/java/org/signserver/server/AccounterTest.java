@@ -28,7 +28,7 @@ import org.signserver.testutils.ModulesTestCase;
  * Test cases for the Accounter feature.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AccounterTest.java 9956 2018-12-17 14:37:40Z malu9369 $
  */
 public class AccounterTest extends ModulesTestCase {
     

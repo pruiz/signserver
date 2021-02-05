@@ -51,7 +51,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
  * not directly through any of the client interfaces.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalProcessSessionBean.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.SUPPORTS)

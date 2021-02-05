@@ -21,7 +21,7 @@ import org.signserver.server.BaseComponent;
  * Currently implements a base version of error reporting.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: BaseArchiver.java 7471 2016-06-14 07:51:51Z malu9369 $
  */
 public abstract class BaseArchiver extends BaseComponent implements Archiver {
     

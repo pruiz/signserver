@@ -27,7 +27,7 @@ import org.signserver.server.cryptotokens.NullCryptoToken;
  * Unit test for the configurable serial number length feature in TimeStampSigner.
  * 
  * @author Marcus Lundblad
- * @version $Id$ 
+ * @version $Id: SerialNumberLengthUnitTest.java 7052 2016-02-18 11:59:37Z netmackan $ 
  */
 public class SerialNumberLengthUnitTest extends TestCase {
 

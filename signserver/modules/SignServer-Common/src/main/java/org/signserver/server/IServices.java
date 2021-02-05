@@ -16,7 +16,7 @@ package org.signserver.server;
  * Map of services of different types that can be used by implementations.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IServices.java 6118 2015-06-23 14:32:00Z netmackan $
  */
 public interface IServices {
 

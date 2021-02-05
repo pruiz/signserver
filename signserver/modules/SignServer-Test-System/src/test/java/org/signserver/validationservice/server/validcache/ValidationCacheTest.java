@@ -28,7 +28,7 @@ import org.junit.Test;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: ValidationCacheTest.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 public class ValidationCacheTest {
 

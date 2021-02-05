@@ -83,7 +83,7 @@ import xades4j.verification.XadesVerifier;
  *  REVOCATION_CHECKING
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESValidator.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class XAdESValidator extends BaseValidator {
 

@@ -35,7 +35,7 @@ import org.cesecore.util.query.QueryCriteria;
  * 
  * Based on QueuedAuditorMockSessionBean.java from EJBCA.
  * 
- * @version $Id$
+ * @version $Id: QueuedAuditorMockSessionBean.java 3325 2013-02-09 19:32:43Z netmackan $
  */
 @Stateless
 public class QueuedAuditorMockSessionBean implements QueuedAuditorSessionLocal {

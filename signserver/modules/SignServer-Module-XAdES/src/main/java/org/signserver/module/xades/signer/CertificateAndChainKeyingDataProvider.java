@@ -25,7 +25,7 @@ import xades4j.verification.UnexpectedJCAException;
  * specification of the signing key and certificate chain.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CertificateAndChainKeyingDataProvider.java 3753 2013-08-26 14:25:33Z netmackan $
  */
 public class CertificateAndChainKeyingDataProvider implements KeyingDataProvider {
 

@@ -21,7 +21,7 @@ import org.signserver.ejb.interfaces.ProcessSessionRemote;
  * Holder for environment and configuration data.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TestContext.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 public class TestContext {
     

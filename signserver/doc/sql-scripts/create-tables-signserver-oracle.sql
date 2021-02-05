@@ -1,6 +1,6 @@
 -- DDL for SignServer 4.0.x on Oracle
 -- ------------------------------------------------------
--- Version: $Id$
+-- Version: $Id: create-tables-signserver-oracle.sql 9135 2018-02-22 08:51:35Z vinays $
 -- Comment:
 
 

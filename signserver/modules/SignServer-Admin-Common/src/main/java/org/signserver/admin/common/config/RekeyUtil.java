@@ -15,7 +15,7 @@ package org.signserver.admin.common.config;
 /**
  * Utility methods useful in the rekeying process.
  *
- * @version $Id$
+ * @version $Id: RekeyUtil.java 8095 2017-03-10 10:01:00Z netmackan $
  */
 public class RekeyUtil {
     

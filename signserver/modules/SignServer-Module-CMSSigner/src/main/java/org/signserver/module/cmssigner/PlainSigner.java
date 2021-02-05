@@ -58,7 +58,7 @@ import static org.signserver.common.SignServerConstants.DEFAULT_NULL;
  * A Signer signing arbitrary content and produces a plain signature.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PlainSigner.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class PlainSigner extends BaseSigner {
 

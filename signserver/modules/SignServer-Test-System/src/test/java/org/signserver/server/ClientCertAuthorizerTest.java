@@ -40,7 +40,7 @@ import org.signserver.testutils.ModulesTestCase;
  * System tests for the ClientCertAuthorizer, using gen2 auth rules.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ClientCertAuthorizerTest.java 10608 2019-04-01 09:31:13Z netmackan $
  */
 public class ClientCertAuthorizerTest {
     /** Logger for this class. */

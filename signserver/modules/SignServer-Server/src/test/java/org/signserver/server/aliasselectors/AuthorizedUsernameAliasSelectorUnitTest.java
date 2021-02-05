@@ -25,7 +25,7 @@ import org.signserver.server.log.Loggable;
  * Unit tests for the username alias selector.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AuthorizedUsernameAliasSelectorUnitTest.java 7534 2016-06-21 11:22:43Z malu9369 $
  */
 public class AuthorizedUsernameAliasSelectorUnitTest extends TestCase {
     

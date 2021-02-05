@@ -19,7 +19,7 @@ import java.security.cert.Certificate;
  * be implemented by all types of signers.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ISignResponse.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public interface ISignResponse extends IArchivableProcessResponse {
 

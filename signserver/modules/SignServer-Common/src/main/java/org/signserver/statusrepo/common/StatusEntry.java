@@ -18,7 +18,7 @@ import java.io.Serializable;
  * Holds the updateTime, value and expiration Time for a status property.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusEntry.java 2206 2012-03-06 14:12:11Z netmackan $
  */
 public class StatusEntry implements Serializable {
 

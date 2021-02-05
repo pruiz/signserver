@@ -26,7 +26,7 @@ import org.signserver.common.data.Request;
  * Simple IAuthorizer accepting all requests.
  * 
  * @author Philip Vendil 24 nov 2007
- * @version $Id$
+ * @version $Id: NoAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class NoAuthorizer implements IAuthorizer {
 

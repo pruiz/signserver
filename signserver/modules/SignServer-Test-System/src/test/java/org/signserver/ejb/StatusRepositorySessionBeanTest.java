@@ -23,7 +23,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
  * Tests for the StatusRepositorySessionBean.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusRepositorySessionBeanTest.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 public class StatusRepositorySessionBeanTest extends TestCase {
 

@@ -16,7 +16,7 @@ package org.signserver.module.pdfsigner;
  * Class checking compatibility of PDF version against signature digest algorithm.
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: PdfVersionCompatibilityChecker.java 8412 2017-06-15 11:26:37Z netmackan $
  */
 public class PdfVersionCompatibilityChecker {
 

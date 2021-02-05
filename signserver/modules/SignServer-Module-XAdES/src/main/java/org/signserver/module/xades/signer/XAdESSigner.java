@@ -89,7 +89,7 @@ import static org.signserver.common.SignServerConstants.DEFAULT_NULL;
  * Based on patch contributed by Luis Maia &lt;lmaia@dcc.fc.up.pt&gt;.
  * 
  * @author Luis Maia <lmaia@dcc.fc.up.pt>
- * @version $Id$
+ * @version $Id: XAdESSigner.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class XAdESSigner extends BaseSigner {
 

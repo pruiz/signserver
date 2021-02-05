@@ -42,7 +42,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: ValidationServiceWorkerTest.java 7376 2016-05-23 06:53:38Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ValidationServiceWorkerTest extends ModulesTestCase {

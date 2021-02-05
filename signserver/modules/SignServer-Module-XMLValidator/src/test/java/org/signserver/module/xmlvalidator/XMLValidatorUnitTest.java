@@ -47,7 +47,7 @@ import org.xml.sax.SAXParseException;
  * System tests (and other tests) are available in the Test-System project.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLValidatorUnitTest.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class XMLValidatorUnitTest {
 

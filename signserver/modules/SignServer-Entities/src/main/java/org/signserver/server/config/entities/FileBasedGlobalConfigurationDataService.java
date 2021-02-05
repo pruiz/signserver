@@ -29,7 +29,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: FileBasedGlobalConfigurationDataService.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class FileBasedGlobalConfigurationDataService implements IGlobalConfigurationDataService {
 

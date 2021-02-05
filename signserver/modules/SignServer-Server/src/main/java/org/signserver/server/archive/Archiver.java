@@ -22,7 +22,7 @@ import org.signserver.server.SignServerContext;
  * Archives ArchivableS.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Archiver.java 7984 2017-01-24 08:28:52Z malu9369 $
  */
 public interface Archiver {
 

@@ -16,7 +16,7 @@ package org.signserver.client.cli.defaultimpl;
  * Interface for providers of a ConsolePasswordReader.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ConsolePasswordProvider.java 6237 2015-09-15 12:42:48Z malu9369 $
  */
 public interface ConsolePasswordProvider {
     ConsolePasswordReader createConsolePasswordReader();

@@ -28,7 +28,7 @@ import xades4j.providers.TimeStampVerificationProvider;
  * Mocked XADES4J TimeStampTokenProvider used for testing the XAdESSigner.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: MockedTimeStampTokenProvider.java 3821 2013-10-15 12:29:03Z malu9369 $
  *
  */
 public class MockedTimeStampTokenProvider implements TimeStampTokenProvider {

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Note that information in this object comes from the client.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RemoteRequestContext.java 10727 2019-05-03 08:16:27Z netmackan $
  */
 public class RemoteRequestContext implements Serializable {
     private static final long serialVersionUID = 1L;

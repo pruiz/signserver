@@ -16,7 +16,7 @@ package org.signserver.common;
  * Type of worker.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerType.java 7080 2016-02-23 09:51:29Z netmackan $
  */
 public enum WorkerType {
     

@@ -21,7 +21,7 @@ import org.signserver.common.FileBasedDatabaseException;
 /**
  * Responsible of loading meta data about the file based database.
  *
- * @version $Id$
+ * @version $Id: MetaDataService.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class MetaDataService {
 

@@ -18,7 +18,7 @@ import org.signserver.module.renewal.ejbcaws.gen.UserMatch;
  * Adding the equals() and hashCode() methods to UserMatch.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UserMatchEq.java 3982 2014-01-06 15:41:36Z netmackan $
  */
 public class UserMatchEq extends UserMatch {
 

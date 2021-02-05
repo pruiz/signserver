@@ -16,7 +16,7 @@ package org.signserver.test.validationws;
  * Informs that this class is not intended to be run standalone.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Main.java 1839 2011-08-12 14:37:21Z netmackan $
  */
 public class Main {
 

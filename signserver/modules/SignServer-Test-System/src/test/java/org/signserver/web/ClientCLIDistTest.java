@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
  * web pages.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ClientCLIDistTest.java 7745 2016-09-27 12:04:08Z malu9369 $
  */
 public class ClientCLIDistTest extends WebTestCase {
     

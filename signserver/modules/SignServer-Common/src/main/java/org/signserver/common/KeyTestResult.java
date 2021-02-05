@@ -18,7 +18,7 @@ import java.io.Serializable;
  * Class holding the results from testing a key.
  * 
  * @author markus
- * @version $Id$
+ * @version $Id: KeyTestResult.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class KeyTestResult implements Serializable {
 

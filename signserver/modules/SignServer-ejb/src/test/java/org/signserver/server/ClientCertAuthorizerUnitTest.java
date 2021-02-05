@@ -34,7 +34,7 @@ import org.signserver.common.data.Request;
  * Test cases for the client certificate authorizer.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ClientCertAuthorizerUnitTest.java 10589 2019-03-29 08:06:38Z vinays $
  */
 public class ClientCertAuthorizerUnitTest {
 

@@ -70,7 +70,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
 /**
  * Tests for the TimeStampSigner.
  *
- * @version $Id$
+ * @version $Id: TimeStampSignerTest.java 11137 2019-08-15 11:18:53Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TimeStampSignerTest extends ModulesTestCase {
@@ -93,7 +93,10 @@ public class TimeStampSignerTest extends ModulesTestCase {
 
     /** Worker ID for test worker. */
     private static final WorkerIdentifier WORKER4 = new WorkerIdentifier(8904);
-    
+
+    /** Worker ID for test worker. */
+    private static final WorkerIdentifier WORKER5 = new WorkerIdentifier(8905);
+
     /** Worker ID for test worker. */
     private static final WorkerIdentifier WORKER20 = new WorkerIdentifier(8920);
 
@@ -173,6 +176,13 @@ public class TimeStampSignerTest extends ModulesTestCase {
         workerSession.setWorkerProperty(WORKER4.getId(), "ACCEPTANYPOLICY", "true");
         workerSession.setWorkerProperty(WORKER4.getId(), "TIMESOURCE", "org.signserver.server.StatusReadingLocalComputerTimeSource");
         workerSession.reloadConfiguration(WORKER4.getId());
+
+        // Worker with a Null timesource, using legacy encoding
+        addTimeStampSigner(WORKER5.getId(), "TestTSA5", true);
+        workerSession.setWorkerProperty(WORKER5.getId(), "ACCEPTANYPOLICY", "true");
+        workerSession.setWorkerProperty(WORKER5.getId(), "TIMESOURCE", "org.signserver.server.NullTimeSource");
+        workerSession.setWorkerProperty(WORKER5.getId(), "LEGACYENCODING", "true");
+        workerSession.reloadConfiguration(WORKER5.getId());
     }
 
     @Test
@@ -322,6 +332,17 @@ public class TimeStampSignerTest extends ModulesTestCase {
     @Test
     public void test04timeNotAvailable() throws Exception {
         assertTimeNotAvailable(WORKER3);
+    }
+
+    /**
+     * Tests that the timestamp signer returnes a time stamp response with
+     * the timeNotAvailable status if the Date is null and legacy encoding
+     * is used.
+     * @throws Exception in case of exception
+     */
+    @Test
+    public void test04timeNotAvailableLegacyEncoding() throws Exception {
+        assertTimeNotAvailable(WORKER5);
     }
 
     /**
@@ -1656,6 +1677,7 @@ public class TimeStampSignerTest extends ModulesTestCase {
         removeWorker(WORKER2.getId());
         removeWorker(WORKER3.getId());
         removeWorker(WORKER4.getId());
+        removeWorker(WORKER5.getId());
     }
 
 }

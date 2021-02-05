@@ -17,7 +17,7 @@ package org.signserver.statusrepo.common;
  * not exist.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoSuchPropertyException.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class NoSuchPropertyException extends Exception {
 

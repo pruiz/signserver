@@ -24,7 +24,7 @@ import org.junit.Test;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: ValidationHelperTest.java 7052 2016-02-18 11:59:37Z netmackan $
  */
 public class ValidationHelperTest {
 

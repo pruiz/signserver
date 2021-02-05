@@ -23,7 +23,7 @@ import org.cesecore.time.providers.TrustedTimeProviderException;
  * This is the trusted time watcher implementation.
  * 
  *
- * @version $Id$
+ * @version $Id: ServerTimeWatcherSessionBean.java 3325 2013-02-09 19:32:43Z netmackan $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.SUPPORTS)

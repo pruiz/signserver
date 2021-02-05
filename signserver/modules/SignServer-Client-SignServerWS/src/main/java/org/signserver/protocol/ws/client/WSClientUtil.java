@@ -28,7 +28,7 @@ import org.signserver.protocol.ws.gen.ProcessResponseWS;
  * Utility class containing help methods for the WS clients.
  * 
  * @author Philip Vendil 28 okt 2007
- * @version $Id$
+ * @version $Id: WSClientUtil.java 7563 2016-06-28 06:22:42Z malu9369 $
  */
 public class WSClientUtil {
 

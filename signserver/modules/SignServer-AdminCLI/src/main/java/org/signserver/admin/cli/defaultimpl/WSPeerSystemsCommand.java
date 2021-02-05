@@ -16,7 +16,7 @@ package org.signserver.admin.cli.defaultimpl;
  * Command for managing the list of authorized WS auditors.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSPeerSystemsCommand.java 8632 2017-09-15 08:44:22Z netmackan $
  */
 public class WSPeerSystemsCommand extends AbstractWSClientsCommand {
     

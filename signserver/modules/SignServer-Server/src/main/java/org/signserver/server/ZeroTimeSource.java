@@ -25,7 +25,7 @@ import org.signserver.common.WorkerStatusInfo;
  * value.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ZeroTimeSource.java 7647 2016-08-17 08:16:10Z malu9369 $
  *
  */
 public class ZeroTimeSource implements ITimeSource {

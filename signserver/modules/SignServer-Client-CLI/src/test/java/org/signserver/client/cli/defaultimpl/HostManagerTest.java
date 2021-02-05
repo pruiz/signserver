@@ -22,7 +22,7 @@ import org.junit.Test;
  * Unit tests for HostManager methods.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: HostManagerTest.java 9256 2018-04-13 17:49:27Z vinays $
  */
 public class HostManagerTest {
 

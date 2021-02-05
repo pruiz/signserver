@@ -24,7 +24,7 @@ import org.signserver.server.SignServerContext;
  * An IWorkerLogger that renders the log line by appending all the log fields
  * and separating them with semicolons.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AllFieldsWorkerLogger.java 7540 2016-06-21 13:30:52Z malu9369 $
  */
 public class AllFieldsWorkerLogger extends BaseWorkerLogger implements IWorkerLogger {
 

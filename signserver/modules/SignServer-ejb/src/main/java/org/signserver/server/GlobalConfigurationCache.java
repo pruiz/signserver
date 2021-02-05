@@ -23,7 +23,7 @@ import org.signserver.common.GlobalConfiguration;
  * 
  * @author Philip Vendil 2007 jan 22
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationCache.java 2883 2012-10-24 09:16:42Z netmackan $
  */
 public class GlobalConfigurationCache {
 

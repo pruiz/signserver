@@ -25,7 +25,7 @@ import org.signserver.common.SignServerException;
  * Abstract implementation of DocumentSigner.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractDocumentSigner.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public abstract class AbstractDocumentSigner implements DocumentSigner {
 

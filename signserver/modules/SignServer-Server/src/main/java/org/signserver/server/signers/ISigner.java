@@ -21,7 +21,7 @@ import org.signserver.server.IProcessable;
  * 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ISigner.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public interface ISigner extends IProcessable {
 }

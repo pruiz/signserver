@@ -28,7 +28,7 @@ import org.apache.log4j.Logger;
  * manual for the SignerStatusReportTimedService.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignerStatusReportParser.java 7360 2016-05-19 13:23:30Z malu9369 $
  */
 public class SignerStatusReportParser {
     

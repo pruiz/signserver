@@ -30,7 +30,7 @@ import org.signserver.server.cryptotokens.ICryptoTokenV4;
  * configured for a worker.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: DefaultAliasSelector.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class DefaultAliasSelector implements AliasSelector {
     

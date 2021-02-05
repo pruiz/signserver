@@ -13,7 +13,7 @@ import org.signserver.test.random.*;
  * Repeatable performs a signing.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SigningThread.java 6959 2015-12-28 15:31:00Z netmackan $
  */
 public class SigningThread extends WorkerThread {
     /** Logger for this class. */

@@ -49,7 +49,7 @@ import static org.signserver.server.cryptotokens.CryptoTokenHelper.INFO_KEY_SPEC
  * used by keystore (P12 and JKS) and Sun P11 crypto tokens.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: JavaKeyStoreDelegator.java 9286 2018-04-27 13:38:47Z netmackan $
  */
 public class JavaKeyStoreDelegator implements KeyStoreDelegator {
     private static final Logger LOG = Logger.getLogger(JavaKeyStoreDelegator.class);

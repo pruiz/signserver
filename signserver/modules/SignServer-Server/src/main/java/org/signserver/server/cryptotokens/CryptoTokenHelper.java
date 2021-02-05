@@ -86,7 +86,7 @@ import static org.signserver.common.SignServerConstants.TOKEN_ENTRY_FIELDS_KEY_A
 /**
  * Helper methods used by the CryptoTokens.
  *
- * @version $Id$
+ * @version $Id: CryptoTokenHelper.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 public class CryptoTokenHelper {
     

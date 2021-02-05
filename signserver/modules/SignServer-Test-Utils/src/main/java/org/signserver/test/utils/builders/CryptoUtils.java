@@ -23,7 +23,7 @@ import org.bouncycastle.util.encoders.Hex;
  * Utility methods for key generation.
  *
  *
- * @version $Id$
+ * @version $Id: CryptoUtils.java 10028 2018-12-20 14:56:37Z netmackan $
  */
 public class CryptoUtils {
     

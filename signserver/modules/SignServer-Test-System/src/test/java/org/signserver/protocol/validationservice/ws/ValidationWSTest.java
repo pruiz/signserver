@@ -50,7 +50,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionRemote;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: ValidationWSTest.java 9747 2018-11-27 12:23:28Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ValidationWSTest extends ModulesTestCase {

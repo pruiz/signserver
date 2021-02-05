@@ -26,7 +26,7 @@ import org.signserver.validationservice.common.Validation;
  * of a given issuers.
  *
  * @author Philip Vendil 26 nov 2007
- * @version $Id$
+ * @version $Id: ValidationCache.java 7308 2016-05-17 09:46:40Z malu9369 $
  */
 public class ValidationCache {
 

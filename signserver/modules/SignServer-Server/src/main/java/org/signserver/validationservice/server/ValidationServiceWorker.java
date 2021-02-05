@@ -36,7 +36,7 @@ import org.signserver.validationservice.common.ValidationServiceConstants;
  * a IValidationService.
  *
  * @author Philip Vendil 16 nov 2007
- * @version $Id$
+ * @version $Id: ValidationServiceWorker.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public class ValidationServiceWorker extends BaseProcessable {
 

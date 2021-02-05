@@ -21,7 +21,7 @@ import org.signserver.server.archive.Archivable;
  * Data holder wrapping a legacy ProcessResponse.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: LegacyResponse.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class LegacyResponse extends Response implements IArchivableProcessResponse {
 

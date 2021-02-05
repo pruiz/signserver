@@ -11,7 +11,7 @@
 <!--  See terms of license at gnu.org.                                       -->
 <!--                                                                         -->
 <!-- ======================================================================= -->
-<!-- Version: $Id$ -->
+<!-- Version: $Id: compile.xml 7257 2016-05-01 18:25:51Z netmackan $ -->
 <project name="compile" default="build" basedir=".">
 
     <!-- 

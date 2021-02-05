@@ -28,7 +28,7 @@ import org.signserver.server.archive.Archivable;
  * Could be used for TimeStamp Responses.
  * 
  * @author philip
- * @version $Id$
+ * @version $Id: GenericSignResponse.java 7610 2016-07-13 10:12:10Z netmackan $
  */
 public class GenericSignResponse extends ProcessResponse implements ISignResponse {
 

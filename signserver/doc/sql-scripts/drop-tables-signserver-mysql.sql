@@ -1,6 +1,6 @@
 -- Dropping tables for SignServer 3.5.x on MySQL/MariaDB
 -- ------------------------------------------------------
--- Version: $Id$
+-- Version: $Id: drop-tables-signserver-mysql.sql 8929 2017-12-20 15:42:29Z vinays $
 -- Comment: 
 
 

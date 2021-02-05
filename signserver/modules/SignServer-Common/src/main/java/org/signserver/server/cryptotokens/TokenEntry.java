@@ -24,7 +24,7 @@ import org.cesecore.util.CertTools;
  * Represents an entry in the token with at minimum an alias and a type.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TokenEntry.java 8866 2017-11-30 14:43:14Z vinays $
  */
 public class TokenEntry implements Serializable {
 

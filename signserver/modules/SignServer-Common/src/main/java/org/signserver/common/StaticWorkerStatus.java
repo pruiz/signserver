@@ -32,7 +32,7 @@ import org.signserver.common.WorkerStatusInfo.Entry;
  * the existing APIs too much.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StaticWorkerStatus.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public class StaticWorkerStatus extends WorkerStatus {
 

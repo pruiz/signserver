@@ -26,7 +26,7 @@ import org.signserver.server.log.WorkerLoggerException;
  * A custom made time stamp logger.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CustomTimeStampLogger1.java 10448 2019-03-01 13:06:21Z netmackan $
  */
 public class CustomTimeStampLogger1 extends BaseWorkerLogger implements ITimeStampLogger {
 

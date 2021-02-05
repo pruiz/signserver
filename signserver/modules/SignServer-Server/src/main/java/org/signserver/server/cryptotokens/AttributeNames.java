@@ -21,7 +21,7 @@ import org.pkcs11.jacknji11.CKA;
  * Handles mapping between PKCS#11 attribute constant names and values.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AttributeNames.java 8905 2017-12-12 12:49:38Z netmackan $
  */
 public class AttributeNames {
 

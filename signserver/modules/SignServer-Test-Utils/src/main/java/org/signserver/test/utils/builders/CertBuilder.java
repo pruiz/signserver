@@ -39,7 +39,7 @@ import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
  * values for everything else.
  *
  *
- * @version $Id$
+ * @version $Id: CertBuilder.java 10635 2019-04-10 14:51:47Z netmackan $
  */
 public class CertBuilder implements Cloneable {
     

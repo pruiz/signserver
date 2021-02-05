@@ -61,7 +61,7 @@ import org.signserver.testutils.ModulesTestCase;
  * server. Tests that require that can be placed among the system tests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MRTDSODSignerUnitTest.java 8769 2017-10-30 14:57:36Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MRTDSODSignerUnitTest extends TestCase {

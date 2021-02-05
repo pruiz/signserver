@@ -16,7 +16,7 @@ package org.signserver.common;
  * Names of known CESeCore EJB modules.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CESeCoreModules.java 10317 2019-02-08 15:24:00Z netmackan $
  */
 public interface CESeCoreModules {
 

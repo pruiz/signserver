@@ -20,7 +20,7 @@ import org.signserver.common.WorkerConfig;
  * certificate type.
  * 
  * @author Philip Vendil 1 dec 2007
- * @version $Id$
+ * @version $Id: ICertPurposeChecker.java 3419 2013-04-07 14:55:41Z netmackan $
  */
 public interface ICertPurposeChecker {
 

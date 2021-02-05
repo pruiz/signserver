@@ -89,7 +89,7 @@ import static org.signserver.common.SignServerConstants.TOKEN_ENTRY_FIELDS_KEY_A
  * This class contains web service implementations for almost all EJB methods.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminWS.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 @WebService(serviceName = "AdminWSService")
 @Stateless

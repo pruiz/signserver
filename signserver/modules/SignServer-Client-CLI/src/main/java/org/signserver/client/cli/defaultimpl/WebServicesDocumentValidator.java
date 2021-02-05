@@ -29,7 +29,7 @@ import org.signserver.common.*;
  * DocumentValidator using web services.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WebServicesDocumentValidator.java 9693 2018-11-13 10:06:26Z malu9369 $
  */
 public class WebServicesDocumentValidator extends AbstractDocumentValidator {
 

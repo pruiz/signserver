@@ -19,7 +19,7 @@ import org.signserver.common.ArchiveMetadata;
  * WS version of ArchiveMetadata.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: WSArchiveMetadata.java 5700 2015-02-13 12:23:16Z netmackan $
  */
 @XmlType(name = "archiveEntry")
 public class WSArchiveMetadata {

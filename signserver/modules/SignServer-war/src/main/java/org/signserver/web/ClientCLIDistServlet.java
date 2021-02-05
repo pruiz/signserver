@@ -18,7 +18,7 @@ import java.io.File;
  * Servlet for downloading the client CLI.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ClientCLIDistServlet.java 7756 2016-10-03 06:07:50Z malu9369 $
  */
 public class ClientCLIDistServlet extends AbstractDistServlet {
 

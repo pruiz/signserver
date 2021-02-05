@@ -18,7 +18,7 @@ import org.signserver.common.ProcessRequest;
  * Data holder wrapping a legacy ProcessRequest.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: LegacyRequest.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class LegacyRequest extends Request {
 

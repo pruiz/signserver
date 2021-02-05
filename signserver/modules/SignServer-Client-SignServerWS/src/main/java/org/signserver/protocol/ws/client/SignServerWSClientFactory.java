@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
  * 
  * @author Philip Vendil 10 nov 2007
  *
- * @version $Id$
+ * @version $Id: SignServerWSClientFactory.java 9698 2018-11-13 14:20:20Z malu9369 $
  */
 public class SignServerWSClientFactory {
 

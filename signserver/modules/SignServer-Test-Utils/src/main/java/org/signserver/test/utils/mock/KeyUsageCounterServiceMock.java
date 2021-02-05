@@ -19,7 +19,7 @@ import org.signserver.server.entities.KeyUsageCounter;
  * Mockup version of the KeyUsageCounterService.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeyUsageCounterServiceMock.java 10738 2019-05-03 14:28:55Z netmackan $
  */
 public class KeyUsageCounterServiceMock implements IKeyUsageCounterDataService {
 

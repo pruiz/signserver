@@ -54,7 +54,7 @@ import org.signserver.server.entities.IKeyUsageCounterDataService;
  *  (none)
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignerStatusReportWorker.java 7620 2016-07-14 14:50:30Z netmackan $
  * @see SignerStatusReportTimedService
  */
 public class SignerStatusReportWorker extends BaseSigner {

@@ -16,7 +16,7 @@ package org.signserver.test.random;
  * Callback to invoke after a test failed in some thread.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FailureCallback.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public interface FailureCallback {
     /**

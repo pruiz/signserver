@@ -29,7 +29,7 @@ import org.signserver.server.WorkerContext;
  * System tests are in the system tests module.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UserMappedDispatcherUnitTest.java 7566 2016-06-28 08:44:51Z malu9369 $
  */
 public class UserMappedDispatcherUnitTest {
     

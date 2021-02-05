@@ -17,7 +17,7 @@ import org.signserver.common.SignServerException;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: OCSPStatusNotGoodException.java 3419 2013-04-07 14:55:41Z netmackan $
  */
 public class OCSPStatusNotGoodException extends SignServerException {
 

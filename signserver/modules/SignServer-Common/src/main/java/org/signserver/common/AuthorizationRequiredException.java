@@ -15,7 +15,7 @@ package org.signserver.common;
 /**
  * Exception thrown if the worker requires authorization.
  * 
- * @version $Id$
+ * @version $Id: AuthorizationRequiredException.java 1124 2010-07-20 13:42:34Z netmackan $
  */
 public class AuthorizationRequiredException extends SignServerException {
 

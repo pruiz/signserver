@@ -23,7 +23,7 @@ import org.bouncycastle.util.encoders.Hex;
  * Utility class for creating the hash used by the KeyUsageCounter.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeyUsageCounterHash.java 3840 2013-11-06 13:33:11Z netmackan $
  */
 public class KeyUsageCounterHash {
     

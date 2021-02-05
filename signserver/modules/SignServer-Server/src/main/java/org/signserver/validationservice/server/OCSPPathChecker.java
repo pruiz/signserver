@@ -45,7 +45,7 @@ import org.signserver.validationservice.common.Validation;
  * NOTE : support for forward checking could be enabled by searching issuer certificate of certificate in question and making it stateless.
  * 
  * @author rayback2
- * @version $Id$
+ * @version $Id: OCSPPathChecker.java 9559 2018-10-05 09:27:03Z malu9369 $
  */
 public class OCSPPathChecker extends PKIXCertPathChecker {
     // cACert holds the previous certificate passed to check method

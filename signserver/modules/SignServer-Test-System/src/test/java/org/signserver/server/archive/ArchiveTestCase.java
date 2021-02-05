@@ -51,7 +51,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Re-usable test case for archiving.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveTestCase.java 9753 2018-11-28 13:00:57Z malu9369 $
  */
 public class ArchiveTestCase extends ModulesTestCase {
     

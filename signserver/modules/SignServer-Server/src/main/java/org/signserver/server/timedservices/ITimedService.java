@@ -23,7 +23,7 @@ import org.signserver.server.ServiceExecutionFailedException;
  * There exists a BaseTimedService that can be extended covering some of it's functions
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ITimedService.java 7053 2016-02-18 14:00:40Z netmackan $
  */
 public interface ITimedService extends IWorker {
 

@@ -20,7 +20,7 @@ package org.signserver.server;
  * database/system.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AccounterException.java 5898 2015-03-17 13:18:11Z netmackan $
  */
 public class AccounterException extends Exception {
 

@@ -65,7 +65,7 @@ import static org.signserver.server.cryptotokens.CryptoTokenHelper.SECRET_KEY_PR
  * System tests for the KeystoreCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeystoreCryptoTokenTest.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 public class KeystoreCryptoTokenTest extends KeystoreCryptoTokenTestBase {
     /** Logger for this class. */

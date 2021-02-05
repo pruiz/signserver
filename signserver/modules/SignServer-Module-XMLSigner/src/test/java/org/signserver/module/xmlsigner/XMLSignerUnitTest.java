@@ -43,7 +43,7 @@ import org.xml.sax.SAXParseException;
  * Unit tests for the XMLSigner class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLSignerUnitTest.java 10028 2018-12-20 14:56:37Z netmackan $
  */
 public class XMLSignerUnitTest {
 

@@ -16,7 +16,7 @@ package org.signserver.module.signerstatusreport;
  * Capable of constructing an report.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ReportBuilder.java 2300 2012-04-02 11:22:03Z netmackan $
  */
 public interface ReportBuilder {
 

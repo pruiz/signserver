@@ -18,7 +18,7 @@ import java.util.List;
  * Common interface for components.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: IComponent.java 7470 2016-06-14 07:41:02Z malu9369 $
  */
 public interface IComponent {
     List<String> getFatalErrors(IServices services);

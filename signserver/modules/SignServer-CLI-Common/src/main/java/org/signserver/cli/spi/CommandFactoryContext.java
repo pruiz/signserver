@@ -19,7 +19,7 @@ import java.util.Properties;
  * Context for command factories.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CommandFactoryContext.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public class CommandFactoryContext {
     private Properties configuration;

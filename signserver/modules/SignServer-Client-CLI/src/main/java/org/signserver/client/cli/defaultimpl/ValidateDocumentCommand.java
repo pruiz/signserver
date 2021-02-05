@@ -40,7 +40,7 @@ import org.signserver.protocol.ws.client.SignServerWSClientFactory;
  * Command Line Interface (CLI) for validating documents.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidateDocumentCommand.java 10979 2019-06-05 10:07:44Z netmackan $
  */
 public class ValidateDocumentCommand extends AbstractCommand {
 
@@ -266,7 +266,7 @@ public class ValidateDocumentCommand extends AbstractCommand {
     /**
      * Checks that all mandadory options are given.
      */
-    private void validateOptions() throws ParseException {
+    private void validateOptions() throws ParseException, IllegalCommandArgumentsException {
         if (workerName == null && workerId == 0) {
             throw new ParseException(
                     "Missing -workername or -workerid");
@@ -293,7 +293,7 @@ public class ValidateDocumentCommand extends AbstractCommand {
             workerIdOrName = String.valueOf(workerId);
         }
 
-        final SSLSocketFactory sf = keyStoreOptions.setupHTTPS();
+        final SSLSocketFactory sf = keyStoreOptions.setupHTTPS(createConsolePasswordReader(), out);
 
         if (port == null) {
             if (keyStoreOptions.isUsePrivateHTTPS()) {

@@ -41,7 +41,7 @@ import org.signserver.server.WorkerContext;
  * property in BaseSigner.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: IncludeCertificateLevelsTest.java 7620 2016-07-14 14:50:30Z netmackan $
  *
  */
 public class IncludeCertificateLevelsTest extends TestCase {

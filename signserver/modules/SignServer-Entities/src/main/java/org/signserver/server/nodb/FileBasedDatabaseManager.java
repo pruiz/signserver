@@ -27,7 +27,7 @@ import org.signserver.common.FileBasedDatabaseException;
  * file based database.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FileBasedDatabaseManager.java 7304 2016-05-17 09:02:00Z malu9369 $
  */
 public class FileBasedDatabaseManager {
     

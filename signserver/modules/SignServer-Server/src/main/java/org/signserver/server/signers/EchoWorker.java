@@ -39,7 +39,7 @@ import org.signserver.common.data.WritableData;
  * Worker simply echoing the request back.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: EchoWorker.java 7772 2016-10-13 10:47:21Z netmackan $
  */
 public class EchoWorker extends BaseProcessable {
     

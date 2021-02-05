@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlValue;
  * data or an hash of data.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DataGroup.java 8063 2017-02-21 08:41:57Z netmackan $
  */
 public class DataGroup {
     private int id;

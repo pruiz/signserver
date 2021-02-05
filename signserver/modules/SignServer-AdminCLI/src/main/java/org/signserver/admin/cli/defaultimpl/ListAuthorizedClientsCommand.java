@@ -21,7 +21,7 @@ import org.signserver.common.AuthorizedClient;
 /**
  * Gets the current configurations list of authorized clients
  *
- * @version $Id$
+ * @version $Id: ListAuthorizedClientsCommand.java 10662 2019-04-12 15:06:48Z netmackan $
  */
 public class ListAuthorizedClientsCommand extends AbstractAdminCommand {
 

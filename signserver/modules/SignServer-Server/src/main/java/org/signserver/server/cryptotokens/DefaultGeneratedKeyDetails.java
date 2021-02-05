@@ -18,7 +18,7 @@ import java.security.PublicKey;
  * Default implementation of a key data.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultGeneratedKeyDetails.java 6119 2015-06-23 15:13:01Z netmackan $
  */
 public class DefaultGeneratedKeyDetails implements IGeneratedKeyData {
 

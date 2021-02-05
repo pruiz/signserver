@@ -35,7 +35,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the timestamp command of Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TimeStampCommandTest.java 9143 2018-02-27 16:48:42Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TimeStampCommandTest extends ModulesTestCase {

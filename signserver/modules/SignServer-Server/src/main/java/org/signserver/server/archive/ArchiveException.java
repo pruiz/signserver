@@ -16,7 +16,7 @@ package org.signserver.server.archive;
  * Exception thrown if archiving fails for some reason.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveException.java 2841 2012-10-16 08:31:40Z netmackan $
  */
 public class ArchiveException extends Exception {
 

@@ -19,7 +19,7 @@ import java.util.List;
  * Class holding signature digest algorithms that can be used in PDF Signing.
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: PdfSignatureDigestAlgorithms.java 8412 2017-06-15 11:26:37Z netmackan $
  */
 public final class PdfSignatureDigestAlgorithms {
 

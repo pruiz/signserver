@@ -16,7 +16,7 @@ package org.signserver.statusrepo.impl;
  * Enum with the different options for what changes to log.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: LogUpdates.java 3262 2013-01-30 09:28:50Z netmackan $
  */
 public enum LogUpdates {
     /** Log all updates (even if the value was not changed). */

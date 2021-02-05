@@ -23,7 +23,7 @@ import org.signserver.common.data.Response;
  * Worker not performing any operations on its own.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NullSigner.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class NullSigner extends BaseSigner {
 

@@ -26,7 +26,7 @@ import org.apache.log4j.Logger;
  * put together during compilation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CompileTimeSettings.java 11034 2019-06-19 07:02:30Z netmackan $
  */
 public class CompileTimeSettings {
 
@@ -60,6 +60,8 @@ public class CompileTimeSettings {
             = "signserver.configfile";
     public static final String SIGNSERVER_VERSION
             = "signserver.version";
+    public static final String CRYPTOTOKEN_DISABLEKEYGENERATION 
+            = "cryptotoken.disablekeygeneration";
     
     public static final String FILEBASED_DB_FOLDER = "database.nodb.location";
     public static final String DATABASE_NAME = "database.name";

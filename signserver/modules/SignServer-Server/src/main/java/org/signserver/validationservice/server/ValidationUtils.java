@@ -46,7 +46,7 @@ import org.signserver.common.SignServerException;
  * Utility functions used by validators.
  *
  * @author rayback2
- * @version $Id$
+ * @version $Id: ValidationUtils.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class ValidationUtils {
     

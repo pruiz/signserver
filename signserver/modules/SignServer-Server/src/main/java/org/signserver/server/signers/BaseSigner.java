@@ -50,7 +50,7 @@ import org.signserver.server.entities.KeyUsageCounter;
  * functionality.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: BaseSigner.java 10706 2019-04-25 12:19:25Z vinays $
  */
 public abstract class BaseSigner extends BaseProcessable implements ISigner {
     

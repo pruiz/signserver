@@ -16,7 +16,7 @@ package org.signserver.test.performance;
  * Representation of something to do.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: Task.java 3422 2013-04-08 11:10:04Z malu9369 $
  */
 public interface Task {
     /**

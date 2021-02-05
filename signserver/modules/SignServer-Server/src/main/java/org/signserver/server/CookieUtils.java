@@ -46,7 +46,7 @@ import java.util.regex.Pattern;
  * </pre>
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CookieUtils.java 9684 2018-11-12 14:58:19Z netmackan $
  */
 public class CookieUtils {
 

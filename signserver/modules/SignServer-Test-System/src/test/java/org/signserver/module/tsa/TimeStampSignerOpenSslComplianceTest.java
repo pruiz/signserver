@@ -35,7 +35,7 @@ import org.signserver.testutils.ModulesTestCase;
  * https://github.com/openssl/openssl/issues/2119
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: TimeStampSignerOpenSslComplianceTest.java 9042 2018-01-18 10:16:57Z malu9369 $
  */
 public class TimeStampSignerOpenSslComplianceTest {
     /** Logger for this class */

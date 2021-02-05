@@ -53,7 +53,7 @@ import org.signserver.web.pub.cluster.IHealthCheck;
  * When enabled, none of the above system checks are performed, instead a down-for-maintenance message is returned.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: SignServerHealthCheck.java 7318 2016-05-17 11:48:43Z malu9369 $
  */
 public class SignServerHealthCheck implements IHealthCheck {
 

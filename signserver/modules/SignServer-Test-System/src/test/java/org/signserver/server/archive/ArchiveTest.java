@@ -30,7 +30,7 @@ import org.signserver.common.ArchiveMetadata;
  * Tests for archiving.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ArchiveTest.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ArchiveTest extends ArchiveTestCase {

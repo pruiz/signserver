@@ -39,7 +39,7 @@ import org.signserver.common.data.Request;
  * Client certificate authorizer.
  *
  * @author Philip Vendil 24 nov 2007
- * @version $Id$
+ * @version $Id: ClientCertAuthorizer.java 10617 2019-04-09 14:53:03Z netmackan $
  */
 public class ClientCertAuthorizer implements IAuthorizer {
 

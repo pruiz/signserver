@@ -21,7 +21,7 @@ import org.signserver.server.IServices;
  * Contains a default implementation of the getFatalErrors mechanism.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: BaseWorkerLogger.java 7547 2016-06-23 06:20:09Z malu9369 $
  */
 public abstract class BaseWorkerLogger implements IWorkerLogger {
     private final List<String> fatalErrors = new LinkedList<>();

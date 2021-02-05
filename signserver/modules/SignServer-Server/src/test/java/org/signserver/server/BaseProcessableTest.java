@@ -66,7 +66,7 @@ import org.signserver.server.log.AdminInfo;
  * Tests for the BaseProcessable class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: BaseProcessableTest.java 9642 2018-10-24 10:54:41Z malu9369 $
  */
 public class BaseProcessableTest extends TestCase {
 

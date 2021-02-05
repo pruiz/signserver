@@ -31,7 +31,7 @@ import org.apache.log4j.Logger;
  * interface.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WebTestCase.java 8382 2017-05-05 14:32:35Z netmackan $
  */
 public abstract class WebTestCase extends ModulesTestCase {
 

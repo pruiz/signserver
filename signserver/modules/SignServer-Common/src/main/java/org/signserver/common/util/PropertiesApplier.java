@@ -31,7 +31,7 @@ import static org.signserver.common.util.PropertiesConstants.WORKER_PREFIX;
  * Base class implementing applying a previous parsed configuration property batch.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: PropertiesApplier.java 10615 2019-04-09 14:35:33Z vinays $
  *
  */
 public abstract class PropertiesApplier {

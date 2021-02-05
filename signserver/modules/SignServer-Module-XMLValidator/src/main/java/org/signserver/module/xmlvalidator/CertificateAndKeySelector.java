@@ -38,7 +38,7 @@ import org.apache.log4j.Logger;
  * also holds the selected certificate.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CertificateAndKeySelector.java 7307 2016-05-17 09:36:11Z malu9369 $
  */
 class CertificateAndKeySelector extends KeySelector {
 

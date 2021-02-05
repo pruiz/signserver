@@ -30,7 +30,7 @@ import org.signserver.common.WorkerType;
  * Makes it efficient to also query by name or type.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FileBasedWorkerConfigDataIndex.java 9420 2018-06-29 10:03:31Z vinays $
  */
 public class FileBasedWorkerConfigDataIndex {
 

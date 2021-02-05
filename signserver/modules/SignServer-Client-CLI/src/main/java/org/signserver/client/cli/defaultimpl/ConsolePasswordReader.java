@@ -18,7 +18,7 @@ import org.signserver.cli.spi.CommandFailureException;
  * Interface providing facilities for reading a password.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ConsolePasswordReader.java 6237 2015-09-15 12:42:48Z malu9369 $
  */
 public interface ConsolePasswordReader {
     char[] readPassword() throws CommandFailureException;

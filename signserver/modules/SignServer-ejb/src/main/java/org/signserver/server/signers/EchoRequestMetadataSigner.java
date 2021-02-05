@@ -34,7 +34,7 @@ import org.signserver.common.data.WritableData;
  * This is only indented for internal testing purposes, and is not a real signer.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: EchoRequestMetadataSigner.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class EchoRequestMetadataSigner extends BaseSigner {
 

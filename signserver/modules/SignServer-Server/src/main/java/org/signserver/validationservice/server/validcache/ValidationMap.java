@@ -24,7 +24,7 @@ import org.signserver.validationservice.common.Validation;
  * Validation Map containing the Certificate -> validation mappings.
  *
  * @author Philip Vendil 26 nov 2007
- * @version $Id$
+ * @version $Id: ValidationMap.java 3419 2013-04-07 14:55:41Z netmackan $
  */
 class ValidationMap {
 

@@ -16,7 +16,7 @@ package org.signserver.server.entities;
  * DataService managing the persistence of the key usage counter.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IKeyUsageCounterDataService.java 2731 2012-09-25 10:09:51Z netmackan $
  */
 public interface IKeyUsageCounterDataService {
 

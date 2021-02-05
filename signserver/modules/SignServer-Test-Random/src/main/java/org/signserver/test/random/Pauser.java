@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
  * Class giving the threads the ability to do synchronized pauses.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Pauser.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public class Pauser {
     /** Logger for this class. */

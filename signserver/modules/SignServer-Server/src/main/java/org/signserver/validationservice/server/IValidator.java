@@ -34,7 +34,7 @@ import org.signserver.validationservice.common.Validation;
  * involved CA certificates and should only return Validation object with status REVOKED or VALID
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: IValidator.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public interface IValidator {
 

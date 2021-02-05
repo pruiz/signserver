@@ -44,7 +44,7 @@ import org.signserver.common.ArchiveDataVO;
  * dataEncoding             : int
  * </pre>
  *
- * @version $Id$
+ * @version $Id: ArchiveDataBean.java 7633 2016-08-11 13:47:40Z netmackan $
  *
  */
 @Entity

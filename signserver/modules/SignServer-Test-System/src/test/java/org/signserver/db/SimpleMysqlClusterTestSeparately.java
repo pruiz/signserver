@@ -23,7 +23,7 @@ import junit.framework.TestCase;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: SimpleMysqlClusterTestSeparately.java 3452 2013-04-20 21:32:59Z netmackan $
  */
 public class SimpleMysqlClusterTestSeparately extends TestCase {
 

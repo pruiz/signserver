@@ -27,7 +27,7 @@ import org.signserver.server.SignServerContext;
  * Tests the fatal errors mechanism.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: BaseWorkerLoggerUnitTest.java 7572 2016-06-28 11:11:35Z netmackan $
  */
 public class BaseWorkerLoggerUnitTest extends TestCase {
     

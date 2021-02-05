@@ -19,7 +19,7 @@ import java.util.ServiceLoader;
  * Utility methods for request/response data handling.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DataUtils.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class DataUtils {
     

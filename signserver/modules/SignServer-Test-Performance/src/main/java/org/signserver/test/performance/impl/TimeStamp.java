@@ -35,7 +35,7 @@ import org.signserver.test.performance.Task;
  * Requests a timestamp.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: TimeStamp.java 9523 2018-09-27 10:14:45Z netmackan $
  */
 public class TimeStamp implements Task {
 

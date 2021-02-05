@@ -43,7 +43,7 @@ import org.signserver.server.log.AdminInfo;
  * user1:worker1, user2:worker2
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UserMappedDispatcher.java 8816 2017-11-15 15:41:01Z vinays $
  */
 public class UserMappedDispatcher extends BaseDispatcher {
 

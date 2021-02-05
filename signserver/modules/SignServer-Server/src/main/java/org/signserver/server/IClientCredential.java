@@ -15,7 +15,7 @@ package org.signserver.server;
 /**
  * Represents a credential supplied by a client.
  * 
- * @version $Id$
+ * @version $Id: IClientCredential.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public interface IClientCredential {
 }

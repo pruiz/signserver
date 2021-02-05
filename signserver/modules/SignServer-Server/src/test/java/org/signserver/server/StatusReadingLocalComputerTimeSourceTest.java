@@ -35,7 +35,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
  * Tests the leapsecond support in status-reading local timesource.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: StatusReadingLocalComputerTimeSourceTest.java 9797 2018-12-07 10:14:57Z netmackan $
  *
  */
 

@@ -22,7 +22,7 @@ import org.signserver.server.log.AdminInfo;
 /**
  * Common interface containing all the session bean methods.
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationSession.java 6970 2015-12-29 18:27:47Z netmackan $
  */
 public interface GlobalConfigurationSession {
 

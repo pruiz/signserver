@@ -27,7 +27,7 @@ import java.io.ObjectOutput;
  * an empty constructor used for serializing.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ProcessRequest.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public abstract class ProcessRequest implements Externalizable {
 

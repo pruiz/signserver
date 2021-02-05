@@ -18,7 +18,7 @@ import javax.xml.ws.WebFault;
  * Class thrown if a resync to data base failed. 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ResyncException.java 3835 2013-11-05 20:12:04Z netmackan $
  */
 @WebFault
 public class ResyncException extends Exception {

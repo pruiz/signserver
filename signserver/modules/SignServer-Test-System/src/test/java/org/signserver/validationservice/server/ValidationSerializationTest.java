@@ -35,7 +35,7 @@ import org.junit.Test;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: ValidationSerializationTest.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ValidationSerializationTest {

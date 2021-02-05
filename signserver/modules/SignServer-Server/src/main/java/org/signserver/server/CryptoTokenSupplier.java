@@ -19,7 +19,7 @@ import org.signserver.server.cryptotokens.ICryptoTokenV4;
  * Supplier of the current crypto token.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CryptoTokenSupplier.java 7052 2016-02-18 11:59:37Z netmackan $
  */
 public interface CryptoTokenSupplier {
     /**

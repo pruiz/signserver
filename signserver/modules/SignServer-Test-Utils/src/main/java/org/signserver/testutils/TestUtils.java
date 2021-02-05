@@ -49,7 +49,7 @@ import org.signserver.common.util.PathUtil;
  * Class containing utility methods used to simplify testing.
  *
  * @author Philip Vendil 21 okt 2007
- * @version $Id$
+ * @version $Id: TestUtils.java 9758 2018-11-29 08:12:46Z malu9369 $
  */
 public class TestUtils {
 

@@ -16,7 +16,7 @@ package org.signserver.admin.common.query;
  * Representation of query ordering.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: QueryOrdering.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class QueryOrdering {
     

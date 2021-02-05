@@ -18,7 +18,7 @@ package org.signserver.statusrepo.common;
  * New status properties should be added to this Enum.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusName.java 4905 2014-07-04 14:42:37Z netmackan $
  */
 public enum StatusName {
     

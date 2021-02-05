@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * /signserver/SignServerWSService/SignServerWS.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WS31Dispatcher.java 1533 2010-12-25 17:21:15Z netmackan $
  */
 public class WS31Dispatcher extends HttpServlet {
 

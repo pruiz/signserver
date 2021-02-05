@@ -17,7 +17,7 @@ import org.cesecore.util.query.elems.RelationalOperator;
 
 /**
  *
- * @version $Id$
+ * @version $Id: OperatorsPerColumnUtil.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class OperatorsPerColumnUtil {
     

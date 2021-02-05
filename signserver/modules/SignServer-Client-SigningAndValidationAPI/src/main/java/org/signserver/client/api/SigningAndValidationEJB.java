@@ -32,7 +32,7 @@ import org.signserver.ejb.interfaces.ProcessSessionRemote;
  * Implements ISigningAndValidation using EJB remote interface.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SigningAndValidationEJB.java 7610 2016-07-13 10:12:10Z netmackan $
  */
 public class SigningAndValidationEJB implements ISigningAndValidation {
 

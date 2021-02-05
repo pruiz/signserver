@@ -22,7 +22,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionLocal;
  * Configuration settings for file uploads (and storage of response data).
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UploadConfig.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class UploadConfig {
     

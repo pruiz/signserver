@@ -24,7 +24,7 @@ import org.signserver.common.RequestContext;
  * Default implementation of a crypto instance.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultCryptoInstance.java 5982 2015-03-31 08:57:14Z netmackan $
  */
 public class DefaultCryptoInstance implements ICryptoInstance {
 

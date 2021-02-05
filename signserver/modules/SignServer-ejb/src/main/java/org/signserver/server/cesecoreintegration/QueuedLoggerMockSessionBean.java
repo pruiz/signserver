@@ -29,7 +29,7 @@ import org.cesecore.time.TrustedTime;
  * Mock implementation of QueuedDevice interface to allow the secure audit code imported from
  * CESeCore to stay the same without bundling the queued implementation.
  * 
- * @version $Id$
+ * @version $Id: QueuedLoggerMockSessionBean.java 3199 2013-01-17 15:27:29Z netmackan $
  */
 @Stateless
 public class QueuedLoggerMockSessionBean implements QueuedLoggerSessionLocal {

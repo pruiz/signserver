@@ -78,7 +78,7 @@ import org.signserver.testutils.ModulesTestCase;
  * Test case for the RenewalWorker.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RenewalWorkerTest.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RenewalWorkerTest extends AbstractTestCase {

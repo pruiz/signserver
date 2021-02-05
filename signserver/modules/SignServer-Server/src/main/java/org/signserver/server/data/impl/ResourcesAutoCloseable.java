@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * used by subclasses to have resources properly closed.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ResourcesAutoCloseable.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public abstract class ResourcesAutoCloseable implements AutoCloseable {
 

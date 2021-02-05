@@ -69,7 +69,7 @@ import org.signserver.server.HashDigestUtils;
  *
  * @author Tomas Gustavsson
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MRTDSODSigner.java 8777 2017-11-01 15:09:04Z vinays $
  */
 public class MRTDSODSigner extends BaseSigner {
 

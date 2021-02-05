@@ -34,7 +34,7 @@ import javax.persistence.Table;
  * signerConfigData (WorkerConfig in xml-encoding, String)
  * </pre>
  *
- * @version $Id$
+ * @version $Id: WorkerConfigDataBean.java 7573 2016-06-28 11:29:45Z malu9369 $
  */
 @Entity
 @Table(name = "signerconfigdata")

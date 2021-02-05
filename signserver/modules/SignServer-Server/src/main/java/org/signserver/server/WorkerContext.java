@@ -19,7 +19,7 @@ package org.signserver.server;
  * 
  * 
  * @author Philip Vendil 3 aug 2008
- * @version $Id$
+ * @version $Id: WorkerContext.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public abstract class WorkerContext {
 

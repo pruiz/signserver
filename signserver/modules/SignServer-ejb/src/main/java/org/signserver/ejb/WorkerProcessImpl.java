@@ -59,8 +59,6 @@ import org.signserver.server.log.SignServerEventTypes;
 import org.signserver.server.log.SignServerModuleTypes;
 import org.signserver.server.log.SignServerServiceTypes;
 import org.signserver.server.log.WorkerLoggerException;
-import org.signserver.server.statistics.Event;
-import org.signserver.server.statistics.StatisticsManager;
 import org.signserver.ejb.interfaces.WorkerSession;
 import org.signserver.ejb.interfaces.WorkerSessionLocal;
 import org.signserver.ejb.worker.impl.PreloadedWorkerConfig;
@@ -71,7 +69,7 @@ import org.signserver.server.log.Loggable;
 /**
  * Implements the business logic for the process method.
  *
- * @version $Id$
+ * @version $Id: WorkerProcessImpl.java 11139 2019-08-16 08:23:35Z malu9369 $
  */
 class WorkerProcessImpl {
 
@@ -218,10 +216,6 @@ class WorkerProcessImpl {
                 throw exception;
             }
 
-            // Statistics: start event
-            final Event event = StatisticsManager.startEvent(workerId, awc, em);
-            requestContext.put(RequestContext.STATISTICS_EVENT, event);
-
             // Process the request
             final Response res = handleProcessing(processable, workerId, request, requestContext, logMap, workerLogger, adminInfo);
 
@@ -237,9 +231,6 @@ class WorkerProcessImpl {
 
             // Archiving
             handleArchiving(res, worker, requestContext);
-
-            // Statistics: end event
-            StatisticsManager.endEvent(workerId, awc, em, event);
 
             // Check key usage limit
             if (!pwc.isDisableKeyUsageCounter() || pwc.isKeyUsageLimitSpecified()) {

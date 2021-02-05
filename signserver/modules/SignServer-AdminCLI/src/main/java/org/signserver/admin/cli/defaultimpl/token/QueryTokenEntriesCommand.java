@@ -47,7 +47,7 @@ import static org.signserver.common.SignServerConstants.TOKEN_ENTRY_FIELDS_ALIAS
  * information including the certificate chain.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: QueryTokenEntriesCommand.java 8983 2018-01-11 23:23:41Z vinays $
  */
 public class QueryTokenEntriesCommand extends AbstractAdminCommand {
 

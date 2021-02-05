@@ -1,4 +1,4 @@
--- version: $Id$
+-- version: $Id: create-index-signserver.sql 7766 2016-10-06 13:42:45Z netmackan $
 
 -- Selecting log entries when verifying/exporting IntegrityProtectedDevice logs:
 CREATE UNIQUE INDEX auditrecorddata_idx2 ON AuditRecordData (nodeId,sequenceNumber);

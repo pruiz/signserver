@@ -22,7 +22,7 @@ import static org.signserver.server.cryptotokens.KeystoreCryptoToken.KEYSTORETYP
  * Crypto token storing the keystore in the configuration in the database.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: KeystoreInConfigCryptoToken.java 7584 2016-06-29 11:06:32Z netmackan $
  */
 public class KeystoreInConfigCryptoToken extends KeystoreCryptoToken {
     @Override

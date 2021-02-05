@@ -18,7 +18,7 @@ import java.util.Collection;
  * Interface for Command factories.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CommandFactory.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public interface CommandFactory {
 

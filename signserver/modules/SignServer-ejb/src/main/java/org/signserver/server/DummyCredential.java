@@ -18,7 +18,7 @@ import java.io.Serializable;
  * Dummy custom credential.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DummyCredential.java 1533 2010-12-25 17:21:15Z netmackan $
  */
 class DummyCredential implements IClientCredential, Serializable {
     private static final long serialVersionUID = 1L;

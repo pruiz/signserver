@@ -19,7 +19,7 @@ import org.signserver.server.IServices;
  * Version of the RequestContext intended to be used by unit tests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedRequestContext.java 7052 2016-02-18 11:59:37Z netmackan $
  */
 public class MockedRequestContext extends RequestContext {
 

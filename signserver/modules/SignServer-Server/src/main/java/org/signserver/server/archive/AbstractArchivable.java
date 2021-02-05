@@ -19,7 +19,7 @@ import java.io.Serializable;
  * parts of an Archivable.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AbstractArchivable.java 7612 2016-07-14 06:43:21Z netmackan $
  */
 public abstract class AbstractArchivable implements Archivable, Serializable {
 

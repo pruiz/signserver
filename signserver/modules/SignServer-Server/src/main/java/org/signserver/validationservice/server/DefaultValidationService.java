@@ -29,7 +29,7 @@ import org.signserver.validationservice.common.Validation.Status;
  * between the configured validators for revocation status.
  * 
  * @author Philip Vendil 29 nov 2007
- * @version $Id$
+ * @version $Id: DefaultValidationService.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class DefaultValidationService extends BaseValidationService {
 

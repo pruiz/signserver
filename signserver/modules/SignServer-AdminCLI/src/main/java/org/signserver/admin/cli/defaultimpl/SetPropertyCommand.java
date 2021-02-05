@@ -21,7 +21,7 @@ import org.signserver.common.GlobalConfiguration;
 /**
  * Sets a property for a given workerid
  *
- * @version $Id$
+ * @version $Id: SetPropertyCommand.java 7691 2016-08-29 13:54:07Z netmackan $
  */
 public class SetPropertyCommand extends AbstractAdminCommand {
 

@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * DataService managing the persistence of the global configuration data.
  *
- * @version $Id$
+ * @version $Id: IGlobalConfigurationDataService.java 2740 2012-09-25 11:32:26Z netmackan $
  */
 public interface IGlobalConfigurationDataService {
 

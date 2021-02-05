@@ -26,7 +26,7 @@ import org.signserver.server.IServices;
  * CryptoTokenHelper to be implemented for different keystore implementations.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: KeyStoreDelegator.java 9314 2018-05-16 08:51:18Z vinays $
  */
 public interface KeyStoreDelegator {
 

@@ -23,7 +23,7 @@ import org.junit.Test;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: QuartsLibTest.java 3465 2013-05-01 10:24:46Z netmackan $
  */
 public class QuartsLibTest {
 

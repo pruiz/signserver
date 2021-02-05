@@ -62,7 +62,7 @@ import org.signserver.testutils.ModulesTestCase;
  * Unit tests for the PlainSigner class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PlainSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class PlainSignerTest {
 

@@ -19,7 +19,7 @@ package org.signserver.server.integrityprotected;
  * read on first access is unique among the nodes sharing the database.
  * 
  * Based on Id: NodeSequenceHolder.java 24598 2016-10-31 11:34:40Z jeklund
- * @version $Id$
+ * @version $Id: SequencialNodeSequenceHolder.java 9536 2018-10-02 08:35:47Z netmackan $
  */
 public enum SequencialNodeSequenceHolder {
     INSTANCE;

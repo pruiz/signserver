@@ -23,7 +23,7 @@ import org.signserver.common.WorkerConfig;
  * Test cases for the error handling in RenewalWorker.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: RenewalWorkerUnitTest.java 4491 2014-04-01 09:14:08Z malu9369 $
  *
  */
 public class RenewalWorkerUnitTest extends TestCase {

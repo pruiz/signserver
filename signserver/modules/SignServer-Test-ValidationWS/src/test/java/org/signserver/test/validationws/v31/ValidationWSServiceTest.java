@@ -49,7 +49,7 @@ import org.signserver.validationservice.common.ValidationServiceConstants;
  * SignServer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidationWSServiceTest.java 9749 2018-11-28 08:43:00Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ValidationWSServiceTest extends ModulesTestCase {

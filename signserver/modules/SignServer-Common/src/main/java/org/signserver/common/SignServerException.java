@@ -25,7 +25,7 @@ import javax.xml.ws.WebFault;
  * @author Philip Vendil
  * @author Markus Kilås
  * @see IllegalRequestException
- * @version $Id$
+ * @version $Id: SignServerException.java 3835 2013-11-05 20:12:04Z netmackan $
  */
 @WebFault
 public class SignServerException extends Exception {

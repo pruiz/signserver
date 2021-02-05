@@ -16,7 +16,7 @@ package org.signserver.common;
  * Exception thrown when there is a problem related to the file based database.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FileBasedDatabaseException.java 2629 2012-09-07 12:53:58Z netmackan $
  */
 public class FileBasedDatabaseException extends RuntimeException {
     

@@ -19,7 +19,7 @@ import org.signserver.client.cli.spi.ClientCommandFactory;
  * CommandFactory for the validation client.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidationClientCommandFactory.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public class ValidationClientCommandFactory extends AbstractCommandFactory implements ClientCommandFactory {
 

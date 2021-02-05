@@ -17,7 +17,7 @@ package org.signserver.ejb.interfaces;
  * used by dispatchers.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: DispatcherProcessTransactionSessionLocal.java 9305 2018-05-07 15:42:28Z vinays $
  */
 public interface DispatcherProcessTransactionSessionLocal extends ProcessTransactionSessionLocal {
 

@@ -26,7 +26,7 @@ import org.signserver.common.WorkerStatusInfo;
  * Has no defined properties.
  *
  * @author philip
- * @version $Id$
+ * @version $Id: LocalComputerTimeSource.java 7647 2016-08-17 08:16:10Z malu9369 $
  */
 public class LocalComputerTimeSource implements ITimeSource {
 

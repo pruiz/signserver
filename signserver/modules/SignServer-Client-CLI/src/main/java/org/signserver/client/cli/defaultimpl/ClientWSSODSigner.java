@@ -44,7 +44,7 @@ import org.signserver.common.SignServerException;
  * Signs data groups using the HTTP(s) interface.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientWSSODSigner.java 9759 2018-11-29 08:31:59Z malu9369 $
  */
 public class ClientWSSODSigner extends AbstractSODSigner {
     

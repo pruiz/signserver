@@ -60,7 +60,7 @@
     </script>
     </head>
 
-<body pageid="46137346">
+<body pageid="75861550">
 
 <div id="ht-loader">
     <noscript>
@@ -110,7 +110,7 @@
                     <a href="../"><img src="projectlogo.png"></a>
                 </h1>
                 <div class="ht-version">
-                    <p>Version: 5.0.0</p>
+                    <p>Version: 5.2.0</p>
                 </div>
             </header>
 
@@ -260,6 +260,10 @@
                             </ul>
             </li>
                                         <li class="leaf">
+        <a class="ht-nav-page-link" href="Configure_Client_Certificate_Authentication_and_Authorization.html">Configure Client Certificate Authentication and Authorization</a>
+
+            </li>
+                                        <li class="leaf">
         <a class="ht-nav-page-link" href="Certificate_Renewals_Using_Peer_Systems.html">Certificate Renewals Using Peer Systems</a>
 
             </li>
@@ -269,6 +273,10 @@
             </li>
                                         <li class="leaf">
         <a class="ht-nav-page-link" href="Setting_up_One-time_Keys.html">Setting up One-time Keys</a>
+
+            </li>
+                                        <li class="leaf">
+        <a class="ht-nav-page-link" href="Setting_up_OpenPGP_Signer.html">Setting up OpenPGP Signer</a>
 
             </li>
                                         <li class="leaf">
@@ -322,7 +330,7 @@
 
             <ul class="nav ht-pages-nav-sub">
                                         <li class="leaf">
-        <a class="ht-nav-page-link" href="signdocument.html">signdocument</a>
+        <a class="ht-nav-page-link" href="Client_CLI_signdocument_Command.html">Client CLI signdocument Command</a>
 
             </li>
                                         <li class="leaf">
@@ -545,6 +553,18 @@
             </li>
                                         <li class="leaf">
         <a class="ht-nav-page-link" href="Plain_Signer.html">Plain Signer</a>
+
+            </li>
+                                        <li class="leaf">
+        <a class="ht-nav-page-link" href="OpenPGP_Signer.html">OpenPGP Signer</a>
+
+            </li>
+                                        <li class="leaf">
+        <a class="ht-nav-page-link" href="Debian_Dpkg-sig_Signer.html">Debian Dpkg-sig Signer</a>
+
+            </li>
+                                        <li class="leaf">
+        <a class="ht-nav-page-link" href="OpenPGPPlain_Signer.html">OpenPGPPlain Signer</a>
 
             </li>
                             </ul>
@@ -1017,10 +1037,6 @@
         <a class="ht-nav-page-link" href="Administration_CLI.html">Administration CLI</a>
 
             </li>
-                                        <li class="leaf">
-        <a class="ht-nav-page-link" href="Administration_GUI.html">Administration GUI</a>
-
-            </li>
                                         <li class="collapsed">
         <a class="ht-nav-page-link" href="Administration_Web.html">Administration Web</a>
 
@@ -1202,6 +1218,10 @@
                             </ul>
             </li>
                                         <li class="leaf">
+        <a class="ht-nav-page-link" href="Administration_GUI.html">Administration GUI</a>
+
+            </li>
+                                        <li class="leaf">
         <a class="ht-nav-page-link" href="Database_CLI.html">Database CLI</a>
 
             </li>
@@ -1306,6 +1326,14 @@
 
             <ul class="nav ht-pages-nav-sub">
                                         <li class="leaf">
+        <a class="ht-nav-page-link" href="SignServer_5.2_Release_Notes.html">SignServer 5.2 Release Notes</a>
+
+            </li>
+                                        <li class="leaf">
+        <a class="ht-nav-page-link" href="SignServer_5.1_Release_Notes.html">SignServer 5.1 Release Notes</a>
+
+            </li>
+                                        <li class="leaf">
         <a class="ht-nav-page-link" href="SignServer_5.0_Release_Notes.html">SignServer 5.0 Release Notes</a>
 
             </li>
@@ -1357,7 +1385,7 @@
         <li><a href="SignServer_Manual.html">SignServer Manual</a></li>
                                                                                      <li><a href="SignServer_Integration.html">SignServer Integration</a></li>
                                                             </ul>
-</div>            <h1 id="src-16221681"> <span>Apache HTTP Server as Reverse Proxy</span></h1>
+</div>            <h1 id="src-81887829"> <span>Apache HTTP Server as Reverse Proxy</span></h1>
         </header>
 
         <div id="main-content" class="wiki-content sp-grid-section" data-index-for-search="true">
@@ -1371,7 +1399,7 @@
 </li><li class=" ">    <p  >Only accept requests to specified locations.    </p>
 </li></ul>    <p  >Since the requests should go through the proxy, it is recommended to configure the application server to only listen to localhost, and/or use a firewall blocking the application server ports from external requests. To configure JBoss to only listen to localhost, set the following properties in <tt class=" ">signserver_deploy.properties</tt>:    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">httpsserver.bindaddress.pubhttp=127.0.0.1</code></div>
 <div class="line"><code class="plain">httpsserver.bindaddress.pubhttps=127.0.0.1</code></div>
 <div class="line"><code class="plain">httpsserver.bindaddress.privhttps=127.0.0.1</code></div>
@@ -1379,7 +1407,7 @@
     </div>
     <p  >Install the Apache web server and enable required modules (the following commands are for Ubuntu but should be similar in other distributions as well):    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">$ </code><code class="functions">sudo</code><code class="plain"> apt-get </code><code class="functions">install</code><code class="plain"> apache2</code></div>
 <div class="line"><code class="plain">$ </code><code class="functions">cd</code><code class="plain"> </code><code class="plain">/etc/apache2/mods-enabled/</code></div>
 <div class="line"><code class="plain">$ </code><code class="functions">sudo</code><code class="plain"> </code><code class="functions">ln</code><code class="plain"> -s ..</code><code class="plain">/mods-available/proxy</code><code class="plain">.load proxy.load</code></div>
@@ -1391,12 +1419,12 @@
 </div>
     </div>
     <p  >    </p>
-    <div class="section section-1" id="src-16221681_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY0LjMuMC1FeGFtcGxlOlJld3JpdGVVUkxzZm9yVFNBKHVzaW5nbW9kX3Byb3h5YW5kbW9kX3Jld3JpdGUp">
+    <div class="section section-1" id="src-81887829_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY1LjIuMC1FeGFtcGxlOlJld3JpdGVVUkxzZm9yVFNBKHVzaW5nbW9kX3Byb3h5YW5kbW9kX3Jld3JpdGUp">
         <h1 class="heading "><span>Example: Rewrite URLs for TSA (using mod_proxy and mod_rewrite)</span></h1>
     <p  >The following sample configuration allows rendering nice URLs for time-stamping so that you can point your TSA clients to <tt class=" ">http://tsa.example.com/</tt> instead of <tt class=" ">http://tsa.example.com:8080/signserver/process?workerName=TimeStampSigner1</tt>.    </p>
     <p  >This configuration combines <tt class=" ">mod_proxy</tt> with <tt class=" ">mod_rewrite</tt> to enable setting the workerName or workerId, allowing different TSAs available on different URLs.    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">&lt;VirtualHost tsa.example.com:</code><code class="value">80</code><code class="plain">&gt;</code></div>
 <div class="line"><code class="plain">    ServerName tsa.example.com</code></div>
 <div class="line"><code class="plain">    ServerAlias tsa.example.com</code></div>
@@ -1418,7 +1446,7 @@
 </div>
     </div>
     </div>
-    <div class="section section-1" id="src-16221681_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY0LjMuMC1FeGFtcGxlOlJld3JpdGVVUkxzYW5kcmVkaXJlY3R0b0hUVFBTKHVzaW5nQUpQKQ">
+    <div class="section section-1" id="src-81887829_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY1LjIuMC1FeGFtcGxlOlJld3JpdGVVUkxzYW5kcmVkaXJlY3R0b0hUVFBTKHVzaW5nQUpQKQ">
         <h1 class="heading "><span>Example: Rewrite URLs and redirect to HTTPS (using AJP)</span></h1>
     <p  >The following example configures three virtual hosts.    </p>
     <p  >The first <tt class=" ">signserver.example.com:80</tt> redirects all requests to use HTTPS and thus the virtual host <tt class=" ">signserver.example.com:443</tt>.    </p>
@@ -1431,7 +1459,7 @@
         </div>
     </div>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">&lt;VirtualHost signserver.example.com:</code><code class="value">80</code><code class="plain">&gt;</code></div>
 <div class="line"><code class="plain">    ServerName signserver.example.com</code></div>
 <div class="line"><code class="plain">    ServerAlias signserver.example.com</code></div>
@@ -1511,14 +1539,14 @@
 </div>
     </div>
     </div>
-    <div class="section section-1" id="src-16221681_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY0LjMuMC1FeGFtcGxlOkdyYW50aW5nYWNjZXNzdG9zcGVjaWZpY3dvcmtlcnNvbmx5">
+    <div class="section section-1" id="src-81887829_safe-id-aWQtLkFwYWNoZUhUVFBTZXJ2ZXJhc1JldmVyc2VQcm94eXY1LjIuMC1FeGFtcGxlOkdyYW50aW5nYWNjZXNzdG9zcGVjaWZpY3dvcmtlcnNvbmx5">
         <h1 class="heading "><span>Example: Granting access to specific workers only</span></h1>
     <p  >This example shows how to limit access to specified resources only.    </p>
     <p  >If you are going to grant different users access to different workers, always remember to first deny access from the root location since there are other ways to access a worker than the &quot;/worker/*&quot; or &quot;/sodworker/*&quot; pattern. For instance, /process, /tsa, /pdf and /sod etc, as well as using the web services interfaces /signserverws, /SignServerWSService, /validationws, /ValidationWSService, and /ClientWSService, all can be used to invoke <strong class=" ">any</strong> worker.    </p>
     <p  >If you instead relay on SignServer to do the authentication/authorization, it is recommended to only grant access to the locations you intend to use. In that case you will probably want to also give access to the web services interfaces, /worker and /process etc.    </p>
     <p  >Also remember that if you are proxying from multiple virtual hosts (for example, if you have one with and one without client authentication as in the example above), you might want to add the access restrictions to all of them.    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain"> ...</code></div>
 <div class="line"><code class="plain">    # First, deny access globally and then only give access to resources explicitly</code></div>
 <div class="line"><code class="plain">    &lt;Location /&gt;</code></div>
@@ -1532,8 +1560,8 @@
 <div class="line"><code class="plain">	Allow from all</code></div>
 <div class="line"><code class="plain">    &lt;/LocationMatch&gt;</code></div>
 <div class="line"> </div>
-<div class="line"><code class="plain">    # Allow demo web pages</code></div>
-<div class="line"><code class="plain">    &lt;Location /demo/&gt;</code></div>
+<div class="line"><code class="plain">    # Allow Client Web</code></div>
+<div class="line"><code class="plain">    &lt;Location /clientweb/&gt;</code></div>
 <div class="line"><code class="plain">	Order Allow,Deny</code></div>
 <div class="line"><code class="plain">	Allow from all</code></div>
 <div class="line"><code class="plain">    &lt;/Location&gt;</code></div>
@@ -1581,22 +1609,22 @@
 </div>
     </div>
     </div>
-    <div class="section section-1" id="src-16221681_id-.ApacheHTTPServerasReverseProxyv4.3.0-AdditionalConfiguration">
+    <div class="section section-1" id="src-81887829_id-.ApacheHTTPServerasReverseProxyv5.2.0-AdditionalConfiguration">
         <h1 class="heading "><span>Additional Configuration</span></h1>
-    <div class="section section-2" id="src-16221681_id-.ApacheHTTPServerasReverseProxyv4.3.0-CustomPrivateHTTPSport">
+    <div class="section section-2" id="src-81887829_id-.ApacheHTTPServerasReverseProxyv5.2.0-CustomPrivateHTTPSport">
         <h2 class="heading "><span>Custom Private HTTPS port</span></h2>
     <p  >For example, if a reverse proxy is used to change the ports used by SignServer, the links in the Administration Web interface might not be correct (for example, if the standard port 443 is used instead of 8443). In that case, configure the following in conf/signserver_deploy.properties:    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">httpserver.external.privhttps=</code><code class="value">443</code></div>
 </div>
     </div>
     </div>
-    <div class="section section-2" id="src-16221681_id-.ApacheHTTPServerasReverseProxyv4.3.0-CustomContextRoot">
+    <div class="section section-2" id="src-81887829_id-.ApacheHTTPServerasReverseProxyv5.2.0-CustomContextRoot">
         <h2 class="heading "><span>Custom Context Root</span></h2>
     <p  >With a reverse proxy, it is also possible to use a different beginning of the URL for accessing SignServer than the default &quot;/signserver&quot;. If for example the reverse proxy instead serves SignServer under &quot;/myservice/signserver&quot; this might have to be configured in <tt class=" ">conf/signserver_deploy.properties</tt> so that the URLs in the Administration Web interface, as well as the Web Services endpoints, work as expected:    </p>
     <div  class="confbox programlisting">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="defaultnew syntaxhighlighter scroll-html-formatted-code" data-linenumbers="false" data-firstline="1">
 <div class="line"><code class="plain">httpserver.context.root=/myservice/signserver</code></div>
 </div>
     </div>

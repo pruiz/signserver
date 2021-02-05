@@ -43,7 +43,7 @@ import org.signserver.validationservice.common.Validation;
  * NOTE : com.sun.security.enableCRLDP not used for CertPath validation, since it affects entire jvm.
  *  
  * @author rayback2
- * @version $Id$
+ * @version $Id: CRLValidator.java 8434 2017-06-28 09:14:12Z netmackan $
  */
 public class CRLValidator extends BaseValidator {
 

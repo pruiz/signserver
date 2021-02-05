@@ -28,7 +28,7 @@ import org.signserver.server.log.WorkerLoggerException;
 /**
  * Default audit logger for TimeStampSignerS.
  *
- * @version $Id$
+ * @version $Id: DefaultTimeStampLogger.java 10448 2019-03-01 13:06:21Z netmackan $
  */
 public class DefaultTimeStampLogger extends BaseWorkerLogger implements IWorkerLogger {
 

@@ -23,7 +23,7 @@ import org.signserver.common.SignServerException;
  * Interface for classes signing SODs.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODSigner.java 2090 2012-02-01 16:41:43Z netmackan $
  */
 public interface SODSigner {
 

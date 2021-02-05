@@ -17,7 +17,7 @@ import javax.ejb.Remote;
 /**
  * Common interface containing all the session bean methods.
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationSessionRemote.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @Remote
 public interface GlobalConfigurationSessionRemote extends GlobalConfigurationSession {

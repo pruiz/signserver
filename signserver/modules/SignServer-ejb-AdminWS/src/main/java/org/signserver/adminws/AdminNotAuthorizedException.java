@@ -19,7 +19,7 @@ import javax.xml.ws.WebFault;
  * operation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminNotAuthorizedException.java 3835 2013-11-05 20:12:04Z netmackan $
  */
 @WebFault
 public class AdminNotAuthorizedException extends Exception {

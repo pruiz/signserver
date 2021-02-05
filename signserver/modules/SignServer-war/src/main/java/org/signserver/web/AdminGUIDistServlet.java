@@ -18,7 +18,7 @@ import java.io.File;
  * Servlet for downloading the AdminGUI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminGUIDistServlet.java 7739 2016-09-27 07:36:09Z malu9369 $
  */
 public class AdminGUIDistServlet extends AbstractDistServlet {
     @Override

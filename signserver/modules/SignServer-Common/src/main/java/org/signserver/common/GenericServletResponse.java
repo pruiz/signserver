@@ -25,7 +25,7 @@ import org.signserver.server.archive.Archivable;
  * It adds a contentType value that should be set by the worker.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: GenericServletResponse.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class GenericServletResponse extends GenericSignResponse {
 

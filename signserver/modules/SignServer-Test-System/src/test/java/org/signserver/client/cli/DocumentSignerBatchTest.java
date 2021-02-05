@@ -44,7 +44,7 @@ import org.signserver.client.cli.defaultimpl.ConsolePasswordReader;
  * threads to run in parallel etc.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DocumentSignerBatchTest.java 9258 2018-04-16 08:46:43Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DocumentSignerBatchTest extends ModulesTestCase {

@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
  * This tests assumes that test-configuration.properties as been applied to
  * SignServer.
  *
- * @version $Id$
+ * @version $Id: ValidationWSServiceTest.java 9749 2018-11-28 08:43:00Z malu9369 $
  */
 public class ValidationWSServiceTest extends org.signserver.test.validationws.v31.ValidationWSServiceTest {
 

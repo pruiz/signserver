@@ -16,7 +16,7 @@ package org.signserver.test.performance;
  * Callback to invoke after a test failed in some thread.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: FailureCallback.java 3116 2012-12-19 12:34:36Z malu9369 $
  */
 public interface FailureCallback {
     /**

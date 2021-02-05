@@ -33,7 +33,7 @@ import org.signserver.server.IServices;
  * Timed service calling testKey() on selected (crypto)workers.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: HSMKeepAliveTimedService.java 8816 2017-11-15 15:41:01Z vinays $
  */
 public class HSMKeepAliveTimedService extends BaseTimedService {
 

@@ -16,7 +16,7 @@ package org.signserver.server.log;
  * Exception thrown in case there was a problem writing out the log line.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerLoggerException.java 2345 2012-05-06 09:03:57Z netmackan $
  */
 public class WorkerLoggerException extends Exception {
 

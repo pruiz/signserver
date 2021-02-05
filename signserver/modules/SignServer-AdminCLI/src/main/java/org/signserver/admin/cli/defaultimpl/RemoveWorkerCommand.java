@@ -24,7 +24,7 @@ import org.signserver.common.WorkerConfig;
 /**
  * Removes all properties for a given worker.
  *
- * @version $Id$
+ * @version $Id: RemoveWorkerCommand.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public class RemoveWorkerCommand extends AbstractAdminCommand {
 

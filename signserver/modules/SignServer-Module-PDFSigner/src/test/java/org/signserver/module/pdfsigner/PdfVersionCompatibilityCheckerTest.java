@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * Unit tests for PdfVersionCompatibilityChecker.
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: PdfVersionCompatibilityCheckerTest.java 8412 2017-06-15 11:26:37Z netmackan $
  */
 public class PdfVersionCompatibilityCheckerTest {
     

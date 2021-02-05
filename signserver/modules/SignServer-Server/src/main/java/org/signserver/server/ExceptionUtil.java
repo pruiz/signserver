@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author Markus Kilås
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ExceptionUtil.java 7602 2016-07-01 14:12:42Z netmackan $
  */
 public class ExceptionUtil {
   

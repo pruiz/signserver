@@ -24,7 +24,7 @@ import org.signserver.server.SignServerContext;
 /**
  * Completely configurable WorkerLogger.
  *
- * @version $Id$
+ * @version $Id: PatternWorkerLogger.java 7540 2016-06-21 13:30:52Z malu9369 $
  */
 public class PatternWorkerLogger extends BaseWorkerLogger implements IWorkerLogger {
 

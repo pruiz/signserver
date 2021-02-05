@@ -20,7 +20,7 @@ import org.signserver.test.utils.mock.MockedCryptoToken;
  * Mocked version of the XAdESSigner using a MockedCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedXMLSigner.java 10023 2018-12-20 12:46:03Z netmackan $
  */
 public class MockedXMLSigner extends XMLSigner {
     private final MockedCryptoToken mockedToken;

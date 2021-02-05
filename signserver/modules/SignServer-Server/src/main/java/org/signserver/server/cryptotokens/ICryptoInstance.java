@@ -27,7 +27,7 @@ import javax.crypto.SecretKey;
  * as soon as it will not be used anymore.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ICryptoInstance.java 7586 2016-06-30 08:43:14Z malu9369 $
  * @see ICryptoTokenV4
  */
 public interface ICryptoInstance /** Java7: extends AutoClosable */ {

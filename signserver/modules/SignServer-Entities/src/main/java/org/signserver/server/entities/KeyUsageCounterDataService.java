@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: KeyUsageCounterDataService.java 2731 2012-09-25 10:09:51Z netmackan $
  */
 public class KeyUsageCounterDataService implements IKeyUsageCounterDataService {
 

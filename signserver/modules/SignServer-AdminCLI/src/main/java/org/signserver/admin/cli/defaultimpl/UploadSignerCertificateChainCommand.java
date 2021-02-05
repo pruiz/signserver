@@ -27,7 +27,7 @@ import org.signserver.common.WorkerStatus;
 /**
  * Commands that uploads a PEM certificate to a signers config.
  *
- * @version $Id$
+ * @version $Id: UploadSignerCertificateChainCommand.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public class UploadSignerCertificateChainCommand extends AbstractAdminCommand {
 

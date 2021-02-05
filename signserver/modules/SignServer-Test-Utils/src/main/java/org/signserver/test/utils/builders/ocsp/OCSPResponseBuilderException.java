@@ -18,7 +18,7 @@ package org.signserver.test.utils.builders.ocsp;
  *
  * XXX: This code is duplicated in EJBCA and SignServer. Consider breaking out as a separate JAR.
  * 
- * @version $Id$
+ * @version $Id: OCSPResponseBuilderException.java 3765 2013-09-10 20:07:32Z netmackan $
  */
 public class OCSPResponseBuilderException extends Exception {
 

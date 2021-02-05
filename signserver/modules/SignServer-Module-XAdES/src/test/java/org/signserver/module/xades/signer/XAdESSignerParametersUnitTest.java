@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  * Unit tests for the XAdESSignerParameters class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESSignerParametersUnitTest.java 3728 2013-08-20 10:45:44Z netmackan $
  */
 public class XAdESSignerParametersUnitTest {
     

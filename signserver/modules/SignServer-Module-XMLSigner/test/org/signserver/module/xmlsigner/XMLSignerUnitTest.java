@@ -45,7 +45,7 @@ import org.xml.sax.SAXParseException;
  * System tests (and other tests) are available in the Test-System project.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLSignerUnitTest.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class XMLSignerUnitTest {
 

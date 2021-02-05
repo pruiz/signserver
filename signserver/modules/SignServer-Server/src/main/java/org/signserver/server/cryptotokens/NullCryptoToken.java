@@ -37,7 +37,7 @@ import org.signserver.server.IServices;
  * and de-activation has no effect.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NullCryptoToken.java 9494 2018-08-30 07:30:12Z vinays $
  */
 public class NullCryptoToken extends BaseCryptoToken {
 

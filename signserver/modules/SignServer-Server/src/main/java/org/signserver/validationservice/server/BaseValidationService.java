@@ -33,7 +33,7 @@ import org.signserver.validationservice.server.validcache.ValidationCache;
  * such as initializing and creating the extended crypto token.
  *
  * @author Philip Vendil 23 nov 2007
- * @version $Id$
+ * @version $Id: BaseValidationService.java 7637 2016-08-15 13:22:44Z malu9369 $
  */
 public abstract class BaseValidationService implements IValidationService {
 

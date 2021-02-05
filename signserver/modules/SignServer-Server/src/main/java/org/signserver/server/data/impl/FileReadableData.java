@@ -26,7 +26,7 @@ import org.apache.log4j.Logger;
  * Note: The file is not removed.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FileReadableData.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class FileReadableData extends CloseableReadableData {
     

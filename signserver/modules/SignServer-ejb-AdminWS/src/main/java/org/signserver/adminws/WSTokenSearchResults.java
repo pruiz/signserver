@@ -22,7 +22,7 @@ import org.signserver.server.cryptotokens.TokenSearchResults;
  * WS version of TokenSearchResults.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WSTokenSearchResults.java 7315 2016-05-17 11:23:33Z malu9369 $
  * @see TokenSearchResults
  */
 @XmlType(name = "tokenSearchResults")

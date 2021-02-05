@@ -32,7 +32,7 @@ import org.signserver.server.UnloadableWorker;
  * those.
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: WorkerFactory.java 9668 2018-11-01 09:27:09Z georgem $
  */
 public class WorkerFactory {
 

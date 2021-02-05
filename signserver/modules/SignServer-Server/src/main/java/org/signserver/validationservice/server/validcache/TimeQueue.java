@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * 
  * @author Philip Vendil 26 nov 2007
  *
- * @version $Id$
+ * @version $Id: TimeQueue.java 7308 2016-05-17 09:46:40Z malu9369 $
  */
 class TimeQueue {
 

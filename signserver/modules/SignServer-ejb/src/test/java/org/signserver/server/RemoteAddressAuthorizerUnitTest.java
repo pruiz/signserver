@@ -20,7 +20,7 @@ import org.junit.Test;
  * Unit tests for the RemoteAddressAuthorizer class.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: RemoteAddressAuthorizerUnitTest.java 9940 2018-12-17 09:58:45Z malu9369 $
  */
 public class RemoteAddressAuthorizerUnitTest {
 

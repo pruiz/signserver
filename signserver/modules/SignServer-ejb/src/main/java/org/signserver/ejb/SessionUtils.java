@@ -22,7 +22,7 @@ import org.signserver.ejb.worker.impl.WorkerWithComponents;
  * Utility functions for session beans.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: SessionUtils.java 8097 2017-03-10 11:55:11Z malu9369 $
  */
 public class SessionUtils {
     /**

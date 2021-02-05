@@ -1,6 +1,6 @@
 # CLI related configuration
 #
-# $Id$
+# $Id: signserver_cli.properties.sample 9365 2018-06-12 13:08:16Z oskareriksson $
 #
 
 ## SignServer Database CLI

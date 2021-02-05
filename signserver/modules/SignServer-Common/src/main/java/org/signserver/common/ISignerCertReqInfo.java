@@ -20,7 +20,7 @@ import java.io.Serializable;
  * to create the request.
  * 
  * @author Philip Vendil 2007 feb 19
- * @version $Id$
+ * @version $Id: ISignerCertReqInfo.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public interface ISignerCertReqInfo extends Serializable {
 }

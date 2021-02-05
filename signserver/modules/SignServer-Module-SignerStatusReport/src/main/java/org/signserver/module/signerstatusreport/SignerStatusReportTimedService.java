@@ -34,7 +34,7 @@ import org.signserver.server.entities.IKeyUsageCounterDataService;
  * TimedService that outputs a status report for a configured set of signers.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignerStatusReportTimedService.java 9371 2018-06-13 09:35:58Z oskareriksson $
  */
 public class SignerStatusReportTimedService extends BaseTimedService {
 

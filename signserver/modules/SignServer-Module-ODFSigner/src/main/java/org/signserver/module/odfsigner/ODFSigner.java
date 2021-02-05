@@ -54,7 +54,7 @@ import org.signserver.server.signers.BaseSigner;
  * https://issues.apache.org/jira/browse/ODFTOOLKIT-67
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: ODFSigner.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class ODFSigner extends BaseSigner {
     private static final String CONTENT_TYPE = "application/octet-stream";

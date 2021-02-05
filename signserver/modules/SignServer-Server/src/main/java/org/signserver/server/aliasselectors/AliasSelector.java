@@ -27,7 +27,7 @@ import org.signserver.common.data.Request;
  * Key alias selector interface.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AliasSelector.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public interface AliasSelector {
     

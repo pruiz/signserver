@@ -42,7 +42,7 @@ import org.signserver.common.WorkerType;
 /**
  * Interface for the worker session bean.
  *
- * @version $Id$
+ * @version $Id: WorkerSession.java 10531 2019-03-19 13:11:17Z vinays $
  */
 public interface WorkerSession {
 

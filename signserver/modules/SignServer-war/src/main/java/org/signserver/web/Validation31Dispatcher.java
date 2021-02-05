@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * /signserver/ValidationWSService/ValidationWS.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Validation31Dispatcher.java 1533 2010-12-25 17:21:15Z netmackan $
  */
 public class Validation31Dispatcher extends HttpServlet {
 

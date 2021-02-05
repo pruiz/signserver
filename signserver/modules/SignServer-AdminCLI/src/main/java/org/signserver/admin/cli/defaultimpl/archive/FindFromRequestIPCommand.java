@@ -23,7 +23,7 @@ import org.signserver.common.ArchiveDataVO;
 /**
  * Returns all archive datas requested from given IP
  *
- * @version $Id$
+ * @version $Id: FindFromRequestIPCommand.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public class FindFromRequestIPCommand extends AbstractAdminCommand {
 

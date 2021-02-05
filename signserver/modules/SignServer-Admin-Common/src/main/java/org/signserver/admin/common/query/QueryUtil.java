@@ -34,7 +34,7 @@ import static org.signserver.common.SignServerConstants.TOKEN_ENTRY_FIELDS_KEY_A
  * and archive data.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: QueryUtil.java 8983 2018-01-11 23:23:41Z vinays $
  */
 public class QueryUtil {
 

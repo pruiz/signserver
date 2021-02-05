@@ -23,7 +23,7 @@ import org.signserver.server.log.IWorkerLogger;
  * Holder for the worker object and its components.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerWithComponents.java 7760 2016-10-05 08:42:39Z netmackan $
  */
 public class WorkerWithComponents {
 

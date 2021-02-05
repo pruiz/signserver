@@ -18,7 +18,7 @@ import java.util.List;
  * The response data returned by the processSOD operation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SODResponse.java 3055 2012-11-29 12:38:43Z netmackan $
  * @see ClientWS#processSOD(java.lang.String, java.util.List, org.signserver.clientws.SODRequest) 
  */
 public class SODResponse extends DataResponse {

@@ -22,7 +22,7 @@ import org.signserver.statusrepo.common.StatusEntry;
 /**
  * Gets a status property if it is valid.
  *
- * @version $Id$
+ * @version $Id: GetStatusPropertyCommand.java 2142 2012-02-20 15:10:52Z netmackan $
  */
 public class GetStatusPropertyCommand extends AbstractAdminCommand {
 

@@ -25,7 +25,7 @@ import org.signserver.common.WorkerType;
  * functions.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: IWorker.java 7637 2016-08-15 13:22:44Z malu9369 $
  */
 public interface IWorker {
 

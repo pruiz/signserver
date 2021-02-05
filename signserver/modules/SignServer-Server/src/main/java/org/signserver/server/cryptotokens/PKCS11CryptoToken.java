@@ -81,7 +81,7 @@ import sun.security.pkcs11.wrapper.CK_ATTRIBUTE;
  * methods.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PKCS11CryptoToken.java 10701 2019-04-24 15:22:28Z netmackan $
  */
 public class PKCS11CryptoToken extends BaseCryptoToken {
 

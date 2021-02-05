@@ -20,7 +20,7 @@ import java.io.InputStream;
  * Abstraction for request data that can be read using various different methods.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ReadableData.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public interface ReadableData {
 

@@ -34,7 +34,7 @@ import org.bouncycastle.util.encoders.DecoderException;
  * Class that holds configuration values passed to pdfsigner.
  *
  * @author rayback_2
- * @version $Id$
+ * @version $Id: PDFSignerParameters.java 9477 2018-08-09 14:37:41Z vinays $
  */
 public class PDFSignerParameters {
 

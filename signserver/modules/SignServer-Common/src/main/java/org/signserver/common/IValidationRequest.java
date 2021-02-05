@@ -17,7 +17,7 @@ package org.signserver.common;
  * be implemented by all types of validator requests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IValidationRequest.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public interface IValidationRequest {
 

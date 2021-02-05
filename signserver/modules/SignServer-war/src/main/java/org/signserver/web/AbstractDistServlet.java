@@ -31,7 +31,7 @@ import org.apache.commons.io.IOUtils;
  * Currently used for Admin GUI and Admin CLI downloads.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AbstractDistServlet.java 11251 2019-09-03 13:19:24Z vinays $
  */
 public abstract class AbstractDistServlet extends HttpServlet {
 
@@ -42,7 +42,7 @@ public abstract class AbstractDistServlet extends HttpServlet {
      */
     protected abstract File getFile();
     
-    protected final SettingsBean settings = new SettingsBean();
+    protected final PublicWebBean settings = new PublicWebBean();
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

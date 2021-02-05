@@ -16,7 +16,7 @@ package org.signserver.module.renewal.common;
  * Properties used by the RenewalWorker.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RenewalWorkerProperties.java 1926 2011-11-05 23:12:54Z netmackan $
  */
 public interface RenewalWorkerProperties {
 

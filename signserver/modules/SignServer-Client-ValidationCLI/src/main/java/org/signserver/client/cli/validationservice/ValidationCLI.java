@@ -25,7 +25,7 @@ import org.signserver.client.cli.spi.ClientCommandFactory;
  * (ie for debugging).
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidationCLI.java 7564 2016-06-28 06:26:35Z malu9369 $
  */
 public class ValidationCLI extends CommandLineInterface {
 

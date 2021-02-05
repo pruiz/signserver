@@ -28,7 +28,7 @@ import org.signserver.common.WorkerStatusInfo;
  * No defined properties.
  *
  * @author markus
- * @version  $Id$
+ * @version  $Id: NullTimeSource.java 7647 2016-08-17 08:16:10Z malu9369 $
  */
 public class NullTimeSource implements ITimeSource {
 

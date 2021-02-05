@@ -32,7 +32,7 @@ import org.cesecore.util.CertTools;
  * It's main field is 'status' containing one of the status constants.
  *
  * @author Philip Vendil 26 nov 2007
- * @version $Id$
+ * @version $Id: Validation.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class Validation implements Serializable {
 

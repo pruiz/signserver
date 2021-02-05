@@ -17,7 +17,7 @@ import org.signserver.validationservice.common.Validation;
 /**
  * Data holder for a certificate validation response.
  *
- * @version $Id$
+ * @version $Id: CertificateValidationResponse.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class CertificateValidationResponse extends Response {
 

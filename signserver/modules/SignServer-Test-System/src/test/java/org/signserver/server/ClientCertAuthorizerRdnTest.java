@@ -70,7 +70,7 @@ import org.signserver.testutils.ModulesTestCase;
  * For unit tests see the ClientsAuthorizationCommandUnitTest class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientCertAuthorizerRdnTest.java 10667 2019-04-15 08:50:45Z netmackan $
  */
 public class ClientCertAuthorizerRdnTest {
 

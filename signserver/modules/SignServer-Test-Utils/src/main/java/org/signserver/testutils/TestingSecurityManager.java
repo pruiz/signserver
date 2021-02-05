@@ -19,7 +19,7 @@ import junit.framework.Assert;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: TestingSecurityManager.java 2943 2012-11-06 09:54:30Z netmackan $
  */
 public class TestingSecurityManager extends SecurityManager {
 

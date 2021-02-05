@@ -21,7 +21,7 @@ import org.signserver.common.RequestContext;
  * log map, not clobbering the original one.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: LogMapUnitTest.java 7539 2016-06-21 13:24:13Z malu9369 $
  */
 public class LogMapUnitTest extends TestCase {
     /**

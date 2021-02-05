@@ -17,7 +17,7 @@ package org.signserver.common;
  * parameters was unknown or unsupported by the crypto token implementation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UnsupportedCryptoTokenParameter.java 6112 2015-06-22 14:32:14Z netmackan $
  */
 public class UnsupportedCryptoTokenParameter extends Exception {
 

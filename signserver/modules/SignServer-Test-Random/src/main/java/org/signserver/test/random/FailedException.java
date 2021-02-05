@@ -16,7 +16,7 @@ package org.signserver.test.random;
  * Exception indicating a failure.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FailedException.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public class FailedException extends Exception {
 

@@ -19,7 +19,7 @@ import java.util.Random;
  * Ouputs a list of randomly generated passwords.
  *
  * @author Markus Kilas
- * @version $Id$
+ * @version $Id: RandomPasswordGenerator.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public final class RandomPasswordGenerator {
 

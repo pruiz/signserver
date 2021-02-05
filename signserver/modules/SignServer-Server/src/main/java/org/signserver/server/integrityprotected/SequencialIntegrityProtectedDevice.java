@@ -77,7 +77,7 @@ import org.signserver.common.ServiceLocator;
  * Based on SVN Id IntegrityProtectedDevice.java 18194 2013-11-21 18:09:12Z jeklund
  * Modify to log sequentially.
  * @see IntegrityProtectedDevice
- * @version $Id$
+ * @version $Id: SequencialIntegrityProtectedDevice.java 9554 2018-10-04 09:43:14Z netmackan $
  */
 public class SequencialIntegrityProtectedDevice implements AuditLogDevice {
 

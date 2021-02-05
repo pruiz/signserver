@@ -27,7 +27,7 @@ import org.signserver.validationservice.common.Validation;
  * if the document was found valid. 
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: GenericValidationResponse.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class GenericValidationResponse extends ProcessResponse {
 

@@ -18,7 +18,7 @@ import org.signserver.server.ServicesImpl;
  * Version of ServicesImpl intended to be used in the unit tests.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedServicesImpl.java 7052 2016-02-18 11:59:37Z netmackan $
  */
 public class MockedServicesImpl extends ServicesImpl {
 

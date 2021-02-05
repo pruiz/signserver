@@ -26,7 +26,7 @@ import org.signserver.common.GlobalConfiguration;
 /**
  * Sets a property for a given workerid with byte data from file set as a BASE94 encoded string
  *
- * @version $Id$
+ * @version $Id: SetPropertyFromFileCommand.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public class SetPropertyFromFileCommand extends AbstractAdminCommand {
 

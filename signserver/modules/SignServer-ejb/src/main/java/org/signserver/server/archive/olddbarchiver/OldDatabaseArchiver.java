@@ -42,7 +42,7 @@ import org.signserver.server.log.Loggable;
  * Archiver only accepting responses and archiving to the database. 
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: OldDatabaseArchiver.java 9954 2018-12-17 14:09:55Z malu9369 $
  */
 public class OldDatabaseArchiver extends BaseArchiver implements Archiver {
     

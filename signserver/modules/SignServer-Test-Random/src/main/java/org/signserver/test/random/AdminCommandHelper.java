@@ -25,7 +25,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
  * Helper class with methods useful for many Command implementations.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminCommandHelper.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 public class AdminCommandHelper {
     

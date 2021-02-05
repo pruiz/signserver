@@ -75,7 +75,7 @@ import org.signserver.server.HashDigestUtils;
  * Cryptographic Message Syntax (CMS) - RFC 3852.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CMSSigner.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class CMSSigner extends BaseSigner {
 

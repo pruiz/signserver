@@ -18,7 +18,7 @@ import java.util.List;
  * Represents the response (result) of requesting some data to be processed.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DataResponse.java 8063 2017-02-21 08:41:57Z netmackan $
  */
 public class DataResponse {
    

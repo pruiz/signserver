@@ -44,7 +44,7 @@ import org.signserver.server.log.AdminInfo;
  *
  * @author Marcus Lundblad
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalTimeStampTokenFetcher.java 7659 2016-08-23 12:48:26Z netmackan $
  */
 public class InternalTimeStampTokenFetcher {
     private static final Logger LOG = Logger.getLogger(InternalTimeStampTokenFetcher.class);

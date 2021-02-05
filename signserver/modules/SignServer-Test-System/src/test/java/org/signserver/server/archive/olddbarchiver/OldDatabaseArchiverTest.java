@@ -41,7 +41,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the OldDatabaseArchiver.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: OldDatabaseArchiverTest.java 8056 2017-02-20 08:07:27Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OldDatabaseArchiverTest extends ArchiveTestCase {

@@ -33,7 +33,7 @@ import org.signserver.validationservice.common.ValidateResponse;
  * through static methods. 
  *
  * @author Philip Vendil 9 dec 2007
- * @version $Id$
+ * @version $Id: RequestAndResponseManager.java 7301 2016-05-17 08:33:34Z malu9369 $
  */
 public class RequestAndResponseManager {
 

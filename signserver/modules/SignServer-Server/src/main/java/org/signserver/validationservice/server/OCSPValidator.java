@@ -53,7 +53,7 @@ import org.signserver.validationservice.common.ValidationServiceConstants;
  * automatically fail over to CRL in case OCSP encounters any problem. 
  * 
  * @author rayback2
- * @version $Id$
+ * @version $Id: OCSPValidator.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class OCSPValidator extends BaseValidator {
 

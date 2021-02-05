@@ -21,7 +21,7 @@ import org.signserver.common.IllegalRequestException;
  *
  * @author Marcus Lundblad
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: FileSpecificHandler.java 9339 2018-06-01 13:40:48Z vinays $
  */
 public interface FileSpecificHandler extends AutoCloseable {
 

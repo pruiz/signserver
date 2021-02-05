@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * Worker ID and worker type pair.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerSpec.java 2677 2012-09-19 10:21:28Z netmackan $
  */
 public class WorkerSpec {
     

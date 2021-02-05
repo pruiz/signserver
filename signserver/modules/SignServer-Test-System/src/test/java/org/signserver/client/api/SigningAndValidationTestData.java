@@ -15,7 +15,7 @@ package org.signserver.client.api;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: SigningAndValidationTestData.java 7529 2016-06-20 14:01:14Z netmackan $
  */
 public class SigningAndValidationTestData {
 

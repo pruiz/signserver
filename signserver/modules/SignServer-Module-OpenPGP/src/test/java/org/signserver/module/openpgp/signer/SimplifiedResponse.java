@@ -20,7 +20,7 @@ import org.bouncycastle.openpgp.PGPSignature;
  * unit tests that was designed for the old API.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SimplifiedResponse.java 10722 2019-05-02 13:45:49Z netmackan $
  */
 class SimplifiedResponse {
     

@@ -30,7 +30,7 @@ import org.signserver.validationservice.common.ValidationServiceConstants;
  * Base class implementing the base functionality for a certificate validator.
  * 
  * @author Philip Vendil 30 nov 2007
- * @version $Id$
+ * @version $Id: BaseValidator.java 7864 2016-12-05 14:20:05Z netmackan $
  */
 public abstract class BaseValidator implements IValidator {
 

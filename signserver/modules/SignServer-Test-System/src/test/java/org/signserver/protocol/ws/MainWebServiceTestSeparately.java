@@ -72,7 +72,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSession;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: MainWebServiceTestSeparately.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainWebServiceTestSeparately extends ModulesTestCase {

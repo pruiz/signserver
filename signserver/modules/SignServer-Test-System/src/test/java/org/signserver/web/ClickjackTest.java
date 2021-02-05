@@ -24,7 +24,7 @@ import org.signserver.testutils.WebTestCase;
  * Tests that the ClickJackFilter is enabled for the various web modules.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClickjackTest.java 7909 2016-12-29 10:41:35Z netmackan $
  */
 public class ClickjackTest extends WebTestCase {
 

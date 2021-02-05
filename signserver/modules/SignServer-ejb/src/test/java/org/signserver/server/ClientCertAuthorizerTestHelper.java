@@ -28,7 +28,7 @@ import org.signserver.test.utils.builders.CertBuilderException;
  * Utility functions for the client certificate authorizer tests.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ClientCertAuthorizerTestHelper.java 10554 2019-03-25 10:45:25Z malu9369 $
  */
 public class ClientCertAuthorizerTestHelper {
     /**

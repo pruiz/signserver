@@ -23,7 +23,7 @@ import org.signserver.common.data.ReadableData;
  * any temporary response file being removed).
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CloseableReadableData.java 7669 2016-08-24 20:01:10Z netmackan $
  * @see CloseableWritableData
  */
 public abstract class CloseableReadableData extends ResourcesAutoCloseable implements ReadableData {

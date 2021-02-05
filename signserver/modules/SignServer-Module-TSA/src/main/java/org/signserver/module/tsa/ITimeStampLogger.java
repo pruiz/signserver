@@ -18,7 +18,7 @@ import org.signserver.server.log.IWorkerLogger;
  * WorkerLogger for TimeStampSigner.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ITimeStampLogger.java 10448 2019-03-01 13:06:21Z netmackan $
  */
 public interface ITimeStampLogger extends IWorkerLogger {
 

@@ -23,7 +23,7 @@ import org.signserver.common.SignServerException;
  * Abstract implementation of SODSigner.
  *
  * @author Markus Kilas
- * @version $Id$
+ * @version $Id: AbstractSODSigner.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public abstract class AbstractSODSigner implements SODSigner {
 

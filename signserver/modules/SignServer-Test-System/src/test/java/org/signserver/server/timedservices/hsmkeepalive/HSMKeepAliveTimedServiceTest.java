@@ -34,7 +34,7 @@ import org.signserver.statusrepo.StatusRepositorySession;
  * System test for the HSM keep-alive timed service.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: HSMKeepAliveTimedServiceTest.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HSMKeepAliveTimedServiceTest extends ModulesTestCase {

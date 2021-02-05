@@ -22,7 +22,7 @@ import org.signserver.cli.spi.*;
 /**
  * Implements the signserver command line interface
  *
- * @version $Id$
+ * @version $Id: CommandLineInterface.java 7562 2016-06-28 06:01:42Z malu9369 $
  */
 public class CommandLineInterface {
     

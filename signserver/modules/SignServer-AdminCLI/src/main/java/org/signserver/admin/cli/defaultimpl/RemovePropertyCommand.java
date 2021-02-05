@@ -21,7 +21,7 @@ import org.signserver.common.GlobalConfiguration;
 /**
  * removes a property for a given signer
  *
- * @version $Id$
+ * @version $Id: RemovePropertyCommand.java 2095 2012-02-06 16:06:07Z netmackan $
  */
 public class RemovePropertyCommand extends AbstractAdminCommand {
 

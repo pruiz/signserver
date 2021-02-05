@@ -26,7 +26,7 @@ import org.junit.Test;
  * Tests different HTTP methods to make sure only GET and POST are allowed
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: HTTPMethodsTest.java 7771 2016-10-11 08:43:03Z malu9369 $
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

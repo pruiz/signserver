@@ -26,7 +26,7 @@ import org.signserver.common.util.PathUtil;
  * put together during compilation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignServerBuildProperties.java 5529 2014-12-02 13:29:21Z netmackan $
  */
 public class SignServerBuildProperties {
 

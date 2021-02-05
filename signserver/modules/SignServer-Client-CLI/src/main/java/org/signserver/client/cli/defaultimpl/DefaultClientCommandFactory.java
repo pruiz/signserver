@@ -20,7 +20,7 @@ import org.signserver.client.cli.spi.ClientCommandFactory;
  * CommandFactory for the default client commands used by the Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DefaultClientCommandFactory.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public class DefaultClientCommandFactory extends AbstractCommandFactory implements ClientCommandFactory {
 

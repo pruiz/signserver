@@ -26,7 +26,7 @@ import org.signserver.server.log.AdminInfo;
  * Helper methods for admin authorization.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminAuthHelper.java 8463 2017-07-12 15:30:30Z netmackan $
  */
 public class AdminAuthHelper {
  

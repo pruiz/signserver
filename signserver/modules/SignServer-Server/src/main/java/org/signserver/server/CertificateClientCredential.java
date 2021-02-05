@@ -17,7 +17,7 @@ import java.io.Serializable;
 /**
  * Representation of a X509 client certificate for authentication use.
  *
- * @version $Id$
+ * @version $Id: CertificateClientCredential.java 2772 2012-09-28 07:20:59Z netmackan $
  */
 public class CertificateClientCredential implements IClientCredential, Serializable {
     

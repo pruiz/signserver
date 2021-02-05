@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import org.bouncycastle.bcpg.ArmoredOutputStream;
 import org.bouncycastle.bcpg.BCPGOutputStream;
 import org.bouncycastle.openpgp.PGPPublicKey;
+import org.bouncycastle.openpgp.PGPSignature;
 
 /**
  * Represents an OpenPGP public key in a form that is the same as for
@@ -27,27 +28,97 @@ import org.bouncycastle.openpgp.PGPPublicKey;
  * also with OpenPGP.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: OpenPgpCertReqData.java 10751 2019-05-07 09:53:16Z malu9369 $
  */
 public class OpenPgpCertReqData extends AbstractCertReqData {
 
     private final byte[] data;
+    private final boolean reEncodeAsPublicKey;
+    private final String header;
+    private final String comment;
 
-    public OpenPgpCertReqData(PGPPublicKey publicKey) throws IOException {
-        super("application/pgp-keys", ".asc");
+    public OpenPgpCertReqData(final PGPPublicKey publicKey) throws IOException {
+        this(publicKey, ".asc");
+    }
+
+    public OpenPgpCertReqData(final PGPPublicKey publicKey,
+                              final String extension) throws IOException {
+        this(publicKey, extension, null, null);
+    }
+    
+    public OpenPgpCertReqData(final PGPPublicKey publicKey,
+                              final String extension,
+                              final String header,
+                              final String comment) throws IOException {
+        super("application/pgp-keys", extension);
         final ByteArrayOutputStream bout = new ByteArrayOutputStream();
         publicKey.encode(bout);
         this.data = bout.toByteArray();
+        this.reEncodeAsPublicKey = false;
+        this.header = header;
+        this.comment = comment;
+    }
+    
+    public OpenPgpCertReqData(final PGPSignature sig,
+                              final boolean reEncodeAsPublicKey)
+            throws IOException {
+        this(sig, reEncodeAsPublicKey, ".asc");
+    }
+
+    public OpenPgpCertReqData(final PGPSignature sig,
+                              final boolean reEncodeAsPublicKey,
+                              final String extension) throws IOException {
+        this(sig, reEncodeAsPublicKey, extension, null, null);
+    }
+    
+    public OpenPgpCertReqData(final PGPSignature sig,
+                              final boolean reEncodeAsPublicKey,
+                              final String extension,
+                              final String header,
+                              final String comment) throws IOException {
+        super("application/pgp-keys", extension);
+        final ByteArrayOutputStream bout = new ByteArrayOutputStream();
+        sig.encode(bout);
+        this.data = bout.toByteArray();
+        this.reEncodeAsPublicKey = reEncodeAsPublicKey;
+        this.header = header;
+        this.comment = comment;
     }
 
     @Override
     public String toArmoredForm() throws IOException {
         final ByteArrayOutputStream bout = new ByteArrayOutputStream();
+        final StringBuilder sb = new StringBuilder();
+
         try (final ArmoredOutputStream armOut = new ArmoredOutputStream(bout)) {
             final BCPGOutputStream bOut = new BCPGOutputStream(armOut);
+
+            armOut.setHeader(ArmoredOutputStream.VERSION_HDR,
+                             CompileTimeSettings.getInstance().getProperty(CompileTimeSettings.SIGNSERVER_VERSION));
+
+            if (comment != null) {
+                armOut.setHeader("Comment", comment);
+            }
+
             bOut.write(data);
         }
-        return new String(bout.toByteArray(), StandardCharsets.UTF_8);
+
+        if (header != null) {
+            sb.append(header);
+        }
+
+        String result = new String(bout.toByteArray(), StandardCharsets.UTF_8);
+
+        if (reEncodeAsPublicKey) {
+            result = result.replace("-----BEGIN PGP SIGNATURE-----",
+                                    "-----BEGIN PGP PUBLIC KEY BLOCK-----")
+                           .replace("-----END PGP SIGNATURE-----",
+                                    "-----END PGP PUBLIC KEY BLOCK-----");
+        }
+
+        sb.append(result);
+
+        return sb.toString();
     }
 
     @Override

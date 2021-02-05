@@ -16,7 +16,7 @@ package org.signserver.server.key.entities;
  * Exception indicating that key data with the provided alias already exists.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AliasAlreadyExistsException.java 9330 2018-05-23 13:48:18Z netmackan $
  */
 public class AliasAlreadyExistsException extends Exception {
 

@@ -37,7 +37,7 @@ import org.apache.commons.lang.StringUtils;
   * @author netmackan
   * @author georgem
            
- * @version $Id$
+ * @version $Id: CookieAuthorizer.java 9683 2018-11-12 14:50:22Z netmackan $
  */
 public class CookieAuthorizer implements IAuthorizer {
 

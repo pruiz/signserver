@@ -31,7 +31,7 @@ import org.signserver.common.WorkerStatus;
 /**
  * Gets the current status of the given worker or all workers.
  *
- * @version $Id$
+ * @version $Id: GetStatusCommand.java 7080 2016-02-23 09:51:29Z netmackan $
  */
 public class GetStatusCommand extends AbstractCommand {
 

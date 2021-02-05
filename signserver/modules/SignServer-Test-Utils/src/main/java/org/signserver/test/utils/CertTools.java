@@ -81,7 +81,7 @@ import org.ejbca.cvc.exception.ParseException;
  * TODO: this should be removed when we upgrade CESeCore
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: CertTools.java 7984 2017-01-24 08:28:52Z malu9369 $
  */
 public class CertTools {
     private static final Logger log = Logger.getLogger(org.signserver.test.utils.CertTools.class);

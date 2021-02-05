@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
  * Utility functions used by the servlet implementations.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ServletUtils.java 6656 2015-11-09 13:21:29Z malu9369 $
  */
 class ServletUtils {
     /* Logger for this class */

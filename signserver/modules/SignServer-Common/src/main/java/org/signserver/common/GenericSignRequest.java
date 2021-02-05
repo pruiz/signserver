@@ -22,7 +22,7 @@ import java.io.IOException;
  * Could be used for TimeStamp Request.
  * 
  * @author philip
- * @version $Id$
+ * @version $Id: GenericSignRequest.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class GenericSignRequest extends ProcessRequest implements ISignRequest {
 

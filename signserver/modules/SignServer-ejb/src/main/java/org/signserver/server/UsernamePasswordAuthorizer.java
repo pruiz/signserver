@@ -34,7 +34,7 @@ import org.signserver.server.log.Loggable;
 /**
  * Authorizer requiring a username password pair.
  * 
- * @version $Id$
+ * @version $Id: UsernamePasswordAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class UsernamePasswordAuthorizer implements IAuthorizer {
 

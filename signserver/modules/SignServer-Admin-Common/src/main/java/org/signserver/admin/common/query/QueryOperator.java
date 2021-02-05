@@ -22,7 +22,7 @@ import org.cesecore.util.query.elems.RelationalOperator;
  * TODO: Refactor using enum.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: QueryOperator.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class QueryOperator {
     

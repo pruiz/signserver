@@ -18,7 +18,7 @@ import javax.ejb.Local;
  * Interface towards the status repository session bean.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusRepositorySessionLocal.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @Local
 public interface StatusRepositorySessionLocal extends StatusRepositorySession {

@@ -20,7 +20,7 @@ import org.signserver.test.utils.mock.MockedCryptoToken;
  * Mocked version of the CMSSigner using a MockedCryptoToken.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedCMSSigner.java 7663 2016-08-24 11:24:33Z netmackan $
  */
 public class MockedCMSSigner extends CMSSigner {
     private final MockedCryptoToken mockedToken;

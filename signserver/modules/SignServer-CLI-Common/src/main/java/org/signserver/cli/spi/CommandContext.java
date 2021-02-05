@@ -16,7 +16,7 @@ package org.signserver.cli.spi;
  * Class implementing the command context.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CommandContext.java 2301 2012-04-02 11:53:49Z netmackan $
  */
 public class CommandContext {
     private String command;

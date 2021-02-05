@@ -16,7 +16,7 @@ package org.signserver.ejb.interfaces;
  * Interface for the internal transaction worker session bean.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: InternalProcessTransactionSessionLocal.java 9305 2018-05-07 15:42:28Z vinays $
  */
 public interface InternalProcessTransactionSessionLocal extends ProcessTransactionSessionLocal {
 

@@ -20,7 +20,7 @@ import java.util.List;
  * Contains a list of token entries and if available, information about
  * if there are more entries and how many (if information is available).
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TokenSearchResults.java 5652 2015-01-26 14:04:17Z netmackan $
  */
 public class TokenSearchResults implements Serializable {
     private final List<TokenEntry> entries;

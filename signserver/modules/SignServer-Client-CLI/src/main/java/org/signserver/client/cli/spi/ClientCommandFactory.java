@@ -19,6 +19,6 @@ import org.signserver.cli.spi.CommandFactory;
  * CommandFactory interface to mark command factories for the Client CLI.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientCommandFactory.java 2103 2012-02-07 19:33:00Z netmackan $
  */
 public interface ClientCommandFactory extends CommandFactory {}

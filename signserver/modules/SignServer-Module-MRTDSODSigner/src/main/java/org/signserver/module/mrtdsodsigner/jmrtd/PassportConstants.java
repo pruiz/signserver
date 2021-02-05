@@ -23,7 +23,7 @@ package org.signserver.module.mrtdsodsigner.jmrtd;
 
 /** Constants for Passport files, datagroups etc.
  * 
- * @version $Id$
+ * @version $Id: PassportConstants.java 1807 2011-07-15 08:49:18Z netmackan $
  */
 public class PassportConstants {
 

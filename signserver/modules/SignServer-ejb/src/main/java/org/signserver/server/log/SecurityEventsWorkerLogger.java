@@ -28,7 +28,7 @@ import org.signserver.server.SignServerContext;
  * Worker logger implementation using CESeCore's SecurityEventsLogger.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: SecurityEventsWorkerLogger.java 7543 2016-06-21 14:11:41Z malu9369 $
  */
 public class SecurityEventsWorkerLogger extends BaseWorkerLogger implements IWorkerLogger {
     /** Logger for this class. */

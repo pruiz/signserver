@@ -40,7 +40,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * is needed.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: InternalProcessTransactionSessionBean.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Stateless
 public class InternalProcessTransactionSessionBean implements InternalProcessTransactionSessionLocal {

@@ -24,7 +24,7 @@ import org.signserver.common.util.PathUtil;
  * Test cases for the ValidationUtils class.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ValidationUtilsTest.java 5529 2014-12-02 13:29:21Z netmackan $
  */
 public class ValidationUtilsTest extends TestCase {
 

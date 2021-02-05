@@ -35,7 +35,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  *
  *
  * @author Markus Kilas
- * @version $Id$
+ * @version $Id: RemoteAddressAuthorizerTest.java 9940 2018-12-17 09:58:45Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RemoteAddressAuthorizerTest extends ModulesTestCase {

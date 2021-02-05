@@ -53,7 +53,7 @@ import org.signserver.ejb.interfaces.WorkerSessionRemote;
  * Tests requiring a patched JRE.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PatchedJreP11Test.java 10523 2019-03-15 10:34:48Z netmackan $
  */
 public class PatchedJreP11Test {
     /** Logger for this class */

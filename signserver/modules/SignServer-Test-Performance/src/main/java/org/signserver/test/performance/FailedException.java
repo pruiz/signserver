@@ -16,7 +16,7 @@ package org.signserver.test.performance;
  * Exception indicating a failure.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: FailedException.java 3118 2012-12-20 16:47:07Z malu9369 $
  */
 public class FailedException extends Exception {
 

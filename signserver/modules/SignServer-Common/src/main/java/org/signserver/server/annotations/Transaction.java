@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
  * the field used for worker entity manager.
  *
  * @author Philip Vendil 23 okt 2008
- * @version $Id$
+ * @version $Id: Transaction.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

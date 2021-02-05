@@ -39,7 +39,7 @@ import org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder;
  * Mock implementation of a CA.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockCA.java 6767 2015-11-24 08:50:09Z malu9369 $
  */
 public class MockCA {
 

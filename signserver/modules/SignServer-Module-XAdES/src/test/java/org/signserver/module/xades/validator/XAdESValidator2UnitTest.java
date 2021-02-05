@@ -93,7 +93,7 @@ import xades4j.providers.impl.DefaultTimeStampVerificationProvider;
  * using it.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESValidator2UnitTest.java 8804 2017-11-11 18:42:34Z vinays $
  */
 public class XAdESValidator2UnitTest {
 

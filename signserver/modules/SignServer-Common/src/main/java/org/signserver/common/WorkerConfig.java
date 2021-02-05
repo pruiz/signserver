@@ -49,7 +49,7 @@ import static org.signserver.common.util.PropertiesConstants.SIGNERCERTCHAIN;
  * 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: WorkerConfig.java 10606 2019-04-01 09:23:57Z vinays $
  */
 public class WorkerConfig extends UpgradeableDataHashMap {
 

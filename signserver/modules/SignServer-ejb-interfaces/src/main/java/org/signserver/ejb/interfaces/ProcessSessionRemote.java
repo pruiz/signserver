@@ -26,7 +26,7 @@ import org.signserver.common.WorkerIdentifier;
  * the EJB interface.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ProcessSessionRemote.java 7056 2016-02-18 15:18:26Z netmackan $
  */
 @Remote
 public interface ProcessSessionRemote {

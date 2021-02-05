@@ -22,7 +22,7 @@ import java.io.IOException;
  * Could be used for XML signature validation requests.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: GenericValidationRequest.java 7565 2016-06-28 08:01:12Z malu9369 $
  */
 public class GenericValidationRequest extends ProcessRequest implements IValidationRequest {
 

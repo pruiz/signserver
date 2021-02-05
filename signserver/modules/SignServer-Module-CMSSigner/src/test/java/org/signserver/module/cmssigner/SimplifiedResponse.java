@@ -19,7 +19,7 @@ import java.security.cert.Certificate;
  * unit tests that was designed for the old API.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SimplifiedResponse.java 7663 2016-08-24 11:24:33Z netmackan $
  */
 class SimplifiedResponse {
     

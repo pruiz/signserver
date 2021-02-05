@@ -48,7 +48,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the UserMappedDispatcher.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UserMappedDispatcherTest.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserMappedDispatcherTest extends ModulesTestCase {

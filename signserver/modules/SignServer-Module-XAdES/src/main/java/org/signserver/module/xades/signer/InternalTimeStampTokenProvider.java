@@ -36,7 +36,7 @@ import xades4j.providers.TimeStampTokenProvider;
  * Time-stamp token provider using the internal worker session.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: InternalTimeStampTokenProvider.java 7307 2016-05-17 09:36:11Z malu9369 $
  */
 public class InternalTimeStampTokenProvider implements TimeStampTokenProvider {
 

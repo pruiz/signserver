@@ -35,7 +35,7 @@ import org.signserver.server.archive.BaseArchiver;
  * Archiver is disabled.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Test1Archiver.java 9951 2018-12-17 12:30:05Z malu9369 $
  */
 public class Test1Archiver extends BaseArchiver implements Archiver {
 

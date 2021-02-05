@@ -26,7 +26,7 @@ import org.signserver.common.WorkerStatusInfo;
  * Its main function is getGenTime returning a java.util.Date
  *
  * @author philip
- * @version $Id$
+ * @version $Id: ITimeSource.java 7698 2016-08-31 09:03:53Z malu9369 $
  */
 public interface ITimeSource {
 

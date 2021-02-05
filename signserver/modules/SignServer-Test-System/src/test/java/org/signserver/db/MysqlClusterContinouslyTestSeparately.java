@@ -25,7 +25,7 @@ import junit.framework.TestCase;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: MysqlClusterContinouslyTestSeparately.java 7365 2016-05-19 14:19:38Z malu9369 $
  */
 public class MysqlClusterContinouslyTestSeparately extends TestCase {
 

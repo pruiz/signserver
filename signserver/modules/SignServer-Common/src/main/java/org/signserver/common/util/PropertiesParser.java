@@ -28,7 +28,7 @@ import static org.signserver.common.util.PropertiesConstants.*;
  * Based on the SetPropertiesHelper implementation in the AdminCLI.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: PropertiesParser.java 10661 2019-04-12 14:23:09Z vinays $
  */
 public class PropertiesParser {
    

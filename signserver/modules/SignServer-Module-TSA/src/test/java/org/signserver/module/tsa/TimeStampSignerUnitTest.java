@@ -77,7 +77,7 @@ import org.signserver.test.utils.mock.MockedServicesImpl;
  * System tests can be put in the Test-System project instead.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TimeStampSignerUnitTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 public class TimeStampSignerUnitTest extends ModulesTestCase {
 

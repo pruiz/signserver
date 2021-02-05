@@ -35,7 +35,7 @@ import org.cesecore.time.TrustedTime;
  * Based on IntegrityProtectedLoggerSessionBean.java from CESeCore.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NoIntegrityProtectedLoggerSessionBean.java 6485 2015-10-14 15:17:28Z netmackan $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)

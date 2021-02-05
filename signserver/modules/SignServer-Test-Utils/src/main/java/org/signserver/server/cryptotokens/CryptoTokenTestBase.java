@@ -67,7 +67,7 @@ import org.signserver.testutils.ModulesTestCase;
  * methods implemented to test a specific CryptoToken implementation.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CryptoTokenTestBase.java 10732 2019-05-03 10:17:45Z netmackan $
  */
 public abstract class CryptoTokenTestBase {
     

@@ -30,7 +30,7 @@ import org.signserver.server.cryptotokens.TokenSearchResults;
 /**
  * Interface for the worker session bean.
  *
- * @version $Id$
+ * @version $Id: WorkerSessionRemote.java 7056 2016-02-18 15:18:26Z netmackan $
  */
 @Remote
 public interface WorkerSessionRemote extends WorkerSession {

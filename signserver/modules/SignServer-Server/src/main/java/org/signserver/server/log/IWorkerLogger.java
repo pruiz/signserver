@@ -25,7 +25,7 @@ import org.signserver.server.SignServerContext;
  * ISystemLogger instead.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: IWorkerLogger.java 9525 2018-09-27 14:48:35Z vinays $
  */
 public interface IWorkerLogger {
 

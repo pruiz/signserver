@@ -22,7 +22,7 @@ import sun.security.pkcs11.wrapper.CK_ATTRIBUTE;
  * Note: This class needs to contain "EC" in the name due to CESeCore.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ECP11AsymmetricParameterSpec.java 8870 2017-12-01 16:24:46Z netmackan $
  */
 class ECP11AsymmetricParameterSpec extends P11AsymmetricParameterSpec {
     

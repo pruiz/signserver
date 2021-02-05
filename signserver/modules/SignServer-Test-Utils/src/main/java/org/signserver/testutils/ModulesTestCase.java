@@ -67,7 +67,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
  * Base class for test cases.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ModulesTestCase.java 11180 2019-08-20 13:11:43Z vinays $
  */
 public class ModulesTestCase extends TestCase {
 
@@ -712,5 +712,15 @@ public class ModulesTestCase extends TestCase {
         int pos = version.indexOf('.');
         pos = version.indexOf('.', pos + 1);
         return Double.parseDouble(version.substring(0, pos));
+    }
+    
+    /**
+     * Is OS running this test-Windows?.
+     *
+     * @return
+     */
+    public static boolean isWindows() {
+        String OS = System.getProperty("os.name").toLowerCase(Locale.ENGLISH);
+        return (OS.contains("win"));
     }
 }

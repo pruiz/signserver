@@ -23,7 +23,7 @@ package org.signserver.common;
  *
  * @author Marcus Lundblad
  * @see IllegalRequestException
- * @version $Id$
+ * @version $Id: ServiceUnavailableException.java 6112 2015-06-22 14:32:14Z netmackan $
  */
 public class ServiceUnavailableException extends SignServerException {
 

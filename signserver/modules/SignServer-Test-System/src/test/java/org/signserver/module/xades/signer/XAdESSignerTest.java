@@ -49,7 +49,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Note: Unit tests should be placed in the SignServer-Module-XAdES project.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESSignerTest.java 9529 2018-10-01 10:18:50Z vinays $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class XAdESSignerTest extends ModulesTestCase {

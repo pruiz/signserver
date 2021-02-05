@@ -22,7 +22,7 @@ import org.apache.log4j.spi.LoggingEvent;
  * Copied from CESeCore <code>org.cesecore.audit.impl.log4j.Log4jDeviceErrorHandler</code>
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: Log4jDeviceErrorHandler.java 3186 2013-01-14 12:01:17Z malu9369 $
  */
 class Log4jDeviceErrorHandler implements ErrorHandler {
         

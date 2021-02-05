@@ -41,7 +41,7 @@ import org.signserver.common.util.PropertiesConstants;
  * rules.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ClientsAuthorizationCommand.java 10706 2019-04-25 12:19:25Z vinays $
  */
 public class ClientsAuthorizationCommand extends AbstractAdminCommand {
 

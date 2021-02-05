@@ -17,7 +17,7 @@ package org.signserver.protocol.ws.client;
  * one of the calls made to a sign server node.
  *
  * @author Philip Vendil 
- * @version $Id$
+ * @version $Id: ICommunicationFault.java 1833 2011-08-10 14:28:47Z netmackan $
  */
 public interface ICommunicationFault {
 

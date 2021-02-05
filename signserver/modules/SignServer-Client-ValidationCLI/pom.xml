@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.signserver</groupId>
         <artifactId>SignServer-Modules</artifactId>
-        <version>5.2.0.Alpha1-SNAPSHOT</version>
+        <version>5.2.0.Final</version>
     </parent>
     <artifactId>SignServer-Client-ValidationCLI</artifactId>
     <name>SignServer-Client-ValidationCLI</name>
@@ -65,7 +65,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>SignServer-Client-CLientWS</artifactId>
+            <artifactId>SignServer-Client-ClientWS</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

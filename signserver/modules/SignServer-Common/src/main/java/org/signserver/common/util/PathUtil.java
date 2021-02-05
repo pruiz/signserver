@@ -21,14 +21,14 @@ import org.apache.log4j.Logger;
  * Typically used by the JUnit tests that uses files in SIGNSERVER_HOME.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PathUtil.java 11176 2019-08-20 09:26:33Z vinays $
  */
 public class PathUtil {
     
     /** Logger for this class. */
     private static final Logger LOG = Logger.getLogger(PathUtil.class);
 
-    private static final String APPLICATION_SPECIFIC_FILE = "bin/signserver-gui";
+    private static final String APPLICATION_SPECIFIC_FILE = "bin/signclient";
 
     /**
      * Gets the application directory (ie. SIGNSERVER_HOME).

@@ -41,7 +41,7 @@ import org.signserver.test.utils.builders.CryptoUtils;
  *
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CRLBuilder.java 7360 2016-05-19 13:23:30Z malu9369 $
  */
 public class CRLBuilder {
     

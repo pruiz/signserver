@@ -17,7 +17,7 @@ package org.signserver.server.log;
  * system log.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdditionalDetailsTypes.java 6134 2015-07-14 09:28:15Z netmackan $
  */
 public enum AdditionalDetailsTypes {
     

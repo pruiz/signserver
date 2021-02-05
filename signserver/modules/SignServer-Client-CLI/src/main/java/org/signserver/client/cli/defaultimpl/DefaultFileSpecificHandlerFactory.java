@@ -24,7 +24,7 @@ import org.signserver.client.cli.spi.FileSpecificHandlerFactory;
  * straight no-op handler.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: DefaultFileSpecificHandlerFactory.java 8739 2017-10-24 06:37:32Z malu9369 $
  */
 public class DefaultFileSpecificHandlerFactory implements FileSpecificHandlerFactory {
 

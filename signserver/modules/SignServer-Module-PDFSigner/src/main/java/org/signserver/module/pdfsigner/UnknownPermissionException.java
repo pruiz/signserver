@@ -16,7 +16,7 @@ package org.signserver.module.pdfsigner;
  * Exception indicating that an unknown permission name was used.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UnknownPermissionException.java 1953 2011-11-23 13:06:45Z netmackan $
  */
 public class UnknownPermissionException extends Exception {
     private String permission;

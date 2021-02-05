@@ -22,7 +22,7 @@ import javax.persistence.Lob;
  * Entity for the key data.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: KeyData.java 9330 2018-05-23 13:48:18Z netmackan $
  */
 @Entity
 public class KeyData implements Serializable {

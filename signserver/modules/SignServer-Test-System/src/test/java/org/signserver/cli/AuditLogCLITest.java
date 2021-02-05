@@ -25,7 +25,7 @@ import org.junit.runners.MethodSorters;
  * This is a separe class to be able to exclude this when running with no DB.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AuditLogCLITest.java 3465 2013-05-01 10:24:46Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AuditLogCLITest extends ModulesTestCase { 

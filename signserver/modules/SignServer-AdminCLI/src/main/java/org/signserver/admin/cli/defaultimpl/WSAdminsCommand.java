@@ -32,7 +32,7 @@ import org.signserver.common.SignServerUtil;
 /**
  * Command for managing the list of authorized WS admins.
  *
- * @version $Id$
+ * @version $Id: WSAdminsCommand.java 8469 2017-07-13 13:59:24Z netmackan $
  */
 public class WSAdminsCommand extends AbstractAdminCommand {
 

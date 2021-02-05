@@ -34,7 +34,7 @@ import org.signserver.server.WorkerContext;
 /**
  * TODO: Document me!
  *
- * @version $Id$
+ * @version $Id: BaseTimedService.java 9410 2018-06-27 06:21:11Z malu9369 $
  */
 public abstract class BaseTimedService extends BaseWorker implements ITimedService {
 

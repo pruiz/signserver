@@ -35,7 +35,7 @@ import org.bouncycastle.util.encoders.Hex;
  * Modified to build without the embedded EJBCA-util module.
  *
  * @author thamwickenberg
- * @version $Id$
+ * @version $Id: EjbcaPatternLogger.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class EjbcaPatternLogger {
 

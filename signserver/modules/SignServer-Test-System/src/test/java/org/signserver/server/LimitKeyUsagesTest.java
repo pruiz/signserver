@@ -28,7 +28,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests limits for the key usages.
  *
  * @author Markus Kilas
- * @version $Id$
+ * @version $Id: LimitKeyUsagesTest.java 7762 2016-10-05 10:54:14Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LimitKeyUsagesTest extends ModulesTestCase {

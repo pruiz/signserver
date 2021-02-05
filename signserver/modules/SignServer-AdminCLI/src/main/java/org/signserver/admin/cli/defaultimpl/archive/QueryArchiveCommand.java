@@ -43,7 +43,7 @@ import org.signserver.admin.common.query.ArchiveFields;
  * Query contents of the archive.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: QueryArchiveCommand.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public class QueryArchiveCommand extends AbstractCommand {
 

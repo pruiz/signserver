@@ -27,7 +27,7 @@ import org.apache.commons.lang.time.FastDateFormat;
  * be inherited by all workers.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: WorkerStatus.java 8018 2017-02-07 10:36:07Z malu9369 $
  */
 public abstract class WorkerStatus implements Serializable {
 

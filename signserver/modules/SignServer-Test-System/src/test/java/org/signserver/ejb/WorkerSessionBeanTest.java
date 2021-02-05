@@ -34,7 +34,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: WorkerSessionBeanTest.java 8500 2017-08-18 06:03:16Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class WorkerSessionBeanTest extends ModulesTestCase {

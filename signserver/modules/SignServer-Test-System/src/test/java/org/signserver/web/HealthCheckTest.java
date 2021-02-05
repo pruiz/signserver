@@ -32,7 +32,7 @@ import org.signserver.statusrepo.StatusRepositorySessionRemote;
  * Tests the Health check.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: HealthCheckTest.java 7667 2016-08-24 16:11:08Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HealthCheckTest extends WebTestCase {

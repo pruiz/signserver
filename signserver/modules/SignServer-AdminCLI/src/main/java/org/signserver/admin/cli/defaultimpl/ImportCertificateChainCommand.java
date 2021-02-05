@@ -28,7 +28,7 @@ import org.signserver.common.WorkerStatus;
  * Command to import a certificate chain to a crypto token.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: ImportCertificateChainCommand.java 7299 2016-05-17 08:12:51Z malu9369 $
  */
 public class ImportCertificateChainCommand extends AbstractAdminCommand {
     

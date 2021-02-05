@@ -50,7 +50,7 @@ import static org.signserver.server.cryptotokens.CryptoTokenHelper.SECRET_KEY_PR
  * NEXTCERTSIGNKEY : Can be used to hold the alias of the next key. (optional)
  *
  * @author Philip Vendil, Markus Kilas
- * @version $Id$
+ * @version $Id: KeystoreCryptoToken.java 10717 2019-04-30 13:49:46Z netmackan $
  */
 public class KeystoreCryptoToken extends BaseCryptoToken {
 

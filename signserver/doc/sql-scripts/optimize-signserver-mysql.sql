@@ -1,4 +1,4 @@
--- version: $Id$
+-- version: $Id: optimize-signserver-mysql.sql 4297 2014-02-14 13:26:03Z netmackan $
 
 -- There is normally no use for the primary key
 ALTER TABLE AuditRecordData DROP PRIMARY KEY;

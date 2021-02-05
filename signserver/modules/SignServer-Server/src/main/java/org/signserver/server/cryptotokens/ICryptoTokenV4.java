@@ -45,7 +45,7 @@ import org.signserver.server.IServices;
  * 
  * @author Marcus Lundblad
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: ICryptoTokenV4.java 10701 2019-04-24 15:22:28Z netmackan $
  */
 public interface ICryptoTokenV4 {
     

@@ -43,7 +43,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionRemote;
 /**
  * Tests for the ValidateCertificateCommand.
  *
- * @version $Id$
+ * @version $Id: ValidationCLITest.java 7312 2016-05-17 11:01:02Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ValidationCLITest extends ModulesTestCase {

@@ -67,7 +67,7 @@ import org.signserver.testutils.ModulesTestCase;
  * SignServer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignServerWSServiceTest.java 9751 2018-11-28 09:44:08Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SignServerWSServiceTest extends ModulesTestCase {

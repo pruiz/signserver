@@ -18,7 +18,7 @@ import org.signserver.protocol.ws.client.IFaultCallback;
 /**
  * TODO: Document me!
  * 
- * @version $Id$
+ * @version $Id: FaultCallback.java 3452 2013-04-20 21:32:59Z netmackan $
  */
 public class FaultCallback implements IFaultCallback {
 

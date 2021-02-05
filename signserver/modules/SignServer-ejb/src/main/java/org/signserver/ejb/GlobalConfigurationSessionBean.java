@@ -44,7 +44,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSessionRemote;
  * The implementation of the GlobalConfiguration Session Bean.
  * 
  * @see org.signserver.ejb.interfaces.GlobalConfigurationSession           
- * @version $Id$
+ * @version $Id: GlobalConfigurationSessionBean.java 7566 2016-06-28 08:44:51Z malu9369 $
  */
 @Stateless
 public class GlobalConfigurationSessionBean implements GlobalConfigurationSessionLocal, GlobalConfigurationSessionRemote {

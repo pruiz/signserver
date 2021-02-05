@@ -38,7 +38,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the validatedocument command of Client CLI.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DocumentValidatorTest.java 7626 2016-07-15 09:47:59Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DocumentValidatorTest extends ModulesTestCase {

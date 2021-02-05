@@ -40,7 +40,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * is needed.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: DispatcherProcessTransactionSessionBean.java 9305 2018-05-07 15:42:28Z vinays $
  */
 @Stateless
 public class DispatcherProcessTransactionSessionBean implements DispatcherProcessTransactionSessionLocal {

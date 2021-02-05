@@ -38,7 +38,7 @@ import org.signserver.server.cryptotokens.TokenSearchResults;
  * Only used methods are implemented.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedCryptoToken.java 10738 2019-05-03 14:28:55Z netmackan $
  */
 public class MockedCryptoToken extends BaseCryptoToken {
 

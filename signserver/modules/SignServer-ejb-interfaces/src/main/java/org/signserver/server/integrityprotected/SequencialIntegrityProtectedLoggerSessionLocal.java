@@ -26,7 +26,7 @@ import org.cesecore.time.TrustedTime;
  * Customized version of IntegrityProtectedLoggerSessionLocal that adds an method for storing a log row with a specified sequence number.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SequencialIntegrityProtectedLoggerSessionLocal.java 9536 2018-10-02 08:35:47Z netmackan $
  */
 public interface SequencialIntegrityProtectedLoggerSessionLocal extends IntegrityProtectedLoggerSessionLocal {
 

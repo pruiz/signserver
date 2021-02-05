@@ -18,7 +18,7 @@ import javax.xml.ws.WebFault;
  * Exception indicating that the query could not be finished successfully.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: QueryException.java 5704 2015-02-13 14:56:52Z netmackan $
  */
 @WebFault
 public class QueryException extends Exception {

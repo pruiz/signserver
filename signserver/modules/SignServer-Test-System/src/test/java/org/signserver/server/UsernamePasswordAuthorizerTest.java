@@ -40,7 +40,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for the UsernamePasswordAuthorizer.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: UsernamePasswordAuthorizerTest.java 10364 2019-02-19 12:09:10Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UsernamePasswordAuthorizerTest extends ModulesTestCase {

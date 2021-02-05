@@ -1,5 +1,5 @@
 -- DDL for SignServer 4.0.x on Postgres
--- Version: $Id$
+-- Version: $Id: create-tables-signserver-postgres.sql 9082 2018-01-26 13:42:25Z malu9369 $
 
 
 --

@@ -27,7 +27,7 @@ import org.bouncycastle.asn1.DERSequence;
  * timestamp responses of different sizes.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: MockedTSAClient.java 2487 2012-08-17 08:45:22Z netmackan $
  */
 public class MockedTSAClient implements TSAClient {
 

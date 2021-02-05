@@ -19,7 +19,7 @@ import org.signserver.cli.spi.UnexpectedCommandFailureException;
 /**
  * Reloads the current configuration
  *
- * @version $Id$
+ * @version $Id: ReloadCommand.java 2095 2012-02-06 16:06:07Z netmackan $
  */
 public class ReloadCommand extends AbstractAdminCommand {
 

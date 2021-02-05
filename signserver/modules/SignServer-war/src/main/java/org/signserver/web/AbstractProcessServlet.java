@@ -26,7 +26,7 @@ import org.signserver.common.RequestMetadata;
  * Handles common request properties (currently REQUEST_METADATA).
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: AbstractProcessServlet.java 7567 2016-06-28 09:21:21Z malu9369 $
  *
  */
 public abstract class AbstractProcessServlet extends HttpServlet {

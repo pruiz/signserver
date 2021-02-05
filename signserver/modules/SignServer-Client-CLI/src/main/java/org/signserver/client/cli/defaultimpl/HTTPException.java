@@ -20,7 +20,7 @@ import java.net.URL;
  * Contains more information about the failure.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: HTTPException.java 6019 2015-05-11 08:31:54Z netmackan $
  */
 public class HTTPException extends IOException {
 

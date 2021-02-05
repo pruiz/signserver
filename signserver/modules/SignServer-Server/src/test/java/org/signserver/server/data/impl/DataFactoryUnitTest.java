@@ -30,7 +30,7 @@ import org.signserver.common.data.ReadableData;
  * Unit tests for the DataFactory.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: DataFactoryUnitTest.java 7669 2016-08-24 20:01:10Z netmackan $
  */
 public class DataFactoryUnitTest {
     

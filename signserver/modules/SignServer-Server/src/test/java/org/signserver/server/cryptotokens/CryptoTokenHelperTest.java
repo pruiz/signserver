@@ -41,7 +41,7 @@ import org.cesecore.keys.util.KeyStoreTools;
 /**
  * Tests that the hard token properties are set correctly for PKCS11 crypto tokens.
  *
- * @version $Id$
+ * @version $Id: CryptoTokenHelperTest.java 9072 2018-01-25 12:25:41Z malu9369 $
  */
 public class CryptoTokenHelperTest extends TestCase {
     

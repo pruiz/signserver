@@ -55,7 +55,7 @@ import org.signserver.server.log.LogMap;
  * Mocked WorkerSession.
  *
  * @author Markus Kilås
- * $version $Id$
+ * $version $Id: WorkerSessionMock.java 11034 2019-06-19 07:02:30Z netmackan $
  */
 public class WorkerSessionMock implements WorkerSessionLocal,
         WorkerSessionRemote, ProcessSessionLocal/*, ProcessSessionRemote*/ {
@@ -499,6 +499,11 @@ public class WorkerSessionMock implements WorkerSessionLocal,
     @Override
     public List<String> getCertificateIssues(int workerId, List<Certificate> certificateChain) throws InvalidWorkerIdException {
         return new ArrayList<>();
+    }
+
+    @Override
+    public boolean isKeyGenerationDisabled() {
+        return false;
     }
 
     private static class Worker {

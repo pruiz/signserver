@@ -17,7 +17,7 @@ package org.signserver.module.xmlvalidator;
  * Test data for TestXMLValidator.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XMLValidatorTestData.java 7526 2016-06-20 13:21:36Z netmackan $
  */
 public class XMLValidatorTestData {
 

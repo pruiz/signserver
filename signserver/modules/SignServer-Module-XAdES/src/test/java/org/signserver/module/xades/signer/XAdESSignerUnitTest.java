@@ -85,7 +85,7 @@ import xades4j.verification.XadesVerifier;
  * Unit tests for the XAdESSigner class.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: XAdESSignerUnitTest.java 8754 2017-10-26 12:27:17Z vinays $
  */
 public class XAdESSignerUnitTest {
 

@@ -28,7 +28,7 @@ import org.signserver.common.SignServerException;
  * getStatus : Method returning the status of a given signerId
  * 
  * @author Philip Vendil 28 okt 2007
- * @version $Id$
+ * @version $Id: ISignServerWS.java 7748 2016-09-30 13:14:58Z netmackan $
  */
 public interface ISignServerWS {
 

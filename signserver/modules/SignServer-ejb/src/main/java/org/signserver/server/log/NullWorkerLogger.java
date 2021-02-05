@@ -21,7 +21,7 @@ import org.signserver.server.SignServerContext;
  * WorkerLogger not logging anything at all.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: NullWorkerLogger.java 7537 2016-06-21 12:36:19Z malu9369 $
  */
 public class NullWorkerLogger extends BaseWorkerLogger implements IWorkerLogger {
 

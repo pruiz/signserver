@@ -46,7 +46,7 @@ import org.signserver.validationservice.common.Validation.Status;
  * 
  * @author Philip Vendil 13 sep 2008
  *
- * @version $Id$
+ * @version $Id: ValidateCertificateCommand.java 9741 2018-11-27 10:29:49Z malu9369 $
  */
 public class ValidateCertificateCommand extends AbstractCommand {
 

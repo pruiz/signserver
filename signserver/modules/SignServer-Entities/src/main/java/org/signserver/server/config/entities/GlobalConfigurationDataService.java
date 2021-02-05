@@ -22,7 +22,7 @@ import javax.persistence.Query;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationDataService.java 2591 2012-09-04 06:55:50Z netmackan $
  */
 public class GlobalConfigurationDataService implements IGlobalConfigurationDataService {
 

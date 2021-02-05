@@ -30,7 +30,7 @@ import org.signserver.common.*;
  * DocumentSigner using the Web Services interface.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WebServicesDocumentSigner.java 9693 2018-11-13 10:06:26Z malu9369 $
  */
 public class WebServicesDocumentSigner extends AbstractDocumentSigner {
 

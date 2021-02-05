@@ -17,7 +17,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- * $Id$
+ * $Id: Hex.java 3717 2013-08-17 21:12:03Z netmackan $
  */
 
 package net.sourceforge.scuba.util;

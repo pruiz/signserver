@@ -55,7 +55,6 @@ import org.signserver.server.log.IWorkerLogger;
 import org.signserver.server.log.LogMap;
 import org.signserver.server.log.Loggable;
 import org.signserver.server.signers.BaseSigner;
-import org.signserver.server.statistics.Event;
 import org.signserver.validationservice.server.ValidationUtils;
 import static org.signserver.common.SignServerConstants.DEFAULT_NULL;
 
@@ -85,17 +84,13 @@ import static org.signserver.common.SignServerConstants.DEFAULT_NULL;
  * @author Tomas Gustavsson
  * @author Aziz Göktepe
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: PDFSigner.java 11148 2019-08-16 10:29:51Z malu9369 $
  */
 public class PDFSigner extends BaseSigner {
 
     /** Logger for this class. */
     public static final Logger LOG = Logger.getLogger(PDFSigner.class);
-    
-    // private final CSVFileStatisticsCollector cSVFileStatisticsCollector =
-    // CSVFileStatisticsCollector.getInstance(this.getClass().getName(),
-    // "PDF size in bytes");
-    
+
     // Configuration Property constants
     // signature properties
     public static final String REASON = "REASON";
@@ -321,12 +316,6 @@ public class PDFSigner extends BaseSigner {
         final LogMap logMap = LogMap.getInstance(requestContext);        
 
         // Start processing the actual signature
-        
-        if (requestContext.get(RequestContext.STATISTICS_EVENT) != null) {
-            Event event = (Event) requestContext.get(RequestContext.STATISTICS_EVENT);
-            event.addCustomStatistics("PDFBYTES", (int) sReq.getRequestData().getLength());
-        }
-        
         ICryptoInstance crypto = null;
         try {
             crypto = acquireCryptoInstance(ICryptoTokenV4.PURPOSE_SIGN, signRequest, requestContext);

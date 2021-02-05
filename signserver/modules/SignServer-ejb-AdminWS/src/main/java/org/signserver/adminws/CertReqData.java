@@ -16,7 +16,7 @@ package org.signserver.adminws;
  * Representation of AbstractCertReqData suitable for serialization over WS.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: CertReqData.java 10715 2019-04-30 11:29:06Z netmackan $
  */
 public class CertReqData {
     private byte[] binary;

@@ -37,7 +37,7 @@ import org.signserver.server.signers.BaseSigner;
  * in production.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Test1Signer.java 9993 2018-12-19 10:08:13Z malu9369 $
  */
 public class Test1Signer extends BaseSigner {
 

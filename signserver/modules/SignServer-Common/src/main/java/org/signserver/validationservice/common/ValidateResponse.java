@@ -25,7 +25,7 @@ import org.signserver.common.RequestAndResponseManager;
  * containing the status of the validation
  *
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ValidateResponse.java 7629 2016-08-06 21:29:50Z netmackan $
  */
 public class ValidateResponse extends ProcessResponse {
 

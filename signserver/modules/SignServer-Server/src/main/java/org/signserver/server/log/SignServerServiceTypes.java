@@ -17,7 +17,7 @@ import org.cesecore.audit.enums.ServiceType;
 /**
  * Different types of service log events used by the SystemLogger.
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignServerServiceTypes.java 3161 2013-01-07 15:37:59Z netmackan $
  */
 public enum SignServerServiceTypes implements ServiceType {
 

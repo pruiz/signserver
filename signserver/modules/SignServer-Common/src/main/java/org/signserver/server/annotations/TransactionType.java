@@ -7,7 +7,7 @@ package org.signserver.server.annotations;
  * be created.
  * 
  * @author Philip Vendil 23 okt 2008
- * @version $Id$
+ * @version $Id: TransactionType.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public enum TransactionType {
 

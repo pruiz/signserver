@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * Unit tests for PdfSignatureDigestAlgorithms.
  * 
  * @author Aziz Göktepe
- * @version $Id$
+ * @version $Id: PdfSignatureDigestAlgorithmsTest.java 10727 2019-05-03 08:16:27Z netmackan $
  */
 public class PdfSignatureDigestAlgorithmsTest {
     

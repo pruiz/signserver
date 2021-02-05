@@ -25,7 +25,7 @@ import javax.net.ssl.X509TrustManager;
  * a JKS file.
  *
  * @author Philip Vendil 15 sep 2008
- * @version $Id$
+ * @version $Id: CustomJKSTrustStoreManager.java 7300 2016-05-17 08:19:19Z malu9369 $
  */
 class CustomJKSTrustStoreManager implements X509TrustManager {
 

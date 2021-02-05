@@ -25,7 +25,7 @@ import org.signserver.server.SignServerContext;
  * An IWorkerLogger that appends log lines to a separate file.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: FileWorkerLogger.java 7540 2016-06-21 13:30:52Z malu9369 $
  */
 public class FileWorkerLogger extends BaseWorkerLogger implements IWorkerLogger {
 

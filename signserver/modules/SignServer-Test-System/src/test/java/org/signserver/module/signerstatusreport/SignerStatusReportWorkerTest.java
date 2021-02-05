@@ -34,7 +34,7 @@ import org.signserver.ejb.interfaces.WorkerSession;
  * Tests for SignerStatusReportTimedService.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: SignerStatusReportWorkerTest.java 7667 2016-08-24 16:11:08Z netmackan $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SignerStatusReportWorkerTest extends WebTestCase {

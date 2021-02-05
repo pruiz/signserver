@@ -19,7 +19,7 @@ import java.util.Collection;
  * audit log and archive search query UI.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: QueryColumn.java 8072 2017-02-21 15:58:06Z netmackan $
  */
 public interface QueryColumn {
    

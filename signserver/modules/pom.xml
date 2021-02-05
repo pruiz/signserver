@@ -4,11 +4,11 @@
     <parent>
         <groupId>org.signserver</groupId>
         <artifactId>SignServer</artifactId>
-        <version>5.2.0.Alpha1-SNAPSHOT</version>
+        <version>5.2.0.Final</version>
     </parent>
     <groupId>org.signserver</groupId>
     <artifactId>SignServer-Modules</artifactId>
-    <version>5.2.0.Alpha1-SNAPSHOT</version>
+    <version>5.2.0.Final</version>
     <packaging>pom</packaging>
     <name>SignServer Modules</name>
     <properties>
@@ -41,14 +41,15 @@
         <module>SignServer-ejb</module>
         <module>CESeCore-jars</module>
         <module>SignServer-Compile</module>
+        <module>SignServer-OpenPGP-Common</module>
         
         <!-- Interfaces -->
         <module>SignServer-Admin-Common</module>
         <module>SignServer-Web-Common</module>
         <module>SignServer-war</module>
         <module>SignServer-war-Healthcheck</module>
-        <module>SignServer-AdminCLI</module>
-        <module>SignServer-AdminGUI</module>
+        <module>SignServer-AdminCLI</module>        
+	<module>SignServer-Admin-web</module>
         
         <module>SignServer-ejb-AdminWS</module>
         <module>SignServer-ejb-SignServerWS</module>

@@ -29,7 +29,7 @@ import org.signserver.server.archive.BaseArchiver;
  * Currently contains unit tests for the getFatalErrors mechanism.
  * 
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: BaseComponentUnitTest.java 7470 2016-06-14 07:41:02Z malu9369 $
  */
 public class BaseComponentUnitTest extends TestCase {
     

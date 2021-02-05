@@ -64,7 +64,7 @@ import org.signserver.validationservice.common.ValidateResponse;
  * Implementor of the ISignServerWS interface.
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: SignServerWS.java 8113 2017-03-13 14:47:03Z netmackan $
  */
 @Stateless
 @WebService(wsdlLocation = "META-INF/wsdl/SignServerWSService.wsdl",

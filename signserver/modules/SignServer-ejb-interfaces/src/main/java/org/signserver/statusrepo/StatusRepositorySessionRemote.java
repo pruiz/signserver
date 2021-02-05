@@ -18,7 +18,7 @@ import javax.ejb.Remote;
  * Interface towards the status repository session bean.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: StatusRepositorySessionRemote.java 6969 2015-12-29 18:24:25Z netmackan $
  */
 @Remote
 public interface StatusRepositorySessionRemote extends StatusRepositorySession {

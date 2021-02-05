@@ -19,7 +19,7 @@ import javax.xml.ws.WebFault;
  * the signing token isn't active. 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: CryptoTokenOfflineException.java 4757 2014-05-23 13:29:32Z netmackan $
  */
 @WebFault
 public class CryptoTokenOfflineException extends Exception {

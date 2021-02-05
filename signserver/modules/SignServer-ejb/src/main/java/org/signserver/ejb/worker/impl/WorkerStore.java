@@ -25,7 +25,7 @@ import org.signserver.server.IWorker;
  * worker name to worker ID.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: WorkerStore.java 6957 2015-12-28 10:53:14Z netmackan $
  */
 public class WorkerStore {
     

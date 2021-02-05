@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * process method. Extends the GenericSignRequest method with a referense the the httpServletRequest. 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: GenericServletRequest.java 1829 2011-08-10 11:50:45Z netmackan $
  */
 public class GenericServletRequest extends GenericSignRequest {
 

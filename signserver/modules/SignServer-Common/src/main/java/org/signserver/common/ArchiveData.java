@@ -22,7 +22,7 @@ import org.cesecore.internal.UpgradeableDataHashMap;
  * 
  * 
  * @author Philip Vendil
- * @version $Id$
+ * @version $Id: ArchiveData.java 7376 2016-05-23 06:53:38Z malu9369 $
  */
 public class ArchiveData extends UpgradeableDataHashMap {
 

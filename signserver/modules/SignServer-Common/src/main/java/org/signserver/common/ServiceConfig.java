@@ -19,7 +19,7 @@ import java.util.Date;
  * Class used to store service specific configuration.
  * 
  * @author Philip Vendil 2007 jan 23
- * @version $Id$
+ * @version $Id: ServiceConfig.java 5121 2014-09-09 14:08:46Z malu9369 $
  */
 public class ServiceConfig {
 

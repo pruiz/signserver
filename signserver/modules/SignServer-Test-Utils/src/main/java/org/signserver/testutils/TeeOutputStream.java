@@ -19,7 +19,7 @@ import java.io.OutputStream;
  * OutputStream outputting to multiple streams.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TeeOutputStream.java 2943 2012-11-06 09:54:30Z netmackan $
  */
 public class TeeOutputStream extends OutputStream {
 

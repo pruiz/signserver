@@ -37,7 +37,7 @@ import org.signserver.ejb.interfaces.GlobalConfigurationSession;
  * Tests for the query token entries command.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: TokenEntriesCLITest.java 9077 2018-01-26 10:32:49Z netmackan $
  */
 public class TokenEntriesCLITest extends ModulesTestCase {
     

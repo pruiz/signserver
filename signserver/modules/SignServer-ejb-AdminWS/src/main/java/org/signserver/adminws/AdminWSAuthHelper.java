@@ -25,7 +25,7 @@ import org.signserver.server.log.AdminInfo;
  * change the AdminWS API.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AdminWSAuthHelper.java 8098 2017-03-10 13:26:20Z netmackan $
  */
 public class AdminWSAuthHelper {
     private final AdminAuthHelper delegate;

@@ -22,7 +22,7 @@ import org.signserver.test.performance.WorkerThread;
  * Thread invoking the time-stamping requests and writing the statistics.
  *
  * @author Marcus Lundblad
- * @version $Id$
+ * @version $Id: TimeStampThread.java 9523 2018-09-27 10:14:45Z netmackan $
  */
 public class TimeStampThread extends WorkerThread {
     /** Logger for this class */

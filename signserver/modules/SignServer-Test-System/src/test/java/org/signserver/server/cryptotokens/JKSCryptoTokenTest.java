@@ -48,7 +48,7 @@ import static org.signserver.server.cryptotokens.CryptoTokenHelper.SECRET_KEY_PR
  * JKS CryptoToken test uses JKS file on file system, The JKS keystore in the file uses a standard PKCS12 format.
  * 
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: JKSCryptoTokenTest.java 10209 2019-01-14 10:24:17Z malu9369 $
  */
 public class JKSCryptoTokenTest extends CryptoTokenTestBase {
 

@@ -53,7 +53,7 @@ import org.signserver.server.log.LogMap;
  * POLICYOID1:WORKERNAMEORID1; POLICYOID2:WORKERNAMEORID2; POLICYOID3:WORKERNAMEORID2;
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: RequestedPolicyDispatcher.java 7764 2016-10-05 11:52:27Z netmackan $
  */
 public class RequestedPolicyDispatcher extends BaseDispatcher {
 

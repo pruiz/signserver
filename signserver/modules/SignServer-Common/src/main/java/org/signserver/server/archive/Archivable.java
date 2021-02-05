@@ -16,7 +16,7 @@ package org.signserver.server.archive;
  * An Archivable is an item that can be archived by an Archiver.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Archivable.java 2841 2012-10-16 08:31:40Z netmackan $
  */
 public interface Archivable {
     

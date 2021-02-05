@@ -29,7 +29,7 @@ import org.signserver.common.data.SignatureRequest;
  * Dummy authorizer used for testing and demonstration purposes
  * 
  * @author Philip Vendil 24 nov 2007
- * @version $Id$
+ * @version $Id: DummyAuthorizer.java 7620 2016-07-14 14:50:30Z netmackan $
  */
 public class DummyAuthorizer implements IAuthorizer {
 

@@ -29,7 +29,7 @@ import org.signserver.common.WorkerIdentifier;
  * Tests for the Base64DatabaseArchiver.
  *
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: Base64DatabaseArchiverTest.java 8054 2017-02-20 07:17:59Z malu9369 $
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Base64DatabaseArchiverTest extends ArchiveTestCase {

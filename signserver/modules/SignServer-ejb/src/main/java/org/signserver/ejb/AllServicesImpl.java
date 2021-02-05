@@ -29,7 +29,7 @@ import org.signserver.statusrepo.StatusRepositorySessionLocal;
  * added in all places.
  * 
  * @author Markus Kilås
- * @version $Id$
+ * @version $Id: AllServicesImpl.java 7566 2016-06-28 08:44:51Z malu9369 $
  */
 public class AllServicesImpl extends ServicesImpl {
     

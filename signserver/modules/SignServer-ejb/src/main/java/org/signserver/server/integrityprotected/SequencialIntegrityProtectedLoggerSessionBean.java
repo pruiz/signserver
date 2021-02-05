@@ -39,7 +39,7 @@ import org.cesecore.util.QueryResultWrapper;
  * IntegrityProtectedLoggerSessionBean implementation but supporting using the provided sequence number.
  *
  * @see SequencialIntegrityProtectedDevice
- * @version $Id$
+ * @version $Id: SequencialIntegrityProtectedLoggerSessionBean.java 9536 2018-10-02 08:35:47Z netmackan $
  */
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)

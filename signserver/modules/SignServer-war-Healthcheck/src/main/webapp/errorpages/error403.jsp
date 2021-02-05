@@ -1,6 +1,6 @@
 <%-- 
     Author     : Markus Kilås
-    Version    : $Id$
+    Version    : $Id: error403.jsp 11269 2019-09-09 08:22:48Z malu9369 $
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" isErrorPage="true" import="java.io.*" session="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -8,8 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="<c:out value='${pageContext.servletContext.contextPath}'/>/../publicweb.css" type="text/css"/>
-        <link rel="shortcut icon" href="<c:out value='${pageContext.servletContext.contextPath}'/>/../favicon.png"/>
+        <link rel="stylesheet" href="<c:out value='${pageContext.servletContext.contextPath}'/>/publicweb.css" type="text/css"/>
+        <link rel="shortcut icon" href="<c:out value='${pageContext.servletContext.contextPath}'/>/favicon.png"/>
         <title>SignServer - Error report</title>
     </head>
     <body>

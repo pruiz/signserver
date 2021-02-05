@@ -23,7 +23,7 @@ import org.signserver.server.nodb.FileBasedDatabaseManager;
  * 
  * Contains about the same methods as the EJB 2 entity beans home interface.
  *
- * @version $Id$
+ * @version $Id: FileBasedKeyUsageCounterDataService.java 7574 2016-06-28 13:55:41Z malu9369 $
  */
 public class FileBasedKeyUsageCounterDataService implements IKeyUsageCounterDataService {
 

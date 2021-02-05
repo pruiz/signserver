@@ -21,7 +21,7 @@ package org.signserver.protocol.ws.client;
  * 
  * @author Philip Vendil 
  *
- * @version $Id$
+ * @version $Id: IFaultCallback.java 1875 2011-09-29 14:50:48Z netmackan $
  */
 public interface IFaultCallback {
 

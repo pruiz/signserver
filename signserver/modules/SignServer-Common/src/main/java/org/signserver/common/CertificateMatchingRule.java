@@ -20,7 +20,7 @@ import java.util.Objects;
  * value, Issuer Type and Issue Value of trusted client certs.
  *
  * @author Vinay Singh
- * @version $Id$
+ * @version $Id: CertificateMatchingRule.java 10592 2019-03-29 08:38:56Z vinays $
  */
 public class CertificateMatchingRule implements Comparable<Object>, Serializable {
 

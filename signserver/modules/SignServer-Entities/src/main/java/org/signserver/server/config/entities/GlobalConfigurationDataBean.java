@@ -24,7 +24,7 @@ import javax.persistence.*;
  * propertyValue : String 
  * </pre>
  *
- * @version $Id$
+ * @version $Id: GlobalConfigurationDataBean.java 3178 2013-01-11 10:54:05Z netmackan $
  *
  */
 @Entity

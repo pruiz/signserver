@@ -23,7 +23,7 @@ import org.signserver.validationservice.common.ValidationServiceConstants;
  * standard X509 V3 certificates.
  * 
  * @author Philip Vendil 1 dec 2007
- * @version $Id$
+ * @version $Id: DefaultX509CertPurposeChecker.java 7582 2016-06-29 09:02:09Z malu9369 $
  */
 public class DefaultX509CertPurposeChecker implements ICertPurposeChecker {
 
