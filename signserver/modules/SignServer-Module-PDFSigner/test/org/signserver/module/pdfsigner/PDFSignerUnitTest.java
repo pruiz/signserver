@@ -138,6 +138,25 @@ public class PDFSignerUnitTest extends TestCase {
     }
 
     /**
+     * Tests that the signer produces detached SHA-256 signatures by default.
+     */
+    public void test01DetachedSha256SignatureByDefault() throws Exception {
+        final byte[] signedPdf = signPDF(sampleOk);
+        final PdfReader reader = new PdfReader(signedPdf);
+        final AcroFields fields = reader.getAcroFields();
+        final List names = fields.getSignatureNames();
+
+        assertEquals("number of signatures", 1, names.size());
+
+        final String signatureName = (String) names.get(0);
+        final PdfDictionary signatureDictionary = fields.getSignatureDictionary(signatureName);
+        assertEquals("subfilter", new PdfName("adbe.pkcs7.detached"), signatureDictionary.getAsName(PdfName.SUBFILTER));
+
+        final PdfPKCS7 signature = fields.verifySignature(signatureName);
+        assertEquals("hash algorithm", "SHA256", signature.getHashAlgorithm());
+    }
+
+    /**
      * Tries to sign a PDF with document restrictions. As no password is 
      * supplied it throws an IllegalRequestException.
      * @throws Exception in case of error
@@ -1236,6 +1255,7 @@ public class PDFSignerUnitTest extends TestCase {
         if (!tsc.isCalled()) {
             throw new Exception("Test must be configured to use TSA otherwise we are not testing anything...");
         }
+        assertEquals("timestamp imprint length", 32, tsc.getLastImprint().length);
         LOG.debug("Private key used: " + token.getPrivateKeyCalls() + "\n");   
     }
     

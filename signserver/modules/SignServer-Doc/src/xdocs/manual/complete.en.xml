@@ -3407,6 +3407,21 @@ Default: "NOT_CERTIFIED".
                             </tr>
                             
                             <tr>
+                                <td><b>DIGESTALGORITHM</b></td>
+                                <td>
+                                    <p>
+The digest algorithm used for the PDF/CMS signature. For RSA keys, SHA256 is recommended. For DSA keys, only SHA1 is supported.
+                                    </p>
+                                    <p>
+Possible values: SHA1, SHA224, SHA256, SHA384, SHA512 and dashed variants such as SHA-256.
+                                    </p>
+                                    <p>
+Default: "SHA256".
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
                                 <td><b>TSA_URL</b></td>
                                 <td>
                                     <p>
@@ -3420,6 +3435,21 @@ Note: if path contains characters "\" or "=" , these characters should be escape
                                     </p>
                                     <p>
 Default: not set (no timestamping).
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>TSA_DIGESTALGORITHM</b></td>
+                                <td>
+                                    <p>
+The digest algorithm used for RFC 3161 timestamp request message imprints.
+                                    </p>
+                                    <p>
+Possible values: SHA1, SHA224, SHA256, SHA384, SHA512 and dashed variants such as SHA-256. The selected value must be accepted by the configured TSA.
+                                    </p>
+                                    <p>
+Default: "SHA256".
                                     </p>
                                 </td>
                             </tr>
@@ -6400,4 +6430,3 @@ Installation package for SignServer 3.2.4 and Debian 6.0 contributed by Antoine 
         </chapter>
     </body>
 </document>
-

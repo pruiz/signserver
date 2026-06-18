@@ -37,6 +37,8 @@ public class MockedTSAClient implements TSAClient {
     
     private boolean called;
 
+    private byte[] lastImprint;
+
     public MockedTSAClient(int fixedActualSize) {
         this.fixedActualSize = fixedActualSize;
     }
@@ -48,6 +50,7 @@ public class MockedTSAClient implements TSAClient {
 
     @Override
     public byte[] getTimeStampToken(PdfPKCS7 caller, byte[] imprint) throws Exception {
+        lastImprint = imprint == null ? null : (byte[]) imprint.clone();
         return getTimeStampToken();
     }
     
@@ -66,6 +69,10 @@ public class MockedTSAClient implements TSAClient {
 
     public boolean isCalled() {
         return called;
+    }
+
+    public byte[] getLastImprint() {
+        return lastImprint == null ? null : (byte[]) lastImprint.clone();
     }
     
 }

@@ -20,6 +20,7 @@ import java.net.URL;
 import java.security.*;
 import java.security.cert.*;
 import java.security.cert.Certificate;
+import java.security.interfaces.DSAPrivateKey;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -104,6 +105,11 @@ public class PDFSigner extends BaseSigner {
     public static final String TSA_URL = "TSA_URL";
     public static final String TSA_USERNAME = "TSA_USERNAME";
     public static final String TSA_PASSWORD = "TSA_PASSWORD";
+    public static final String TSA_DIGESTALGORITHM = "TSA_DIGESTALGORITHM";
+    private static final String DEFAULT_TSA_DIGESTALGORITHM = "SHA256";
+
+    public static final String DIGESTALGORITHM = "DIGESTALGORITHM";
+    private static final String DEFAULT_DIGESTALGORITHM = "SHA256";
     
     // extra properties
     public static final String EMBED_CRL = "EMBED_CRL";
@@ -143,6 +149,9 @@ public class PDFSigner extends BaseSigner {
 
     /** Random used for instance when setting a random owner/permissions password*/
     private SecureRandom random = new SecureRandom();
+
+    private String digestAlgorithm = DEFAULT_DIGESTALGORITHM;
+    private String tsaDigestAlgorithm = DEFAULT_TSA_DIGESTALGORITHM;
     
     @Override
     public void init(int signerId, WorkerConfig config,
@@ -167,6 +176,15 @@ public class PDFSigner extends BaseSigner {
             }
         }
         archivetodiskPattern = Pattern.compile(ARCHIVETODISK_PATTERN_REGEX);
+
+        final String configuredDigestAlgorithm = config.getProperty(DIGESTALGORITHM);
+        if (configuredDigestAlgorithm != null) {
+            digestAlgorithm = configuredDigestAlgorithm.trim();
+        }
+        final String configuredTsaDigestAlgorithm = config.getProperty(TSA_DIGESTALGORITHM);
+        if (configuredTsaDigestAlgorithm != null) {
+            tsaDigestAlgorithm = configuredTsaDigestAlgorithm.trim();
+        }
     }
 
     /**
@@ -192,6 +210,8 @@ public class PDFSigner extends BaseSigner {
             throw new IllegalRequestException(
                     "Recieved request data wasn't a expected byte[].");
         }
+
+        checkDigestAlgorithms();
 
         // Log values
         final LogMap logMap = LogMap.getInstance(requestContext);
@@ -392,6 +412,12 @@ public class PDFSigner extends BaseSigner {
     protected byte[] calculateSignature(PdfPKCS7 sgn, int size, MessageDigest messageDigest,
     		Calendar cal, PDFSignerParameters params, Certificate[] certChain, TSAClient tsc, byte[] ocsp,
     		PdfSignatureAppearance sap) throws IOException, DocumentException, SignServerException {
+        return calculateSignature(sgn, size, messageDigest, cal, params, certChain, tsc, ocsp, sap, "SHA-1");
+    }
+
+    protected byte[] calculateSignature(PdfPKCS7 sgn, int size, MessageDigest messageDigest,
+    		Calendar cal, PDFSignerParameters params, Certificate[] certChain, TSAClient tsc, byte[] ocsp,
+    		PdfSignatureAppearance sap, String tsaDigestAlgorithm) throws IOException, DocumentException, SignServerException {
      
         final HashMap<PdfName, Integer> exc = new HashMap<PdfName, Integer>();
         exc.put(PdfName.CONTENTS, new Integer(size * 2 + 2));
@@ -415,7 +441,7 @@ public class PDFSigner extends BaseSigner {
             throw new SignServerException("Error calculating signature", e);
         }
 
-        byte[] encodedSig = sgn.getEncodedPKCS7(hash, cal, tsc, ocsp);
+        byte[] encodedSig = sgn.getEncodedPKCS7(hash, cal, tsc, ocsp, tsaDigestAlgorithm);
         
         return encodedSig;
     }
@@ -435,6 +461,10 @@ public class PDFSigner extends BaseSigner {
         Certificate[] certChain = (Certificate[]) certs.toArray(new Certificate[0]);
         PrivateKey privKey = this.getCryptoToken().getPrivateKey(
                 ICryptoToken.PURPOSE_SIGN);
+
+        if (privKey instanceof DSAPrivateKey && !isSha1Digest(digestAlgorithm)) {
+            throw new IllegalRequestException("Only SHA1 is permitted as digest algorithm for DSA private keys");
+        }
 
         PdfReader reader = new PdfReader(pdfbytes, password);
         boolean appendMode = true; // TODO: This could be good to have as a property in the future
@@ -595,7 +625,7 @@ public class PDFSigner extends BaseSigner {
         
         PdfPKCS7 sgn;
         try {
-            sgn = new PdfPKCS7(privKey, certChain, crlList, "SHA1", null, false);
+            sgn = new PdfPKCS7(privKey, certChain, crlList, digestAlgorithm, null, false);
         } catch (InvalidKeyException e) {
             throw new SignServerException("Error constructing PKCS7 package", e);
         } catch (NoSuchProviderException e) {
@@ -606,9 +636,9 @@ public class PDFSigner extends BaseSigner {
 
         MessageDigest messageDigest;
         try {
-            messageDigest = MessageDigest.getInstance("SHA1");
+            messageDigest = MessageDigest.getInstance(digestAlgorithm);
         } catch (NoSuchAlgorithmException e) {
-            throw new SignServerException("Error creating SHA1 digest", e);
+            throw new SignServerException("Error creating " + digestAlgorithm + " digest", e);
         }
         
         Calendar cal = Calendar.getInstance();
@@ -619,7 +649,7 @@ public class PDFSigner extends BaseSigner {
         		calculateEstimatedSignatureSize(certChain, tsc, ocsp, crlList);
         }
         	
-        byte[] encodedSig = calculateSignature(sgn, contentEstimated, messageDigest, cal, params, certChain, tsc, ocsp, sap);
+        byte[] encodedSig = calculateSignature(sgn, contentEstimated, messageDigest, cal, params, certChain, tsc, ocsp, sap, tsaDigestAlgorithm);
 
         if (LOG.isDebugEnabled()) {
         	LOG.debug("Estimated size: " + contentEstimated);
@@ -910,7 +940,32 @@ public class PDFSigner extends BaseSigner {
     }
 
     protected TSAClient getTimeStampClient(String url, String username, String password) {
-        return new TSAClientBouncyCastle(url, username, password);
+        return new TSAClientBouncyCastle(url, username, password, tsaDigestAlgorithm);
+    }
+
+    private void checkDigestAlgorithms() throws SignServerException {
+        if (!isSupportedDigestAlgorithm(digestAlgorithm)) {
+            throw new SignServerException("Illegal digest algorithm: " + digestAlgorithm);
+        }
+        if (!isSupportedDigestAlgorithm(tsaDigestAlgorithm)) {
+            throw new SignServerException("Illegal timestamping digest algorithm: " + tsaDigestAlgorithm);
+        }
+    }
+
+    private static boolean isSha1Digest(final String algorithm) {
+        return "SHA1".equalsIgnoreCase(algorithm) || "SHA-1".equalsIgnoreCase(algorithm);
+    }
+
+    private static boolean isSupportedDigestAlgorithm(final String algorithm) {
+        return isSha1Digest(algorithm)
+                || "SHA224".equalsIgnoreCase(algorithm)
+                || "SHA-224".equalsIgnoreCase(algorithm)
+                || "SHA256".equalsIgnoreCase(algorithm)
+                || "SHA-256".equalsIgnoreCase(algorithm)
+                || "SHA384".equalsIgnoreCase(algorithm)
+                || "SHA-384".equalsIgnoreCase(algorithm)
+                || "SHA512".equalsIgnoreCase(algorithm)
+                || "SHA-512".equalsIgnoreCase(algorithm);
     }
 
 }

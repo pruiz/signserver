@@ -1,0 +1,8 @@
+[jpackage]
+name=JPackage 6 generic
+baseurl=http://mirrors.ibiblio.org/jpackage/6.0/generic/free/
+failovermethod=priority
+enabled=0
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-jpackage
+priority=10

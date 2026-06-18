@@ -53,6 +53,7 @@ import java.io.*;
 import java.math.*;
 import java.net.*;
 
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.cmp.*;
 import org.bouncycastle.asn1.x509.*;
 import org.bouncycastle.tsp.*;
@@ -77,6 +78,8 @@ public class TSAClientBouncyCastle implements TSAClient {
     protected String tsaPassword;
     /** Estimate of the received time stamp token */
     protected int tokSzEstimate;
+    /** Digest algorithm used for the timestamp request message imprint. */
+    protected ASN1ObjectIdentifier digestAlgorithmOid;
     
     /**
      * Creates an instance of a TSAClient that will use BouncyCastle.
@@ -107,10 +110,25 @@ public class TSAClientBouncyCastle implements TSAClient {
      * @param tokSzEstimate int - estimated size of received time stamp token (DER encoded)
      */
     public TSAClientBouncyCastle(String url, String username, String password, int tokSzEstimate) {
+        this(url, username, password, tokSzEstimate, "SHA-1");
+    }
+
+    /**
+     * Creates an instance of a TSAClient with a configurable request digest.
+     */
+    public TSAClientBouncyCastle(String url, String username, String password, String digestAlgorithm) {
+        this(url, username, password, 7168, digestAlgorithm);
+    }
+
+    /**
+     * Constructor with configurable request digest.
+     */
+    public TSAClientBouncyCastle(String url, String username, String password, int tokSzEstimate, String digestAlgorithm) {
         this.tsaURL       = url;
         this.tsaUsername  = username;
         this.tsaPassword  = password;
         this.tokSzEstimate = tokSzEstimate;
+        this.digestAlgorithmOid = getDigestAlgorithmOid(digestAlgorithm);
     }
     
     /**
@@ -146,7 +164,7 @@ public class TSAClientBouncyCastle implements TSAClient {
             tsqGenerator.setCertReq(true);
             // tsqGenerator.setReqPolicy("1.3.6.1.4.1.601.10.3.1");
             BigInteger nonce = BigInteger.valueOf(System.currentTimeMillis());
-            TimeStampRequest request = tsqGenerator.generate(X509ObjectIdentifiers.id_SHA1, imprint, nonce);
+            TimeStampRequest request = tsqGenerator.generate(digestAlgorithmOid, imprint, nonce);
             byte[] requestBytes = request.getEncoded();
             
             // Call the communications layer
@@ -227,4 +245,19 @@ public class TSAClientBouncyCastle implements TSAClient {
         }
         return respBytes;
     }    
+
+    private static ASN1ObjectIdentifier getDigestAlgorithmOid(String algorithm) {
+        if (algorithm == null || algorithm.length() == 0 || "SHA1".equalsIgnoreCase(algorithm) || "SHA-1".equalsIgnoreCase(algorithm)) {
+            return X509ObjectIdentifiers.id_SHA1;
+        } else if ("SHA224".equalsIgnoreCase(algorithm) || "SHA-224".equalsIgnoreCase(algorithm)) {
+            return new ASN1ObjectIdentifier("2.16.840.1.101.3.4.2.4");
+        } else if ("SHA256".equalsIgnoreCase(algorithm) || "SHA-256".equalsIgnoreCase(algorithm)) {
+            return new ASN1ObjectIdentifier("2.16.840.1.101.3.4.2.1");
+        } else if ("SHA384".equalsIgnoreCase(algorithm) || "SHA-384".equalsIgnoreCase(algorithm)) {
+            return new ASN1ObjectIdentifier("2.16.840.1.101.3.4.2.2");
+        } else if ("SHA512".equalsIgnoreCase(algorithm) || "SHA-512".equalsIgnoreCase(algorithm)) {
+            return new ASN1ObjectIdentifier("2.16.840.1.101.3.4.2.3");
+        }
+        throw new IllegalArgumentException("Unsupported TSA digest algorithm: " + algorithm);
+    }
 }
